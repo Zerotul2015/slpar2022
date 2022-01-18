@@ -10,16 +10,17 @@ namespace App\Classes;
 
 
 use App\Classes\ActiveRecord\FactoryObject;
+use PDO;
 
 class ActiveRecord
 
 {
-    private \PDO $dbh;
+    private PDO $dbh;
     private string $className = 'stdClass';
 
     function __construct()
     {
-        $this->dbh = new \PDO("mysql:dbname=$_ENV[DB_DATABASE];host=$_ENV[DB_HOST]", $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+        $this->dbh = new PDO("mysql:dbname=$_ENV[DB_DATABASE];host=$_ENV[DB_HOST]", $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
         $this->dbh->exec("SET NAMES utf8");
     }
 
@@ -54,7 +55,7 @@ class ActiveRecord
                 if ($k == 'save') {
                     continue;
                 }
-                // массив значени для одного ключа
+                // массив значений для одного ключа
                 if (is_array($v)) {
                     $kNew = 1;
                     $name_val[] = $k;
@@ -94,7 +95,7 @@ class ActiveRecord
 
 
     /**
-     * Возвращает подготовленую строку с условиями WHERE... для подстановки в sql запрос
+     * Возвращает подготовленную строку с условиями WHERE... для подстановки в sql запрос
      * и массив параметров для подстановки PDO
      * @param $where
      * @return array
@@ -134,7 +135,7 @@ class ActiveRecord
     public function getObject($table, $select, $where, $orderBy, $sort, $limit, $className = 'stdClass')
     {
         $select = $select ? implode(', ', $select) : '*';
-        //упрорядочивание
+        //упорядочивание
         $sort = $sort === 'DESC' ? $sort : 'ASC';
         //сортировка по колонке
         $orderBy = $orderBy ? 'ORDER BY ' . $orderBy : 'ORDER BY  id';
@@ -151,7 +152,7 @@ class ActiveRecord
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        $res = $sth->fetchAll(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $className);
+        $res = $sth->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $className);
         //$sth->debugDumpParams();
         return $res;
     }
@@ -160,7 +161,7 @@ class ActiveRecord
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        $res = $sth->fetchAll(\PDO::FETCH_ASSOC);
+        $res = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
 
@@ -173,7 +174,7 @@ class ActiveRecord
     public function set($table, $val, $id = '')
     {
         $val = self::prepareSql($val); //[name, :name=>value, name=:name, :name]
-        // если редкатирование существуеющей записи
+        // если редактирование существующей записи
         if ($id) {
             $sql = 'UPDATE `' . $table . '` SET ' . implode(', ', $val['name=:name']) . ' WHERE ' . $id;
             // echo $sql . PHP_EOL;
@@ -181,7 +182,7 @@ class ActiveRecord
             $result = $sth->execute($val[':name=>value']);
             // $sth->debugDumpParams();
             return $result;
-        } // Добавляем новую запись в базу и возварщаем ее ID
+        } // Добавляем новую запись в базу и возвращаем ее ID
         else {
             $sql = 'INSERT INTO `' . $table . '` (' . implode(', ', $val['name']) . ') VALUES(' . implode(', ',
                     $val[':name']) . ')';
