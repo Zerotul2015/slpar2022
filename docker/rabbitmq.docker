@@ -1,0 +1,3 @@
+FROM rabbitmq:3-management
+
+ADD ./docker/php-fpm/php.ini /usr/local/etc/php/php.ini

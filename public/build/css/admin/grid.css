@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+}
+
+.col-2 {
+  grid-template-columns: repeat(2, auto);
+}
+
+.col-3 {
+  grid-template-columns: repeat(3, auto);
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, auto);
+}
+
+.col-5 {
+  grid-template-columns: repeat(5, auto);
+}
+
+.col-6 {
+  grid-template-columns: repeat(6, auto);
+}
+
+.col-7 {
+  grid-template-columns: repeat(7, auto);
+}
+
+.col-8 {
+  grid-template-columns: repeat(8, auto);
+}
+
+.col-9 {
+  grid-template-columns: repeat(9, auto);
+}
+
+.col-10 {
+  grid-template-columns: repeat(10, auto);
+}
+
+.col-11 {
+  grid-template-columns: repeat(11, auto);
+}
+
+.col-12 {
+  grid-template-columns: repeat(12, auto);
+}

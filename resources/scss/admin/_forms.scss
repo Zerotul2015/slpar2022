@@ -1,0 +1,112 @@
+// стили элеиентов форм
+input[type="number"] {
+  text-align: center;
+}
+
+.input_hidden {
+  display: none;
+}
+
+.input_error {
+  border-color: $red-button;
+}
+
+.input_success {
+  border-color: $green;
+}
+
+input, textarea, select, .input, .textarea, .select {
+  border: 1px solid $grey;
+  background: $white;
+  border-radius: 5px;
+  padding: .25rem;
+  outline: none;
+  //max-width: 100%;
+  margin: 0;
+  line-height: 1.2rem;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  border: 1px solid $grey-dark;
+  border-radius: 5px;
+  padding: .25rem;
+  outline: none;
+  box-shadow: 0 0 5px $grey-dark;
+}
+
+.input:disabled, .textarea:disabled, .select:disabled {
+  border: 1px solid $grey;
+  background: $grey;
+  border-radius: 5px;
+  padding: .25rem;
+  outline: none;
+  box-shadow: 0 0 5px $grey;
+}
+
+
+//обертка для блока с .input-block
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.form-section {
+  display: grid;
+  justify-content: start;
+  justify-items: stretch;
+  align-items: start;
+  grid-gap: .25rem;
+  grid-auto-flow: row;
+}
+
+.form-section_column {
+  grid-auto-flow: column;
+}
+
+.form-section_flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+.form-section_with-title{
+  padding:1rem;
+}
+.form-title{
+  margin: -.5rem 0 0 -.5rem;
+  font-weight: 600;
+}
+//конец обертка для блока
+
+.input-block {
+  display: grid;
+  align-items: center;
+  padding: .25rem;
+  border-radius: 5px;
+  grid-auto-flow: row;
+  grid-template-columns: auto 1fr;
+  grid-gap: .25rem;
+}
+
+.input-block_min {
+  grid-template-columns: min-content min-content;
+}
+
+.input-block_column {
+  grid-auto-flow: row;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, min-content);
+  align-self: start;
+}
+
+.input-block_highlight {
+  border: 1px solid $grey;
+  background: $grey-light;
+}
+
+.hint {
+  font-size: .8rem;
+  font-style: italic;
+  color: $grey-dark;
+}
+
+// конец стили элеиентов форм

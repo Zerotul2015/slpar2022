@@ -1,0 +1,47 @@
+{% block menu %}
+    <nav class="navbar">
+        <ul class="nav">
+            <li class="menu_sidebar__item">
+                <a href="/admin/settings/banner">Баннеры</a>
+            </li>
+            <li class="menu_sidebar__item menu_sidebar__item_parent">
+                <a href="/admin/orders/list-orders">Заказы</a>
+                {% include 'menuOrders.twig' %}
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/menu">Меню</a>
+            </li>
+            <li class="menu_sidebar__item menu_sidebar__item_parent">
+                <a href="/admin/settings">Настройки магазина</a>
+                {% include 'menuSettings.twig' %}
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/our-works/list-works">Наши работы</a>
+            </li>
+
+            <li class="menu_sidebar__item">
+                <a href="/admin/settings/sections">Разделы</a>
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/discounts/discounts-list">Скидки</a>
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/orders/delivery-methods">Способы доставки</a>
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/orders/payment-methods">Способы оплаты</a>
+            </li>
+            <li class="menu_sidebar__item menu_sidebar__item_parent">
+                <a href="/admin/pages/pages">Страницы</a>
+                {% include 'menuPage.twig' %}
+            </li>
+            <li class="menu_sidebar__item menu_sidebar__item_parent">
+                <a href="/admin/products/products">Управление товаром</a>
+                {% include 'menuProducts.twig' %}
+            </li>
+            <li class="menu_sidebar__item">
+                <a href="/admin/authorization/logout">Выход</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

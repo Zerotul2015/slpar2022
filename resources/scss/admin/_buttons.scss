@@ -1,0 +1,183 @@
+//button БЭМ
+
+.buttons-block {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  justify-content: start;
+}
+//для вывода ошибки под кнопками
+.button-block-error {
+  grid-template: 1/-1;
+}
+
+button,
+button:active,
+button:focus {
+  outline: none;
+  border-width: 0;
+}
+
+.button {
+  outline: 0;
+  color: $white;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  border-radius: .125rem;
+  background-color: #424242;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  display: grid;
+  grid-gap: .25rem;
+  grid-auto-flow: column;
+  align-items: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+  will-change: box-shadow, transform;
+  text-align: center;
+  vertical-align: middle;
+}
+
+//иконки в кнопках
+.button-icon {
+
+}
+
+//текст в кнопках
+.button-text {
+
+}
+
+
+.button:hover {
+  color: $white;
+  background-color: #888788;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+.button_remove,.button_red {
+  background: $red-button;
+}
+
+.button_remove:hover,.button_red:hover {
+  background: $red-button-hover;
+}
+
+.button_small {
+  font-size: .8rem;
+  padding: .25rem .5rem;
+}
+
+.button_green {
+  background-color: $green-button;
+  color: #fff;
+}
+
+.button_green:hover {
+  background-color: $green-button-hover;
+}
+
+.button_white {
+  background-color: $white;
+  border: 1px solid #ccc;
+  color: #737373;
+}
+
+.button_white:hover {
+  background: darken($white, 10%);
+}
+
+.button_dashed {
+  background: $white;
+  color: $green-button;
+  border: 1px dashed $green-button;
+  transition: .5s;
+}
+
+.button_dashed:hover {
+  background: $green-button-hover;
+  color: $white;
+
+}
+
+.button_dashed:focus {
+  color: $green-button;
+  border: 1px solid $green-button;
+}
+
+.button:disabled {
+  pointer-events: none;
+  background: #ccc;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  color: $white;
+}
+
+.button__icon {
+  margin-right: 1rem;
+}
+
+//для анимации загрузки
+.button_loader {
+  animation: loader .4s linear infinite;
+  font-size: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 25px;
+  padding: 0;
+  box-shadow: none;
+  background: $white;
+  border-color: $white;
+  border-right: 2px solid $green;
+}
+
+.button_loader:focus,
+.button_loader:active {
+  border-right: 2px solid $green;
+}
+
+//конец для анимации загрузки
+
+@keyframes loader {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+//стиль для input загузки файла
+.input-file-upload {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-file-upload__label {
+  z-index: 1;
+  cursor: pointer;
+}
+
+.input-file-upload__input {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+//новый стиль скрытого инпута
+#files-hidden, .files-hidden {
+  display: none;
+}
+
+//end button БЭМ

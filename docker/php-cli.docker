@@ -1,0 +1,50 @@
+FROM php:8.1-cli
+
+RUN apt-get update && apt-get install -y libmcrypt-dev libmagickwand-dev mariadb-client webp
+RUN apt-get install -y \
+    libwebp-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev libxpm-dev \
+    libfreetype6-dev \
+    zlib1g-dev \
+    libzip-dev \
+    unzip \
+    supervisor
+
+RUN docker-php-ext-configure gd \
+    --enable-gd \
+    --with-webp \
+    --with-jpeg \
+    --with-xpm \
+    --with-freetype
+
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
+    install-php-extensions http
+
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install exif
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install sockets
+RUN pecl install xdebug-3.1.2
+
+# install imagick
+# Version is not officially released https://pecl.php.net/get/imagick but following works for PHP 8
+RUN mkdir -p /usr/src/php/ext/imagick; \
+    curl -fsSL https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1; \
+    docker-php-ext-install imagick;
+RUN docker-php-ext-enable gd
+RUN docker-php-ext-enable xdebug
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+ADD ./docker/php-fpm/php.ini /usr/local/etc/php/php.ini
+
+ADD ./docker/php-fpm/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+
+ADD ./docker/supervisor/main_consumer.conf /etc/supervisor/conf.d/main_consumer.conf
+
+WORKDIR /var/www

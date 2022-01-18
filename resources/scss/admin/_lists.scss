@@ -1,0 +1,42 @@
+.list {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: .5rem;
+  justify-content: start;
+}
+
+
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color:$black;
+}
+.list-item_grid{
+  display: grid;
+  grid-auto-flow: column;
+}
+.list-item:nth-child(odd){
+  background: $green-background;
+  color:$black;
+}
+.list-item:hover{
+  color:$white;
+  background: $green-background-hover;
+}
+
+//элементы списка не реагирующие на наведение указателя мыши
+.list-item_not-hover:nth-child(odd):hover{
+  background: $green-background;
+  color:$black;
+}
+
+.list-item_not-hover:hover{
+  background: $white;
+  color:$black;
+}
+
+.list-item > * {
+  margin: .25rem;
+}

@@ -1,0 +1,17 @@
+image{
+
+}
+.image-thumb {
+  max-width: 250px;
+  width: 100%;
+}
+
+.thumb-thumb_big {
+  max-width: 500px;
+}
+
+.images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}

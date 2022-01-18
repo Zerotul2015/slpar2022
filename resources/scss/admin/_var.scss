@@ -1,0 +1,42 @@
+$white:rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$green: rgb(17, 153, 75);
+$green-light: rgb(102, 174, 50);
+$green-dark: rgb(83, 142, 50);
+$green-button: rgb(17, 153, 75);
+$green-button-hover:rgb(32, 193, 100);
+$grey-light: rgb(239, 239, 239);
+$grey: rgb(193, 193, 193);
+$grey-dark: rgb(132, 132, 132);
+$red:rgb(248,0,0);
+$red-button: rgb(153, 0, 0);
+$red-button-hover: lighten($red-button, 10%);
+$green-background:rgba(102, 174, 50, 0.1);
+$green-background-hover: rgb(102, 174, 50);
+$red-background:rgba(248, 0, 0, 0.1);
+$red-background-hover: rgb(248, 0, 0);
+$background-block-color: rgb(255, 255, 255);
+$box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .08);
+
+
+:root{
+  --white:rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --green:  rgb(17, 153, 75);
+  --green-light: rgb(102, 174, 50);
+  --green-dark: rgb(83, 142, 50);
+  --green-button: rgb(17, 153, 75);
+  --green-button-hover:rgb(32, 193, 100);
+  --grey-light: rgb(239, 239, 239);
+  --grey: rgb(193, 193, 193);
+  --grey-dark: rgb(132, 132, 132);
+  --red:rgb(248,0,0);
+  --red-button: rgb(153, 0, 0);
+  --red-button-hover: lighten($red-button, 10%);
+  --green-background:rgba(102, 174, 50, 0.1);
+  --green-background-hover: rgb(102, 174, 50);
+  --red-background:rgba(248, 0, 0, 0.1);
+  --red-background-hover: rgb(248, 0, 0);
+  --background-block-color: rgb(255, 255, 255);
+  --box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .08);
+}

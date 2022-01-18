@@ -1,0 +1,504 @@
+create table customer
+(
+	id bigint unsigned not null,
+	name varchar(255) null,
+	phone varchar(32) null,
+	mail varchar(255) null,
+	status varchar(32) null comment 'Статус покупателя(active, blocked и т.п)',
+	constraint customer_id_uindex
+		unique (id),
+	constraint customer_mail_uindex
+		unique (mail),
+	constraint customer_phone_uindex
+		unique (phone)
+);
+
+alter table customer
+	add primary key (id);
+
+create table customer_company
+(
+	id bigint unsigned not null,
+	customer_id bigint unsigned null,
+	inn varchar(12) null,
+	kpp varchar(9) null,
+	name text null,
+	note text null comment 'Произвольный текст. Здесь покупатель может что то пометить для себя.',
+	note_hidden text null comment 'Не доступно для покупателя. Используется менеджерами для заметок по контрагенту.',
+	constraint customer_company_id_uindex
+		unique (id),
+	constraint customer_company_customer_id_fk
+		foreign key (customer_id) references customer (id)
+			on update cascade on delete set null
+);
+
+alter table customer_company
+	add primary key (id);
+
+create table delivery_methods
+(
+	id bigint unsigned auto_increment,
+	name varchar(255) null,
+	description text null,
+	price int null,
+	sum_for_free int unsigned null,
+	enable tinyint(1) null,
+	protected tinyint(1) null,
+	constraint id
+		unique (id)
+);
+
+create table discounts
+(
+	id bigint unsigned auto_increment,
+	active tinyint(1) null,
+	time_start int null,
+	time_end int null,
+	value int null,
+	unit varchar(6) null,
+	name varchar(255) null,
+	composition text null,
+	constraint id
+		unique (id)
+);
+
+alter table discounts
+	add primary key (id);
+
+create table gallery_category
+(
+	id bigint unsigned auto_increment
+		primary key,
+	category_name varchar(255) null,
+	url varchar(255) null,
+	folder varchar(255) null,
+	category_description text null,
+	seo text null,
+	connection_products text null,
+	connection_category_products text null,
+	connection_services text null,
+	constraint gallery_category_folder_uindex
+		unique (folder),
+	constraint gallery_category_url_uindex
+		unique (url)
+);
+
+create table gallery_image
+(
+	id bigint unsigned auto_increment
+		primary key,
+	title varchar(255) null,
+	gallery_category text null,
+	image varchar(255) null,
+	connection_products text null,
+	connection_category_products text null
+);
+
+create table menu
+(
+	id bigint unsigned auto_increment,
+	name varchar(64) not null,
+	position varchar(32) null,
+	items text null,
+	priority int null,
+	enable tinyint(1) null,
+	constraint id
+		unique (id)
+);
+
+create table orders_status
+(
+	id bigint unsigned auto_increment,
+	name varchar(255) null,
+	send_admin tinyint(1) null,
+	description text null,
+	message_mail text null,
+	message_mail_admin text null,
+	constraint id
+		unique (id)
+);
+
+create table page_blocks
+(
+	id bigint unsigned auto_increment,
+	name varchar(255) null,
+	intro text null,
+	pages text null,
+	constraint id
+		unique (id)
+);
+
+create table page_category
+(
+	id bigint unsigned auto_increment,
+	name_short varchar(255) default 'без названия' null,
+	name_full varchar(255) null,
+	description text null,
+	seo text null,
+	parent bigint default 0 null,
+	priority int default 0 not null,
+	url varchar(255) not null,
+	integrated tinyint(1) null,
+	date timestamp default CURRENT_TIMESTAMP null,
+	constraint id
+		unique (id)
+);
+
+create table page
+(
+	id bigint unsigned auto_increment,
+	title varchar(255) not null,
+	category_id bigint unsigned null,
+	style varchar(32) null,
+	images text null,
+	folder varchar(255) null,
+	seo text null,
+	description text null,
+	content text null,
+	url varchar(255) not null,
+	integrated tinyint(1) null,
+	url_integrated varchar(255) null,
+	date timestamp default CURRENT_TIMESTAMP null,
+	constraint id
+		unique (id),
+	constraint page_ibfk_1
+		foreign key (category_id) references page_category (id)
+			on update cascade on delete set null
+);
+
+create index category
+	on page (category_id);
+
+create table payment_methods
+(
+	id bigint unsigned auto_increment,
+	name varchar(255) null,
+	description text null,
+	settings text null,
+	enable tinyint(1) null,
+	protected tinyint(1) null,
+	protected_name varchar(255) null,
+	constraint id
+		unique (id)
+);
+
+create table orders
+(
+	id bigint unsigned not null,
+	customer bigint unsigned null,
+	customer_company bigint unsigned null,
+	payment_method bigint unsigned null,
+	delivery_method bigint unsigned null,
+	products text null,
+	status bigint unsigned null,
+	constraint order_id_uindex
+		unique (id),
+	constraint order_customer_company_id_fk
+		foreign key (customer_company) references customer_company (id)
+			on update cascade on delete set null,
+	constraint order_customer_id_fk
+		foreign key (customer) references customer (id)
+			on update cascade on delete set null,
+	constraint order_delivery_methods_id_fk
+		foreign key (delivery_method) references delivery_methods (id)
+			on update cascade on delete set null,
+	constraint order_orders_status_id_fk
+		foreign key (status) references orders_status (id)
+			on update cascade on delete set null,
+	constraint order_payment_methods_id_fk
+		foreign key (payment_method) references payment_methods (id)
+			on update cascade on delete set null
+);
+
+alter table orders
+	add primary key (id);
+
+create table payment_yandex
+(
+	id bigint unsigned auto_increment,
+	secret_key varchar(255) null,
+	shop_id varchar(32) null,
+	constraint id
+		unique (id),
+	constraint payment_yandex_id_uindex
+		unique (id)
+);
+
+alter table payment_yandex
+	add primary key (id);
+
+create table product_category
+(
+	id bigint unsigned auto_increment,
+	parent_id bigint unsigned default '0' null,
+	priority int default 0 not null,
+	name varchar(128) not null,
+	description text null,
+	image varchar(255) null,
+	seo text null,
+	folder varchar(255) null,
+	url varchar(255) not null,
+	is_custom tinyint(1) null,
+	custom_link varchar(255) null,
+	constraint id
+		unique (id),
+	constraint url
+		unique (url)
+);
+
+create index parent_id
+	on product_category (parent_id);
+
+alter table product_category
+	add primary key (id);
+
+create table product_label
+(
+	id bigint unsigned auto_increment,
+	name varchar(128) null,
+	icon varchar(32) null,
+	color varchar(32) null,
+	constraint id
+		unique (id)
+);
+
+alter table product_label
+	add primary key (id);
+
+create table product_manufacturer
+(
+	id bigint unsigned auto_increment,
+	name varchar(128) not null,
+	image varchar(255) null,
+	description text null,
+	folder varchar(255) null,
+	url varchar(255) null,
+	constraint id
+		unique (id)
+);
+
+alter table product_manufacturer
+	add primary key (id);
+
+create table product_stock_status
+(
+	id bigint unsigned auto_increment,
+	name varchar(64) null,
+	description text null,
+	delivery_time tinyint null,
+	constraint id
+		unique (id)
+);
+
+alter table product_stock_status
+	add primary key (id);
+
+create table product_unit
+(
+	id bigint unsigned auto_increment,
+	code varchar(4) null,
+	name varchar(255) null,
+	symbol_national varchar(64) null,
+	symbol_international varchar(64) null,
+	constraint id
+		unique (id),
+	constraint products_units_code_uindex
+		unique (code)
+);
+
+alter table product_unit
+	add primary key (id);
+
+create table product
+(
+	id bigint unsigned auto_increment,
+	name varchar(128) not null,
+	article varchar(255) null,
+	characteristics text null,
+	description text null,
+	seo text null,
+	images text null,
+	image_main varchar(255) null,
+	videos text null,
+	attachments text null,
+	folder varchar(255) null,
+	category bigint unsigned null,
+	label bigint unsigned null,
+	manufacturer bigint unsigned null,
+	unit bigint unsigned null,
+	dimensions text null,
+	stock_status bigint unsigned null,
+	url varchar(255) not null,
+	product_options text null,
+	price int null,
+	price_on_request tinyint(1) null,
+	priority int default 0 null,
+	enable tinyint(1) default 1 null,
+	products_related text null,
+	constraint id
+		unique (id),
+	constraint products_article_uindex
+		unique (article),
+	constraint url
+		unique (url),
+	constraint product_ibfk_1
+		foreign key (category) references product_category (id)
+			on update cascade on delete set null,
+	constraint product_ibfk_2
+		foreign key (manufacturer) references product_manufacturer (id)
+			on update cascade on delete set null,
+	constraint product_ibfk_3
+		foreign key (unit) references product_unit (id)
+			on update cascade on delete set null,
+	constraint product_ibfk_4
+		foreign key (label) references product_label (id)
+			on update cascade on delete set null,
+	constraint product_ibfk_5
+		foreign key (stock_status) references product_stock_status (id)
+			on update cascade on delete set null
+);
+
+create index category
+	on product (category);
+
+create index label
+	on product (label);
+
+create index manufacturer
+	on product (manufacturer);
+
+create index plantations
+	on product (manufacturer);
+
+create index stock_status
+	on product (stock_status);
+
+create index unit
+	on product (unit);
+
+alter table product
+	add primary key (id);
+
+create table promotional_code
+(
+	id bigint unsigned auto_increment,
+	date_start varchar(32) null,
+	date_end varchar(32) null,
+	discount varchar(128) null,
+	promocode varchar(255) null,
+	auto_apply tinyint(1) null,
+	conditions text null,
+	constraint id
+		unique (id)
+);
+
+alter table promotional_code
+	add primary key (id);
+
+create table settings
+(
+	id bigint unsigned auto_increment,
+	title_prefix varchar(128) null,
+	title_postfix varchar(128) null,
+	title_prefix_product varchar(128) null,
+	title_postfix_product varchar(128) null,
+	maintenance_mode tinyint(1) null,
+	image_header varchar(255) null,
+	image_logo varchar(255) null,
+	logo_text varchar(255) null,
+	template_footer text null,
+	constraint id
+		unique (id)
+);
+
+create table settings_banner
+(
+	id bigint unsigned auto_increment,
+	banner_name varchar(64) null,
+	image varchar(255) null,
+	href varchar(255) null,
+	description varchar(255) null,
+	constraint id
+		unique (id)
+);
+
+alter table settings_banner
+	add primary key (id);
+
+create table settings_index_page
+(
+	id bigint unsigned auto_increment,
+	image_header varchar(255) null,
+	slider text null,
+	seo text null,
+	layout text null,
+	folder varchar(255) null,
+	constraint id
+		unique (id)
+);
+
+create table settings_layouts
+(
+	id bigint unsigned auto_increment,
+	layout_for varchar(32) null,
+	is_default tinyint(1) null,
+	for_id bigint unsigned null,
+	blocks text null,
+	constraint id
+		unique (id)
+);
+
+create table settings_notifications
+(
+	id bigint unsigned auto_increment,
+	smtp varchar(64) null,
+	email_login varchar(64) null,
+	email_pass varchar(64) null,
+	email_to_send varchar(64) null,
+	email_to_receive varchar(64) null,
+	constraint id
+		unique (id)
+);
+
+create table settings_product_page
+(
+	id bigint unsigned auto_increment,
+	offers text null,
+	constraint id
+		unique (id),
+	constraint settings_product_page_id_uindex
+		unique (id)
+);
+
+alter table settings_product_page
+	add primary key (id);
+
+create table settings_sections
+(
+	id bigint unsigned auto_increment,
+	section bigint unsigned null,
+	seo text null,
+	title varchar(255) null,
+	description text null,
+	constraint id
+		unique (id),
+	constraint section
+		unique (section)
+);
+
+alter table settings_sections
+	add primary key (id);
+
+create table users
+(
+	id bigint unsigned auto_increment,
+	login varchar(64) not null,
+	pass varchar(255) not null,
+	token varchar(255) null,
+	access_level varchar(32) null,
+	constraint id
+		unique (id),
+	constraint users_login_uindex
+		unique (login)
+);
+

@@ -1,0 +1,8 @@
+.thumb {
+  max-width: 250px;
+  width: 100%;
+}
+
+.thumb_big {
+  max-width: 500px;
+}

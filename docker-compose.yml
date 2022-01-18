@@ -1,0 +1,90 @@
+version: '3'
+services:
+    nginx:
+      build:
+        context: ./
+        dockerfile: docker/nginx.docker
+      volumes:
+        - ./:/var/www
+        - ./docker/nginx/ssl:/etc/nginx/ssl
+      ports:
+        - "8080:443"
+      links:
+        - php-fpm
+      networks:
+        - internal
+    php-fpm:
+      build:
+        context: ./
+        dockerfile: docker/php-fpm.docker
+      volumes:
+        - ./:/var/www
+        - ./docker/supervisor:/etc/supervisor/conf.d
+      links:
+        - mysql
+        - rabbitmq
+      environment:
+        AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+        DEBUG_CONFIG: "remote_host=192.168.221.1 remote_enable=1"
+        PHP_IDE_CONFIG: "serverName=Docker"
+        DB_PORT: 3306
+        DB_HOST: mysql
+      networks:
+        - internal
+    php-cli:
+      build:
+        context: ./
+        dockerfile: docker/php-cli.docker
+      volumes:
+        - ./:/var/www
+        - ./docker/supervisor:/etc/supervisor/conf.d
+      links:
+        - mysql
+        - rabbitmq
+      environment:
+        AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+        DEBUG_CONFIG: "remote_host=192.168.221.1 remote_enable=1"
+        PHP_IDE_CONFIG: "serverName=Docker"
+        DB_PORT: 3306
+        DB_HOST: mysql
+      networks:
+        - internal
+    mysql:
+      image: mysql:8
+      volumes:
+        - ./storage/docker/mysql:/var/lib/mysql
+      environment:
+        - "MYSQL_ROOT_PASSWORD=secret"
+        - "MYSQL_USER=app"
+        - "MYSQL_PASSWORD=secret"
+        - "MYSQL_DATABASE=app"
+      ports:
+        - "33061:3306"
+      networks:
+        - internal
+    rabbitmq:
+      build:
+        context: ./
+        dockerfile: docker/rabbitmq.docker
+      environment:
+        RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+        RABBITMQ_DEFAULT_USER: "rabbitmq"
+        RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      volumes:
+        - ./storage/docker/rabbitmq/etc/:/etc/rabbitmq/
+        - ./storage/docker/rabbitmq/data/:/var/lib/rabbitmq/mnesia/
+        - ./storage/docker/rabbitmq/logs/:/var/log/rabbitmq/
+      ports:
+        # The standard AMQP protocol port
+        - '5672:5672'
+        # HTTP management UI
+        - '15672:15672'
+      networks:
+        - internal
+networks:
+  internal:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.221.0/28
