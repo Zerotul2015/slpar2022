@@ -25,6 +25,11 @@ class ChangeData extends Main
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Page\PageCategoryModel'));
     }
 
+    public function bathStyle()
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\BathStyle\BathStyleModel'));
+    }
+
     public function product()
     {
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Product\ProductModel'));

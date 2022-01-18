@@ -101,6 +101,20 @@ export default new Router({
             component: () => import("../components/Pages/PagesCategoriesCreate.vue"),
             meta: {title: 'Редактирование категории страниц - Панель управления'}
         },
+        //---БанныеСтили---БанныеСтили---БанныеСтили---БанныеСтили---БанныеСтили---БанныеСтили---БанныеСтили---//
+        {
+            path: '/bath-style/page/:pageNumber',
+            props: true,
+            name: 'BathStyleListPage',
+            component: () => import("../components/BathStyle/BathStyleList.vue"),
+            meta: {title: `Стилевые решения для бань - Панель управления`}
+        },
+        {
+            path: '/bath-style',
+            name: 'BathStyleList',
+            component: () => import("../components/BathStyle/BathStyleList.vue"),
+            meta: {title: 'Стилевые решения для бань - Панель управления'}
+        },
         //---Товары---Товары---Товары---Товары---Товары---Товары---Товары---Товары---//
         {
             path: '/products/page/:pageNumber',

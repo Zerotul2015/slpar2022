@@ -88,6 +88,9 @@
             <li class="menu_sidebar__item"><a href="/admin/pages/index-page">Главная страница</a></li>
           </ul>
         </li>
+        <li class="menu_sidebar__item">
+          <router-link to="/bath-style">Стилевые решения</router-link>
+        </li>
         <li class="menu_sidebar__item menu_sidebar__item_parent">
           <router-link to="/products">Управление товаром</router-link>
           <ul class="menu_sidebar_submenu">

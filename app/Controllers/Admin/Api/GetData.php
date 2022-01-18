@@ -4,6 +4,7 @@
 namespace App\Controllers\Admin\Api;
 
 
+use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\CustomerCompany;
 use App\Classes\ActiveRecord\Tables\GalleryCategory;
@@ -59,6 +60,11 @@ class GetData extends Main
     public function product(): void
     {
         $object = Product::find();
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+    public function bathStyle(): void
+    {
+        $object = BathStyle::find();
         $this->returnAnswer($this->prepareReturnData($object));
     }
 

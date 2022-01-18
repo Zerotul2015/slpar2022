@@ -1,1 +1,4 @@
 /storage/
+/vendor/
+/.yarn/
+/node_modules/

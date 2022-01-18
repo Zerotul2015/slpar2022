@@ -51,7 +51,9 @@
           <select class="select" :id="'cat-' + guid" v-model="item.category_id">
             <option :value="null">Без категории</option>
             <option v-for="(cat, keyCak) in categories" :value="cat.id">
-              <span v-if="cat.parent_id && !!categories[cat.parent_id]">{{categories[cat.parent_id].name}} -> </span>{{ cat.name }}
+              <span v-if="cat.parent_id && !!categories[cat.parent_id]">{{ categories[cat.parent_id].name }} -> </span>{{
+                cat.name
+              }}
             </option>
           </select>
         </div>
@@ -131,6 +133,13 @@
           </div>
         </div>
       </div>
+      <h2>Стилевые решения</h2>
+      <div class="form-section">
+        <div class="input-block input-block_highlight" v-for="(styleItem, keyStyle) in bathStyles">
+          <input type="checkbox" :id="'style-' + keyStyle" :value="styleItem.id" v-model="item.bath_style_id">
+          <label :for="'style-' + keyStyle">{{styleItem.name}}</label>
+        </div>
+      </div>
       <h2>Цена</h2>
       <div class="form-section">
         <div class="input-block input-block_highlight">
@@ -182,6 +191,7 @@
 import api from "../../common/api";
 import editor from "@tinymce/tinymce-vue"
 import VueToggles from "vue-toggles";
+import {isNull} from "lodash";
 
 export default {
   name: "ProductsCreate",
@@ -207,8 +217,8 @@ export default {
       priceOnRequest: false,
       productEnable: true,
       priority: 0,
-      seoTitle:'',
-      seoDescription:'',
+      seoTitle: '',
+      seoDescription: '',
       dimensionsLength: null,//длина в метрах
       dimensionsWidth: null,//ширина в метрах
       dimensionsHeight: null,//высота в метрах
@@ -264,20 +274,22 @@ export default {
         },
         'images': [],
         'image_main': null,
+        'bath_style_id': [],
       };
     }
     this.$store.dispatch('productCategory/getAllById');//получаем данные категорий товаров
     this.$store.dispatch('productUnit/getAllById');//получаем данные категорий товаров
     this.$store.dispatch('productStockStatus/getAllById');//получаем данные категорий товаров
     this.$store.dispatch('productManufacturer/getAllById');//получаем данные категорий товаров
+    this.$store.dispatch('bathStyle/getAllById');//получаем данные стилевых решений бань
   },
   mounted() {
   },
   watch: {
-    seoDescription(newVal, oldVal){
+    seoDescription(newVal, oldVal) {
       this.seo.description = newVal;
     },
-    seoTitle(newVal, oldVal){
+    seoTitle(newVal, oldVal) {
       this.seo.titrle = newVal;
     },
     dimensionsLength(newVal, oldVal) {
@@ -370,6 +382,9 @@ export default {
         title = 'Такого товара не существует.';
       }
       return title;
+    },
+    bathStyles() {
+      return this.$store.state.bathStyle.allById;
     },
     categories() {
       return this.$store.state.productCategory.allById;
@@ -464,6 +479,9 @@ export default {
               this.notFoundProduct = true;
             } else {
               this.item = r.returnData && r.returnData[0] ? r.returnData[0] : {};
+              if(isNull(this.item.bath_style_id)){
+                this.item.bath_style_id = [];
+              }
               if (this.idCopy) {
                 this.item.id = null;
                 this.item.images = [];
