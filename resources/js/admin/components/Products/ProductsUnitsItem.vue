@@ -133,7 +133,7 @@ export default {
               this.saveStatus = 1;
               console.log(r);
               this.unitItem.id = r.returnData.id ? r.returnData.id : undefined;
-              //this.$emit('item-changed', r.returnData);
+              this.$emit('item-changed', r.returnData);
             } else {
               this.saveStatus = 2;
               this.errorText = r.error ? r.error : 'неизвестная ошибка: ' + r;
