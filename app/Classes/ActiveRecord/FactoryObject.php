@@ -37,7 +37,7 @@ class FactoryObject
     }
 
     /**
-     * Получаем массив всех объекты нужного класса, в качестве ключей которго используются primaryKey
+     * Получаем массив всех объекты нужного класса, в качестве ключей которого используются primaryKey
      * @param $val array
      * @param $indexBy string
      * @return array | false
@@ -47,6 +47,7 @@ class FactoryObject
         $returnResult = false;
         $result = static::getAll($val);
         if ($result) {
+            $returnResult = [];
             if ($indexBy) {
                 foreach ($result as $res) {
                     $returnResult[$res->{$indexBy}] = $res;
