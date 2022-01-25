@@ -31,7 +31,7 @@ class ProductModel implements DefaultMethodTableClass
             }
             $val['folder'] = $folder;
 
-            $val['images'] = $val['image_main'] ?? [];
+            $val['images'] = $val['images'] ?? [];
             $val['image_main'] = $val['image_main'] ?? false;
 
             $preparedImages = MainModel::prepareImagesBeforeSave($val['images'], $val['image_main'], $imagesOld, 'products/' . $val['folder']);
