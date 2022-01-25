@@ -18,7 +18,7 @@
       <div class="form-section" v-if="toggleSeo">
         <div class="input-block input-block_highlight">
           <label for="seo-title">Seo заголовок:</label>
-          <input id="seo-title" class="input" type="text" v-model="seoDescription">
+          <input id="seo-title" class="input" type="text" v-model="seoTitle">
         </div>
         <div class="input-block input-block_column input-block_highlight">
           <label for="seo-description">Описание:</label>
@@ -66,7 +66,7 @@
         </div>
         <div class="input-block input-block_column input-block_highlight">
           <label :for="'stock-' + guid">Статус наличия:</label>
-          <select class="select" :id="'stock-' + guid" v-model="item.stock_status">
+          <select class="select" :id="'stock-' + guid" v-model="item.stock_status_id">
             <option :value="null">Без статуса</option>
             <option v-for="(stStatus, keyCak) in stockStatuses" :value="stStatus.id">{{ stStatus.name }}</option>
           </select>
@@ -287,10 +287,10 @@ export default {
   },
   watch: {
     seoDescription(newVal, oldVal) {
-      this.seo.description = newVal;
+      this.item.seo.description = newVal;
     },
     seoTitle(newVal, oldVal) {
-      this.seo.titrle = newVal;
+      this.item.seo.title = newVal;
     },
     dimensionsLength(newVal, oldVal) {
       this.item.dimensions.d_length = newVal;
