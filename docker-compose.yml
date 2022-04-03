@@ -8,7 +8,8 @@ services:
         - ./:/var/www
         - ./docker/nginx/ssl:/etc/nginx/ssl
       ports:
-        - "8080:443"
+        - "443:443"
+        - "80:80"
       links:
         - php-fpm
       networks:
@@ -25,8 +26,6 @@ services:
         - rabbitmq
       environment:
         AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
-        DEBUG_CONFIG: "remote_host=192.168.221.1 remote_enable=1"
-        PHP_IDE_CONFIG: "serverName=Docker"
         DB_PORT: 3306
         DB_HOST: mysql
       networks:
@@ -60,6 +59,21 @@ services:
         - "MYSQL_DATABASE=app"
       ports:
         - "33061:3306"
+      networks:
+        - internal
+    phpmyadmin:
+      container_name: lampphpmyadmin
+      image: phpmyadmin/phpmyadmin
+      environment:
+        - "MYSQL_ROOT_PASSWORD=secret"
+        - "MYSQL_USER=app"
+        - "MYSQL_PASSWORD=secret"
+        - "PMA_HOST=mysql"
+        - "PMA_PORT=3306"
+      links:
+        - mysql
+      ports:
+        - "8081:80"
       networks:
         - internal
     rabbitmq:

@@ -38,15 +38,15 @@ class Routing
         string $classNameDefault = 'Index',
         string $methodNameDefault = 'Main',
         array $rootClassAvailable = [
-            'Admin',
-            'Amqp',
-            'Api',
-            'Cron',
-            'Parser',
-            'Services',
-            'Visitors',
+            'Admin'=>'Admin',
+            'Amqp'=>'Amqp',
+            'Api'=>'Api',
+            'Cron'=>'Cron',
+            'Parser'=>'Parser',
+            'Services'=>'Services',
+            'Shop'=>'Shop',
         ],
-        string $rootClassDefault = '',
+        string $rootClassDefault = 'Shop',
         array $rootClassCustom = ['images' => 'ImageCache']
     )
     {
@@ -73,14 +73,17 @@ class Routing
                 $urlArrayUcFirst[] = $vForClassName;
             }
         }
-
         //Проверка на кастомный контроллеров
         if (isset($urlArrayUcFirst[0], $this->rootClassCustom[strtolower($this->urlArray[0])])) {
             $this->CustomController = true;
         } else {
-            $urlArrayUcFirstOriginal = $urlArrayUcFirst;// нужно для проверки существаования метода
-            $prefixClassName = '\App\Controllers\\';
-            $nameClassForCheck = '\App\Controllers\\' . $this->classNameDefault;
+            $urlArrayUcFirstOriginal = $urlArrayUcFirst;// нужно для проверки существования метода
+            if(empty($urlArrayUcFirst) || !isset($this->rootClassAvailable[$urlArrayUcFirst[0]])){
+                $prefixClassName = '\App\Controllers\\' . $this->rootClassDefault . "\\";
+            }else {
+                $prefixClassName = '\App\Controllers\\';
+            }
+            $nameClassForCheck = $prefixClassName . $this->classNameDefault;
 
             $countParameters = count($urlArrayUcFirst);
             if ($countParameters !== 0) {

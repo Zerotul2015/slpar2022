@@ -1,0 +1,23 @@
+%gradient-grey{
+  background: linear-gradient(rgb(136, 135, 136), rgb(79, 79, 79));
+}
+%gradient-grey-revert{
+  background: linear-gradient(rgb(79, 79, 79), rgb(136, 135, 136));
+}
+%gradient-green{
+  background: linear-gradient(rgb(75, 174, 66), rgb(30, 133, 59));
+}
+%gradient-green-revert{
+  background: linear-gradient(rgb(30, 133, 59), rgb(75, 174, 66));
+}
+%gradient-brown{
+  background: linear-gradient(rgb(138, 108, 62), rgb(66, 55, 17));
+
+}%gradient-brown-revert{
+  background: linear-gradient(rgb(66, 55, 17), rgb(138, 108, 62));
+}
+
+%padding-button {
+  padding: .25rem .55rem;
+}
+

@@ -1,5 +1,5 @@
 {
-  "name": "marketplace",
+  "name": "slpar",
   "version": "0.3.5",
   "scripts": {
     "build": "webpack"
@@ -43,6 +43,7 @@
     "less": "^4.1.2",
     "less-plugin-autoprefix": "^2.0.0",
     "less-plugin-clean-css": "^1.5.1",
+    "mini-css-extract-plugin": "^2.5.3",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",

@@ -3,7 +3,8 @@ let path = require('path'); // для работы с path
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const  TerserPlugin = require('terser-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 require("@babel/core");
 require("@babel/polyfill");
@@ -11,7 +12,8 @@ require("@babel/polyfill");
 module.exports = {
     entry: {
         admin: ["@babel/polyfill", './resources/js/admin/admin-main.js'],
-        //desktop: ["@babel/polyfill", './resources/js/public/desktop.js'],
+        public: ["@babel/polyfill", './resources/js/public/app.js'],
+        publicstyle: './resources/scss/public/style.scss',
         //mobile:["@babel/polyfill", './resources/js/public-mobile/app.js']
     },
     mode: 'development',
@@ -52,8 +54,9 @@ module.exports = {
             {
                 test:  /\.s[ac]ss$/i,
                 use: [
+                    MiniCssExtractPlugin.loader,
                     // Creates `style` nodes from JS strings
-                    "style-loader",
+                    //"style-loader",
                     // Translates CSS into CommonJS
                     "css-loader",
                     // Compiles Sass to CSS
@@ -69,11 +72,16 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                use: ['svg-inline-loader', 'vue-svg-loader'],
+                use: ['vue-svg-loader'],
+                //use: ['svg-inline-loader', 'vue-svg-loader'],
             },
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].css"
+        }),
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -88,12 +96,18 @@ module.exports = {
         //     template: './resources/views/public-mobile/layouts/webpack.html',
         //     filename: './../../../resources/views/public-mobile/layouts/webpack.twig'
         // }),
-        // new HtmlWebpackPlugin({
-        //     chunks:['desktop'],
-        //     // Load a custom template (lodash by default)
-        //     template: './resources/views/public/layouts/webpack.html',
-        //     filename: './../../../resources/views/public/layouts/webpack.twig'
-        // }),
+        new HtmlWebpackPlugin({
+            chunks:['public'],
+            // Load a custom template (lodash by default)
+            template: './resources/views/public/layouts/webpack.html',
+            filename: './../../../resources/views/public/layouts/webpack.twig'
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['publicstyle'],
+            // Load a custom template (lodash by default)
+            template: './resources/views/public/layouts/webpack.html',
+            filename: './../../../resources/views/public/layouts/webpackStyle.twig'
+        }),
     ],
     watch: false,
     watchOptions: {

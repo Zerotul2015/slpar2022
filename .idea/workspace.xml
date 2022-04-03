@@ -4,12 +4,262 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Добавил стилевые решения,">
-      <change afterPath="$PROJECT_DIR$/base_backup/slpar2022.sql" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix before make design">
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Shop/Traits/TwigConfigure.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/add_shopping_cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/arrow_drop_down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bar_chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/check_box.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/check_box_outline_blank.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/compare_empty.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/compare_full.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/favorite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/grid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/heart-outline.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/indeterminate_check_box.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/phone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/radio_button_checked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/radio_button_unchecked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/send.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/shopping_cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/sort.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/view_sequential.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/banners.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/customer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/customerCompany.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/galleryCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/pageCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productManufacturer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productStockStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productUnit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_var.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/404.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/index.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T130104.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T131317.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T142231.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T142233.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T142234.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T143714.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T144906-1.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T144906.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T150755.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T151235.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T152657.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T152658.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T153527-1.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T153527-2.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T153527.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T153749.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T153751.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T160621.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T160622.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T160623.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T160624.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T161647.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T161648.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T161649.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T161650.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T161801.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T162617-1.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T162617-2.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T162617-3.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T162617.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165417.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165418.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165422.502.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165926.504.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T170756.200.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/CustomerCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/CustomerCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/DeliveryMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/DeliveryMethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Discounts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Discounts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/GalleryCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/GalleryCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/GalleryImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/GalleryImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/OrdersStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/OrdersStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageBlocks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageBlocks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PaymentMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PaymentMethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PaymentYandex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PaymentYandex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductLabel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductLabel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductManufacturer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductManufacturer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductStockStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductStockStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/ProductUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PromotionalCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PromotionalCode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsBanner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsBanner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsLayouts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsLayouts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsNotifications.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsNotifications.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsProductPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsProductPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsSections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsSections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/MyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/MyException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Amqp/Receive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Amqp/Receive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Error/Errors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Error/Errors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Public/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/worker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base_backup/slpar2022.sql" beforeDir="false" afterPath="$PROJECT_DIR$/base_backup/slpar2022.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/example.crt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/example.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/example.key" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/example.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.crt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.key" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php-fpm/php.ini" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php-fpm/php.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/supervisor/main_consumer.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/supervisor/main_consumer.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/RabbitMQ/receiver.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/RabbitMQ/receiver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/RabbitMQ/sender.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/RabbitMQ/sender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemCompany_vue.bbb20d676eff4b2dd3c1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemCompany_vue.bbb20d676eff4b2dd3c1.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemDetails_vue.12fef0d2921557c68c8c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemDetails_vue.12fef0d2921557c68c8c.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemOrders_vue.c055cf20da9b86266e7a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemOrders_vue.c055cf20da9b86266e7a.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersList_vue.11cc100e3d5262d4690b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersList_vue.11cc100e3d5262d4690b.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Home_vue.3f21edd18cf0697cc17e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Home_vue.3f21edd18cf0697cc17e.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Login_vue.a96e0a4d9882414a8b52.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Login_vue.a96e0a4d9882414a8b52.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_MenuSettings_MenuSettings_vue.3bc0a27dc0a57d8eaba0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_MenuSettings_MenuSettings_vue.3bc0a27dc0a57d8eaba0.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersItemDetails_vue.c1cf0f9b42cd2b3eb2c4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersItemDetails_vue.c1cf0f9b42cd2b3eb2c4.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersList_vue.0c606d98943c24983b89.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersList_vue.0c606d98943c24983b89.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategoriesCreate_vue.7ccc33ee85c82584711b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategoriesCreate_vue.7ccc33ee85c82584711b.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategories_vue.acb4083176490f181c1e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategories_vue.acb4083176490f181c1e.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesEdit_vue.908927fa3ad33b1a4248.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesEdit_vue.908927fa3ad33b1a4248.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_Pages_vue.52ecfde471de7b3fe776.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_Pages_vue.52ecfde471de7b3fe776.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsCategories_vue.dcc6fe4dad814c978123.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsCategories_vue.dcc6fe4dad814c978123.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsList_vue.874133345a9a4a2a2bdc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsList_vue.874133345a9a4a2a2bdc.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturersItem_vue.538a04555ad6bf7943ae.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturersItem_vue.538a04555ad6bf7943ae.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturers_vue.56591c517a68f4576433.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturers_vue.56591c517a68f4576433.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsStockStatus_vue.fa32851fae9e7a244fef.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsStockStatus_vue.fa32851fae9e7a244fef.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsLayouts_vue.17810eedcabdd2fa34e0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsLayouts_vue.17810eedcabdd2fa34e0.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsNotifications_vue.e9d21e50086042320060.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsNotifications_vue.e9d21e50086042320060.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsUsers_vue.9e3510dffcb821653354.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsUsers_vue.9e3510dffcb821653354.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_Settings_vue.1d9356ce903ca2c205f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_Settings_vue.1d9356ce903ca2c205f1.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_settingsBanners_vue.629390e45410114dae52.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_settingsBanners_vue.629390e45410114dae52.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_babel_polyfill_lib_index_js-node_modules_axios_index_js-node_modules_npr-676bf2.5439c9ecc6f22414e126.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_babel_polyfill_lib_index_js-node_modules_axios_index_js-node_modules_npr-676bf2.5439c9ecc6f22414e126.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_lodash_lodash_js.ca3ffbb2f012707f6e21.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_lodash_lodash_js.ca3ffbb2f012707f6e21.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_tinymce_tinymce-vue_lib_es2015_main_ts_index_js.7f86e437684ca7e9fe96.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_tinymce_tinymce-vue_lib_es2015_main_ts_index_js.7f86e437684ca7e9fe96.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_vue-toggles_dist_vue-toggles_esm_js.e57dfd62ecb302e01b35.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_vue-toggles_dist_vue-toggles_esm_js.e57dfd62ecb302e01b35.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/filemanager/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/filemanager/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/filemanager/include/mime_type_lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/filemanager/include/mime_type_lib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-36x36.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-36x36.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-48x48.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-48x48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-72x72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-96x96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-114x114.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-114x114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-152x152.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-180x180.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-57x57.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-57x57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-60x60.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-60x60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-72x72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-76x76.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-76x76.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-precomposed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-96x96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-150x150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-310x310.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-310x310.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-70x70.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-70x70.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/28030ce30b30ff41f4db8b498a00407d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/fe7f493f43c6117e2b7aab07e9fe88aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/thumb/28030ce30b30ff41f4db8b498a00407d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/thumb/fe7f493f43c6117e2b7aab07e9fe88aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Other/LoaderSpinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Other/LoaderSpinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Other/Pagination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Other/Pagination.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +279,16 @@
         <option value="Less File" />
         <option value="Vue Single File Component for Marketplace" />
         <option value="JavaScript File" />
-        <option value="SCSS File" />
         <option value="HTML File" />
         <option value="HTTP Public Environment File" />
         <option value="Vue Single File Component" />
+        <option value="SCSS File" />
       </list>
     </option>
+  </component>
+  <component name="FoldableProjectSettings">
+    <option name="FOLD_DIRECTORIES" value="false" />
+    <option name="FOLDING_ENABLED" value="false" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="master" />
@@ -56,121 +310,119 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsListItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/test.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/admin-main.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Classes/ActiveRecord/Main.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/index.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customer.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Classes/ActiveRecord/FactoryObject.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/orders.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productStockStatus.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/Pages.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategories.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productCategory.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productUnit.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/router/index.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productManufacturer.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customerCompany.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/product.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsManufacturers.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategories.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/banners.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/common/authApi.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsStockStatus.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/common/api.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Api/Json.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategoriesCreate.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesEdit.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/categories-search.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/rabbitmq/rabbitmq.conf" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/products-search.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/supervisor/main_consumer.conf" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsStockStatusItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsUnits.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/search-auto-complete.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsUnitsItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_grid.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/nginx.docker" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsFooterPage.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/MainModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsManufacturersItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/nginx/default.conf" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/php-fpm/php.ini" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/settingsBanners.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/rabbitmq.docker" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsLayouts.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/php-cli.docker" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsUsers.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/settingsBannersItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker/php-fpm.docker" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsFooterHtml.vue" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersCompanies.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersListItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsNotifications.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemCompany.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemDetails.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersList.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemOrders.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettings.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenuItem.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenu.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_buttons.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_text.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_other.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_images.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_layouts.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_lists.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/views/admin/index.twig" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_forms.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/admin.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/Authorization.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/Main.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Authorization.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Controllers/Amqp/Receive.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Uploader.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Classes/Routing.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsUnitsItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsListItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsManufacturersItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsManufacturers.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/categories-search.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/products-search.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Classes/ActiveRecord.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/search/search-auto-complete.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategories.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/Pages.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategoriesCreate.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesEdit.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Login.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/App.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/worker.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/router/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/common/api.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/common/authApi.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/banners.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productStockStatus.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productManufacturer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productUnit.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/orders.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customerCompany.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productCategory.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/product.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/store/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/admin-main.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/build/css/admin/admin.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/admin/index.twig" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_buttons.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_grid.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_var.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_forms.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_images.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/admin.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_text.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_lists.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_other.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_layouts.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettings.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenu.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/php-cli.docker" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenuItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/supervisor/main_consumer.conf" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemCompany.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersCompanies.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersList.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/rabbitmq.docker" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/Main.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Api/Authorization.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Authorization.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Admin/Uploader.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Api/Json.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemDetails.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Classes/ActiveRecord/FactoryObject.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Classes/ActiveRecord/Main.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Classes/Routing.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Classes/PrepareApp.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsBannerModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/php-fpm.docker" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemOrders.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsLayoutsModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsBannerModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsUsersModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductStockStatusModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Customer/CustomerModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Settings/SettingsModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Customer/CustomerCompanyModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Orders/OrdersStatusModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Orders/OrdersModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductCategoryModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Customer/CustomerModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductStockStatusModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductUnitModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductCategoryModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Orders/OrdersModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/Orders/OrdersStatusModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Page/PageCategoryModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/Page/PageModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/test.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/public/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/MainModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/rabbitmq/rabbitmq.conf" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Admin/UploaderModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/PublicMainModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/FilesystemModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/Model/Admin/UploaderModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/public/build/css/admin/admin.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/App.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/admin/_var.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Login.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/worker.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/php-fpm/php.ini" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/nginx/default.conf" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/docker/nginx.docker" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersListItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/settingsBanners.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/settingsBannersItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsFooterHtml.vue" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsFooterPage.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsLayouts.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsUsers.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/SettingsNotifications.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsStockStatus.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsStockStatusItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategories.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsUnits.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsList.vue" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupnpm">
@@ -281,6 +533,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP&#10;TEXT&#10;JavaScript&#10;Vue" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="PLAIN_TEXT" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Docker Compose" />
@@ -288,23 +541,27 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/public/components" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="nodejs_interpreter_path" value="node" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="wsl://Ubuntu@/home/zerotul/.nvm/versions/node/v16.13.2/bin/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="tasks.open.task.update.state.enabled" value="true" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/base_backup" />
-      <recent name="$PROJECT_DIR$/resources/js/admin/store/modules" />
-      <recent name="$PROJECT_DIR$/public/build/images/admin" />
-      <recent name="$PROJECT_DIR$/app/Model/Admin/BathStyle" />
-      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\docker\nginx\ssl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/base_backup" />
@@ -314,7 +571,7 @@
       <recent name="$PROJECT_DIR$/resources/js/admin/components" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="PHP Web Page.Docker">
     <configuration name="rest-api_1 | Worker1 Парсинг товаров со страниц категорий" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="9" requestIdentifier="Worker1 Парсинг товаров со страниц категорий" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -330,7 +587,7 @@
     <configuration name="GetData.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/marketplace/Controllers/Admin/Api/GetData.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Docker" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Docker" start_url="https://127.0.0.1:8080/admin">
+    <configuration name="Docker" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Docker" start_url="https://127.0.0.1/admin">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
@@ -346,24 +603,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="HTTP Request.rest-api_1 | Worker1 Парсинг товаров со страниц категорий" />
       <item itemvalue="HTTP Request.rest-api_1 | Worker2 Парсинг товаров со страниц категорий" />
       <item itemvalue="HTTP Request.rest-api_1 | works1 загрузка изображений для товаров" />
       <item itemvalue="HTTP Request.rest-api#1" />
       <item itemvalue="JavaScript Debug.GetData.php" />
-      <item itemvalue="npm.build" />
       <item itemvalue="PHP Web Page.Docker" />
     </list>
     <recent_temporary>
@@ -385,7 +630,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
+    <configuration>C:\Users\kosty\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -529,28 +774,17 @@
       <workItem from="1642524214691" duration="9311000" />
       <workItem from="1642585128330" duration="83000" />
       <workItem from="1642669761894" duration="2170000" />
-      <workItem from="1643076261664" duration="702000" />
-    </task>
-    <task id="LOCAL-00077" summary="Написал метод для парсинга брендов(производителей) с терема">
-      <created>1624210216312</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1624210216312</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Написал метод для парсинга брендов(производителей) с терема">
-      <created>1624634161514</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1624634161514</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Начал переписывать парсинг на Amphp, парсинг брендов готов.">
-      <created>1626472951437</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1626472951437</updated>
+      <workItem from="1643076261664" duration="978000" />
+      <workItem from="1643546475072" duration="1063000" />
+      <workItem from="1644150378256" duration="729000" />
+      <workItem from="1648381388374" duration="1561000" />
+      <workItem from="1648383521878" duration="2523000" />
+      <workItem from="1648481849693" duration="615000" />
+      <workItem from="1648529402230" duration="1167000" />
+      <workItem from="1648619669968" duration="2180000" />
+      <workItem from="1648723537045" duration="597000" />
+      <workItem from="1648860294299" duration="2018000" />
+      <workItem from="1648959553422" duration="15726000" />
     </task>
     <task id="LOCAL-00080" summary="Начал переписывать парсинг на Amphp, парсинг категорий и подкатегорий(с их подкатегориями) готов.">
       <created>1626637500164</created>
@@ -923,7 +1157,28 @@
       <option name="project" value="LOCAL" />
       <updated>1642532308036</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="fix name props">
+      <created>1643076991621</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1643076991621</updated>
+    </task>
+    <task id="LOCAL-00120" summary="fix stock_status to stock_status_id">
+      <created>1643077027452</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1643077027452</updated>
+    </task>
+    <task id="LOCAL-00121" summary="build app">
+      <created>1643077055074</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1643077055074</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -954,10 +1209,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="написал метод для парсинга данных со страницы товара" />
-    <MESSAGE value="Почти дописал парсер для teremonline.ru" />
-    <MESSAGE value="Написал парсер для teremonline.ru" />
-    <MESSAGE value="Начал внедрять rabbitmq" />
     <MESSAGE value="Фиксация изменений перед экспериментами" />
     <MESSAGE value="TERMO42-1 Учел что может быть миниатюра видео с youtube" />
     <MESSAGE value="переименовал метод в moveFileFromTemp" />
@@ -979,7 +1230,11 @@
     <MESSAGE value="FIX: Deprecated: Automatic conversion of false to array" />
     <MESSAGE value="Исправил орфографию в комментариях" />
     <MESSAGE value="Добавил стилевые решения," />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил стилевые решения," />
+    <MESSAGE value="fix name props" />
+    <MESSAGE value="fix stock_status to stock_status_id" />
+    <MESSAGE value="build app" />
+    <MESSAGE value="fix before make design" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix before make design" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
