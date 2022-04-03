@@ -128,7 +128,6 @@ export default {
   created() {
     this.toggleShow = !this.item.id;
     this.image = this.item.image ? this.item.image : '';
-    this.image = this.item.image ? this.item.image : '';
     this.isCustomLink = this.item.is_custom ? this.item.is_custom : false;
   },
   watch: {
