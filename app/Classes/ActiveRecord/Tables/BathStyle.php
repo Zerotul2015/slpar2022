@@ -7,17 +7,19 @@ use App\Classes\ActiveRecord\Main;
 /**
  * @property mixed id regular read/write property
  * @property mixed name regular read/write property
- * @property mixed position regular read/write property
- * @property mixed items regular read/write property
+ * @property mixed description regular read/write property
+ * @property mixed seo regular read/write property
  * @property mixed priority regular read/write property
- * @property mixed enable regular read/write property
+ * @property mixed image regular read/write property
+ * @property mixed folder regular read/write property
+ * @property mixed url regular read/write property
  */
 
-class Menu extends Main
+class BathStyle extends Main
 {
-    static string $tableName = 'menu'; 
+    static string $tableName = 'bath_style'; 
 
-    static string $className = '\App\Classes\ActiveRecord\Tables\Menu'; 
+    static string $className = '\App\Classes\ActiveRecord\Tables\BathStyle'; 
 
     static array $columnName = [
         'id' => [
@@ -30,22 +32,22 @@ class Menu extends Main
         ],
         'name' => [
             'field' => 'name',
-            'type' => 'varchar(64)',
-            'null' => 'NO',
-            'key' => '',
-            'default' => null,
-            'extra' => ''
-        ],
-        'position' => [
-            'field' => 'position',
-            'type' => 'varchar(32)',
+            'type' => 'text',
             'null' => 'YES',
             'key' => '',
             'default' => null,
             'extra' => ''
         ],
-        'items' => [
-            'field' => 'items',
+        'description' => [
+            'field' => 'description',
+            'type' => 'text',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'seo' => [
+            'field' => 'seo',
             'type' => 'text',
             'null' => 'YES',
             'key' => '',
@@ -60,17 +62,33 @@ class Menu extends Main
             'default' => null,
             'extra' => ''
         ],
-        'enable' => [
-            'field' => 'enable',
-            'type' => 'tinyint(1)',
+        'image' => [
+            'field' => 'image',
+            'type' => 'varchar(255)',
             'null' => 'YES',
             'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'folder' => [
+            'field' => 'folder',
+            'type' => 'varchar(255)',
+            'null' => 'YES',
+            'key' => 'UNI',
+            'default' => null,
+            'extra' => ''
+        ],
+        'url' => [
+            'field' => 'url',
+            'type' => 'varchar(255)',
+            'null' => 'NO',
+            'key' => 'UNI',
             'default' => null,
             'extra' => ''
         ]
    ]; 
 
     static string $primaryKey = 'id';
-    static array  $uniqueKey = []; 
+    static array  $uniqueKey = ['folder' => '','url' => '']; 
 
 }

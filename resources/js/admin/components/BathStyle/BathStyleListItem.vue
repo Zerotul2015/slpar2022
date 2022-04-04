@@ -1,15 +1,12 @@
 <template>
-  <div class="form-section list-item_not-hover">
-    <div class="input-block error" v-if="!item.id" style="flex-shrink: 0;width:100%">*Это новый стиль, он еще не сохранен!</div>
-    <div class="input-block">
-      <label :for="'name-' + guid">Наименование:</label>
-      <input :id="'name-' + guid" class="input" type="text" v-model="item.name">
-    </div>
-    <div class="buttons-block">
-      <button class="button button_green" v-html="saveButtonText" @click="saveItem"></button>
-      <button class="button button_remove" v-html="deleteButtonText" @click="removeItem"></button>
-      <div class="error" v-html="errorText"></div>
-    </div>
+  <div style="display: grid;grid-gap:1rem; align-content: center; justify-content: left; padding:1rem;">
+    <div><img class="image_thumb" :src="imageUrl"></div>
+    <div>{{ item.name }}</div>
+    <router-link class="button" :to="'/bath-style/edit/' + item.id" title="редактирование">
+      <span class="button-icon"><i class="far fa-edit"></i></span>
+    </router-link>
+    <button class="button button_remove" v-html="deleteButtonText" @click="removeItem"></button>
+
   </div>
 </template>
 
@@ -27,31 +24,21 @@ export default {
   data() {
     return {
       guid: this.$root.guid(),
-      errorText:'',
+      errorText: '',
+      image:'',
       //start save, delete
-      saveStatus: null, // 1 -  успешно, 2 - ошибка, 0 | null - без изменений
-      saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохранить</span>',
-      saveButtonSuccess: '<span class="button-icon"><i class="far fa-check"></i></span><span class="button-icon">изменения записаны</span>',
-      saveButtonError: '<span class="button-icon"><i class="far fa-times"></i></span><span class="button-icon">ошибка при сохранении</span>',
       deleteStatus: null, // 1 -  требуется подтверждение, 2 - ошибка, 0 | null - без изменений
-      deleteButtonDefault: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">удалить</span>',
-      deleteButtonConfirm: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">подтвердить удаление</span>',
-      deleteButtonError: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">ошибка при удалении</span>',
+      deleteButtonDefault: '<span class="button-icon"><i class="far fa-trash-alt"></i></span',
+      deleteButtonConfirm: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-text">подтвердить удаление</span>',
+      deleteButtonError: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-text">ошибка при удалении</span>',
       //end save, delete
     }
   },
   created() {
-
+    this.image = this.item.image ? this.item.image : '';
   },
-  watch:{
+  watch: {
     //start save, delete
-    saveStatus: function (newVal) {
-      if (newVal) {
-        setTimeout(() => {
-          this.saveStatus = null
-        }, 2500);
-      }
-    },
     deleteStatus: function (newVal) {
       if (newVal === 2) {
         setTimeout(() => {
@@ -61,19 +48,21 @@ export default {
     },
     //end save, delete
   },
-  computed:{
-    //start save, delete
-    saveButtonText() {
-      if (this.saveStatus === 1) {
-        return this.saveButtonSuccess;
+  computed: {
+    imageUrl() {
+      let returnUrl = [];
+      if (this.image) {
+        if (this.image.indexOf('/upload/temp') + 1) {
+          returnUrl = this.image;
+        } else {
+          returnUrl = '/images/bath-style/' + this.item.folder + '/thumb/' + this.image;
+        }
+      } else {
+        returnUrl = '/build/images/noimg.png'
       }
-      if (this.saveStatus === 2) {
-        return this.saveButtonError;
-      }
-      if (this.saveStatus === 0 || this.saveStatus === null) {
-        return this.saveButtonDefault;
-      }
+      return returnUrl;
     },
+    //start save, delete
     deleteButtonText() {
       if (this.deleteStatus === 1) {
         return this.deleteButtonConfirm;
@@ -92,48 +81,28 @@ export default {
       this.errorText = '';
       if (this.deleteStatus === 1) {
         api.applyData('bathStyle', 'delete', {'id': this.item.id})
-            .then((r)=>{
-              if(r.result && r.result === true){
+            .then((r) => {
+              if (r.result && r.result === true) {
                 this.deleteStatus = 1;
                 this.$emit('item-removed')
-              }else{
+              } else {
                 this.deleteStatus = 2;
                 this.errorText = r.error ? r.error : 'неизвестная ошибка: ' + r;
               }
             })
-            .catch((e)=>{
+            .catch((e) => {
               this.deleteStatus = 2;
               this.errorText = e ? e : 'неизвестная ошибка';
             });
-      }else{
-        if(this.item.id){
+      } else {
+        if (this.item.id) {
           this.deleteStatus = 1;
-        }else{
+        } else {
           this.$emit('item-removed')
         }
       }
-    },
-    saveItem() {
-      this.errorText = '';
-      api.applyData('bathStyle', 'save', this.item)
-          .then((r) => {
-            if (r.result === true) {
-              this.saveStatus = 1;
-              console.log(r);
-              this.item.id = r.returnData.id ? r.returnData.id : undefined;
-              this.$emit('item-changed', r.returnData);
-            } else {
-              this.saveStatus = 2;
-              this.errorText = r.error ? r.error : 'неизвестная ошибка: ' + r;
-            }
-          })
-          .catch((e) => {
-            this.saveStatus = 2;
-            this.errorText = e.error ? e.error : 'неизвестная ошибка: ' + e;
-          })
     }
   }
-
 }
 </script>
 

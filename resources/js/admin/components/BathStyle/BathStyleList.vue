@@ -2,10 +2,10 @@
   <div class="wrapper-content">
     <h1>Стилевые решения для бань и саун</h1>
     <div class="buttons-block">
-      <button class="button button_green" @click="addBathStyle">
+      <router-link class="button button_green" :to="'/bath-style/create/'" title="создать стиль">
         <span class="button-icon"><i class="far fa-plus"></i></span>
         <span class="button-text">Создать стиль</span>
-      </button>
+      </router-link>
     </div>
     <div class="form-section">
       <div class="input-block">
@@ -21,8 +21,8 @@
       {{ error }}
     </div>
     <LoaderSpinner v-if="isLoadingData"></LoaderSpinner>
-    <div v-else class="products-grid background-alternation">
-      <BathStyleListItem class="row" v-for="(currentItem, keyItem) in itemsData.objects"
+    <div v-else class="list" style="display: flex; flex-wrap: wrap;">
+      <BathStyleListItem class="list-item" v-for="(currentItem, keyItem) in itemsData.objects"
                          :item="currentItem"
                          :key="$root.guid()"
                          v-on:item-removed="itemsData.objects.splice(keyItem, 1)"
@@ -65,6 +65,11 @@ export default {
     this.getCount();
   },
   watch: {
+    itemsData: {
+      deep: true,
+      handler() {
+      }
+    },
     pageNumber() {
       this.getItemsData();
     },
@@ -150,15 +155,6 @@ export default {
             this.error = e.error;
           })
     }, 1500),
-    //методы добавления и реакции на изменения
-    addBathStyle() {
-      this.itemsData.objects.unshift({'name': ''})
-    },
-    changeItem(keyItem, newVal) {
-      if (this.itemsData.objects[keyItem]) {
-        this.itemsData.objects[keyItem] = newVal;
-      }
-    },
   }
 }
 </script>

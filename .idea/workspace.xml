@@ -4,67 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix before make design">
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Shop/Traits/TwigConfigure.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/add_shopping_cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/arrow_drop_down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/arrow_right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bar_chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/check_box.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/check_box_outline_blank.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/compare_empty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/compare_full.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/favorite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/grid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/heart-outline.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/home.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/indeterminate_check_box.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/radio_button_checked.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/radio_button_unchecked.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/send.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/shopping_cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/sort.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/view_sequential.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/banners.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/customer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/customerCompany.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/galleryCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/pageCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productManufacturer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productStockStatus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productUnit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_var.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/404.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/index.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="remove duplicate string in created method">
+      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/BathStyle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T130104.504.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T131317.504.html" beforeDir="false" />
@@ -101,14 +43,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165422.502.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T165926.504.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-12-12T170756.200.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/CustomerCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/CustomerCompany.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/DeliveryMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/DeliveryMethods.php" afterDir="false" />
@@ -138,128 +73,11 @@
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsProductPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsProductPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsSections.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsSections.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/MyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/MyException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Amqp/Receive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Amqp/Receive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Error/Errors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Error/Errors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Parser/TeremParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Public/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_backup/slpar2022.sql" beforeDir="false" afterPath="$PROJECT_DIR$/base_backup/slpar2022.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/example.crt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/example.crt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/example.key" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/example.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.crt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.crt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.key" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/ssl/nginx-selfsigned.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php-fpm/php.ini" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php-fpm/php.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/supervisor/main_consumer.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/supervisor/main_consumer.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/RabbitMQ/receiver.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/RabbitMQ/receiver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/RabbitMQ/sender.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/RabbitMQ/sender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemCompany_vue.bbb20d676eff4b2dd3c1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemCompany_vue.bbb20d676eff4b2dd3c1.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemDetails_vue.12fef0d2921557c68c8c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemDetails_vue.12fef0d2921557c68c8c.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemOrders_vue.c055cf20da9b86266e7a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersItemOrders_vue.c055cf20da9b86266e7a.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersList_vue.11cc100e3d5262d4690b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Customers_CustomersList_vue.11cc100e3d5262d4690b.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Home_vue.3f21edd18cf0697cc17e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Home_vue.3f21edd18cf0697cc17e.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Login_vue.a96e0a4d9882414a8b52.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Login_vue.a96e0a4d9882414a8b52.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_MenuSettings_MenuSettings_vue.3bc0a27dc0a57d8eaba0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_MenuSettings_MenuSettings_vue.3bc0a27dc0a57d8eaba0.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersItemDetails_vue.c1cf0f9b42cd2b3eb2c4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersItemDetails_vue.c1cf0f9b42cd2b3eb2c4.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersList_vue.0c606d98943c24983b89.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Orders_OrdersList_vue.0c606d98943c24983b89.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategoriesCreate_vue.7ccc33ee85c82584711b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategoriesCreate_vue.7ccc33ee85c82584711b.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategories_vue.acb4083176490f181c1e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesCategories_vue.acb4083176490f181c1e.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesEdit_vue.908927fa3ad33b1a4248.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_PagesEdit_vue.908927fa3ad33b1a4248.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_Pages_vue.52ecfde471de7b3fe776.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Pages_Pages_vue.52ecfde471de7b3fe776.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsCategories_vue.dcc6fe4dad814c978123.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsCategories_vue.dcc6fe4dad814c978123.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsList_vue.874133345a9a4a2a2bdc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsList_vue.874133345a9a4a2a2bdc.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturersItem_vue.538a04555ad6bf7943ae.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturersItem_vue.538a04555ad6bf7943ae.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturers_vue.56591c517a68f4576433.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsManufacturers_vue.56591c517a68f4576433.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsStockStatus_vue.fa32851fae9e7a244fef.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Products_ProductsStockStatus_vue.fa32851fae9e7a244fef.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsLayouts_vue.17810eedcabdd2fa34e0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsLayouts_vue.17810eedcabdd2fa34e0.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsNotifications_vue.e9d21e50086042320060.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsNotifications_vue.e9d21e50086042320060.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsUsers_vue.9e3510dffcb821653354.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_SettingsUsers_vue.9e3510dffcb821653354.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_Settings_vue.1d9356ce903ca2c205f1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_Settings_vue.1d9356ce903ca2c205f1.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_settingsBanners_vue.629390e45410114dae52.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.resources_js_admin_components_Settings_settingsBanners_vue.629390e45410114dae52.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_babel_polyfill_lib_index_js-node_modules_axios_index_js-node_modules_npr-676bf2.5439c9ecc6f22414e126.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_babel_polyfill_lib_index_js-node_modules_axios_index_js-node_modules_npr-676bf2.5439c9ecc6f22414e126.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_lodash_lodash_js.ca3ffbb2f012707f6e21.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_lodash_lodash_js.ca3ffbb2f012707f6e21.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_tinymce_tinymce-vue_lib_es2015_main_ts_index_js.7f86e437684ca7e9fe96.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_tinymce_tinymce-vue_lib_es2015_main_ts_index_js.7f86e437684ca7e9fe96.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_vue-toggles_dist_vue-toggles_esm_js.e57dfd62ecb302e01b35.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/dist/app.vendors-node_modules_vue-toggles_dist_vue-toggles_esm_js.e57dfd62ecb302e01b35.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/filemanager/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/filemanager/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/filemanager/include/mime_type_lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/filemanager/include/mime_type_lib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-144x144.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-36x36.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-36x36.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-48x48.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-48x48.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-72x72.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/android-icon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-96x96.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-114x114.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-114x114.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-120x120.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-144x144.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-152x152.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-180x180.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-57x57.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-57x57.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-60x60.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-60x60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-72x72.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-76x76.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-76x76.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-precomposed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/apple-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon-96x96.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-144x144.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-150x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-310x310.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-310x310.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon/ms-icon-70x70.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-70x70.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/28030ce30b30ff41f4db8b498a00407d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/fe7f493f43c6117e2b7aab07e9fe88aa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/thumb/28030ce30b30ff41f4db8b498a00407d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/60b5141f14d309.07324349fldr1622479903/thumb/fe7f493f43c6117e2b7aab07e9fe88aa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/test-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/BathStyle/BathStyleModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/BathStyle/BathStyleModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/BathStyle/BathStyleListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Other/LoaderSpinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Other/LoaderSpinner.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Other/Pagination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Other/Pagination.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -541,7 +359,7 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/public/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/admin/components/BathStyle" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -557,11 +375,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\BathStyle" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\docker\nginx\ssl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/base_backup" />
@@ -784,21 +602,8 @@
       <workItem from="1648619669968" duration="2180000" />
       <workItem from="1648723537045" duration="597000" />
       <workItem from="1648860294299" duration="2018000" />
-      <workItem from="1648959553422" duration="15726000" />
-    </task>
-    <task id="LOCAL-00080" summary="Начал переписывать парсинг на Amphp, парсинг категорий и подкатегорий(с их подкатегориями) готов.">
-      <created>1626637500164</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1626637500164</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Fix before change OS">
-      <created>1627827341089</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1627827341089</updated>
+      <workItem from="1648959553422" duration="24019000" />
+      <workItem from="1649045421543" duration="641000" />
     </task>
     <task id="LOCAL-00082" summary="В методе prepareImagesBeforeSave учел случай когда изображений нет или 1 и не указано главное.">
       <created>1634395459862</created>
@@ -1178,7 +983,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643077055074</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="fix before make design">
+      <created>1648982555608</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1648982555609</updated>
+    </task>
+    <task id="LOCAL-00123" summary="remove duplicate string in created method">
+      <created>1648984092249</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1648984092250</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -1209,7 +1028,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Фиксация изменений перед экспериментами" />
     <MESSAGE value="TERMO42-1 Учел что может быть миниатюра видео с youtube" />
     <MESSAGE value="переименовал метод в moveFileFromTemp" />
     <MESSAGE value="написал сопоставление для категорий" />
@@ -1234,7 +1052,8 @@
     <MESSAGE value="fix stock_status to stock_status_id" />
     <MESSAGE value="build app" />
     <MESSAGE value="fix before make design" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix before make design" />
+    <MESSAGE value="remove duplicate string in created method" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove duplicate string in created method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

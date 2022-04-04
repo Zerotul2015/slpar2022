@@ -115,6 +115,19 @@ export default new Router({
             component: () => import("../components/BathStyle/BathStyleList.vue"),
             meta: {title: 'Стилевые решения для бань - Панель управления'}
         },
+        {
+            path: '/bath-style/create',
+            name: 'BathStyleCreate',
+            component: () => import("../components/BathStyle/BathStyleCreate.vue"),
+            meta: {title: 'Создание стиля - Панель управления'}
+        },
+        {
+            path: '/bath-style/edit/:id',
+            props: true,
+            name: 'BathStyleCreate',
+            component: () => import("../components/BathStyle/BathStyleCreate.vue"),
+            meta: {title: 'Редактирование стиля - Панель управления'}
+        },
         //---Товары---Товары---Товары---Товары---Товары---Товары---Товары---Товары---//
         {
             path: '/products/page/:pageNumber',
