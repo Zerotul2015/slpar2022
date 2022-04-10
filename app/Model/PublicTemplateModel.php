@@ -8,32 +8,62 @@ use App\Classes\ActiveRecord\Main;
 use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\GalleryCategory;
 use App\Classes\ActiveRecord\Tables\Menu;
-use App\Classes\ActiveRecord\Tables\OurWorks;
 use App\Classes\ActiveRecord\Tables\Page;
 use App\Classes\ActiveRecord\Tables\PageCategory;
 use App\Classes\ActiveRecord\Tables\Product;
 use App\Classes\ActiveRecord\Tables\ProductCategory;
-use App\Classes\ActiveRecord\Tables\Products;
-use App\Classes\ActiveRecord\Tables\ProductsCategory;
-use App\Classes\ActiveRecord\Tables\ProductsCollections;
-use App\Classes\ActiveRecord\Tables\Services;
 use App\Classes\ActiveRecord\Tables\Settings;
 use App\Classes\ActiveRecord\Tables\SettingsBanner;
 use App\Classes\ActiveRecord\Tables\SettingsIndexPage;
 use App\Classes\ActiveRecord\Tables\SettingsLayouts;
 use App\Classes\ActiveRecord\Tables\SettingsSections;
-use App\Classes\ActiveRecord\Tables\SettingsSeo;
-use App\Classes\ActiveRecord\Tables\SettingsTemplate;
-use App\Classes\ActiveRecord\Tables\SettingsTemplateFooter;
+
 use App\Classes\Breadcrumbs;
 use App\Classes\MyException;
-use App\Model\Collections\CollectionsModel;
-use App\Model\Product\ProductsModel;
+
 
 class PublicTemplateModel
 {
+
+
+    public static function templateSettings(string $section, $indexObject)
+    {
+
+        $breadcrumb = new Breadcrumbs('Главная', '/');
+
+        $sectionCheck = ['page' => true, 'pageCategory' => true, 'product' => true, 'productCategory' => true, 'cart' => true, 'compare' => true, 'bathStyle' => true];
+        if (isset($sectionCheck[$section])) {
+            $objectData = match ($section) {
+                'page' => Page::findOne($indexObject),
+                'pageCategory' => PageCategory::findOne($indexObject),
+                'product' => Product::findOne($indexObject),
+                'productCategory' => ProductCategory::findOne($indexObject),
+                'cart' => $breadcrumb->add('Корзина', '/cart')->render(),
+                'compare' => $breadcrumb->add('Сравнение товаров', '/compare')->render(),
+                'favorite' => $breadcrumb->add('Избранное', '/favorite')->render(),
+                'bathStyle' => BathStyle::findOne($indexObject)
+            };
+        }
+        if (isset($objectData)) {
+            $breadcrumb = self::generateBreadcrumb($objectData);
+        }
+
+        $footer = PublicTemplateModel::prepareFooter();
+        //меню
+        $menuCategory = PublicTemplateModel::getMenuCategory();
+
+        return [
+            'breadcrumb' => $breadcrumb,
+            'bathStyle' => BathStyle::find()->indexBy()->all(),
+            'menuCategory' => $menuCategory,
+            'footer'=>$footer,
+        ];
+
+    }
+
+
     /**
-     * @param ProductsCategory|Products|OurWorks|Services $currentObj
+     * @param ProductCategory|Product|BathStyle|Page|PageCategory $currentObj
      * @return string
      */
     public static function generateBreadcrumb($currentObj): string
@@ -51,21 +81,15 @@ class PublicTemplateModel
                         $breadCrumbClass->add($currentObj->name, "/catalog/$currentObj->url");
                         $breadCrumb = $breadCrumbClass->render();
                     }
-                }else{
+                } else {
                     $breadCrumbClass = new Breadcrumbs('Главная', '/');
                     $breadCrumbClass->add('Каталог', "/");
                     $breadCrumbClass->add($currentObj->name, "/catalog/$currentObj->url");
                     $breadCrumb = $breadCrumbClass->render();
                 }
                 break;
-            case ProductsCollections::class:
-                $breadCrumbClass = new Breadcrumbs('Главная', '/');
-                $breadCrumbClass->add('Подборки товаров', "/collections");
-                $breadCrumbClass->add($currentObj->name, "/collections/$currentObj->url");
-                $breadCrumb = $breadCrumbClass->render();
-                break;
             case Product::class;
-                if ($categoryParent = ProductCategory::findOne($currentObj->category)) {
+                if ($categoryParent = ProductCategory::findOne($currentObj->category_id)) {
                     $breadCrumbClass = new Breadcrumbs('Главная', '/');
                     if ($categoryParent->parent_id) {
                         if ($categoryParent2 = ProductCategory::findOne($categoryParent->parent_id)) {
@@ -85,25 +109,7 @@ class PublicTemplateModel
             case BathStyle::class;
                 $breadCrumbClass = new Breadcrumbs('Главная', '/');
                 $breadCrumbClass->add('Стилевые решения', "/bath-style");
-                $breadCrumbClass->add($currentObj->name_style, "/bath-style/$currentObj->url");
-                $breadCrumb = $breadCrumbClass->render();
-                break;
-            case OurWorks::class;
-                $breadCrumbClass = new Breadcrumbs('Главная', '/');
-                $breadCrumbClass->add('Наши работы', "/our-works");
-                $breadCrumbClass->add($currentObj->name, "/our-works/$currentObj->url");
-                $breadCrumb = $breadCrumbClass->render();
-                break;
-            case Services::class;
-                $breadCrumbClass = new Breadcrumbs('Главная', '/');
-                $breadCrumbClass->add('Услуги', "/services");
-                $breadCrumbClass->add($currentObj->service_name, "/services/$currentObj->url");
-                $breadCrumb = $breadCrumbClass->render();
-                break;
-            case GalleryCategory::class;
-                $breadCrumbClass = new Breadcrumbs('Главная', '/');
-                $breadCrumbClass->add('Фотогалерея', "/gallery");
-                $breadCrumbClass->add($currentObj->category_name, "/gallery/$currentObj->url");
+                $breadCrumbClass->add($currentObj->name, "/bath-style/$currentObj->url");
                 $breadCrumb = $breadCrumbClass->render();
                 break;
             default:
@@ -198,7 +204,7 @@ class PublicTemplateModel
                 break;
             case 'giftCertificate':
                 $blocks = self::prepareBlocksLayout(6);
-                if($sectionSettings = SettingsSections::findOne(6)){
+                if ($sectionSettings = SettingsSections::findOne(6)) {
                     $seo = $sectionSettings->seo;
                 }
                 break;
@@ -293,7 +299,7 @@ class PublicTemplateModel
 
     public static function prepareFooter()
     {
-        $titleForColumn = ['Камин42', 'Помощь', 'Покупателю'];
+        $titleForColumn = ['', '', ''];
         $footerForColumn = [];
         $footerForColumn[] = '<a class="link link_footer link_footer-last-item" href="tel:+79617221122">8(961)722-11-22</a>';
         $footerForColumn[] = '<a class="link link_footer link_footer-last-item" href="tel:+73842480232">8(3842)48-02-32</a>';
@@ -301,8 +307,6 @@ class PublicTemplateModel
 <div class="social-link-intro">Следите за нами</div>
 <div class="social-link-wrap">
 <a class="link link_footer-social link_footer link_footer-last-item" target="blank" href="https://vk.com/kamin42" title="Мы в Вконтакте"><i class="fab fa-vk"></i></a>
-<a class="link link_footer-social link_footer link_footer-last-item" target="blank" href="https://www.facebook.com/Каминно-Печной-Дискаунтер-Kamin42ru-104366017992448" title="Мы в Facebook"><i class="fab fa-facebook-f"></i></a>
-<a class="link link_footer-social link_footer link_footer-last-item" target="blank" href="https://instagram.com/kamin_42" title="Мы в Instagram"><i class="fab fa-instagram"></i></a>
 </div>
 </div>';
         $footerColumns = Settings::findOne(1)->template_footer;

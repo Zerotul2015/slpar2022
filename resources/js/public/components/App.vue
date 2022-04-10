@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="body-wrap">
-    <headerApp/>
+    <headerApp :templateData="templateHeaderDate"/>
     <div class="body-wrap">
       <main class="">
         <transition name="component-fade" mode="out-in">
@@ -24,12 +24,22 @@ export default {
     HeaderApp,
     FooterApp
   },
-  data: () => ({}),
+  data: () => ({
+    templateHeaderDate:{},
+    templateFooterData:{}
+  }),
   created() {
 
   },
+  beforeMount(){
+    this.getTemplatesDate();
+  },
   computed: {},
-  methods: {}
+  methods: {
+    getTemplatesDate(){
+
+    }
+  }
 }
 </script>
 

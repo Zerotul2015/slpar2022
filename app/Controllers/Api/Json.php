@@ -45,7 +45,7 @@ use YandexCheckout\Model\Notification\NotificationSucceeded;
 use YandexCheckout\Model\Notification\NotificationWaitingForCapture;
 use YandexCheckout\Model\NotificationEventType;
 
-class Json
+class Json // старый метод, вместо не го используется GetData.
 {
     public $postData = [];
     public $limit = 20;

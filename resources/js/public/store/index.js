@@ -9,10 +9,6 @@ import productStockStatus from './modules/productStockStatus'
 import productUnit from './modules/productUnit'
 import productManufacturer from './modules/productManufacturer'
 import productCategory from './modules/productCategory'
-import customer from './modules/customer'
-import customerCompany from './modules/customerCompany'
-import orders from './modules/orders'
-import galleryCategory from './modules/galleryCategory'
 
 Vue.use(Vuex)
 
@@ -27,10 +23,6 @@ export default new Vuex.Store({
         productUnit,
         productManufacturer,
         productCategory,
-        customer,
-        customerCompany,
-        orders,
-        galleryCategory,
     },
     state: {
 
