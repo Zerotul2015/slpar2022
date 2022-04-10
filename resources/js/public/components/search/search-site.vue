@@ -11,7 +11,7 @@
       <label v-if="labelPosition_==='after' && labelText_.length > 0" class="search-autocomplete-label"
              :class="{ [customClass_]:customClass_.length >0 }" :for="guid">{{ labelText_ }}</label>
     </div>
-    <div class="found-values" :class="{ [customClass_]:customClass_.length >0 }" v-if="foundedCount < 1"
+    <div class="found-values" :class="{ [customClass_]:customClass_.length >0 }" v-if="foundedCount === 0"
          v-show="displayFounded" @mouseover="focusFounded = true"
          @mouseout="focusFounded = false">
       <div class="found-item found-item_not" :class="{ [customClass_]:customClass_.length >0 }">
@@ -22,21 +22,16 @@
          @mouseover="focusFounded = true"
          @mouseout="focusFounded = false">
       <div v-for="(foundItem, foundKey) in foundedCategory" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click="selectVal(foundItem['name'])">
-        Категория "{{ foundItem['name'] }}"<span class="link-external"
-                                                 @click.prevent="openLink('productsCategory', foundKey)"
-                                                 title="открыть в новой вкладке"><i
-          class="far fa-external-link"></i></span>
+           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('productsCategory', foundKey)">
+        Категория "{{ foundItem['name'] }}"
       </div>
       <div v-for="(foundItem, foundKey) in foundedProducts" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click="selectVal(foundItem['name'])">
-        {{ foundItem['name'] }}<span class="link-external" @click.prevent="openLink('products', foundKey)"
-                                     title="открыть в новой вкладке"><i class="far fa-external-link"></i></span>
+           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('products', foundKey)">
+        {{ foundItem['name'] }}
       </div>
       <div v-for="(foundItem, foundKey) in foundedPages" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click="selectVal(foundItem['title'])">
-        {{ foundItem['title'] }}<span class="link-external" @click.prevent="openLink('products', foundKey)"
-                                      title="открыть в новой вкладке"><i class="far fa-external-link"></i></span>
+           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('pages', foundKey)">
+        {{ foundItem['title'] }}
       </div>
     </div>
   </div>
@@ -128,26 +123,26 @@ export default {
   },
   computed: {
     foundedCount() {
-      if (Object(this.founded_).length > 0) {
-        if (this.founded_.products && this.founded_.products.length > 0) {
-          console.log('товаров больше 0');
+      let count = 0;
+        if (this.foundedCategory.length > 0) {
+          count = count + this.foundedCategory.length;
         }
-        if (this.founded_.productsCategory && this.founded_.productsCategory.length > 0) {
-          console.log('категорий больше 0');
+        if (this.foundedProducts.length > 0) {
+          count = count + this.foundedProducts.length;
         }
-        if (this.founded_.pages && this.founded_.pages.length > 0) {
-          console.log('страниц больше 0');
+        if (this.foundedPages.length > 0) {
+          count = count + this.foundedPages.length;
         }
-      }
+      return count;
     },
     foundedPages() {
-      return this.founded_.pages ? this.founded_.pages : null;
+      return this.founded_.pages ? this.founded_.pages : [];
     },
     foundedProducts() {
-      return this.founded_.products ? this.founded_.products : null;
+      return this.founded_.products ? this.founded_.products : [];
     },
     foundedCategory() {
-      return this.founded_.productsCategory ? this.founded_.productsCategory : null;
+      return this.founded_.productsCategory ? this.founded_.productsCategory : [];
     },
     searchArray() {
       let returnArray = {};
@@ -163,6 +158,11 @@ export default {
     }
   },
   watch: {
+    founded_: {
+      deep: true,
+      handler: () => {
+      }
+    },
     inputVal_: function (newVal, oldVal) {
       this.searchingSite();
     }
@@ -236,25 +236,23 @@ export default {
   flex-direction: column;
   background: #FFFFFF;
   color: rgb(74, 74, 74);
-  border: 1px solid rgb(79, 79, 79);
 }
 
 .found-values::-webkit-scrollbar-track {
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .found-values::-webkit-scrollbar-thumb {
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .found-item {
   padding: .25rem;
-  margin: .25rem 0;
 }
 
 .found-item:hover {
-  background: #FFFFFF;
   color: rgb(79, 79, 79);
+  background: rgb(237, 212, 182);
   cursor: pointer;
 }
 
@@ -264,25 +262,8 @@ export default {
 
 .found-item_not:hover {
   background: unset;
-  color: rgb(79, 79, 79);
   cursor: unset;
 }
 
-.link-external {
-  margin-left: 1rem;
-  cursor: pointer;
-  color: rgb(30, 133, 59);
-}
 
-.link-external:hover {
-  color: rgb(60, 171, 61);
-}
-
-.found-item:hover .link-external {
-  color: rgb(30, 133, 59);
-}
-
-.found-item:hover .link-external:hover {
-  color: rgb(60, 171, 61);
-}
 </style>

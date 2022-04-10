@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="написал поиск по сайту из шапки, но не тестировал">
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-auto-complete.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Дописал поиск и виджет поиска в шапке">
+      <change afterPath="$PROJECT_DIR$/public/build/images/logo.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Json.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/Json.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/customer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/customerCompany.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/galleryCategory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_var.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
@@ -307,7 +294,7 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/public/components/search" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/build/images" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -323,11 +310,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components\search" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\BathStyle" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/base_backup" />
@@ -554,14 +541,7 @@
       <workItem from="1649045421543" duration="1304000" />
       <workItem from="1649329075311" duration="6108000" />
       <workItem from="1649375523901" duration="4443000" />
-      <workItem from="1649488447336" duration="22649000" />
-    </task>
-    <task id="LOCAL-00083" summary="Правки компонентов customers">
-      <created>1634458145468</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1634458145468</updated>
+      <workItem from="1649488447336" duration="27345000" />
     </task>
     <task id="LOCAL-00084" summary="Заменил сертификат nginx на sha256">
       <created>1634458171859</created>
@@ -948,7 +928,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649047344648</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Дописал поиск и виджет поиска в шапке">
+      <created>1649577225262</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1649577225262</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -979,7 +966,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="написал сопоставление для категорий" />
     <MESSAGE value="TERMO42-5 Сопоставление производителей" />
     <MESSAGE value="TERMO42-6 Сопоставление товаров" />
     <MESSAGE value="TERMO42-8 Товары без габаритов" />
@@ -1004,7 +990,8 @@
     <MESSAGE value="remove duplicate string in created method" />
     <MESSAGE value="закончил страницу настройки банных стилей" />
     <MESSAGE value="написал поиск по сайту из шапки, но не тестировал" />
-    <option name="LAST_COMMIT_MESSAGE" value="написал поиск по сайту из шапки, но не тестировал" />
+    <MESSAGE value="Дописал поиск и виджет поиска в шапке" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дописал поиск и виджет поиска в шапке" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
