@@ -84,7 +84,6 @@ class Routing
                 $prefixClassName = '\App\Controllers\\';
             }
             $nameClassForCheck = $prefixClassName . $this->classNameDefault;
-
             $countParameters = count($urlArrayUcFirst);
             if ($countParameters !== 0) {
                 do {
@@ -95,6 +94,12 @@ class Routing
                         $methodNameForCheck = $urlArrayUcFirstOriginal[$keyForMethod];
                     }
 
+                    ///////
+                    /// сделал для работы приложения на vue даже если нет такого контроллера для пререндера
+                    if($prefixClassName ===  $nameClassForCheck){
+                        $nameClassForCheck = $nameClassForCheck . $this->classNameDefault;
+                    }
+                    ///////
                     //если класс существует
                     if (class_exists($nameClassForCheck)) {
                         $this->className = $nameClassForCheck;
@@ -111,7 +116,6 @@ class Routing
                                 $this->methodName = $this->methodNameDefault;
                                 $this->arguments = $this->urlArray[$keyForArgument - 1];
                             } else {
-                                var_dump($this);
                                 throw new MyException('404');
                             }
                         } else {

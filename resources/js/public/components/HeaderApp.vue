@@ -5,19 +5,22 @@
         <img src="/build/images/logo.svg" alt="С легким паром">
       </a>
       <div class="header-bath-style-scroll">
-
+        <bath-styles-header-carousel></bath-styles-header-carousel>
       </div>
-      <div class="header-links">
-        <div class="h-link">Каталог</div>
+      <div class="header-catalog">
+        <div class="h-catalog-link h-link">Каталог<span class="h-catalog-link-caret"><i
+            class="fas fa-caret-up"></i></span></div>
+
         <div class="h-catalog">
           <div class="h-catalog-group" v-for="(categoryMain, keyGroup) in catalog[0]">
-            <a class="h-catalog-link-main" :href="'/catalog/' + categoryMain.url">{{categoryMain.name}}</a>
-            <div class="h-catalog-child-group" v-if="catalog[0]">
-              <a class="h-catalog-link-child" v-for="(categoryChild, keyChildCat) in catalog[0]"
-                 :href="'/catalog/' + categoryMain.url + '/' + categoryChild.url">
+            <router-link class="h-catalog-link-main" :to="'/catalog/'+ categoryMain.url">{{ categoryMain.name }}</router-link>
+            <div class="h-catalog-child-group" v-if="catalog[categoryMain.id]">
+              <router-link class="h-catalog-link-child" v-for="(categoryChild, keyChildCat) in catalog[categoryMain.id]"
+                           :key="$root.guid()"
+                           :to="'/catalog/' + categoryMain.url + '/' + categoryChild.url">
                 <span class="h-icon-link-child"><i class="far fa-chevron-right"></i></span>
-                <span class="h-text-link-child">{{categoryChild.name}}</span>
-              </a>
+                <span class="h-text-link-child">{{ categoryChild.name }}</span>
+              </router-link>
             </div>
           </div>
         </div>
@@ -30,8 +33,8 @@
 
 <script>
 import IconSvg from "./Icon-svg/icon-svg";
-import SearchAutoComplete from "../components/search/search-auto-complete.vue";
 import SearchSite from "./search/search-site";
+import BathStylesHeaderCarousel from "./BathStyle/BathStylesHeaderCarousel.vue";
 
 export default {
   name: "HeaderApp",
@@ -43,6 +46,9 @@ export default {
   computed: {
     catalog() {
       return this.$store.getters["templateData/menuCatalog"];
+    },
+    bathStyles() {
+      return this.$store.getters["templateData/bathStyles"];
     },
     cart: () => {
       return {
@@ -58,7 +64,7 @@ export default {
       }; // placeholder
     }
   },
-  components: {SearchSite, SearchAutoComplete, IconSvg}
+  components: {BathStylesHeaderCarousel, SearchSite, IconSvg}
 }
 </script>
 

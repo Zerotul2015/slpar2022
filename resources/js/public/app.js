@@ -25,9 +25,10 @@ Vue.filter('priceToLocale', function (value) {
 Vue.config.productionTip = false;
 
 
-
-router.beforeEach((to, from, next) => {});
-router.beforeResolve((to, from, next)=>{
+router.beforeEach((to, from, next) => {
+    next();
+});
+router.beforeResolve((to, from, next) => {
     if (to.name) {
         // Start the route progress bar.
         NProgress.start();
@@ -35,13 +36,9 @@ router.beforeResolve((to, from, next)=>{
     next()
 })
 
-const DEFAULT_TITLE = 'С легким паром. Торопиться не надо.';
 router.afterEach((to, from) => {
     // Complete the animation of the route progress bar.
     NProgress.done();
-    Vue.nextTick(()=>{
-        document.title = to.meta.title || DEFAULT_TITLE;
-    });
 })
 
 // create a new axios instance
@@ -61,17 +58,14 @@ axios.interceptors.response.use(response => {
 })
 
 
-
 const app = new Vue({
     router,
     store,
     render: h => h(App),
-    data(){
-        return{
-
-        }
+    data() {
+        return {}
     },
-    methods:{
+    methods: {
         guid() {
             return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
                 (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16))

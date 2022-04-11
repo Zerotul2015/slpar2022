@@ -31,17 +31,30 @@ export default {
   },
   beforeMount(){
     this.$store.dispatch('templateData/getTemplateSettings');
+    this.$store.dispatch('bathStyle/getAllById');
   },
   watch:{
-    templateSeo(newVal, oldVal){
+    seo(newVal, oldVal){
       document.title = newVal.title;
       document.description = newVal.description;
-    }
+    },
+    section(){
+      this.$store.dispatch('templateData/getChange');
+    },
+    sectionKey(){
+      this.$store.dispatch('templateData/getChange');
+    },
   },
   computed: {
-    templateSeo(){
+    seo(){
       return this.$store.getters["templateData/seo"];
-    }
+    },
+    section(){
+      return this.$store.getters["templateData/section"];
+    },
+    sectionKey(){
+      return this.$store.getters["templateData/sectionKey"];
+    },
   },
   methods: {
     getTemplatesDate(){

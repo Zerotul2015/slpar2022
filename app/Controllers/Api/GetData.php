@@ -247,7 +247,9 @@ class GetData extends Main
     {
         $section = $this->postData['section'] ?? '';
         $sectionKey = $this->postData['sectionKey'] ?? '';
-        $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey));
+        $simple = $this->postData['simple'] ?? false;
+        $simple = !!$simple;
+        $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey,$simple));
     }
 
 

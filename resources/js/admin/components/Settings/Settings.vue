@@ -8,6 +8,19 @@
       {{ error }}
     </div>
     <section class="content-block">
+      <h2>SEO главной страницы</h2>
+      <div class="form-section form-section_column">
+        <div class="input-block  input-block_column input-block_highlight">
+          <label for="index-title">Seo заголовок:</label>
+          <input id="index-title" type="text" class="input" v-model="fetchedData.seo_index_page.title">
+        </div>
+        <div class="input-block  input-block_column input-block_highlight">
+          <label for="index-desc">Seo описание:</label>
+          <input id="index-desc" type="text" class="input" v-model="fetchedData.seo_index_page.description">
+        </div>
+      </div>
+    </section>
+    <section class="content-block">
       <h2>Seo заголовки</h2>
       <div class="form-section form-section_column">
         <div class="input-block  input-block_column input-block_highlight">
@@ -28,23 +41,23 @@
         </div>
       </div>
     </section>
-<!--    <section class="content-block">-->
-<!--      <h2>Внешний вид, шаблон</h2>-->
-<!--      <div class="form-section form-section_column">-->
-<!--        <div class="input-block  input-block_column input-block_highlight">-->
-<!--          <div>Изображение для шапки</div>-->
-<!--          <img class="image-preview" :src="imageHeader" alt="Изображение шапки">-->
-<!--          <upload-image v-model="fetchedData.image_header"></upload-image>-->
-<!--        </div>-->
-<!--        <div class="input-block  input-block_column input-block_highlight">-->
-<!--          <div>Логотип и текст</div>-->
-<!--          <input class="input" type="text" v-model="fetchedData.logo_text">-->
-<!--          <br>-->
-<!--          <img class="image-preview" :src="imageLogo" alt="Логотип">-->
-<!--          <upload-image v-model="fetchedData.image_logo"></upload-image>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
+    <!--    <section class="content-block">-->
+    <!--      <h2>Внешний вид, шаблон</h2>-->
+    <!--      <div class="form-section form-section_column">-->
+    <!--        <div class="input-block  input-block_column input-block_highlight">-->
+    <!--          <div>Изображение для шапки</div>-->
+    <!--          <img class="image-preview" :src="imageHeader" alt="Изображение шапки">-->
+    <!--          <upload-image v-model="fetchedData.image_header"></upload-image>-->
+    <!--        </div>-->
+    <!--        <div class="input-block  input-block_column input-block_highlight">-->
+    <!--          <div>Логотип и текст</div>-->
+    <!--          <input class="input" type="text" v-model="fetchedData.logo_text">-->
+    <!--          <br>-->
+    <!--          <img class="image-preview" :src="imageLogo" alt="Логотип">-->
+    <!--          <upload-image v-model="fetchedData.image_logo"></upload-image>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </section>-->
     <section class="content-block">
       <h2>Подвал сайта</h2>
       <div class="grid grid-col-3">
@@ -129,7 +142,9 @@ export default {
     return {
       loading: false,
       error: null,
-      fetchedData: {},
+      fetchedData: {
+        'seo_index_page': {'title': '', 'description': ''}
+      },
       typeFooterColumn: {
         'html': 'Произвольный html',
         'pages': 'Страницы',
@@ -254,6 +269,9 @@ export default {
           .then((r) => {
             this.loading = false;
             if (r.result && r.result === true) {
+              if (!r.returnData.seo_index_page) {
+                r.returnData.seo_index_page = {'title': '', 'description': ''};
+              }
               this.fetchedData = r.returnData;
               this.maintenanceMode = !!r.returnData.maintenance_mode
             }

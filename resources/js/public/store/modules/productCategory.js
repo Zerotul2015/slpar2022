@@ -2,43 +2,50 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    all: [],
-    allById: {}
+    categoryData: [],
 })
 
 // getters
-const getters = {}
+const getters = {
+    url(state) {
+        return state.categoryData.url ? state.categoryData.url : '';
+    },
+    name(state) {
+        return state.categoryData.name ? state.categoryData.name : '';
+    },
+    description(state){
+        return state.categoryData.description ? state.categoryData.description : '';
+    },
+    folder(state){
+        return state.categoryData.folder ? state.categoryData.folder : '';
+    },
+    image(state){
+        return state.categoryData.image ? state.categoryData.image : null;
+    }
+}
 
 // actions
 const actions = {
-    getAll({commit}) {
-        api.getData('productCategory', {})
+    getCategory({commit}, id) {
+        let sendData ={
+            'where':'id',
+            'searchString':id
+        }
+        api.getData('productCategory', sendData)
             .then(r => {
                 if (r.result === true) {
-                    commit('setAll', r.returnData);
+                    commit('setCategory', r.returnData);
                 }
             })
             .catch()
     },
-    getAllById({commit}) {
-        api.getData('productCategory', {'indexBy': 'id'})
-            .then(r => {
-                if (r.result === true) {
-                    commit('setAllById', r.returnData);
-                }
-            })
-            .catch()
-    }
 }
 
 // mutations
 const mutations = {
-    setAll(state, productsCategory) {
-        state.all = productsCategory
-    },
-    setAllById(state, productsCategory) {
-        state.allById = {...state.allById, ...productsCategory}
-    },
+    setCategory(state, productsCategory) {
+        state.categoryData = productsCategory;
+    }
 }
 
 export default {

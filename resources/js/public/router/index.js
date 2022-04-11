@@ -11,7 +11,18 @@ export default new Router({
             path: '/',
             name: 'Home',
             component: () => import("../components/Home.vue"),
-            meta: {title: 'С легким паром. Торопиться не надо.'}
+        },
+        {
+            path: '/catalog/:url',
+            name: 'category',
+            props: true,
+            component: () => import("../components/Category/CategoryPage.vue"),
+        },
+        {
+            path: '/catalog/*/:url',
+            name: 'subCategory',
+            props: true,
+            component: () => import("../components/Category/CategoryPage.vue"),
         },
     ]
 });

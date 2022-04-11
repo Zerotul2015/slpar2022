@@ -63,9 +63,9 @@
             </li>
           </ul>
         </li>
-        <li class="menu_sidebar__item">
-          <a href="/admin/settings/sections">Разделы</a>
-        </li>
+<!--        <li class="menu_sidebar__item">-->
+<!--          <a href="/admin/settings/sections">Разделы</a>-->
+<!--        </li>-->
         <!--        <li class="menu_sidebar__item">-->
         <!--          <a href="/admin/discounts/discounts-list">Скидки</a>-->
         <!--        </li>-->
@@ -81,11 +81,6 @@
             <li class="menu_sidebar__item">
               <router-link to="/pages/">Список страниц</router-link>
             </li>
-
-            <li class="menu_sidebar__item">
-              <hr>
-            </li>
-            <li class="menu_sidebar__item"><a href="/admin/pages/index-page">Главная страница</a></li>
           </ul>
         </li>
         <li class="menu_sidebar__item">

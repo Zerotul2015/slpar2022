@@ -6,17 +6,11 @@ namespace App\Model;
 
 use App\Classes\ActiveRecord\Main;
 use App\Classes\ActiveRecord\Tables\BathStyle;
-use App\Classes\ActiveRecord\Tables\GalleryCategory;
-use App\Classes\ActiveRecord\Tables\Menu;
 use App\Classes\ActiveRecord\Tables\Page;
 use App\Classes\ActiveRecord\Tables\PageCategory;
 use App\Classes\ActiveRecord\Tables\Product;
 use App\Classes\ActiveRecord\Tables\ProductCategory;
 use App\Classes\ActiveRecord\Tables\Settings;
-use App\Classes\ActiveRecord\Tables\SettingsBanner;
-use App\Classes\ActiveRecord\Tables\SettingsIndexPage;
-use App\Classes\ActiveRecord\Tables\SettingsLayouts;
-use App\Classes\ActiveRecord\Tables\SettingsSections;
 
 use App\Classes\Breadcrumbs;
 use App\Classes\MyException;
@@ -31,10 +25,11 @@ class PublicTemplateModel
      * Основной метод получения настроек макета, меню, seo и пр. для указаной страницы
      * @param string $section
      * @param int|string $indexOrUrlObject
+     * @param bool $simple //только seo и breadcrumb
      * @return array
      */
     #[ArrayShape(['result' => "bool", 'returnData' => "array"])]
-    public static function templateSettings(string $section = '', int|string $indexOrUrlObject =''): array
+    public static function templateSettings(string $section = '', int|string $indexOrUrlObject ='', bool $simple = false): array
     {
         if (is_numeric($indexOrUrlObject)) {
             $where = 'id';
@@ -56,26 +51,22 @@ class PublicTemplateModel
                 'bathStyle' => BathStyle::find()->where([$where => $indexOrUrlObject])->one(),
             };
         }
-        $breadcrumb = self::generateBreadcrumb($objectData);
-
+        $returnData = [];
+        //если нужны все данные(например для первой загрузки или пререндера)
+        if($simple === false){
         $footer = PublicTemplateModel::prepareFooter();
         //меню
         $menuCategory = PublicTemplateModel::getMenuCategory();
+            $returnData = [
+                'menuCatalog' => $menuCategory,
+                'footer' => $footer,
+            ];
+        }
 
-        //SEO
-        $seo = static::getSeo($section, $objectData);
+        $returnData['breadcrumb'] = self::generateBreadcrumb($objectData);
+        $returnData['seo'] = static::getSeo($section, $objectData);
 
-        $returnData = [
-            'breadcrumb' => $breadcrumb,
-            'bathStyles' => BathStyle::find()->indexBy()->all(),
-            'menuCatalog' => $menuCategory,
-            'footer' => $footer,
-            'seo' => static::getSeo($section, $objectData),
-        ];
-        $result = true;
-
-        return ['result' => $result, 'returnData' => $returnData];
-
+        return ['result' => true, 'returnData' => $returnData];
     }
 
 
@@ -162,23 +153,26 @@ class PublicTemplateModel
             case 'favorite':
                 $seo['title'] = 'Избранные товары';
                 break;
+            case 'index':
+                $seo['title'] = $settings->seo_index_page['title'];
+                $seo['description'] = $settings->seo_index_page['description'];
+                break;
             default:
                 if ($objectData) {
                     if (empty($objectData->seo['title'])) {
-                        $seo['title'] = $objectData->name ?? '';
+                        $seo['title'] = $objectData->name ?? $settings->seo_index_page['title'];
                     } else {
                         $seo['title'] = $objectData->seo['title'];
                     }
-                    $seo['description'] = empty($objectData->seo['description']) ? '' : $objectData->seo['description'];
+                    $seo['description'] = empty($objectData->seo['description']) ? $settings->seo_index_page['description'] : $objectData->seo['description'];
                 }
                 break;
-
         }
         //добавляем префикс и постфикс
         if ($section === 'product' || $section === 'productCategory') {
-            $seo['title'] = $settings->title_prefix_product . $seo['title'] . $settings->title_postfix_product;
-        } else {
-            $seo['title'] = $settings->title_prefix . $seo['title'] . $settings->title_postfix;
+            $seo['title'] = $settings->title_prefix_product . ' ' . $seo['title'] . ' ' . $settings->title_postfix_product;
+        } elseif($section !== 'index') {//для главной префиксы не добавляем
+            $seo['title'] = $settings->title_prefix . ' '. $seo['title'] . ' ' . $settings->title_postfix;
         }
         return $seo;
     }

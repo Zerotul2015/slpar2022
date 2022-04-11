@@ -24,6 +24,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed logoText regular read/write property
  * @property mixed template_footer regular read/write property
  * @property mixed templateFooter regular read/write property
+ * @property mixed seo_index_page regular read/write property
+ * @property mixed seoIndexPage regular read/write property
  */
 
 class Settings extends Main
@@ -107,6 +109,14 @@ class Settings extends Main
         ],
         'template_footer' => [
             'field' => 'template_footer',
+            'type' => 'text',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'seo_index_page' => [
+            'field' => 'seo_index_page',
             'type' => 'text',
             'null' => 'YES',
             'key' => '',

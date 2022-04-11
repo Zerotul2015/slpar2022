@@ -2,35 +2,65 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    templateSettings: {}
+    breadcrumb: '',
+    menuCatalog: {},
+    footer: {},
+    section: 'index',
+    sectionKey: null,
+    seo: {'title': '', 'description': ''}
 })
 
 // getters
 const getters = {
     breadcrumb(state) {
-        return state.templateSettings.breadcrumb ? state.templateSettings.breadcrumb : '';
-    },
-    bathStyles(state) {
-        return state.templateSettings.bathStyles ? state.templateSettings.bathStyles : {};
+        return state.breadcrumb;
     },
     menuCatalog(state) {
-        return state.templateSettings.menuCatalog ? state.templateSettings.menuCatalog : '';
+        return state.menuCatalog;
     },
     footer(state) {
-        return state.templateSettings.footer ? state.templateSettings.footer : {};
+        return state.footer;
     },
     seo(state) {
-        return state.templateSettings.seo ? state.templateSettings.seo : '';
+        return state.seo;
+    },
+    section(state) {
+        return state.section;
+    },
+    sectionKey(state) {
+        return state.sectionKey;
     }
 }
 
 // actions
 const actions = {
-    getTemplateSettings({commit}) {
-        api.getData('templateData', {})
+    getChange({commit, state}) {
+        let sendData = {
+            'section':state.section,
+            'sectionKey':state.sectionKey,
+            'simple': true,
+        };
+        api.getData('templateData', sendData)
             .then(r => {
                 if (r.result === true) {
-                    commit('setTemplateSettings', r.returnData);
+                    commit('setSeo', r.returnData.seo);
+                    commit('setBreadcrumb', r.returnData.breadcrumb);
+                }
+            })
+            .catch()
+    },
+    getTemplateSettings({commit, state}) {
+        let sendData = {
+            'section':state.section,
+            'sectionKey':state.sectionKey,
+        };
+        api.getData('templateData', sendData)
+            .then(r => {
+                if (r.result === true) {
+                    commit('setSeo', r.returnData.seo);
+                    commit('setBreadcrumb', r.returnData.breadcrumb);
+                    commit('setMenuCatalog', r.returnData.menuCatalog);
+                    commit('setFooter', r.returnData.footer);
                 }
             })
             .catch()
@@ -39,9 +69,24 @@ const actions = {
 
 // mutations
 const mutations = {
-    setTemplateSettings(state, templateData) {
-        state.templateSettings = templateData
-    }
+    setSeo(state, newSeo) {
+        state.seo = newSeo;
+    },
+    setSection(state, newSection) {
+        state.section = newSection;
+    },
+    setSectionKey(state, newSectionKey) {
+        state.sectionKey = newSectionKey;
+    },
+    setBreadcrumb(state, breadcrumb) {
+        state.breadcrumb = breadcrumb;
+    },
+    setMenuCatalog(state, menuCatalog) {
+        state.menuCatalog = menuCatalog;
+    },
+    setFooter(state, footer) {
+        state.footer = footer;
+    },
 }
 
 export default {

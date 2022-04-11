@@ -5,22 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Верстаю шапку">
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/compare.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/favorite.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/Breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Breadcrumbs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Routing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +55,8 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="HTTP Public Environment File" />
-        <option value="Vue Single File Component" />
         <option value="SCSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -84,6 +97,7 @@
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategories.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/Pages.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategoriesCreate.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Pages/PagesEdit.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Login.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" root0="FORCE_HIGHLIGHTING" />
@@ -99,6 +113,7 @@
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/orders.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/customerCompany.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Controllers/Api/GetData.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/productCategory.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/modules/product.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/store/index.js" root0="FORCE_HIGHLIGHTING" />
@@ -163,10 +178,16 @@
     <setting file="file://$PROJECT_DIR$/docker/rabbitmq/rabbitmq.conf" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Admin/UploaderModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/PublicMainModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Model/PublicTemplateModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/FilesystemModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker/php-fpm/php.ini" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker/nginx/default.conf" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker/nginx.docker" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/public/components/App.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Model/Parser/Terem/TeremParserModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersListItem.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Settings/settingsBanners.vue" root0="FORCE_HIGHLIGHTING" />
@@ -221,7 +242,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
@@ -233,7 +253,6 @@
       <path value="$PROJECT_DIR$/vendor/phpmd/phpmd" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/symfony/config" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
@@ -276,6 +295,11 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pOIZfyknMvvdDiP4eAEGNqhru9" />
@@ -302,7 +326,7 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/public/store/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.nvm/versions/node/v16.13.2/bin" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -549,14 +573,7 @@
       <workItem from="1649045421543" duration="1304000" />
       <workItem from="1649329075311" duration="6108000" />
       <workItem from="1649375523901" duration="4443000" />
-      <workItem from="1649488447336" duration="45251000" />
-    </task>
-    <task id="LOCAL-00085" summary="При копировании товара, обнуление уникальных значений">
-      <created>1637165203598</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1637165203598</updated>
+      <workItem from="1649488447336" duration="68727000" />
     </task>
     <task id="LOCAL-00086" summary="Исправил ошибку с назначением главного изображения">
       <created>1637165392558</created>
@@ -943,7 +960,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649581595472</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Верстаю шапку">
+      <created>1649635895921</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1649635895922</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
