@@ -9,6 +9,10 @@ import productStockStatus from './modules/productStockStatus'
 import productUnit from './modules/productUnit'
 import productManufacturer from './modules/productManufacturer'
 import productCategory from './modules/productCategory'
+import templateData from './modules/templateData'
+import cart from './modules/cart'
+import compare from './modules/compare'
+import favorite from './modules/favorite'
 
 Vue.use(Vuex)
 
@@ -23,6 +27,7 @@ export default new Vuex.Store({
         productUnit,
         productManufacturer,
         productCategory,
+        templateData,
     },
     state: {
 

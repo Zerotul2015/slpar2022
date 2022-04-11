@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="body-wrap">
-    <headerApp :templateData="templateHeaderDate"/>
+    <headerApp/>
     <div class="body-wrap">
       <main class="">
         <transition name="component-fade" mode="out-in">
@@ -25,16 +25,24 @@ export default {
     FooterApp
   },
   data: () => ({
-    templateHeaderDate:{},
-    templateFooterData:{}
   }),
   created() {
 
   },
   beforeMount(){
-    this.getTemplatesDate();
+    this.$store.dispatch('templateData/getTemplateSettings');
   },
-  computed: {},
+  watch:{
+    templateSeo(newVal, oldVal){
+      document.title = newVal.title;
+      document.description = newVal.description;
+    }
+  },
+  computed: {
+    templateSeo(){
+      return this.$store.getters["templateData/seo"];
+    }
+  },
   methods: {
     getTemplatesDate(){
 

@@ -10,7 +10,11 @@ const DATA_PATH = {
     'productStockStatus': 'product-stock-status',
     'product': 'product',
     'bathStyle':'bath-style',
-    'searchSite':'search-site'
+    'searchSite':'search-site',
+    'templateData':'template-data',
+    'cart':'cart',
+    'compare':'compare',
+    'favorite':'favorite',
 }
 
 export default {

@@ -65,9 +65,9 @@ class GetData extends Main
         $this->postData = $postData;
         $productsFound = $this->prepareReturnData($products)['returnData'];
         //фильтруем отключенные товары
-        if(is_array($productsFound)){
-            foreach ($productsFound as $k => $itemProduct){
-                if(!$itemProduct->enable){
+        if (is_array($productsFound)) {
+            foreach ($productsFound as $k => $itemProduct) {
+                if (!$itemProduct->enable) {
                     unset($productsFound[$k]);
                 }
             }
@@ -243,10 +243,27 @@ class GetData extends Main
         $this->returnAnswer($this->prepareReturnData($object));
     }
 
-    public function templateSettings(): void
+    public function templateData(): void
+    {
+        $section = $this->postData['section'] ?? '';
+        $sectionKey = $this->postData['sectionKey'] ?? '';
+        $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey));
+    }
+
+
+    public function cart(): void
     {
 
-        $this->returnAnswer(PublicTemplateModel::templateSettings());
+    }
+
+    public function compare(): void
+    {
+
+    }
+
+    public function favorite(): void
+    {
+
     }
 
 }

@@ -10,6 +10,7 @@ namespace App\Classes;
 
 
 use App\Classes\ActiveRecord\FactoryObject;
+use JetBrains\PhpStorm\ArrayShape;
 use PDO;
 
 class ActiveRecord
@@ -100,6 +101,7 @@ class ActiveRecord
      * @param $where
      * @return array
      */
+    #[ArrayShape(['params' => "array", 'where' => "string"])]
     public function prepareWhere($where): array
     {
         $params = [];

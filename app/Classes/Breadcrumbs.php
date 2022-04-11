@@ -9,6 +9,8 @@
 namespace App\Classes;
 
 
+use ReturnTypeWillChange;
+
 class Breadcrumbs implements \Iterator
 {
     private array $breadcrumbs = [];
@@ -71,12 +73,12 @@ class Breadcrumbs implements \Iterator
         return $html;
     }
 
-    public function rewind()
+    #[ReturnTypeWillChange] public function rewind()
     {
         reset($this->breadcrumbs);
     }
 
-    public function current()
+    #[ReturnTypeWillChange] public function current()
     {
         $var = current($this->breadcrumbs);
         $newVar['name'] = $var[0];
@@ -84,19 +86,19 @@ class Breadcrumbs implements \Iterator
         return $newVar;
     }
 
-    public function key()
+    #[ReturnTypeWillChange] public function key()
     {
         $var = key($this->breadcrumbs);
         return $var['key'];
     }
 
-    public function next()
+    #[ReturnTypeWillChange] public function next()
     {
         $var = next($this->breadcrumbs);
         return $var;
     }
 
-    public function valid()
+    #[ReturnTypeWillChange] public function valid()
     {
         $key = key($this->breadcrumbs);
         $var = ($key !== NULL && $key !== FALSE);
