@@ -4,36 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Верстаю шапку">
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="написал роутер для категорий, начал верстать страницу категории и карусель стилей">
+      <change afterPath="$PROJECT_DIR$/public/build/images/honeycomb_light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/Routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Shop/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_extends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +309,7 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.nvm/versions/node/v16.13.2/bin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kamin42.ru" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -342,9 +325,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components\search" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components" />
     </key>
@@ -573,14 +556,7 @@
       <workItem from="1649045421543" duration="1304000" />
       <workItem from="1649329075311" duration="6108000" />
       <workItem from="1649375523901" duration="4443000" />
-      <workItem from="1649488447336" duration="68727000" />
-    </task>
-    <task id="LOCAL-00086" summary="Исправил ошибку с назначением главного изображения">
-      <created>1637165392558</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1637165392559</updated>
+      <workItem from="1649488447336" duration="85546000" />
     </task>
     <task id="LOCAL-00087" summary="fix">
       <created>1637173388257</created>
@@ -967,7 +943,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649635895922</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="написал роутер для категорий, начал верстать страницу категории и карусель стилей">
+      <created>1649702386491</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1649702386491</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -998,7 +981,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="TERMO42-6 Сопоставление товаров" />
     <MESSAGE value="TERMO42-8 Товары без габаритов" />
     <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам. Исправил опечатки в комментариях" />
     <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам" />
@@ -1023,7 +1005,8 @@
     <MESSAGE value="написал поиск по сайту из шапки, но не тестировал" />
     <MESSAGE value="Дописал поиск и виджет поиска в шапке" />
     <MESSAGE value="Верстаю шапку" />
-    <option name="LAST_COMMIT_MESSAGE" value="Верстаю шапку" />
+    <MESSAGE value="написал роутер для категорий, начал верстать страницу категории и карусель стилей" />
+    <option name="LAST_COMMIT_MESSAGE" value="написал роутер для категорий, начал верстать страницу категории и карусель стилей" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

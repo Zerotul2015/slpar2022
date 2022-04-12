@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="body-wrap">
     <headerApp/>
-    <div class="body-wrap">
+    <div class="content-wrap">
       <main class="">
         <transition name="component-fade" mode="out-in">
           <router-view></router-view>
@@ -32,6 +32,7 @@ export default {
   beforeMount(){
     this.$store.dispatch('templateData/getTemplateSettings');
     this.$store.dispatch('bathStyle/getAllById');
+    this.$store.dispatch('bathStyle/getAll');
   },
   watch:{
     seo(newVal, oldVal){

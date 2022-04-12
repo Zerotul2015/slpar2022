@@ -2,41 +2,59 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    selectedStyle: {},
-    bathStyle: {},
+    selectedStyleKey: 0,
+    selectedStyleId: null,
     bathStylesById: {},
+    bathStyles: {},
 })
 
 // getters
 const getters = {
+    selectKey(state) {
+        return state.selectedStyleKey;
+    },
+    selectId(state) {
+        return state.selectedStyleId;
+    },
     //получаем стиль с переданным id
     bathStyle: (state) => (id) => {
-        if (state.bathStylesById[id]) {
-            return state.bathStylesById[id];
+        if (id) {
+            if (state.bathStylesById[id]) {
+                return state.bathStylesById[id];
+            } else {
+                return undefined;
+            }
         } else {
-            return undefined;
+            return Object.values(state.bathStyle)[0];
         }
     },
-    //для получения данных из bathStyle
-    url(state) {
-        return state.bathStyle.url ? state.bathStyle.url : '';
+    all(state) {
+        return state.bathStyles;
     },
-    name(state) {
-        return state.bathStyle.name ? state.bathStyle.name : '';
+    allById(state) {
+        return state.bathStylesById;
     },
-    description(state) {
-        return state.bathStyle.description ? state.bathStyle.description : '';
-    },
-    folder(state) {
-        return state.bathStyle.folder ? state.bathStyle.folder : '';
-    },
-    image(state) {
-        return state.bathStyle.image ? state.bathStyle.image : null;
-    }
 }
 
 // actions
 const actions = {
+    setActiveStyle({commit, state}, keyStyle) {
+        if (state.bathStyles[keyStyle]) {
+            commit('setActiveStyleKey', keyStyle);
+            let id = state.bathStyles[keyStyle].id;
+            commit('setActiveStyleId', id);
+        }
+
+    },
+    getAll({commit}) {
+        api.getData('bathStyle', {})
+            .then(r => {
+                if (r.result === true) {
+                    commit('setAll', r.returnData);
+                }
+            })
+            .catch()
+    },
     getAllById({commit}) {
         api.getData('bathStyle', {'indexBy': 'id'})
             .then(r => {
@@ -46,18 +64,18 @@ const actions = {
             })
             .catch()
     },
-    selectStyle({commit, state}, id) {
-        if (state.bathStylesById[id]) {
-            commit('setBathStyle', state.bathStylesById[id]);
-        }
-
-    }
 }
 
 // mutations
 const mutations = {
-    setBathStyle(state, bathStyle) {
-        state.bathStyle = bathStyle;
+    setActiveStyleKey(state, keyStyle) {
+        state.selectedStyleKey = keyStyle;
+    },
+    setActiveStyleId(state, idStyle) {
+        state.selectedStyleKId = idStyle;
+    },
+    setAll(state, bathStyles) {
+        state.bathStyles = bathStyles;
     },
     setAllById(state, bathStyles) {
         state.bathStylesById = bathStyles;
