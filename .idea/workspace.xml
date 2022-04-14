@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix перед демонстрацией">
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Products/ProductCatalogItem.vue" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix bathStyle done 70%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -556,14 +550,7 @@
       <workItem from="1649329075311" duration="6108000" />
       <workItem from="1649375523901" duration="4443000" />
       <workItem from="1649488447336" duration="85620000" />
-      <workItem from="1649920583154" duration="4680000" />
-    </task>
-    <task id="LOCAL-00088" summary="исправил орфографию">
-      <created>1637419948273</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1637419948274</updated>
+      <workItem from="1649920583154" duration="7124000" />
     </task>
     <task id="LOCAL-00089" summary="add develop in mode xdebug">
       <created>1637421211324</created>
@@ -950,7 +937,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649766870821</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="fix bathStyle done 70%">
+      <created>1649947788562</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1649947788563</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -981,7 +975,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам. Исправил опечатки в комментариях" />
     <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам" />
     <MESSAGE value="TERMO42-11 Изменить список товаров" />
     <MESSAGE value="TERMO42-12 доработал методы парсера терема, учел требование значение seo" />
@@ -1006,7 +999,8 @@
     <MESSAGE value="Верстаю шапку" />
     <MESSAGE value="написал роутер для категорий, начал верстать страницу категории и карусель стилей" />
     <MESSAGE value="fix перед демонстрацией" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix перед демонстрацией" />
+    <MESSAGE value="fix bathStyle done 70%" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bathStyle done 70%" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

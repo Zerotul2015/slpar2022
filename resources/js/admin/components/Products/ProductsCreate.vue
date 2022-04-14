@@ -91,6 +91,28 @@
           <input :id="'dimension-weight' +guid" class="input" type="text" v-model="dimensionsWeight">
         </div>
       </div>
+      <h2>Характеристики</h2>
+      <div class="buttons-block">
+        <button class="button button_green" @click="addSpecification">
+          <span class="button-icon"><i class="far fa-plus"></i></span>
+          <span class="button-tetx">Добавить характеристики</span>
+        </button>
+      </div>
+      <div class="form-section">
+        <div v-for="(specGroup, keyGroup) in item.specifications" style="display: grid;grid-auto-flow: column; align-items: center; grid-gap:.25rem">
+          <div class="input-block input-block_column input-block_highlight">
+            <label :for="'dimension-length'+guid" class="label">Название:</label>
+            <input :id="'dimension-length' +guid" class="input" type="text" v-model="specGroup.name">
+          </div>
+          <div class="input-block input-block_column input-block_highlight">
+            <label :for="'dimension-length'+guid" class="label">Значение:</label>
+            <input :id="'dimension-length' +guid" class="input" type="text" v-model="specGroup.val">
+          </div>
+          <button class="button button_red" @click="item.specifications.splice(keyGroup, 1)">
+            <span class="button-icon"><i class="far fa-trash-alt"></i></span>
+          </button>
+        </div>
+      </div>
       <h2>Описание товара</h2>
       <editor :api-key="this.$root.TINY_API_KEY" v-model="item.description"
               :init="this.$root.configEditor"></editor>
@@ -137,7 +159,7 @@
       <div class="form-section">
         <div class="input-block input-block_highlight" v-for="(styleItem, keyStyle) in bathStyles">
           <input type="checkbox" :id="'style-' + keyStyle" :value="styleItem.id" v-model="item.bath_style_id">
-          <label :for="'style-' + keyStyle">{{styleItem.name}}</label>
+          <label :for="'style-' + keyStyle">{{ styleItem.name }}</label>
         </div>
       </div>
       <h2>Цена</h2>
@@ -252,7 +274,7 @@ export default {
         'article': '',
         'unit_id': null,
         'description': '',
-        'specifications': '',
+        'specifications': [],
         'attachments': '',
         'category_id': null,
         'manufacturer_id': null,
@@ -276,6 +298,10 @@ export default {
         'image_main': null,
         'bath_style_id': [],
       };
+    }else{
+      if(!this.item.specifications){
+        this.item.specifications = [];
+      }
     }
     this.$store.dispatch('productCategory/getAllById');//получаем данные категорий товаров
     this.$store.dispatch('productUnit/getAllById');//получаем данные категорий товаров
@@ -424,6 +450,12 @@ export default {
     //end save, delete
   },
   methods: {
+    addSpecification(){
+      if(!this.item.specifications){
+        this.item.specifications= [];
+      }
+      this.item.specifications.push({'name':'','val':''});
+    },
     setImageMain(imageKey) {
       if (this.item.images[imageKey]) {
         this.item.image_main = this.item.images[imageKey];
@@ -479,7 +511,7 @@ export default {
               this.notFoundProduct = true;
             } else {
               this.item = r.returnData && r.returnData[0] ? r.returnData[0] : {};
-              if(isNull(this.item.bath_style_id)){
+              if (isNull(this.item.bath_style_id)) {
                 this.item.bath_style_id = [];
               }
               if (this.idCopy) {

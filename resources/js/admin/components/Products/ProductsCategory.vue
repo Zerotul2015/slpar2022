@@ -12,7 +12,9 @@
         <select :id="'move-to-' + guid" v-model="moveTo">
           <option :value="0">--ОСНОВНЫЕ КАТЕГОРИИ--</option>
           <option v-for="(cat, keyCak) in productsCategories" :value="cat.id">
-            <span v-if="cat.parent_id && productsCategories[cat.parent_id]">{{productsCategories[cat.parent_id].name}} -> </span>{{ cat.name }}
+            <span v-if="cat.parent_id && productsCategories[cat.parent_id]">{{ productsCategories[cat.parent_id].name }} -> </span>{{
+              cat.name
+            }}
           </option>
         </select>
         <button class="button button_small" @click="moveCategory">переместить</button>
@@ -70,6 +72,13 @@
           </div>
         </div>
       </div>
+      <div class="col-3-auto col_middle-left" v-if="!isCustomLink">
+        <label :for="'move-to-' + guid">Содержит товары для:</label>
+        <select :id="'move-to-' + guid" v-model="item.binding_style">
+          <option value="bath">Бань и саун</option>
+          <option value="fireplace">Каминов и печей</option>
+        </select>
+      </div>
     </div>
     <div class="row">
       <div class="col buttons-block">
@@ -108,8 +117,8 @@ export default {
       errorText: '',
       errorUploadText: '',
       image: '',
-      toggleButtonClose:'<span class="button-icon"><i class="far fa-compress-arrows-alt"></i></span><span class="button-icon">свернуть</span>',
-      toggleButtonOpen:'<span class="button-icon"><i class="far fa-expand-arrows-alt"></i></span><span class="button-icon">подробнее</span>',
+      toggleButtonClose: '<span class="button-icon"><i class="far fa-compress-arrows-alt"></i></span><span class="button-icon">свернуть</span>',
+      toggleButtonOpen: '<span class="button-icon"><i class="far fa-expand-arrows-alt"></i></span><span class="button-icon">подробнее</span>',
       //start save, delete
       saveStatus: null, // 1 -  успешно, 2 - ошибка, 0 | null - без изменений
       saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохарнить</span>',
@@ -129,6 +138,9 @@ export default {
     this.toggleShow = !this.item.id;
     this.image = this.item.image ? this.item.image : '';
     this.isCustomLink = this.item.is_custom ? this.item.is_custom : false;
+    if (!this.item.binding_style) {
+      this.item.binding_style = 'bath';
+    }
   },
   watch: {
     isCustomLink(newVal) {

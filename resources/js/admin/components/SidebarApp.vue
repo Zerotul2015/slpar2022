@@ -106,7 +106,6 @@
             </li>
             <li class="menu_sidebar__item"><a href="/admin/products/manufacturers">Производители</a></li>
             <li class="menu_sidebar__item"><a href="/admin/products/stock-status">Статусы наличия</a></li>
-            <li class="menu_sidebar__item"><a href="/admin/products/characteristics">Характеристики</a></li>
             <li class="menu_sidebar__item"><a href="/admin/products/label">Ярлыки</a></li>
           </ul>
         </li>
