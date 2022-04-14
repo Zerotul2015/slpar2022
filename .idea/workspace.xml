@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="написал роутер для категорий, начал верстать страницу категории и карусель стилей">
-      <change afterPath="$PROJECT_DIR$/public/build/images/honeycomb_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix перед демонстрацией">
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Products/ProductCatalogItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_extends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_var.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
@@ -556,14 +555,8 @@
       <workItem from="1649045421543" duration="1304000" />
       <workItem from="1649329075311" duration="6108000" />
       <workItem from="1649375523901" duration="4443000" />
-      <workItem from="1649488447336" duration="85546000" />
-    </task>
-    <task id="LOCAL-00087" summary="fix">
-      <created>1637173388257</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1637173388257</updated>
+      <workItem from="1649488447336" duration="85620000" />
+      <workItem from="1649920583154" duration="4680000" />
     </task>
     <task id="LOCAL-00088" summary="исправил орфографию">
       <created>1637419948273</created>
@@ -950,7 +943,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649702386491</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="fix перед демонстрацией">
+      <created>1649766870821</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1649766870821</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -981,7 +981,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="TERMO42-8 Товары без габаритов" />
     <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам. Исправил опечатки в комментариях" />
     <MESSAGE value="TERMO42-9 Доработать пагинацию по страницам" />
     <MESSAGE value="TERMO42-11 Изменить список товаров" />
@@ -1006,7 +1005,8 @@
     <MESSAGE value="Дописал поиск и виджет поиска в шапке" />
     <MESSAGE value="Верстаю шапку" />
     <MESSAGE value="написал роутер для категорий, начал верстать страницу категории и карусель стилей" />
-    <option name="LAST_COMMIT_MESSAGE" value="написал роутер для категорий, начал верстать страницу категории и карусель стилей" />
+    <MESSAGE value="fix перед демонстрацией" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix перед демонстрацией" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

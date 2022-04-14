@@ -19,6 +19,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed isCustom regular read/write property
  * @property mixed custom_link regular read/write property
  * @property mixed customLink regular read/write property
+ * @property mixed binding_style regular read/write property
+ * @property mixed bindingStyle regular read/write property
  */
 
 class ProductCategory extends Main
@@ -111,6 +113,14 @@ class ProductCategory extends Main
         'custom_link' => [
             'field' => 'custom_link',
             'type' => 'varchar(255)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'binding_style' => [
+            'field' => 'binding_style',
+            'type' => 'varchar(16)',
             'null' => 'YES',
             'key' => '',
             'default' => null,

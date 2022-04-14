@@ -10,7 +10,7 @@ export default new Router({
         {
             path: '/',
             name: 'Home',
-            component: () => import("../components/Home.vue"),
+            component: () => import("../components/BathStyle/BathStyle.vue"),
         },
         {
             path: '/catalog/:url',
@@ -23,6 +23,12 @@ export default new Router({
             name: 'subCategory',
             props: true,
             component: () => import("../components/Category/CategoryPage.vue"),
+        },,
+        {
+            path: '/bath-style/:url',
+            name: 'bathStyle',
+            props: true,
+            component: () => import("../components/BathStyle/BathStyle.vue"),
         },
     ]
 });

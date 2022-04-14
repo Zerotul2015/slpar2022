@@ -4,8 +4,7 @@ import api from '../../common/api'
 const state = () => ({
     selectedStyleKey: 0,
     selectedStyleId: null,
-    bathStylesById: {},
-    bathStyles: {},
+    bathStyles: [],
 })
 
 // getters
@@ -28,11 +27,16 @@ const getters = {
             return Object.values(state.bathStyle)[0];
         }
     },
+    bathStylesByUrl:(state)=>(url)=>{
+        let bathStyle = state.bathStyles.filter(item=>item.url === url);
+        return bathStyle.length > 0 ? bathStyle[0] : null;
+    },
+    bathStylesById:(state)=>(id)=>{
+        let bathStyle = state.bathStyles.filter(item=>item.id === id);
+        return bathStyle.length > 0 ? bathStyle[0] : null;
+    },
     all(state) {
         return state.bathStyles;
-    },
-    allById(state) {
-        return state.bathStylesById;
     },
 }
 
@@ -44,7 +48,6 @@ const actions = {
             let id = state.bathStyles[keyStyle].id;
             commit('setActiveStyleId', id);
         }
-
     },
     getAll({commit}) {
         api.getData('bathStyle', {})
@@ -54,16 +57,7 @@ const actions = {
                 }
             })
             .catch()
-    },
-    getAllById({commit}) {
-        api.getData('bathStyle', {'indexBy': 'id'})
-            .then(r => {
-                if (r.result === true) {
-                    commit('setAllById', r.returnData);
-                }
-            })
-            .catch()
-    },
+    }
 }
 
 // mutations
@@ -71,15 +65,9 @@ const mutations = {
     setActiveStyleKey(state, keyStyle) {
         state.selectedStyleKey = keyStyle;
     },
-    setActiveStyleId(state, idStyle) {
-        state.selectedStyleKId = idStyle;
-    },
     setAll(state, bathStyles) {
         state.bathStyles = bathStyles;
-    },
-    setAllById(state, bathStyles) {
-        state.bathStylesById = bathStyles;
-    },
+    }
 }
 
 export default {

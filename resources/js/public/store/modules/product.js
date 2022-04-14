@@ -2,37 +2,71 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    all: [],
-    allById: {}
+    products: [],
+    product: {}
 })
 
 // getters
-const getters = {}
+const getters = {
+    product(state){
+        return state.product;
+    },
+    products(state){
+        return state.products;
+    },
+}
 
 // actions
 const actions = {
-    getAll({commit}) {
-        api.getData('product', {})
+    getProductsForCategory({commit}, idCat) {
+        let sendData = {
+            'where': 'category_id',
+            'searchString': idCat
+        }
+        api.getData('product', sendData)
             .then(r => {
                 if (r.result === true) {
-                    commit('setAll', r.returnData);
+                    commit('setProducts', r.returnData);
                 }
             })
             .catch()
     },
-    getAllById({commit}) {
-        api.getData('product', {'indexBy': 'id'})
+    getProductByUrl({commit}, url){
+        let sendData = {
+            'where': 'url',
+            'searchString': url
+        }
+        api.getData('product', sendData)
             .then(r => {
                 if (r.result === true) {
-                    commit('setAllById', r.returnData);
+                    commit('setProduct', r.returnData);
                 }
             })
             .catch()
-    }
+    },
+    getProduct({commit}, idProduct){
+        let sendData = {
+            'where': 'id',
+            'searchString': idProduct
+        }
+        api.getData('product', sendData)
+            .then(r => {
+                if (r.result === true) {
+                    commit('setProduct', r.returnData);
+                }
+            })
+            .catch()
+    },
 }
 
 // mutations
 const mutations = {
+    setProducts(state, products){
+        state.products = products;
+    },
+    setProduct(state, product){
+        state.product = product;
+    },
     setAll(state, products) {
         state.all = products
     },

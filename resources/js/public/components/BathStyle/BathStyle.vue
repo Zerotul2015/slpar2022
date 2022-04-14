@@ -45,6 +45,12 @@
 <script>
 export default {
   name: "BathStyle",
+  props:{
+    url:{
+      type:String,
+      required:false
+    }
+  },
   data: () => ({
     toggleDescriptionStyle: false,
   }),
