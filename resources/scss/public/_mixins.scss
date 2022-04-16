@@ -1,0 +1,10 @@
+@mixin border-button($color) {
+  border: 1px solid $color;
+}
+
+@mixin background-hover($color) {
+  background: lighten($color, 15%);
+}
+@mixin box-shadow() {
+  box-shadow: 0 0 5px $grey;
+}

@@ -35,16 +35,22 @@
       </div>
 
     </div>
-    <div class="breadcrumb-wrap"></div>
-    <div class="bsp-products">
-
+    <breadcrumb></breadcrumb>
+    <div class="bsp-products-group" v-for="(catItem) in productsCategory">
+      <h2>{{catItem.name}}</h2>
+      <div class="bsp-products-wrap">
+      <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ProductCard from "../Product/ProductCard";
+import Breadcrumb from "../Breadcrumb";
 export default {
   name: "BathStyle",
+  components: {Breadcrumb, ProductCard},
   props:{
     url:{
       type:String,
@@ -55,11 +61,41 @@ export default {
     toggleDescriptionStyle: false,
   }),
   beforeMount() {
-    this.$store.dispatch("product/getProduct", 25686);
+    if(this.url){
+       this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", this.url);
+     }else{
+
+    }
+  },
+  watch:{
+    selectStyleKey(){
+      if(this.url && this.bathStyles[this.selectStyleKey].url !== this.url){
+        this.$router.push('/bath-style/' + this.bathStyles[this.selectStyleKey].url);
+      }else{
+        this.$store.dispatch("bathStyle/getProductsData");
+      }
+    },
+    bathStyles(newVal){
+      //для активации нужно стиля исходя при открытии страницы
+      if(this.url){
+        if(newVal[this.selectStyleKey] && newVal[this.selectStyleKey].url !== this.url){
+          this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", this.url);
+        }
+      }
+    },
+    url(newUrl){
+      //смена стиля при смене url
+      if(this.bathStyles[this.selectStyleKey] && this.bathStyles[this.selectStyleKey].url !== newUrl){
+        this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", newUrl);
+      }
+    },
   },
   computed: {
-    product(){
-      return this.$store.getters['product/product']
+    products(){
+      return this.$store.getters['bathStyle/productsData']
+    },
+    productsCategory(){
+      return this.$store.getters['bathStyle/productsCategoryData']
     },
     selectStyleKey(){
       return this.$store.getters['bathStyle/selectKey'];
@@ -95,16 +131,16 @@ export default {
   methods: {
     nextStyle() {
       if (this.selectStyleKey + 1 < this.countStyles) {
-        this.$store.dispatch("bathStyle/setActiveStyle", this.selectStyleKey + 1)
+        this.$store.dispatch("bathStyle/setActiveStyleKey", this.selectStyleKey + 1)
       } else {
-        this.$store.dispatch("bathStyle/setActiveStyle", 0)
+        this.$store.dispatch("bathStyle/setActiveStyleKey", 0)
       }
     },
     previousStyle() {
       if (this.selectStyleKey > 0) {
-        this.$store.dispatch("bathStyle/setActiveStyle", this.selectStyleKey - 1)
+        this.$store.dispatch("bathStyle/setActiveStyleKey", this.selectStyleKey - 1)
       } else {
-        this.$store.dispatch("bathStyle/setActiveStyle", this.countStyles - 1)
+        this.$store.dispatch("bathStyle/setActiveStyleKey", this.countStyles - 1)
       }
     },
   },

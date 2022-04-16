@@ -15,9 +15,8 @@ $dotenv = Dotenv::createImmutable(ROOT_DIRECTORY);
 $dotenv->load();
 $error = '';
 
-$bathStyles = \App\Classes\ActiveRecord\Tables\BathStyle::find()
-    ->indexBy()
-    ->all();
+$menuHeader = \App\Model\PublicTemplateModel::getMenu('header');
+var_dump($menuHeader);
 
 echo '<br>===============================================================';
 echo '<br>Время выполнения скрипта: ' . (microtime(true) - $start) . ' sec.';

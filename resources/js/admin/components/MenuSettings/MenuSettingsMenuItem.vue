@@ -16,7 +16,7 @@
         </div>
         <div v-if="menuItem.typeItem === 'pageCategory'">
           <select v-model="menuItem.value" title="Выберите категорию">
-            <option v-for="(pageCat, pageCatId) in pageCategory" :value="pageCatId">{{ pageCat.name }}</option>
+            <option v-for="(pageCat, pageCatId) in pageCategory" :value="pageCatId">{{ pageCat.name_short }}</option>
           </select>
         </div>
         <div v-if="menuItem.typeItem === 'custom'">

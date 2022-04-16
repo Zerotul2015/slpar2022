@@ -15,8 +15,6 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed parent regular read/write property
  * @property mixed priority regular read/write property
  * @property mixed url regular read/write property
- * @property mixed integrated regular read/write property
- * @property mixed date regular read/write property
  */
 
 class PageCategory extends Main
@@ -89,22 +87,6 @@ class PageCategory extends Main
             'key' => '',
             'default' => null,
             'extra' => ''
-        ],
-        'integrated' => [
-            'field' => 'integrated',
-            'type' => 'tinyint(1)',
-            'null' => 'YES',
-            'key' => '',
-            'default' => null,
-            'extra' => ''
-        ],
-        'date' => [
-            'field' => 'date',
-            'type' => 'timestamp',
-            'null' => 'YES',
-            'key' => '',
-            'default' => 'CURRENT_TIMESTAMP',
-            'extra' => 'DEFAULT_GENERATED'
         ]
    ]; 
 

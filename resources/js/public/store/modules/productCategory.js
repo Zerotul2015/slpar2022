@@ -3,6 +3,7 @@ import api from '../../common/api'
 // initial state
 const state = () => ({
     categoryData: [],
+    products: [],
 })
 
 // getters
@@ -13,28 +14,48 @@ const getters = {
     name(state) {
         return state.categoryData.name ? state.categoryData.name : '';
     },
-    description(state){
+    description(state) {
         return state.categoryData.description ? state.categoryData.description : '';
     },
-    folder(state){
+    folder(state) {
         return state.categoryData.folder ? state.categoryData.folder : '';
     },
-    image(state){
+    image(state) {
         return state.categoryData.image ? state.categoryData.image : null;
+    },
+    products(state) {
+        return state.products;
     }
 }
 
 // actions
 const actions = {
-    getCategory({commit}, id) {
-        let sendData ={
-            'where':'id',
-            'searchString':id
+    getProducts({commit, state}) {
+        if (state.categoryData.id) {
+            let sendData = {
+                'where': 'category_id',
+                'searchString': state.categoryData.id
+            }
+            api.getData('product', sendData)
+                .then(r => {
+                    if (r.result === true) {
+                        commit('setProducts', r.returnData);
+                    }
+                })
+                .catch()
+        }
+    },
+    getCategoryByUrl({commit}, url) {
+        let sendData = {
+            'where': 'url',
+            'searchString': url
         }
         api.getData('productCategory', sendData)
             .then(r => {
                 if (r.result === true) {
-                    commit('setCategory', r.returnData);
+                    if( r.returnData[0]){
+                    commit('setCategory', r.returnData[0]);
+                    }
                 }
             })
             .catch()
@@ -43,6 +64,9 @@ const actions = {
 
 // mutations
 const mutations = {
+    setProducts(state, products) {
+        state.products = products;
+    },
     setCategory(state, productsCategory) {
         state.categoryData = productsCategory;
     }

@@ -4,9 +4,6 @@
       <a class="header-logo" href="/">
         <img src="/build/images/logo.svg" alt="С легким паром">
       </a>
-      <div class="header-bath-style-scroll">
-        <bath-styles-header-carousel></bath-styles-header-carousel>
-      </div>
       <div class="header-catalog">
         <div class="h-catalog-link h-link">Каталог<span class="h-catalog-link-caret"><i
             class="fas fa-caret-up"></i></span></div>
@@ -36,6 +33,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="header-links-block">
+        <router-link class="h-link" v-for="(menuItem) in menuHeader"
+                    :key="$root.guid()"
+                    :to="menuItem.value">{{menuItem.title}}</router-link>
       </div>
       <search-site class="header-search-block" :iconShow="true" custom-class="hs-block"></search-site>
       <div class="header-icon-block"></div>

@@ -28,7 +28,6 @@ export default {
   name: "Home",
   computed: {
     bathStyleKeys(){
-      return this.$store.getters['bathStyle/bathStyleKeys'];
     },
     bathStyles() {
       return this.$store.getters['bathStyle/bathStyles'];

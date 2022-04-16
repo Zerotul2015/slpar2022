@@ -13,12 +13,10 @@
   border:1px solid rgb(237, 212, 182);
 }
 .header-content {
-  width: 95%;
-  max-width: 1280px;
-  margin:0 auto;
+  @extend .default-width-content;
   display: grid;
   position:relative;
-  grid-template-areas: "h-logo h-bath h-catalog h-search h-icon";
+  grid-template-areas: "h-logo h-catalog h-links h-search h-icon";
   grid-template-columns: 13rem repeat(3, auto) 1fr;
   justify-content: start;
   align-items: center;
@@ -38,8 +36,12 @@
   }
 }
 
-.header-bath-style-scroll {
-  grid-area: h-bath;
+.header-links-block {
+  grid-area: h-links;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.15rem;
+
 }
 .header-catalog {
   grid-area: h-catalog;
@@ -186,4 +188,7 @@ svg.icon-input-search.hs-block {
 .found-values.hs-block{
   border-radius:$border-radius;
   @include box-shadow();
+}
+.breadcrumb-wrap{
+  @extend .default-width-content;
 }

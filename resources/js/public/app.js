@@ -30,6 +30,10 @@ router.beforeEach((to, from, next) => {
 });
 router.beforeResolve((to, from, next) => {
     if (to.name) {
+        app.$store.commit('templateData/setSection', to.name);
+        if(to.params.url){
+            app.$store.commit('templateData/setSectionKey', to.params.url);
+        }
         // Start the route progress bar.
         NProgress.start();
     }

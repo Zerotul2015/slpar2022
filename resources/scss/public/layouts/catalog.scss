@@ -1,0 +1,10 @@
+.catalog-wrap{
+ @extend .default-width-content;
+}
+
+.catalog-products{
+  display:grid;
+  justify-content:center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap:1rem;
+}

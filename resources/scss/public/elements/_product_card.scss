@@ -1,0 +1,45 @@
+.product-card {
+  position:relative;
+  display:grid;
+  grid-gap:.5rem;
+  justify-content:center;
+}
+
+.pc-name {
+  padding:.5rem 2.5rem;
+}
+
+.pc-image-main {}
+
+.pc-price-wrap {
+  justify-self: end;
+}
+
+.pc-buttons {
+  display:grid;
+  grid-auto-flow:column;
+  grid-gap:.5rem;
+  align-self:end;
+}
+
+.pc-favorite {
+  position:absolute;
+  fill:rgb(220, 220, 220);
+  right:.5rem;
+  top:.5rem;
+}
+.pc-favorite:hover{
+  cursor:pointer;
+  fill:rgb(60, 171, 61);
+}
+
+.pc-price {
+  font-weight:600;
+
+}
+
+.pc-price-old {
+  text-decoration:line-through;
+  color:rgb(173, 173, 173);
+  margin-top: -.5rem;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="componentIconName" :is="componentIconName" :style="{'width':iconSize, 'height':iconSize}"></div>
+  <div v-if="componentIconName" :is="componentIconName" :style="{'width':iconSize, 'height':iconSize, colorFill}"></div>
 </template>
 
 <script>
@@ -68,7 +68,11 @@ export default {
       type: String,
       required: true
     },
-    size: {}
+    size: {},
+    color: {
+      type: String,
+      required: false
+    }
   },
   data: function () {
     return {
@@ -106,6 +110,9 @@ export default {
 
   },
   computed: {
+    colorFill() {
+      return this.color ? 'fill:' + this.color : '';
+    },
     componentIconName: function () {
       if (this.iconsName[this.icon]) {
         return this.iconsName[this.icon];

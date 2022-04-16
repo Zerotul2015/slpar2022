@@ -23,6 +23,7 @@ use App\Classes\ActiveRecord\Tables\SettingsBanner;
 use App\Classes\ActiveRecord\Tables\SettingsLayouts;
 use App\Classes\ActiveRecord\Tables\SettingsNotifications;
 use App\Classes\ActiveRecord\Tables\Users;
+use App\Model\BathStyle\BathStyleModel;
 use App\Model\PublicTemplateModel;
 
 
@@ -207,10 +208,22 @@ class GetData extends Main
         $this->returnAnswer($this->prepareReturnData($object));
     }
 
+    /**
+     * Если передать getProductsData = true и bathStyleId, тогда возвращает массив товаров и категорий для стиля
+     * Иначе рабатет как стандартный метод получения данных через prepareReturnData()
+     * @return void
+     */
     public function bathStyle(): void
     {
-        $object = BathStyle::find();
-        $this->returnAnswer($this->prepareReturnData($object));
+        if (isset($this->postData['getProductsData'], $this->postData['bathStyleId']) && $this->postData['getProductsData'] === true) {
+            $returnData = [
+                'result' => true,
+                'returnData' => BathStyleModel::getProductsData($this->postData['bathStyleId'])];
+        } else {
+            $object = BathStyle::find();
+            $returnData = $this->prepareReturnData($object);
+        }
+        $this->returnAnswer($returnData);
     }
 
     public function galleryCategory(): void
@@ -249,7 +262,7 @@ class GetData extends Main
         $sectionKey = $this->postData['sectionKey'] ?? '';
         $simple = $this->postData['simple'] ?? false;
         $simple = !!$simple;
-        $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey,$simple));
+        $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey, $simple));
     }
 
 

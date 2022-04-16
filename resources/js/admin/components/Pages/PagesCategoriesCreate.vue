@@ -30,10 +30,6 @@
     </div>
     <div class="form-section">
       <div class="input-block input-block_highlight">
-        <label for="date-page">Дата публикации:</label>
-        <input id="date-page" class="input" type="date" v-model="dateVal">
-      </div>
-      <div class="input-block input-block_highlight">
         <label for="name-short">Название короткое:</label>
         <input id="name-short" class="input" type="text" v-model="category.name_short">
       </div>
@@ -86,18 +82,12 @@ export default {
         name_short: '',
         name_full: '',
         description: '',
-        date:null,
         seo: {description: '', title: ''},
         url: null
       }
     }
   },
   watch: {
-    'category.date'(newVal) {
-      if (newVal !== this.dateVal) {
-        this.dateVal = new Date(Date.parse(newVal)).toLocaleDateString('en-CA');
-      }
-    },
     dateVal(newVal) {
       if (newVal !== this.category.date) {
         this.category.date = new Date(Date.parse(newVal)).toLocaleDateString('en-CA');

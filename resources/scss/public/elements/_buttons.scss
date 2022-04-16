@@ -1,0 +1,38 @@
+button, .btn {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:.5rem;
+  align-content: center;
+  justify-content: center;
+  color: $white;
+  @extend %padding-button;
+  background: $grey-middle;
+  border: 1px solid $grey-middle;
+  outline: none;
+  text-transform: uppercase;
+  transition: .25s;
+}
+
+button:hover, .btn:hover {
+  cursor: pointer;
+  background: $grey;
+  border: 1px solid $grey;
+}
+
+.btn-icon{}
+.btn-text{}
+
+
+.btn_green{
+  background: $green;
+  border: 1px solid $green;
+}
+.btn_green:hover{
+  background: $green-dark;
+  border: 1px solid $green-dark;
+}
+
+.btn_as-text, .btn_as-text:hover{
+  background: none;
+  border:none;
+}

@@ -13,6 +13,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed image regular read/write property
  * @property mixed folder regular read/write property
  * @property mixed url regular read/write property
+ * @property mixed products_id regular read/write property
+ * @property mixed productsId regular read/write property
  */
 
 class BathStyle extends Main
@@ -83,6 +85,14 @@ class BathStyle extends Main
             'type' => 'varchar(255)',
             'null' => 'NO',
             'key' => 'UNI',
+            'default' => null,
+            'extra' => ''
+        ],
+        'products_id' => [
+            'field' => 'products_id',
+            'type' => 'text',
+            'null' => 'YES',
+            'key' => '',
             'default' => null,
             'extra' => ''
         ]
