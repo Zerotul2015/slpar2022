@@ -4,6 +4,7 @@ import api from '../../common/api'
 const state = () => ({
     breadcrumb: '',
     menuCatalog: {},
+    menuHeader: {},
     footer: {},
     section: 'index',
     sectionKey: null,
@@ -17,6 +18,9 @@ const getters = {
     },
     menuCatalog(state) {
         return state.menuCatalog;
+    },
+    menuHeader(state) {
+        return state.menuHeader;
     },
     footer(state) {
         return state.footer;
@@ -60,6 +64,7 @@ const actions = {
                     commit('setSeo', r.returnData.seo);
                     commit('setBreadcrumb', r.returnData.breadcrumb);
                     commit('setMenuCatalog', r.returnData.menuCatalog);
+                    commit('setMenuHeader', r.returnData.menuHeader);
                     commit('setFooter', r.returnData.footer);
                 }
             })
@@ -83,6 +88,9 @@ const mutations = {
     },
     setMenuCatalog(state, menuCatalog) {
         state.menuCatalog = menuCatalog;
+    },
+    setMenuHeader(state, menuHeader) {
+        state.menuHeader = menuHeader;
     },
     setFooter(state, footer) {
         state.footer = footer;

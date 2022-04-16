@@ -6,6 +6,7 @@ namespace App\Model;
 
 use App\Classes\ActiveRecord\Main;
 use App\Classes\ActiveRecord\Tables\BathStyle;
+use App\Classes\ActiveRecord\Tables\Menu;
 use App\Classes\ActiveRecord\Tables\Page;
 use App\Classes\ActiveRecord\Tables\PageCategory;
 use App\Classes\ActiveRecord\Tables\Product;
@@ -23,13 +24,13 @@ class PublicTemplateModel
 
     /**
      * Основной метод получения настроек макета, меню, seo и пр. для указаной страницы
-     * @param string $section
+     * @param string $section page,pageCategory,product,productCategory,cart,compare,favorite,bathStyle
      * @param int|string $indexOrUrlObject
      * @param bool $simple //только seo и breadcrumb
      * @return array
      */
     #[ArrayShape(['result' => "bool", 'returnData' => "array"])]
-    public static function templateSettings(string $section = '', int|string $indexOrUrlObject ='', bool $simple = false): array
+    public static function templateSettings(string $section = '', int|string $indexOrUrlObject = '', bool $simple = false): array
     {
         if (is_numeric($indexOrUrlObject)) {
             $where = 'id';
@@ -53,17 +54,20 @@ class PublicTemplateModel
         }
         $returnData = [];
         //если нужны все данные(например для первой загрузки или пререндера)
-        if($simple === false){
-        $footer = PublicTemplateModel::prepareFooter();
-        //меню
-        $menuCategory = PublicTemplateModel::getMenuCategory();
+        if ($simple === false) {
+            $footer = static::prepareFooter();
+            //меню
+            $menuCategory = static::getMenuCategory();
+            //Меню страниц
+            $menuHeader = static::getMenu('header');
             $returnData = [
                 'menuCatalog' => $menuCategory,
+                'menuHeader' => $menuHeader,
                 'footer' => $footer,
             ];
-        }
+        };
 
-        $returnData['breadcrumb'] = self::generateBreadcrumb($objectData);
+        $returnData['breadcrumb'] = static::generateBreadcrumb($objectData);
         $returnData['seo'] = static::getSeo($section, $objectData);
 
         return ['result' => true, 'returnData' => $returnData];
@@ -78,12 +82,12 @@ class PublicTemplateModel
     public static function prepareFooter(Settings|array $settings = null): array
     {
         $footerPrepared = [];
-        if(is_array($settings)){
+        if (is_array($settings)) {
             $footerRaw = $settings;
-        }elseif (is_null($settings)){
+        } elseif (is_null($settings)) {
             $settings = Settings::findOne(1);
             $footerRaw = $settings->template_footer;
-        }else{
+        } else {
             $footerRaw = $settings->template_footer;
         }
 
@@ -171,8 +175,8 @@ class PublicTemplateModel
         //добавляем префикс и постфикс
         if ($section === 'product' || $section === 'productCategory') {
             $seo['title'] = $settings->title_prefix_product . ' ' . $seo['title'] . ' ' . $settings->title_postfix_product;
-        } elseif($section !== 'index') {//для главной префиксы не добавляем
-            $seo['title'] = $settings->title_prefix . ' '. $seo['title'] . ' ' . $settings->title_postfix;
+        } elseif ($section !== 'index') {//для главной префиксы не добавляем
+            $seo['title'] = $settings->title_prefix . ' ' . $seo['title'] . ' ' . $settings->title_postfix;
         }
         return $seo;
     }
@@ -235,6 +239,133 @@ class PublicTemplateModel
             }
         }
         return $breadCrumb;
+    }
+
+
+    /**
+     * Возвращате Массив пунктов меню для указаной позиции
+     * @param string $position
+     * @return array|null
+     */
+    public static function getMenu(string $position): array|null
+    {
+        $positionCheck = ['header'=>'header'];
+        if (isset($positionCheck[$position])) {
+            $menu = Menu::find()->where(['position' => $position])->one();
+        } else {
+            $menu = null;
+        }
+        return static::getMenuData($menu)->items;
+    }
+
+
+    /**
+     * Возвращате переданное меню с подставленными ссылками вместо ключей
+     * @param Menu $menu
+     * @return Menu
+     */
+    public static function getMenuData(Menu $menu): Menu
+    {
+        $items = $menu->items;
+        $preparedMenuItems = [];
+        if (!empty($items) && is_array($items)) {
+            $pageIdArray = static::getPagesIdFromMenuItems($items);
+            $pageCategoryIdArray = static::getPageCategoryIdFromMenuItems($items);
+
+            if (!empty($pageIdArray)) {
+                $pages = Page::find()->where(['id' => $pageIdArray])
+                    ->select(['id', 'title', 'url', 'integrated', 'url_integrated'])
+                    ->indexBy()
+                    ->all();
+            } else {
+                $pages = [];
+            }
+            if (!empty($pageCategoryIdArray)) {
+                $pageCategories = PageCategory::find()->where(['id' => $pageCategoryIdArray])
+                    ->select(['id', 'name_short', 'name_full', 'url'])
+                    ->indexBy()
+                    ->all();
+            } else {
+                $pageCategories = [];
+            }
+            $preparedMenuItems = static::prepareLinkForMenu($items, $pages, $pageCategories);
+        }
+
+        $menu->items = $preparedMenuItems;
+        return $menu;
+
+    }
+
+    /**
+     * В переданных пунктах заменят ключи ссылками.
+     * @param array $menuItems
+     * @param $pages
+     * @param $pageCategories
+     * @return array
+     */
+    public static function prepareLinkForMenu(array $menuItems, $pages, $pageCategories): array
+    {
+        $preparedMenu = [];
+        foreach ($menuItems as $keyItem => $item) {
+            $preparedMenu[$keyItem] = $item;
+            if ($item['typeItem'] === 'page' && isset($pages[$item['value']])) {
+                if ($pages[$item['value']]->integrated) {
+                    $url = $pages[$item['value']]->url_integrated;
+                } else {
+                    $url = '/page/' . $pages[$item['value']]->url;
+                }
+                $preparedMenu[$keyItem]['value'] = $url;
+            }
+            if ($item['typeItem'] === 'pageCategory' && isset($pageCategories[$item['value']])) {
+                $url = '/page-category/' . $pageCategories[$item['value']]->url;
+                $preparedMenu[$keyItem]['value'] = $url;
+            }
+            //рекурсивный перебор детей
+            if (!empty($preparedMenu[$keyItem]['children']) && is_array($preparedMenu[$keyItem]['children'])) {
+                $preparedMenu[$keyItem]['children'] =
+                    static::prepareLinkForMenu($preparedMenu[$keyItem]['children'], $pages, $pageCategories);
+            }
+
+        }
+        return $preparedMenu;
+    }
+
+    /**
+     * Возвразает массив id страниц используемых в переданных пунктах меню
+     * @param array $menuItems
+     * @return array
+     */
+    public static function getPagesIdFromMenuItems(array $menuItems): array
+    {
+        $pageIdArray = [];
+        foreach ($menuItems as $item) {
+            if ($item['typeItem'] === 'page') {
+                $pageIdArray[$item['value']] = $item['value'];
+            }
+            if (!empty($item['children']) && is_array($item['children'])) {
+                $pageIdArray + static::getPagesIdFromMenuItems($item['children']);
+            }
+        }
+        return $pageIdArray;
+    }
+
+    /**
+     * * Возвразает массив id категорий страниц используемых в переданных пунктах меню
+     * @param array $menuItems
+     * @return array
+     */
+    public static function getPageCategoryIdFromMenuItems(array $menuItems): array
+    {
+        $pageCategoryIdArray = [];
+        foreach ($menuItems as $item) {
+            if ($item['typeItem'] === 'pageCategory') {
+                $pageCategoryIdArray[$item['value']] = $item['value'];
+            }
+            if (!empty($item['children']) && is_array($item['children'])) {
+                $pageCategoryIdArray + static::getPageCategoryIdFromMenuItems($item['children']);
+            }
+        }
+        return $pageCategoryIdArray;
     }
 
     /**

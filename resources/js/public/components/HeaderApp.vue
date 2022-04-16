@@ -10,10 +10,22 @@
       <div class="header-catalog">
         <div class="h-catalog-link h-link">Каталог<span class="h-catalog-link-caret"><i
             class="fas fa-caret-up"></i></span></div>
-
         <div class="h-catalog">
+          <div class="h-catalog-group">
+            <router-link class="h-catalog-link-main" :to="'/bath-style/'">Комплексные стилевые решения</router-link>
+            <div class="h-catalog-child-group" v-if="bathStyles">
+              <router-link class="h-catalog-link-child" v-for="(styleItem, keyStyle) in bathStyles"
+                           :key="$root.guid()"
+                           :to="'/bath-style/' + styleItem.url">
+                <span class="h-icon-link-child"><i class="far fa-chevron-right"></i></span>
+                <span class="h-text-link-child">{{ styleItem.name }}</span>
+              </router-link>
+            </div>
+          </div>
           <div class="h-catalog-group" v-for="(categoryMain, keyGroup) in catalog[0]">
-            <router-link class="h-catalog-link-main" :to="'/catalog/'+ categoryMain.url">{{ categoryMain.name }}</router-link>
+            <router-link class="h-catalog-link-main" :to="'/catalog/'+ categoryMain.url">
+              {{categoryMain.name}}
+            </router-link>
             <div class="h-catalog-child-group" v-if="catalog[categoryMain.id]">
               <router-link class="h-catalog-link-child" v-for="(categoryChild, keyChildCat) in catalog[categoryMain.id]"
                            :key="$root.guid()"
@@ -47,8 +59,11 @@ export default {
     catalog() {
       return this.$store.getters["templateData/menuCatalog"];
     },
+    menuHeader(){
+      return this.$store.getters["templateData/menuHeader"];
+    },
     bathStyles() {
-      return this.$store.getters["templateData/bathStyles"];
+      return this.$store.getters["bathStyle/all"];
     },
     cart: () => {
       return {

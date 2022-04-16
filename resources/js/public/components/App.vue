@@ -31,7 +31,6 @@ export default {
   },
   beforeMount(){
     this.$store.dispatch('templateData/getTemplateSettings');
-    this.$store.dispatch('bathStyle/getAllById');
     this.$store.dispatch('bathStyle/getAll');
   },
   watch:{
@@ -58,9 +57,7 @@ export default {
     },
   },
   methods: {
-    getTemplatesDate(){
 
-    }
   }
 }
 </script>
