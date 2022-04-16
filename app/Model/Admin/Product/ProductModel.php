@@ -4,6 +4,7 @@
 namespace App\Model\Admin\Product;
 
 
+use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Product;
 use App\Classes\ActiveRecord\Tables\ProductCategory;
 use App\Model\Admin\MainModel;
@@ -24,7 +25,7 @@ class ProductModel implements DefaultMethodTableClass
             if (isset($val['id']) && $val['id'] && $itemOld = Product::findOne($val['id'])) {
                 $imagesOld = $itemOld->images ?? [];
                 $folder = $itemOld->folder ?: uniqid('', true) . 'fldr' . time();
-            }else{
+            } else {
                 $val['id'] = '';
                 $imagesOld = '';
                 $folder = uniqid('', true) . 'fldr' . time();
@@ -47,11 +48,27 @@ class ProductModel implements DefaultMethodTableClass
             }
             $returnResult['id'] = $item->id;
             if ($resultSave) {
+                static::updateRelatedData($item);
                 $returnResult['result'] = true;
             }
             $returnResult['returnData'] = $item;
         }
         return $returnResult;
+    }
+
+    public static function updateRelatedData(Product $product)
+    {
+        //обновляем ссылку в банных стилях
+        $bathStyleId = $product->bath_style_id;
+        if (!empty($bathStyleId)) {
+            foreach ($bathStyleId as $styleId) {
+                $bathStyle = BathStyle::findOne($styleId);
+                $productsInStyle = $bathStyle->products_id;
+                $productsInStyle[$product->id] = $product->id;
+                $bathStyle->products_id = $productsInStyle;
+                $bathStyle->save();
+            }
+        }
     }
 
     /**
