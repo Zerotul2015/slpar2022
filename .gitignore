@@ -2,3 +2,4 @@
 /vendor/
 /.yarn/
 /node_modules/
+/public/images/
