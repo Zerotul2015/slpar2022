@@ -4,74 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Перед демонстрацией">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил проверку уникальности артикула">
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-BoldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-BoldItalic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBoldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBoldItalic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Italic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Light.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Light.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-LightItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-LightItalic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Medium.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-MediumItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-MediumItalic.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBoldItalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBoldItalic.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/100/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/1280/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/1920/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/250/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/50/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/500/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/800/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/c3fd666fec090d2f391056419cc81e71.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background/c3fd666fec090d2f391056419cc81e71.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background_mobile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background_tablet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/large/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/logo_default/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/medium/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/small/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb_big/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb_manufacturer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/100/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/1280/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/1920/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/250/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/50/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/500/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/800/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/header_background/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/header_background_mobile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/header_background_tablet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/large/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/logo_default/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/medium/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/small/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/thumb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/thumb_big/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/services/thumb_manufacturer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/100/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/1280/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/1920/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/23a0c10be630cfd0836719ee165dfe11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/250/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/374691b8cf9c3725f8303af2f981b213.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/40b952d43c452499c61570dc50b6b060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/50/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/500/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/800/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/cdbc3640f38c90af9ebd1ce555595a56.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/header_background/23a0c10be630cfd0836719ee165dfe11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/header_background/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/header_background_mobile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/header_background_tablet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/large/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/logo_default/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/medium/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/small/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/thumb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/thumb_big/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/template/thumb_manufacturer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +69,7 @@
     <option name="NEW_BASE" value="master" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -346,29 +310,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/kamin42.ru&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/fonts",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\fonts" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components\search" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\scss\public\elements" />
@@ -601,21 +565,8 @@
       <workItem from="1650000922245" duration="11542000" />
       <workItem from="1650074670510" duration="21296000" />
       <workItem from="1650120638411" duration="3761000" />
-      <workItem from="1650166946810" duration="5528000" />
-    </task>
-    <task id="LOCAL-00093" summary="Начал внедрять rabbitmq">
-      <created>1638203480838</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1638203480839</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Фиксация изменений перед экспериментами">
-      <created>1638898954551</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1638898954551</updated>
+      <workItem from="1650166946810" duration="9099000" />
+      <workItem from="1650194671659" duration="969000" />
     </task>
     <task id="TERMO42-1" summary="Спарсить товар">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -631,13 +582,6 @@
       <workItem from="1638978929154" duration="17228000" />
       <workItem from="1639054468007" duration="19212000" />
       <workItem from="1639127832091" duration="12467000" />
-    </task>
-    <task id="LOCAL-00095" summary="TERMO42-1 Учел что может быть миниатюра видео с youtube">
-      <created>1638982145013</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1638982145013</updated>
     </task>
     <task id="LOCAL-00096" summary="переименовал метод в moveFileFromTemp">
       <created>1639216912850</created>
@@ -995,18 +939,31 @@
       <option name="project" value="LOCAL" />
       <updated>1650122893925</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="исправил опечатку в тексте кнопки">
+      <created>1650184118959</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1650184118959</updated>
+    </task>
+    <task id="LOCAL-00136" summary="исправил опечатку в тексте кнопки">
+      <created>1650184170092</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1650184170092</updated>
+    </task>
+    <task id="LOCAL-00137" summary="добавил проверку уникальности артикула">
+      <created>1650184207781</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1650184207781</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
-    <servers>
-      <YouTrack url="https://kemit.myjetbrains.com">
-        <option name="defaultSearch" value="project: TERMO42 Assignee: me sort by: updated #Unresolved" />
-        <option name="preferredOpenTaskState">
-          <CustomTaskState id="In progress" name="In progress" />
-        </option>
-        <username>zerotul</username>
-      </YouTrack>
-    </servers>
+    <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -1026,8 +983,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix width for category in products-grid__product" />
-    <MESSAGE value="fix style and other minor bugs" />
     <MESSAGE value="init project" />
     <MESSAGE value="uncomment emit on change" />
     <MESSAGE value="change logo" />
@@ -1051,7 +1006,9 @@
     <MESSAGE value="фиксация изменений" />
     <MESSAGE value="добавил метод для обновления связанных данных" />
     <MESSAGE value="Перед демонстрацией" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перед демонстрацией" />
+    <MESSAGE value="исправил опечатку в тексте кнопки" />
+    <MESSAGE value="добавил проверку уникальности артикула" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил проверку уникальности артикула" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
