@@ -121,7 +121,7 @@ export default {
       toggleButtonOpen: '<span class="button-icon"><i class="far fa-expand-arrows-alt"></i></span><span class="button-icon">подробнее</span>',
       //start save, delete
       saveStatus: null, // 1 -  успешно, 2 - ошибка, 0 | null - без изменений
-      saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохарнить</span>',
+      saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохранить</span>',
       saveButtonSuccess: '<span class="button-icon"><i class="far fa-check"></i></span><span class="button-icon">изменения записаны</span>',
       saveButtonError: '<span class="button-icon"><i class="far fa-times"></i></span><span class="button-icon">ошибка при сохранении</span>',
       deleteStatus: null, // 1 -  требуется подтверждение, 2 - ошибка, 0 | null - без изменений
