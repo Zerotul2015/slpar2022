@@ -19,9 +19,15 @@ class ProductModel implements DefaultMethodTableClass
     public static function Save($val): array
     {
         $returnResult = ['result' => false, 'id' => null, 'returnData' => null];
-        if (!isset($val['name']) || empty($val['name'])) {
-            $returnResult['error'] = 'Поля "Название" обязательно для заполнения';
-        } else {
+        $emptyField = empty($val['name']) || empty($val['article']);
+        if (empty($val['name'])) {
+            $returnResult['error'] = '"Название" обязательно для заполнения. ';
+        }
+        if (empty($val['article'])) {
+            $returnResult['error'] = '"Артикул" обязательно для заполнения. ';
+        }
+
+        if (!$emptyField) {
             if (isset($val['id']) && $val['id'] && $itemOld = Product::findOne($val['id'])) {
                 $imagesOld = $itemOld->images ?? [];
                 $folder = $itemOld->folder ?: uniqid('', true) . 'fldr' . time();

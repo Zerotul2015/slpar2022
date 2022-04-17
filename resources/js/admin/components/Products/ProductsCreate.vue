@@ -34,7 +34,12 @@
       </div>
       <div class="form-section form-section_column">
         <div class="input-block input-block_column input-block_highlight">
-          <label :for="'article-' + guid">Артикул:</label>
+          <label :for="'article-' + guid">
+            <span v-if="articleChecked"
+                  :class="{'text-color-green': (articleChecked && !articleUsed),'error':(articleChecked && articleUsed)}"
+                  v-html="articleCheckIcon"></span>Артикул:</label>
+          <div v-if="articleChecked && articleUsed" :class="{'error':(articleChecked && articleUsed)}"
+               v-html="articleCheckText"></div>
           <input :id="'article-' + guid" class="input" type="text" v-model="item.article">
         </div>
         <div class="input-block input-block_column input-block_highlight">
@@ -99,7 +104,8 @@
         </button>
       </div>
       <div class="form-section">
-        <div v-for="(specGroup, keyGroup) in item.specifications" style="display: grid;grid-auto-flow: column; align-items: center; grid-gap:.25rem">
+        <div v-for="(specGroup, keyGroup) in item.specifications"
+             style="display: grid;grid-auto-flow: column; align-items: center; grid-gap:.25rem">
           <div class="input-block input-block_column input-block_highlight">
             <label :for="'dimension-length'+guid" class="label">Название:</label>
             <input :id="'dimension-length' +guid" class="input" type="text" v-model="specGroup.name">
@@ -214,6 +220,7 @@ import api from "../../common/api";
 import editor from "@tinymce/tinymce-vue"
 import VueToggles from "vue-toggles";
 import {isNull} from "lodash";
+import debounce from "lodash/debounce";
 
 export default {
   name: "ProductsCreate",
@@ -232,6 +239,9 @@ export default {
       error: null,
       errorText: null,
       notFoundProduct: false,
+      articleUsed: false,
+      articleUsedId: null,
+      articleChecked: false,
       toggleSeo: false,
       item: {},
       price: null,
@@ -298,8 +308,8 @@ export default {
         'image_main': null,
         'bath_style_id': [],
       };
-    }else{
-      if(!this.item.specifications){
+    } else {
+      if (!this.item.specifications) {
         this.item.specifications = [];
       }
     }
@@ -312,6 +322,10 @@ export default {
   mounted() {
   },
   watch: {
+    "item.article"(newArticle) {
+      this.articleChecked = false;
+      this.checkArticle();
+    },
     seoDescription(newVal, oldVal) {
       this.item.seo.description = newVal;
     },
@@ -379,6 +393,21 @@ export default {
     //end save, delete
   },
   computed: {
+    articleCheckIcon() {
+      let icon = '<i class="far fa-check"></i> ';
+      if (this.articleChecked && this.articleUsed) {
+        icon = '<i class="far fa-times"></i> ';
+      }
+      return icon;
+    },
+    articleCheckText() {
+      let text = '';
+      if (this.articleChecked && this.articleUsed) {
+        text = 'Артикут уже ' +
+            '<a href="/admin/products/edit/' + this.articleUsedId + '" target="_blank">используется</a>';
+      }
+      return text;
+    },
     preparedImages() {
       let imageReturn = [];
       if (this.item.images && this.item.images.length > 0) {
@@ -450,11 +479,37 @@ export default {
     //end save, delete
   },
   methods: {
-    addSpecification(){
-      if(!this.item.specifications){
-        this.item.specifications= [];
+    checkArticle: debounce(async function () {
+      api.getData('product', {where: 'article', 'searchString': this.item.article})
+          .then((r) => {
+            this.isLoading = false;
+            if (r.returnData === null) {
+              this.articleUsed = false;
+              this.articleChecked = true;
+            } else {
+              this.articleUsedId = r.returnData[0] && r.returnData[0].id ? r.returnData[0].id : null;
+              if (this.articleUsedId === this.item.id) {
+                this.articleUsed = false;
+                this.articleChecked = true;
+              } else {
+                this.articleUsed = true;
+                this.articleChecked = true;
+              }
+            }
+            if (r.error) {
+              this.error = 'Во время проверки артикула возникла ошибка: ' + r.error ? r.error : 'неизвестная ошибка';
+            }
+          })
+          .catch((e) => {
+            this.isLoading = false;
+            this.error = e.error;
+          })
+    }, 1500),
+    addSpecification() {
+      if (!this.item.specifications) {
+        this.item.specifications = [];
       }
-      this.item.specifications.push({'name':'','val':''});
+      this.item.specifications.push({'name': '', 'val': ''});
     },
     setImageMain(imageKey) {
       if (this.item.images[imageKey]) {
@@ -516,6 +571,7 @@ export default {
               }
               if (this.idCopy) {
                 this.item.id = null;
+                this.item.article = '';
                 this.item.images = [];
                 this.item.image_main = null;
                 this.item.videos = null;

@@ -4,49 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил метод для обновления связанных данных">
-      <change afterPath="$PROJECT_DIR$/app/Model/BathStyle/BathStyleModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Breadcrumb.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Compare/Compare.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Errors/404.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Favorite/Favorite.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Page/Page.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Page/PageCategory.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_breadcrumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Перед демонстрацией">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/BathStyle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/BathStyle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PageCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenuItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenuItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategoriesCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Pages/PagesCategoriesCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Products/ProductCatalogItem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Product/ProductModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/100/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/1280/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/1920/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/250/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/50/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/500/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/800/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/c3fd666fec090d2f391056419cc81e71.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background/c3fd666fec090d2f391056419cc81e71.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background_mobile/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/header_background_tablet/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/large/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/logo_default/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/medium/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/small/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb_big/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banner/thumb_manufacturer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/100/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/1280/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/1920/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/250/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/50/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/500/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/800/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/header_background/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/header_background_mobile/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/header_background_tablet/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/large/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/logo_default/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/medium/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/small/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/thumb/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/thumb_big/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/services/thumb_manufacturer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/100/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/1280/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/1920/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/23a0c10be630cfd0836719ee165dfe11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/250/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/374691b8cf9c3725f8303af2f981b213.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/40b952d43c452499c61570dc50b6b060.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/50/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/500/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/800/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/cdbc3640f38c90af9ebd1ce555595a56.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/header_background/23a0c10be630cfd0836719ee165dfe11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/header_background/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/header_background_mobile/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/header_background_tablet/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/large/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/logo_default/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/medium/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/small/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/thumb/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/thumb_big/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/template/thumb_manufacturer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,22 +346,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/kamin42.ru",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/kamin42.ru&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
@@ -575,14 +600,8 @@
       <workItem from="1649999305723" duration="874000" />
       <workItem from="1650000922245" duration="11542000" />
       <workItem from="1650074670510" duration="21296000" />
-      <workItem from="1650120638411" duration="1129000" />
-    </task>
-    <task id="LOCAL-00092" summary="Написал парсер для teremonline.ru">
-      <created>1638107134160</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1638107134161</updated>
+      <workItem from="1650120638411" duration="3761000" />
+      <workItem from="1650166946810" duration="5528000" />
     </task>
     <task id="LOCAL-00093" summary="Начал внедрять rabbitmq">
       <created>1638203480838</created>
@@ -969,7 +988,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650089634073</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Перед демонстрацией">
+      <created>1650122893924</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1650122893925</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers>
@@ -1000,7 +1026,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="TERMO42-18 Убрать настройку шапки и логотипа" />
     <MESSAGE value="fix width for category in products-grid__product" />
     <MESSAGE value="fix style and other minor bugs" />
     <MESSAGE value="init project" />
@@ -1025,7 +1050,8 @@
     <MESSAGE value="написал методы для формирования и вывода меню" />
     <MESSAGE value="фиксация изменений" />
     <MESSAGE value="добавил метод для обновления связанных данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил метод для обновления связанных данных" />
+    <MESSAGE value="Перед демонстрацией" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перед демонстрацией" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
