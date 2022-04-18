@@ -16,7 +16,7 @@
     <div class="bsp-sliders">
       <div class="bsp-s-top-line">
         <div class="bsp-s-previous" @click="previousStyle"><i class="far fa-chevron-left"></i></div>
-        <div class="bsp-s-current-title" v-html="styleName"></div>
+        <div class="bsp-s-current-title" v-html="'Стиль ' + styleName"></div>
         <div class="bsp-s-next" @click="nextStyle"><i class="far fa-chevron-right"></i></div>
       </div>
       <div class="bsp-s-current-image">
@@ -36,21 +36,25 @@
 
     </div>
     <breadcrumb></breadcrumb>
-    <div class="bsp-products-group" v-for="(catItem) in productsCategory">
+    <div class="bsp-products-group" v-for="(catItem) in productsCategory"
+         v-show="filterBindingCategoryState === false || (catItem.binding_style === filterBindingCategory)">
       <h2>{{catItem.name}}</h2>
-      <div class="bsp-products-wrap">
-      <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>
-      </div>
+      <vue-horizontal class="bsp-products-wrap">
+        <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>
+      </vue-horizontal>
+<!--      <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>-->
+
     </div>
   </div>
 </template>
 
 <script>
+import VueHorizontal from "vue-horizontal";
 import ProductCard from "../Product/ProductCard";
 import Breadcrumb from "../Breadcrumb";
 export default {
   name: "BathStyle",
-  components: {Breadcrumb, ProductCard},
+  components: {Breadcrumb, ProductCard,VueHorizontal},
   props:{
     url:{
       type:String,
@@ -58,7 +62,7 @@ export default {
     }
   },
   data: () => ({
-    toggleDescriptionStyle: false,
+    toggleDescriptionStyle: false, //открыто или нет описание стиля(на изображении слайда)
   }),
   beforeMount() {
     if(this.url){
@@ -91,11 +95,17 @@ export default {
     },
   },
   computed: {
+    filterBindingCategory(){
+      return this.$store.getters['bathStyle/filterBy'];
+    },
+    filterBindingCategoryState(){
+      return this.$store.getters['bathStyle/filterToggle'];
+    },
     products(){
-      return this.$store.getters['bathStyle/productsData']
+      return this.$store.getters['bathStyle/productsData'];
     },
     productsCategory(){
-      return this.$store.getters['bathStyle/productsCategoryData']
+      return this.$store.getters['bathStyle/productsCategoryData'];
     },
     selectStyleKey(){
       return this.$store.getters['bathStyle/selectKey'];

@@ -1,9 +1,24 @@
+.header-page {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  transition:top .5s;
+  /* position: fixed; */
+  left: 0;
+  right: 0;
+  top: -100%;
+  z-index:9999;
+}
+.header-page_fixed{
+  position:fixed;
+  top:0;
+  background: $grey;
+  box-shadow: 0 0 5px $grey;
+}
 .header-wrap{
   position:relative;
   background: $grey;
-  margin-top: 1.5rem;
-  margin-bottom:1.5rem;
 }
+
 .header-wrap::after{
   position:absolute;
   content: '';
@@ -191,4 +206,58 @@ svg.icon-input-search.hs-block {
 }
 .breadcrumb-wrap{
   @extend .default-width-content;
+}
+
+// шапка после прокуртки
+//фильтрация товара в стилях
+
+.h-fixed-second-line {
+  color:$white;
+  text-transform:uppercase;
+}
+
+.hf-s-title-binding {
+  text-align:center;
+}
+
+.hf-s-binging-toggle-wrap {
+  display:grid;
+  grid-auto-flow:column;
+  justify-content:center;
+  grid-gap:3rem;
+}
+
+.hf-s-binging-toggle {
+  color:$grey-light;
+  border: 1px solid $grey-light;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+.hf-s-binging-toggle:hover{
+  cursor:pointer;
+  color:$white;
+  text-shadow: 0 0 5px $white;
+}
+
+.hf-s-binging-toggle_active{
+  color:$brown-light;
+  border-color: $brown-light;
+  cursor:none;
+}
+
+
+.hf-s-binging-toggle_active:hover{
+  cursor:pointer;
+  text-shadow: none;
+  color:$brown-light;
+}
+.hf-s-binding-toggle-reset {
+  text-align: center;
+  font-size: $font-size-small;
+  color: $grey-light;
+  text-transform: lowercase;
+}
+.hf-s-binding-toggle-reset:hover{
+  cursor:pointer;
+  text-decoration: underline;
 }

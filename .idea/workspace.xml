@@ -4,37 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил проверку уникальности артикула">
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-BoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-BoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-ExtraBoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-LightItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-LightItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-MediumItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-MediumItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/fonts/OpenSans-SemiBoldItalic.woff2" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Закончил раздел стилей">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/BathStyle/BathStyleModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/BathStyle/BathStyleModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/index.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/footer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,22 +301,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/fonts",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/fonts&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\fonts" />
@@ -566,7 +557,8 @@
       <workItem from="1650074670510" duration="21296000" />
       <workItem from="1650120638411" duration="3761000" />
       <workItem from="1650166946810" duration="9099000" />
-      <workItem from="1650194671659" duration="969000" />
+      <workItem from="1650194671659" duration="5863000" />
+      <workItem from="1650287884706" duration="9327000" />
     </task>
     <task id="TERMO42-1" summary="Спарсить товар">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -582,13 +574,6 @@
       <workItem from="1638978929154" duration="17228000" />
       <workItem from="1639054468007" duration="19212000" />
       <workItem from="1639127832091" duration="12467000" />
-    </task>
-    <task id="LOCAL-00096" summary="переименовал метод в moveFileFromTemp">
-      <created>1639216912850</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1639216912851</updated>
     </task>
     <task id="LOCAL-00097" summary="написал сопоставление для категорий">
       <created>1639225487639</created>
@@ -960,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650184207781</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Сменил шрифт">
+      <created>1650196566627</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1650196566627</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -983,8 +975,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="init project" />
-    <MESSAGE value="uncomment emit on change" />
     <MESSAGE value="change logo" />
     <MESSAGE value="FIX: Deprecated: Automatic conversion of false to array" />
     <MESSAGE value="Исправил орфографию в комментариях" />
@@ -1008,7 +998,9 @@
     <MESSAGE value="Перед демонстрацией" />
     <MESSAGE value="исправил опечатку в тексте кнопки" />
     <MESSAGE value="добавил проверку уникальности артикула" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил проверку уникальности артикула" />
+    <MESSAGE value="Сменил шрифт" />
+    <MESSAGE value="Закончил раздел стилей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Закончил раздел стилей" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

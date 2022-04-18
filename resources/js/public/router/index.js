@@ -9,7 +9,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Home',
+            name: 'index',
             component: () => import("../components/BathStyle/BathStyle.vue"),
         },
         {

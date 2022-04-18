@@ -5437,6 +5437,7 @@ __metadata:
     vue: ^2.6.14
     vue-awesome-swiper: ^4.1.1
     vue-color: ^2.8.1
+    vue-horizontal: ^0.8.12
     vue-horizontal-list: "*"
     vue-loader: ^15.9.8
     vue-multiselect: ^2.1.6
@@ -6000,6 +6001,15 @@ __metadata:
   peerDependencies:
     vue: ^2.6.11
   checksum: e9490df5a0c959b5e970282f26d4764a0d4328e2d959b228ab0c90427cd524b64b4d2cce24134939b461d4357305fbb4fd083253f410a42965e494953f04225a
+  languageName: node
+  linkType: hard
+
+"vue-horizontal@npm:^0.8.12":
+  version: 0.8.12
+  resolution: "vue-horizontal@npm:0.8.12"
+  peerDependencies:
+    vue: ^2.6.11
+  checksum: 74eb28f514053e6cafe0952dba822c66f8b7475ead423218ea5aa33bb6ded28f7df27e4e1d2b04f6e6c690af683610a934bead58802dc04ab73b2bf030b5133f
   languageName: node
   linkType: hard
 

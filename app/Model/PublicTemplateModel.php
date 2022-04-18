@@ -24,7 +24,7 @@ class PublicTemplateModel
 
     /**
      * Основной метод получения настроек макета, меню, seo и пр. для указаной страницы
-     * @param string $section page,pageCategory,product,productCategory,cart,compare,favorite,bathStyle
+     * @param string $section index,page,pageCategory,product,productCategory,cart,compare,favorite,bathStyle
      * @param int|string $indexOrUrlObject
      * @param bool $simple //только seo и breadcrumb
      * @return array

@@ -6,6 +6,8 @@ const state = () => ({
     selectedStyleId: null,
     styleUrl: '',
     bathStyles: [],
+    filterBy:'', //fireplace | bath
+    filterToggle:false,
     productsData: {},
     productsCategoryData: {}
 })
@@ -17,6 +19,12 @@ const getters = {
     },
     selectId(state) {
         return state.selectedStyleId;
+    },
+    filterBy(state) {
+        return state.filterBy;
+    },
+    filterToggle(state) {
+        return state.filterToggle;
     },
     bathStylesByUrl: (state) => (url) => {
         let bathStyle = state.bathStyles.filter(item => item.url === url);
@@ -39,6 +47,17 @@ const getters = {
 
 // actions
 const actions = {
+    setFilter({commit} ,filterName){
+        if (filterName === 'fireplace' || filterName === 'bath') {
+            commit('setFilterBy', filterName);
+            commit('setFilterToggle', true);
+        }
+
+    },
+    disableFilter({commit}){
+        commit('setFilterToggle', false);
+        commit('setFilterBy', null);
+    },
     getProductsData({commit, state}) {
         //getProductsData
         if (state.bathStyles[state.selectedStyleKey]) {
@@ -76,6 +95,14 @@ const actions = {
 
 // mutations
 const mutations = {
+    setFilterBy(state, filterName) {
+        if (filterName === 'fireplace' || filterName === 'bath') {
+            state.filterBy = filterName;
+        }
+    },
+    setFilterToggle(state, toggleStatus) {
+        state.filterToggle = !!toggleStatus;
+    },
     setStyleUrl(state, styleUrl) {
         state.styleUrl = styleUrl;
     },

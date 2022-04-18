@@ -20,6 +20,7 @@
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^4.1.1",
     "vue-color": "^2.8.1",
+    "vue-horizontal": "^0.8.12",
     "vue-horizontal-list": "*",
     "vue-multiselect": "^2.1.6",
     "vue-router": "^3.5.3",

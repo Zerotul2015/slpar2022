@@ -6,8 +6,8 @@ const state = () => ({
     menuCatalog: {},
     menuHeader: {},
     footer: {},
-    section: 'index',
-    sectionKey: null,
+    section: 'index', //index,page,pageCategory,product,productCategory,cart,compare,favorite,bathStyle Берется из названия route
+    sectionKey: null, // Берется из параметра url в router
     seo: {'title': '', 'description': ''}
 })
 

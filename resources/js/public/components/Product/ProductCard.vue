@@ -19,9 +19,6 @@
       <button class="btn" v-html="btnFavoriteText"></button>
       <button class="btn btn_green" v-html="btnCartText"></button>
     </div>
-    <div class="pc-favorite">
-      <icon-svg icon="svg-favorite"></icon-svg>
-    </div>
   </div>
 </template>
 
@@ -38,7 +35,7 @@ export default {
   },
   computed:{
     btnFavoriteText(){
-      let text = '<span class="btn-text">нравится</span>'
+      let text = '<span class="btn-text">в закладки</span>'
       let icon = '';
       return icon + text;
     },

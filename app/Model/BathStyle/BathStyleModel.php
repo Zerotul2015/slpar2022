@@ -35,7 +35,7 @@ class BathStyleModel
         if ($bathStyleOrKey) {
             $productsId = $bathStyleOrKey->products_id;
             if (!empty($productsId)) {
-                $products = Product::find()->where(['id' => $productsId])->indexBy()->findGroupBy('category_id');
+                $products = Product::find()->where(['id' => $productsId])->findGroupBy('category_id');
             }
         }
         return $products;
