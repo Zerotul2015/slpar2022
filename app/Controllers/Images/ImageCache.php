@@ -49,6 +49,11 @@ class ImageCache
                 'height' => 250,
                 'fit' => true
             ],
+            'thumb_medium' => [
+                'width' => 350,
+                'height' => 350,
+                'fit' => true
+            ],
             'thumb_big' => [
                 'width' => 500,
                 'height' => 500,

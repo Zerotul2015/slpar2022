@@ -58,7 +58,7 @@
         </div>
         <div class="hf-s-binging-toggle"
              :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'fireplace'}"
-             @click="changeBindingCategoryStyle('fireplace')">Каминов и печей
+             @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ export default {
       return this.$store.getters["templateData/section"];
     },
     headerFixed() {
-      return this.$root.scrollY > window.innerHeight / 2;
+      return this.$root.scrollY > 0;
     },
     catalog() {
       return this.$store.getters["templateData/menuCatalog"];

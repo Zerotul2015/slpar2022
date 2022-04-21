@@ -208,6 +208,29 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/cache" />
       <excludeFolder url="file://$MODULE_DIR$/.yarn" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/61ef5cdcdca883.84728818fldr1643076828" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/61ef5e0eda1728.69266301fldr1643077134" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/61ef9a8611edc9.48447201fldr1643092614" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/61ef9c3b24e729.28961940fldr1643093051" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/625bcd9a515540.40346378fldr1650183578" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/625bcdaf3c1118.10500452fldr1650183599" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/6252e1ba3c3bc5.91413881fldr1649598906" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/6252e1e43e5b87.32820693fldr1649598948" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/categories/60983d0b9b3371.54237384fldr1620589835" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092ceb0438d00.32108585fldr1620233904/thumb" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092cf9e0c6c42.64261784fldr1620234142" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092cf677a4fc2.04912483fldr1620234087" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d1a209d369.36057951fldr1620234658" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d1d57a2136.49033318fldr1620234709" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d20ded3b19.75475978fldr1620234765" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d067eb4649.12800261fldr1620234343" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d368c2e5d2.72749877fldr1620235112" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d0870ef083.36751706fldr1620234375" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/manufacturers/6092d2307b1f31.93635516fldr1620234800" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/bath-style" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/pages" />
+      <excludeFolder url="file://$MODULE_DIR$/public/images/products" />
+      <excludeFolder url="file://$MODULE_DIR$/storage" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

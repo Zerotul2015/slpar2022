@@ -4,8 +4,10 @@
       <div class="bsp-h-top">Комплексный подход к декорированию бань и саун</div>
       <div class="bsp-h-middle">Аксессуары и декор</div>
       <div class="bsp-h-bottom">
-        <div>Для бань и саун</div>
-        <div>Каминов и печей</div>
+        <div class="bsp-h-toggle-binding" :class="{'bsp-h-toggle-binding_active':selectBindingFilterStyle === 'bath'}"
+             @click="changeBindingCategoryStyle('bath')">Для бань и саун</div>
+        <div class="bsp-h-toggle-binding" :class="{'bsp-h-toggle-binding_active':selectBindingFilterStyle === 'fireplace'}"
+             @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей</div>
       </div>
       <div class="bsp-h-bottom-end">
         <span class="bsp-s-title-icon-toggle" style="margin-right:.5rem"><i class="far fa-chevron-down"></i></span>
@@ -39,8 +41,9 @@
     <div class="bsp-products-group" v-for="(catItem) in productsCategory"
          v-show="filterBindingCategoryState === false || (catItem.binding_style === filterBindingCategory)">
       <h2>{{catItem.name}}</h2>
-      <vue-horizontal class="bsp-products-wrap">
-        <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>
+      <vue-horizontal class="bsp-products-wrap" responsive>
+        <ProductCard class="product-card_slider" v-for="(productItem) in products[catItem.id]"
+                     :product="productItem" :key="$root.guid()" image-size="thumb_medium"></ProductCard>
       </vue-horizontal>
 <!--      <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>-->
 
@@ -137,6 +140,9 @@ export default {
         return '';
       }
     },
+    selectBindingFilterStyle() {
+      return this.$store.getters['bathStyle/filterBy'];
+    },
   },
   methods: {
     nextStyle() {
@@ -153,6 +159,16 @@ export default {
         this.$store.dispatch("bathStyle/setActiveStyleKey", this.countStyles - 1)
       }
     },
+    changeBindingCategoryStyle(bindingName) {
+      console.log(bindingName);
+      if (bindingName === 'fireplace' || bindingName === 'bath') {
+        if (bindingName === this.selectBindingFilterStyle) {
+          this.$store.dispatch('bathStyle/disableFilter');
+        } else {
+          this.$store.dispatch('bathStyle/setFilter', bindingName);
+        }
+      }
+    }
   },
 }
 </script>
@@ -165,4 +181,40 @@ export default {
 .bsp-s-title-icon-toggle_up {
   transform: rotate(180deg);
 }
+
+
+.bsp-products-wrap >>> .v-hl-btn svg {
+  width: 40px;
+  height: 40px;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 20px;
+  background: none;
+  color:rgb(60, 171, 61);
+  box-shadow:none;
+}
+
+.bsp-products-wrap >>> .v-hl-btn svg:hover {
+  background: rgb(60, 171, 61);
+  color:#ffffff;
+}
+@media (min-width: 640px) {
+  .bsp-products-wrap  .product-card_slider {
+    width: calc((100% - 0.5rem) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .bsp-products-wrap  .product-card_slider {
+    width: calc((100% - (2 * 0.5rem)) / 3);
+  }
+}
+@media (min-width: 1280px) {
+  .bsp-products-wrap  .product-card_slider {
+    width: calc((100% - (3 * 0.5rem)) / 4);
+  }
+}
+.bsp-products-wrap .v-hl-responsive>*{
+  margin-right:.5rem;
+}
+
 </style>

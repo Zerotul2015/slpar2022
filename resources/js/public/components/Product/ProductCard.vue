@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <div class="pc-name">{{product.name}}</div>
+    <div class="pc-name">{{ product.name }}</div>
     <img class="pc-image-main" :src="imageMain">
     <div class="pc-price-wrap" v-if="product.price_on_request">
       Цена по запросу
@@ -24,6 +24,7 @@
 
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
+
 export default {
   name: "ProductCard",
   components: {IconSvg},
@@ -31,23 +32,31 @@ export default {
     product: {
       type: Object,
       required: true
-    }
+    },
+    imageSize: {
+      type: String,
+      required: false
+    },
   },
-  computed:{
-    btnFavoriteText(){
+  computed: {
+    btnFavoriteText() {
       let text = '<span class="btn-text">в закладки</span>'
       let icon = '';
       return icon + text;
     },
-    btnCartText(){
+    btnCartText() {
       let text = '<span class="btn-text">в корзине</span>'
       let icon = '';
       return icon + text;
     },
-    imageMain(){
+    imageMain() {
       let image = '/build/images/noimg.png/';
-      if(this.product.image_main){
-        image = '/images/products/' + this.product.folder + '/thumb/' + this.product.image_main
+      let availableImageSize = {'thumb': true, 'thumb_medium': true}
+      let imageSize = (this.imageSize && availableImageSize[this.imageSize]) ? this.imageSize : 'thumb';
+      console.log(imageSize);
+      console.log(this.imageSize);
+      if (this.product.image_main) {
+        image = '/images/products/' + this.product.folder + '/' + imageSize + '/' + this.product.image_main
       }
       return image;
     }

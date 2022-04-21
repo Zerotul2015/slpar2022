@@ -3,3 +3,8 @@
 /.yarn/
 /node_modules/
 /public/images/
+/public/images/categories/
+/public/images/certificates/
+/public/images/favicon/
+/public/images/manufacturers/
+/public/images/other/

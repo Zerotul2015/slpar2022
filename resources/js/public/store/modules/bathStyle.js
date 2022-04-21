@@ -98,6 +98,8 @@ const mutations = {
     setFilterBy(state, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath') {
             state.filterBy = filterName;
+        }else{
+            state.filterBy = '';
         }
     },
     setFilterToggle(state, toggleStatus) {
