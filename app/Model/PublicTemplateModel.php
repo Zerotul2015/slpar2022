@@ -249,7 +249,7 @@ class PublicTemplateModel
      */
     public static function getMenu(string $position): array|null
     {
-        $positionCheck = ['header'=>'header'];
+        $positionCheck = ['header' => 'header'];
         if (isset($positionCheck[$position])) {
             $menu = Menu::find()->where(['position' => $position])->one();
         } else {
@@ -307,25 +307,28 @@ class PublicTemplateModel
     {
         $preparedMenu = [];
         foreach ($menuItems as $keyItem => $item) {
-            $preparedMenu[$keyItem] = $item;
-            if ($item['typeItem'] === 'page' && isset($pages[$item['value']])) {
-                if ($pages[$item['value']]->integrated) {
-                    $url = $pages[$item['value']]->url_integrated;
-                } else {
-                    $url = '/page/' . $pages[$item['value']]->url;
+            if (empty($item['value'])) {
+                continue;
+            } else {
+                $preparedMenu[$keyItem] = $item;
+                if ($item['typeItem'] === 'page' && isset($pages[$item['value']])) {
+                    if ($pages[$item['value']]->integrated) {
+                        $url = $pages[$item['value']]->url_integrated;
+                    } else {
+                        $url = '/page/' . $pages[$item['value']]->url;
+                    }
+                    $preparedMenu[$keyItem]['value'] = $url;
                 }
-                $preparedMenu[$keyItem]['value'] = $url;
+                if ($item['typeItem'] === 'pageCategory' && isset($pageCategories[$item['value']])) {
+                    $url = '/page-category/' . $pageCategories[$item['value']]->url;
+                    $preparedMenu[$keyItem]['value'] = $url;
+                }
+                //рекурсивный перебор детей
+                if (!empty($preparedMenu[$keyItem]['children']) && is_array($preparedMenu[$keyItem]['children'])) {
+                    $preparedMenu[$keyItem]['children'] =
+                        static::prepareLinkForMenu($preparedMenu[$keyItem]['children'], $pages, $pageCategories);
+                }
             }
-            if ($item['typeItem'] === 'pageCategory' && isset($pageCategories[$item['value']])) {
-                $url = '/page-category/' . $pageCategories[$item['value']]->url;
-                $preparedMenu[$keyItem]['value'] = $url;
-            }
-            //рекурсивный перебор детей
-            if (!empty($preparedMenu[$keyItem]['children']) && is_array($preparedMenu[$keyItem]['children'])) {
-                $preparedMenu[$keyItem]['children'] =
-                    static::prepareLinkForMenu($preparedMenu[$keyItem]['children'], $pages, $pageCategories);
-            }
-
         }
         return $preparedMenu;
     }
