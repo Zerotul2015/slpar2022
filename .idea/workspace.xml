@@ -4,37 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="поправил стил переключателей слайдера товаров">
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements/_others.scss" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Добавил свойста(массив возвращаемых данных) для стандартизации api.">
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/MainModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/_elements.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_main_content.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/100/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/1280/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/1920/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/250/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/50/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/500/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/7108b4126942f58d6e3e585db232f1d1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/78c5c010628dee1a85cefb0e2d61d584.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/800/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/header_background/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/header_background_mobile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/header_background_tablet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/large/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/logo_default/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/medium/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/small/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/thumb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/thumb_big/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/categories/thumb_manufacturer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base_backup/slpar2022.sql" beforeDir="false" afterPath="$PROJECT_DIR$/base_backup/slpar2022.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_breadcrumb.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
@@ -316,7 +311,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/images",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/app/Model",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -331,11 +326,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\fonts" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\components\search" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model\Notification" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model\Shop\Cart" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\images" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\scss\public\elements" />
@@ -573,22 +568,8 @@
       <workItem from="1650287884706" duration="9499000" />
       <workItem from="1650340986915" duration="3430000" />
       <workItem from="1650432425783" duration="3971000" />
-      <workItem from="1650533924285" duration="3379000" />
-    </task>
-    <task id="TERMO42-1" summary="Спарсить товар">
-      <branch name="master" repository="$PROJECT_DIR$" />
-      <branch name="master" repository="$PROJECT_DIR$" original="true" />
-      <created>1638906127437</created>
-      <option name="issue" value="true" />
-      <url>https://kemit.myjetbrains.com/issue/TERMO42-1</url>
-      <option name="number" value="1" />
-      <option name="presentableId" value="TERMO42-1" />
-      <option name="project" value="TERMO42" />
-      <option name="type" value="FEATURE" />
-      <updated>1639225807124</updated>
-      <workItem from="1638978929154" duration="17228000" />
-      <workItem from="1639054468007" duration="19212000" />
-      <workItem from="1639127832091" duration="12467000" />
+      <workItem from="1650533924285" duration="17104000" />
+      <workItem from="1650596370505" duration="16997000" />
     </task>
     <task id="TERMO42-5" summary="Сопоставление производителей">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -605,27 +586,6 @@
       <workItem from="1639310403104" duration="2862000" />
       <workItem from="1639399542894" duration="507000" />
       <workItem from="1639491164175" duration="858000" />
-    </task>
-    <task id="LOCAL-00098" summary="TERMO42-5 Сопоставление производителей">
-      <created>1639230379476</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1639230379476</updated>
-    </task>
-    <task id="LOCAL-00099" summary="TERMO42-5 Сопоставление производителей">
-      <created>1639233527019</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1639233527019</updated>
-    </task>
-    <task id="LOCAL-00100" summary="TERMO42-6 Сопоставление товаров">
-      <created>1639491624430</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1639491624431</updated>
     </task>
     <task id="TERMO42-8" summary="Товары без габаритов">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -967,7 +927,35 @@
       <option name="project" value="LOCAL" />
       <updated>1650297502834</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="поправил стил переключателей слайдера товаров">
+      <created>1650537538663</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1650537538663</updated>
+    </task>
+    <task id="LOCAL-00141" summary="поправил стил переключателей слайдера товаров">
+      <created>1650537906510</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1650537906510</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Добавил проверку на пустую ссылку в меню">
+      <created>1650546067771</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1650546067771</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Добавил свойста(массив возвращаемых данных) для стандартизации api.">
+      <created>1650643453365</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1650643453365</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -990,8 +978,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="FIX: Deprecated: Automatic conversion of false to array" />
-    <MESSAGE value="Исправил орфографию в комментариях" />
     <MESSAGE value="Добавил стилевые решения," />
     <MESSAGE value="fix name props" />
     <MESSAGE value="fix stock_status to stock_status_id" />
@@ -1015,7 +1001,9 @@
     <MESSAGE value="Сменил шрифт" />
     <MESSAGE value="Закончил раздел стилей" />
     <MESSAGE value="поправил стил переключателей слайдера товаров" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправил стил переключателей слайдера товаров" />
+    <MESSAGE value="Добавил проверку на пустую ссылку в меню" />
+    <MESSAGE value="Добавил свойста(массив возвращаемых данных) для стандартизации api." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил свойста(массив возвращаемых данных) для стандартизации api." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

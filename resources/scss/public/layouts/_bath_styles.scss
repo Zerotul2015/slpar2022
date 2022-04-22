@@ -1,4 +1,5 @@
 .bath-styles-page {
+  grid-gap:0;
 }
 
 .bsp-header {
@@ -112,11 +113,15 @@
 .bsp-s-current-description-text {
 }
 
-
+//хлебные крошки
+.bath-styles-page .breadcrumbs-wrap{
+  margin:1rem auto;
+}
 
 //товары
 .bsp-products-group{
   @extend .default-width-content;
+  margin-bottom:2rem;
 }
 .bsp-products-wrap{
   display:grid;

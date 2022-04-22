@@ -1,0 +1,9 @@
+a, .link{
+  cursor:pointer;
+  color:$brown-light;
+}
+
+a:hover, .link:hover{
+  text-decoration: none;
+  color:$grey;
+}

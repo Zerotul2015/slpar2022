@@ -2,7 +2,7 @@
   <div id="app" class="body-wrap">
     <headerApp/>
     <div class="content-wrap">
-      <main class="">
+      <main>
         <transition name="component-fade" mode="out-in">
           <router-view></router-view>
         </transition>

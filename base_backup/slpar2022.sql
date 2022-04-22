@@ -682,7 +682,7 @@ UNLOCK TABLES;
 -- Table structure for table `promotional_code`
 --
 
-DROP TABLE IF EXISTS `promotional_code`;
+DROP TABLE IF EXISTS promo_code;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotional_code` (
@@ -702,10 +702,10 @@ CREATE TABLE `promotional_code` (
 -- Dumping data for table `promotional_code`
 --
 
-LOCK TABLES `promotional_code` WRITE;
-/*!40000 ALTER TABLE `promotional_code` DISABLE KEYS */;
-INSERT INTO `promotional_code` VALUES (5,NULL,NULL,'{\"val\":\"10\",\"unit\":\"percent\"}','123',1,'{\"countProducts\":{\"max\":7,\"min\":5},\"sumOrder\":{\"max\":10000,\"min\":5000}}');
-/*!40000 ALTER TABLE `promotional_code` ENABLE KEYS */;
+LOCK TABLES promo_code WRITE;
+/*!40000 ALTER TABLE promo_code DISABLE KEYS */;
+INSERT INTO promo_code VALUES (5,NULL,NULL,'{\"val\":\"10\",\"unit\":\"percent\"}','123',1,'{\"countProducts\":{\"max\":7,\"min\":5},\"sumOrder\":{\"max\":10000,\"min\":5000}}');
+/*!40000 ALTER TABLE promo_code ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

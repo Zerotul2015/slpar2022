@@ -105,13 +105,7 @@ class ImageCache
 
         ],
         'path' => [
-            'categories' => '/images/categories/',
-            'manufacturers' => '/images/manufacturers/',
-            'services' => '/images/services/',
-            'template' => '/images/template/',
-            'certificates' => '/images/certificates/',
-            'banner' => '/images/banner/',
-            'other' => '/images/other/',
+            //'manufacturers' => '/images/manufacturers/',
         ]
     ];
     public $request = [

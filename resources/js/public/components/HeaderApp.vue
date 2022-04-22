@@ -37,10 +37,27 @@
           </div>
         </div>
         <div class="header-links-block">
-          <router-link class="h-link" v-for="(menuItem) in menuHeader"
-                       :key="$root.guid()"
-                       :to="menuItem.value">{{ menuItem.title }}
-          </router-link>
+          <vue-horizontal class="hlb-menu-style" v-if="headerFixed" snap="center"
+                          :button-between="false"
+          >
+            <template v-slot:btn-next>
+              <div class="replaced-btn">
+                <div>>></div>
+              </div>
+            </template>
+            <template v-slot:btn-prev>
+              <div class="replaced-btn">
+                <div><<</div>
+              </div>
+            </template>
+            <div class="menu-style-item" v-for="(bathItem) in bathStyles">{{ bathItem.name }}</div>
+          </vue-horizontal>
+          <div class="hlb-links" v-else>
+            <router-link class="h-link" v-for="(menuItem) in menuHeader"
+                         :key="$root.guid()"
+                         :to="menuItem.value">{{ menuItem.title }}
+            </router-link>
+          </div>
         </div>
         <search-site class="header-search-block" :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block"></div>
@@ -50,7 +67,7 @@
       <div class="hf-s-title-binding">
         <span>Аксессуары и декор</span>
         <span class="hf-s-binding-toggle-reset" v-show="selectBindingFilterStyleState === true"
-                                                              @click="resetBindingCategoryStyle">сбросить</span>
+              @click="resetBindingCategoryStyle">сбросить</span>
       </div>
       <div class="hf-s-binging-toggle-wrap">
         <div class="hf-s-binging-toggle" :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'bath'}"
@@ -66,13 +83,15 @@
 </template>
 
 <script>
+import VueHorizontal from "vue-horizontal";
 import IconSvg from "./Icon-svg/icon-svg";
 import SearchSite from "./search/search-site";
 import BathStylesHeaderCarousel from "./BathStyle/BathStylesHeaderCarousel.vue";
 
+
 export default {
   name: "HeaderApp",
-  components: {BathStylesHeaderCarousel, SearchSite, IconSvg},
+  components: {BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal},
   data() {
     return {
       menuNav: [],
@@ -134,5 +153,15 @@ export default {
 </script>
 
 <style scoped>
+.hlb-menu-style >>> .v-hl-btn-prev {
+  background: linear-gradient(to left, #4f4f4f00 0, #4f4f4f 66%, #4f4f4f);
+  padding-right: 1rem;
+  padding-left: 3rem;
+}
 
+.hlb-menu-style >>> .v-hl-btn-next {
+  background: linear-gradient(to right, #4f4f4f00 0, #4f4f4f 66%, #4f4f4f);
+  padding-left: 1rem;
+  padding-right: 3rem;
+}
 </style>

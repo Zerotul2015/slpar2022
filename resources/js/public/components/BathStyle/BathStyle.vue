@@ -1,5 +1,5 @@
 <template>
-  <div class="bath-styles-page">
+  <div class="main-content bath-styles-page">
     <div class="bsp-header">
       <div class="bsp-h-top">Комплексный подход к декорированию бань и саун</div>
       <div class="bsp-h-middle">Аксессуары и декор</div>
@@ -45,8 +45,6 @@
         <ProductCard class="product-card_slider" v-for="(productItem) in products[catItem.id]"
                      :product="productItem" :key="$root.guid()" image-size="thumb_medium"></ProductCard>
       </vue-horizontal>
-<!--      <ProductCard v-for="(productItem) in products[catItem.id]" :product="productItem" :key="$root.guid()"></ProductCard>-->
-
     </div>
   </div>
 </template>
@@ -211,10 +209,11 @@ export default {
 @media (min-width: 1280px) {
   .bsp-products-wrap  .product-card_slider {
     width: calc((100% - (3 * 0.5rem)) / 4);
+
   }
 }
-.bsp-products-wrap .v-hl-responsive>*{
-  margin-right:.5rem;
-}
 
+.bsp-products-wrap .product-card_slider{
+  margin-right:.55rem;
+}
 </style>
