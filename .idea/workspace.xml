@@ -4,35 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="Добавил свойста(массив возвращаемых данных) для стандартизации api.">
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/MainModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/_elements.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_main_content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/SettingsIndexPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Images/ImageCache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_backup/slpar2022.sql" beforeDir="false" afterPath="$PROJECT_DIR$/base_backup/slpar2022.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_product_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_breadcrumb.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="фиксация изменений">
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Favorite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiCart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiFavorite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +289,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/app/Model",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/public/common",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -326,11 +304,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model\Notification" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model\Shop\Cart" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\images" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\scss\public\elements" />
@@ -569,57 +547,7 @@
       <workItem from="1650340986915" duration="3430000" />
       <workItem from="1650432425783" duration="3971000" />
       <workItem from="1650533924285" duration="17104000" />
-      <workItem from="1650596370505" duration="16997000" />
-    </task>
-    <task id="TERMO42-5" summary="Сопоставление производителей">
-      <branch name="master" repository="$PROJECT_DIR$" />
-      <branch name="master" repository="$PROJECT_DIR$" original="true" />
-      <created>1639225584677</created>
-      <option name="issue" value="true" />
-      <url>https://kemit.myjetbrains.com/issue/TERMO42-5</url>
-      <option name="number" value="5" />
-      <option name="presentableId" value="TERMO42-5" />
-      <option name="project" value="TERMO42" />
-      <option name="type" value="FEATURE" />
-      <updated>1639492022958</updated>
-      <workItem from="1639225807165" duration="44070000" />
-      <workItem from="1639310403104" duration="2862000" />
-      <workItem from="1639399542894" duration="507000" />
-      <workItem from="1639491164175" duration="858000" />
-    </task>
-    <task id="TERMO42-8" summary="Товары без габаритов">
-      <branch name="master" repository="$PROJECT_DIR$" />
-      <branch name="master" repository="$PROJECT_DIR$" original="true" />
-      <created>1639491810363</created>
-      <option name="issue" value="true" />
-      <url>https://kemit.myjetbrains.com/issue/TERMO42-8</url>
-      <option name="number" value="8" />
-      <option name="presentableId" value="TERMO42-8" />
-      <option name="project" value="TERMO42" />
-      <option name="type" value="BUG" />
-      <updated>1639498092817</updated>
-      <workItem from="1639492022979" duration="6013000" />
-    </task>
-    <task id="LOCAL-00101" summary="TERMO42-8 Товары без габаритов">
-      <created>1639496012615</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1639496012615</updated>
-    </task>
-    <task id="LOCAL-00102" summary="TERMO42-8 Товары без габаритов">
-      <created>1639496547583</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1639496547583</updated>
-    </task>
-    <task id="LOCAL-00103" summary="TERMO42-8 Товары без габаритов">
-      <created>1639497974017</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1639497974017</updated>
+      <workItem from="1650596370505" duration="19592000" />
     </task>
     <task id="TERMO42-9" summary="Доработать пагинацию по страницам">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -632,13 +560,6 @@
       <option name="project" value="TERMO42" />
       <updated>1639505018514</updated>
       <workItem from="1639498093337" duration="6827000" />
-    </task>
-    <task id="LOCAL-00104" summary="TERMO42-9 Доработать пагинацию по страницам. Исправил опечатки в комментариях">
-      <created>1639503458534</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1639503458534</updated>
     </task>
     <task id="LOCAL-00105" summary="TERMO42-9 Доработать пагинацию по страницам">
       <created>1639503579279</created>
@@ -955,7 +876,49 @@
       <option name="project" value="LOCAL" />
       <updated>1650643453365</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Начал делать функционал корзины">
+      <created>1650644082415</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644082415</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Перенес модели из прошлых проектов">
+      <created>1650644135422</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644135422</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Создал отдельную модель для работы с заказами">
+      <created>1650644170465</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644170465</updated>
+    </task>
+    <task id="LOCAL-00147" summary="Удалил label">
+      <created>1650644203804</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644203804</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Написал модель для товара">
+      <created>1650644226179</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644226179</updated>
+    </task>
+    <task id="LOCAL-00149" summary="фиксация изменений">
+      <created>1650644304940</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1650644304940</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -978,11 +941,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Добавил стилевые решения," />
-    <MESSAGE value="fix name props" />
-    <MESSAGE value="fix stock_status to stock_status_id" />
-    <MESSAGE value="build app" />
-    <MESSAGE value="fix before make design" />
     <MESSAGE value="remove duplicate string in created method" />
     <MESSAGE value="закончил страницу настройки банных стилей" />
     <MESSAGE value="написал поиск по сайту из шапки, но не тестировал" />
@@ -993,7 +951,6 @@
     <MESSAGE value="fix bathStyle done 70%" />
     <MESSAGE value="changed in admin product and productCategory" />
     <MESSAGE value="написал методы для формирования и вывода меню" />
-    <MESSAGE value="фиксация изменений" />
     <MESSAGE value="добавил метод для обновления связанных данных" />
     <MESSAGE value="Перед демонстрацией" />
     <MESSAGE value="исправил опечатку в тексте кнопки" />
@@ -1003,7 +960,13 @@
     <MESSAGE value="поправил стил переключателей слайдера товаров" />
     <MESSAGE value="Добавил проверку на пустую ссылку в меню" />
     <MESSAGE value="Добавил свойста(массив возвращаемых данных) для стандартизации api." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил свойста(массив возвращаемых данных) для стандартизации api." />
+    <MESSAGE value="Начал делать функционал корзины" />
+    <MESSAGE value="Перенес модели из прошлых проектов" />
+    <MESSAGE value="Создал отдельную модель для работы с заказами" />
+    <MESSAGE value="Удалил label" />
+    <MESSAGE value="Написал модель для товара" />
+    <MESSAGE value="фиксация изменений" />
+    <option name="LAST_COMMIT_MESSAGE" value="фиксация изменений" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
