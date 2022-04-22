@@ -2,7 +2,6 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    products: [],
     product: {}
 })
 
@@ -10,27 +9,11 @@ const state = () => ({
 const getters = {
     product(state){
         return state.product;
-    },
-    products(state){
-        return state.products;
-    },
+    }
 }
 
 // actions
 const actions = {
-    getProductsForCategory({commit}, idCat) {
-        let sendData = {
-            'where': 'category_id',
-            'searchString': idCat
-        }
-        api.getData('product', sendData)
-            .then(r => {
-                if (r.result === true) {
-                    commit('setProducts', r.returnData);
-                }
-            })
-            .catch()
-    },
     getProductByUrl({commit}, url){
         let sendData = {
             'where': 'url',
@@ -61,17 +44,8 @@ const actions = {
 
 // mutations
 const mutations = {
-    setProducts(state, products){
-        state.products = products;
-    },
     setProduct(state, product){
         state.product = product;
-    },
-    setAll(state, products) {
-        state.all = products
-    },
-    setAllById(state, products) {
-        state.allById = {...state.allById, ...products}
     },
 }
 
