@@ -265,12 +265,6 @@ class GetData extends Main
         $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey, $simple));
     }
 
-
-    public function cart(): void
-    {
-
-    }
-
     public function compare(): void
     {
 
