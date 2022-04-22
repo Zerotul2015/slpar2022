@@ -16,25 +16,27 @@ class Cart extends Main
 
     public function addProduct()
     {
-        $productId = $this->postData['productId'] ?: null;
-        $count = $this->postData['count'] ?: 1;
+        $productId = $this->postData['productId'] ?? null;
+        $count = isset($this->postData['count']) && $this->postData['count'] ? $this->postData['count'] : 1;
         if ($productId) {
             $this->returnData = CartModel::addProduct($productId, $count);
         }
         $this->returnAnswer($this->returnData);
     }
+
     public function changeCount()
     {
-        $productId = $this->postData['productId'] ?: null;
-        $countNew = $this->postData['count'] ?: 1;
+        $productId = $this->postData['productId'] ?? null;
+        $countNew = isset($this->postData['count']) && $this->postData['count'] ? $this->postData['count'] : 1;
         if ($productId) {
             $this->returnData = CartModel::changeCount($productId, $countNew);
         }
         $this->returnAnswer($this->returnData);
     }
+
     public function removeProduct()
     {
-        $productId = $this->postData['productId'] ?: null;
+        $productId = $this->postData['productId'] ?? null;
         if ($productId) {
             $this->returnData = CartModel::removeProduct($productId);
         }
@@ -43,7 +45,7 @@ class Cart extends Main
 
     public function applyPromoCode()
     {
-        $promoCodeText = $this->postData['promoCode'] ?: null;
+        $promoCodeText = $this->postData['promoCode'] ?? null;
         if ($promoCodeText && is_string($promoCodeText)) {
             $this->returnData = CartModel::applyPromoCode($promoCodeText);
         }
