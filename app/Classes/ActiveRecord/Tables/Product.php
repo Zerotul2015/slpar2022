@@ -19,8 +19,6 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed folder regular read/write property
  * @property mixed category_id regular read/write property
  * @property mixed categoryId regular read/write property
- * @property mixed label_id regular read/write property
- * @property mixed labelId regular read/write property
  * @property mixed manufacturer_id regular read/write property
  * @property mixed manufacturerId regular read/write property
  * @property mixed unit_id regular read/write property
@@ -141,14 +139,6 @@ class Product extends Main
         ],
         'category_id' => [
             'field' => 'category_id',
-            'type' => 'bigint unsigned',
-            'null' => 'YES',
-            'key' => 'MUL',
-            'default' => null,
-            'extra' => ''
-        ],
-        'label_id' => [
-            'field' => 'label_id',
             'type' => 'bigint unsigned',
             'null' => 'YES',
             'key' => 'MUL',
