@@ -16,7 +16,7 @@ class Favorite extends Main
 
     public function addProduct()
     {
-        $productId = $this->postData['productId'] ?: null;
+        $productId = $this->postData['productId'] ?? null;
         if ($productId) {
             $this->returnData = FavoriteModel::addProduct($productId);
         }
@@ -24,7 +24,7 @@ class Favorite extends Main
     }
     public function removeProduct()
     {
-        $productId = $this->postData['productId'] ?: null;
+        $productId = $this->postData['productId'] ?? null;
         if ($productId) {
             $this->returnData = FavoriteModel::removeProduct($productId);
         }
