@@ -12,6 +12,7 @@ abstract class Main
     public array $where = [];
     public string $limit = ''; // int count
     public array $values = []; //data
+    public array $returnData = ['result'=>false, 'returnData'=> null]; //data
 
     public function __construct()
     {
