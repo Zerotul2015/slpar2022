@@ -36,3 +36,24 @@ button:hover, .btn:hover {
   background: none;
   border:none;
 }
+
+
+.btn_cart{
+  fill:$white;
+  background: $green;
+  border: 1px solid $green;
+}
+.btn_cart:hover{
+  background: $green-dark;
+  border: 1px solid $green-dark;
+}
+.btn_cart-added{
+  background: $white;
+  border: 1px solid $white;
+  color:$green-dark;
+  fill:$green-dark;
+}
+.btn_cart-added:hover{
+  background: $white;
+  border: 1px solid $green-dark;
+}

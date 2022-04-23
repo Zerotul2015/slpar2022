@@ -32,6 +32,9 @@ export default {
     this.$store.dispatch("productCategory/getCategoryByUrl", this.url);
   },
   watch: {
+    url(newUrl){
+      this.$store.dispatch("productCategory/getCategoryByUrl", newUrl);
+    },
     categoryName(){
       this.$store.dispatch("productCategory/getProducts");
     }

@@ -16,8 +16,11 @@
       </div>
     </div>
     <div class="pc-buttons">
-      <button class="btn" v-html="btnFavoriteText" @click.prevent="addFavorite"></button>
-      <button class="btn btn_green" v-html="btnCartText" @click.prevent="addCart"></button>
+      <button class="btn btn_favorite"  :class="{'btn_favorite-added':inFavorite}" v-html="btnFavoriteText" @click.prevent="addFavorite"></button>
+      <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}"  @click.prevent="addCart">
+        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>
+        <span class="btn-text" v-html="btnCartText"></span>
+      </button>
     </div>
   </router-link>
 </template>
@@ -39,6 +42,9 @@ export default {
     },
   },
   computed: {
+    cartIcon(){
+      return this.inCart ? 'cart-shopping' : 'cart-plus';
+    },
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
     },

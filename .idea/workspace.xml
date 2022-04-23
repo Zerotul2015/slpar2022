@@ -4,92 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="успешно проветестировал добавление в корзину и закладки">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Favorite.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/PromoCode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/RemovePublicTemplateModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_bath_style.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_customer.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_customer_company.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_delivery_methods.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_discounts.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_gallery_category.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_gallery_image.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_menu.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_orders.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_orders_status.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_page.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_page_blocks.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_page_category.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_payment_methods.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_payment_yandex.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product_category.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product_label.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product_manufacturer.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product_stock_status.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_product_unit.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_promotional_code.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_banner.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_index_page.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_layouts.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_notifications.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_product_page.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_settings_sections.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_backup/app_users.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/05bf8b06bb0ad0ef97c5871125e08327.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/2fdf3a220adadefd84dcd459d42b3fd9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/74b16f176aedeec59a5d5a37ba4b9d76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/75026008fdf0508fe64c7583632512dd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/b16bf8d073a1923f576d584b49f9b050.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/dbc602d4c4e48b4d3409cedd56481b02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/temp/f01f8b1c85da2de40f531d945280b1e8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angle-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angle-left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angle-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angle-up.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angles-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angles-left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angles-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/angles-up.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-shopping.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/grid-2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/add_shopping_cart.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/grid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/assets/svg/grid.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/shopping_cart.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/apiFavorite.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/apiFavorite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/favorite.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/favorite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/header.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -627,31 +550,7 @@
       <workItem from="1650432425783" duration="3971000" />
       <workItem from="1650533924285" duration="17104000" />
       <workItem from="1650596370505" duration="23758000" />
-      <workItem from="1650681712551" duration="8101000" />
-    </task>
-    <task id="TERMO42-12" summary="Категории, учесть что поля могут иметь ошибочные значения">
-      <branch name="master" repository="$PROJECT_DIR$" />
-      <branch name="master" repository="$PROJECT_DIR$" original="true" />
-      <created>1639508256642</created>
-      <option name="issue" value="true" />
-      <url>https://kemit.myjetbrains.com/issue/TERMO42-12</url>
-      <option name="number" value="12" />
-      <option name="presentableId" value="TERMO42-12" />
-      <option name="project" value="TERMO42" />
-      <option name="type" value="BUG" />
-      <updated>1639931667330</updated>
-      <workItem from="1639508274962" duration="8000" />
-      <workItem from="1639574725520" duration="379000" />
-      <workItem from="1639781075667" duration="3000" />
-      <workItem from="1639818169597" duration="602000" />
-      <workItem from="1639927138669" duration="3760000" />
-    </task>
-    <task id="LOCAL-00109" summary="TERMO42-12">
-      <created>1639930215307</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1639930215308</updated>
+      <workItem from="1650681712551" duration="11959000" />
     </task>
     <task id="TERMO42-18" summary="Убрать настройку шапки и логотипа">
       <branch name="master" repository="$PROJECT_DIR$" />
@@ -664,13 +563,6 @@
       <updated>1641396408831</updated>
       <workItem from="1639931667358" duration="11000" />
       <workItem from="1641385059174" duration="2212000" />
-    </task>
-    <task id="LOCAL-00110" summary="TERMO42-18 Убрать настройку шапки и логотипа">
-      <created>1641386045603</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1641386045603</updated>
     </task>
     <task id="LOCAL-00111" summary="fix width for category in products-grid__product">
       <created>1641396701294</created>
@@ -987,7 +879,28 @@
       <option name="project" value="LOCAL" />
       <updated>1650650452893</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="переход на svg иконки fontawesome 6">
+      <created>1650692704319</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1650692704319</updated>
+    </task>
+    <task id="LOCAL-00157" summary="переход на svg иконки fontawesome 6">
+      <created>1650692716382</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1650692716382</updated>
+    </task>
+    <task id="LOCAL-00158" summary="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок">
+      <created>1650695811411</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1650695811411</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -1010,8 +923,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix перед демонстрацией" />
-    <MESSAGE value="fix bathStyle done 70%" />
     <MESSAGE value="changed in admin product and productCategory" />
     <MESSAGE value="написал методы для формирования и вывода меню" />
     <MESSAGE value="добавил метод для обновления связанных данных" />
@@ -1035,7 +946,9 @@
     <MESSAGE value="фиксация" />
     <MESSAGE value="добавил проверку isset()" />
     <MESSAGE value="успешно проветестировал добавление в корзину и закладки" />
-    <option name="LAST_COMMIT_MESSAGE" value="успешно проветестировал добавление в корзину и закладки" />
+    <MESSAGE value="переход на svg иконки fontawesome 6" />
+    <MESSAGE value="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок" />
+    <option name="LAST_COMMIT_MESSAGE" value="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
