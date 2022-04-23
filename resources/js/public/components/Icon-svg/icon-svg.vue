@@ -58,7 +58,7 @@ export default {
   },
   data: function () {
     return {
-      fontSizeDefault: 16,
+      fontSizeDefault: 14,
       iconsName: {
         'grid': 'grid',
         'grid-2': 'grid2',
