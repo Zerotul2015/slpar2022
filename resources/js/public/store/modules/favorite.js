@@ -15,7 +15,7 @@ const getters = {
 // actions
 const actions = {
     getFavorite({commit}) {
-        apiFavorite.act('getFavorite', {})
+        apiFavorite.favoriteAct('getFavorite', {})
             .then(r => {
                 if (r.result === true) {
                     commit('setFavoriteProducts', r.returnData['products']);
@@ -27,7 +27,7 @@ const actions = {
         let sendData = {
             'productId': productId,
         };
-        apiFavorite.act('addProduct', sendData)
+        apiFavorite.favoriteAct('addProduct', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setFavoriteProducts', r.returnData['products']);
@@ -39,7 +39,7 @@ const actions = {
         let sendData = {
             'productId': productId,
         };
-        apiFavorite.act('removeProduct', sendData)
+        apiFavorite.favoriteAct('removeProduct', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setFavoriteProducts', r.returnData['products']);
@@ -48,7 +48,7 @@ const actions = {
             .catch()
     },
     deleteFavorite({commit}) {
-        apiFavorite.act('delFavorite', {})
+        apiFavorite.favoriteAct('delFavorite', {})
             .then(r => {
                 if (r.result === true) {
                     commit('setFavoriteProducts', {});

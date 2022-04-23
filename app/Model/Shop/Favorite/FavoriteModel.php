@@ -40,7 +40,7 @@ class FavoriteModel
     }
 
     #[ArrayShape(['result' => "bool", 'returnData' => "\App\Classes\ActiveRecord\Tables\Favorite"])]
-    public static function addProduct(int $productId): array
+    public static function addProduct($productId): array
     {
         $result = false;
         $favorite = static::getFavorite(true);
@@ -78,8 +78,8 @@ class FavoriteModel
         $favoriteProducts = $favoriteAfterGet->products;
         if (!empty($favoriteProducts)) {
             $favoriteProductCleaner = [];
-            foreach ($favoriteProducts as $favoriteProductItem) {
-                $favoriteProductCleaner[$favoriteProductItem->id] = $favoriteProductItem->id;
+            foreach ($favoriteProducts as $productId => $favoriteProductItem) {;
+                $favoriteProductCleaner[$productId] = $productId;
             }
             $favoriteAfterGet->products = $favoriteProductCleaner;
         }

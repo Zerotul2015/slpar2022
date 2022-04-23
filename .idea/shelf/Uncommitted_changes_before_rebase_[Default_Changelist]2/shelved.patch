@@ -1,0 +1,22 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/storage/\r\n/vendor/\r\n/.yarn/\r\n/node_modules/\r\n/public/images/\r\n/public/images/categories/\r\n/public/images/certificates/\r\n/public/images/favicon/\r\n/public/images/manufacturers/\r\n/public/images/other/\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision e4f747df0867d8888af964e2633b66caa09d5bd6)
++++ b/.gitignore	(date 1650537585702)
+@@ -2,9 +2,4 @@
+ /vendor/
+ /.yarn/
+ /node_modules/
+-/public/images/
+-/public/images/categories/
+-/public/images/certificates/
+-/public/images/favicon/
+-/public/images/manufacturers/
+-/public/images/other/
++/public/images/
+\ No newline at end of file

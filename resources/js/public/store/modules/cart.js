@@ -19,7 +19,7 @@ const getters = {
 // actions
 const actions = {
     getCart({commit}) {
-        apiCart.act('getCart', {})
+        apiCart.cartAction('getCart', {})
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
@@ -35,7 +35,7 @@ const actions = {
         if (count) {
             sendData['count'] = count;
         }
-        apiCart.act('addProduct', sendData)
+        apiCart.cartAction('addProduct', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
@@ -48,7 +48,7 @@ const actions = {
         let sendData = {
             'productId': productId,
         };
-        apiCart.act('removeProduct', sendData)
+        apiCart.cartAction('removeProduct', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
@@ -62,7 +62,7 @@ const actions = {
             'productId': productId,
             'count': newCount,
         };
-        apiCart.act('changeCount', sendData)
+        apiCart.cartAction('changeCount', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
@@ -75,7 +75,7 @@ const actions = {
         let sendData = {
             'promoCode': promoCodeText,
         };
-        apiCart.act('applyPromoCode', sendData)
+        apiCart.cartAction('applyPromoCode', sendData)
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
@@ -85,7 +85,7 @@ const actions = {
             .catch()
     },
     deleteCart({commit}) {
-        apiCart.act('deleteCart', {})
+        apiCart.cartAction('deleteCart', {})
             .then(r => {
                 if (r.result === true) {
                     commit('setCartProducts', {});
@@ -99,7 +99,7 @@ const actions = {
 // mutations
 const mutations = {
     setCartProducts(state, cartProducts) {
-        state.cart = cartProducts;
+        state.cartProducts = cartProducts;
     },
     setPromoCodeUsed(state, promoCodeUsed) {
         state.promoCodeUsed = promoCodeUsed;

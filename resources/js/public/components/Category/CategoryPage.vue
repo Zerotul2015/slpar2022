@@ -4,7 +4,8 @@
     <div class="catalog-wrap">
       <h1 v-html="categoryName"></h1>
       <div class="catalog-products">
-        <ProductCard v-for="(productItem) in products" :product="productItem" :key="$root.guid()"></ProductCard>
+        <ProductCard v-for="(productItem) in products" :product="productItem" :key="$root.guid()"
+        :image-size="sizeImageProduct"></ProductCard>
       </div>
     </div>
   </div>
@@ -36,6 +37,16 @@ export default {
     }
   },
   computed: {
+    gridSize(){
+      return this.$store.getters['productCategory/gridSize'];
+    },
+    sizeImageProduct(){
+      let size = 'thumb';
+      if(this.gridSize ==='big'){
+        size = 'thumb_medium';
+      }
+      return size;
+    },
     categoryName() {
       return this.$store.getters['productCategory/name'];
     },

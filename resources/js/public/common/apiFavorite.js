@@ -9,7 +9,7 @@ const ACTION_PATH = {
 }
 
 export default {
-    act: async function (typeAction, sendData) {
+    favoriteAct: async function (typeAction, sendData) {
         return await new Promise(async function (resolve, reject) {
             if (!sendData) {
                 sendData = {}

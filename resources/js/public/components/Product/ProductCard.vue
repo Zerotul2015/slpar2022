@@ -39,13 +39,21 @@ export default {
     },
   },
   computed: {
+    inCart() {
+      return !!this.$store.getters['cart/products'][this.product.id];
+    },
+    inFavorite() {
+      return !!this.$store.getters['favorite/products'][this.product.id];
+    },
     btnFavoriteText() {
-      let text = '<span class="btn-text">в закладки</span>'
+      let text = this.inFavorite ? 'в закладках' : 'в закладки';
+      text = '<span class="btn-text">' + text + '</span>';
       let icon = '';
       return icon + text;
     },
     btnCartText() {
-      let text = '<span class="btn-text">в корзину</span>'
+      let text = this.inCart ? 'в корзине' : 'в корзину';
+      text = '<span class="btn-text">' + text + '</span>';
       let icon = '';
       return icon + text;
     },
@@ -59,9 +67,13 @@ export default {
       return image;
     }
   },
-  methods:{
-    addFavorite(){},
-    addCart(){},
+  methods: {
+    addFavorite() {
+      this.$store.dispatch('favorite/addProduct', this.product.id);
+    },
+    addCart() {
+      this.$store.dispatch('cart/addProduct', this.product.id);
+    },
   }
 }
 </script>

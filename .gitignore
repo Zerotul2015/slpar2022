@@ -3,3 +3,5 @@
 /.yarn/
 /node_modules/
 /public/images/
+/public/build/dist/
+/public/upload/

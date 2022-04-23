@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a78405b1-82f1-4184-a904-9546041376ba" name="slpar.ru" url="http://slpar.ru">
+        <fileTransfer rootFolder="/var/www/slp42/data/www/slpar.ru" accessType="SFTP" host="slpar.ru" port="22" sshConfigId="c519cdd9-4a5c-43cd-90f5-dd64ed282489" sshConfig="slp42@slpar.ru:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

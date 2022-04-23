@@ -32,6 +32,8 @@ export default {
   beforeMount(){
     this.$store.dispatch('templateData/getTemplateSettings');
     this.$store.dispatch('bathStyle/getAll');
+    this.$store.dispatch('cart/getCart');
+    this.$store.dispatch('favorite/getFavorite');
   },
   watch:{
     seo(newVal, oldVal){

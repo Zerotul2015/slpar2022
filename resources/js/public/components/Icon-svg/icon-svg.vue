@@ -4,31 +4,22 @@
 
 <script>
 //иконки
-import svgAddShoppingCart from '../../../assets/svg/add_shopping_cart.svg';
-import svgArrowDropDown from '../../../assets/svg/arrow_drop_down.svg';
-import svgArrowRight from '../../../assets/svg/arrow_right.svg';
-import svgBarChart from '../../../assets/svg/bar_chart.svg';
-import svgCart from '../../../assets/svg/cart.svg';
-import svgCheckBox from '../../../assets/svg/check_box.svg';
-import svgCheckBoxOutlineBlank from '../../../assets/svg/check_box_outline_blank.svg';
-import svgClose from '../../../assets/svg/close.svg';
-import svgCompareEmpty from '../../../assets/svg/compare_empty.svg';
-import svgCompareFull from '../../../assets/svg/compare_full.svg';
-import svgFavorite from '../../../assets/svg/favorite.svg';
-import svgGrid from '../../../assets/svg/grid.svg';
-import svgHeart from '../../../assets/svg/heart.svg';
-import svgHeartOutline from '../../../assets/svg/heart-outline.svg';
-import svgHome from '../../../assets/svg/home.svg';
-import svgIndeterminateCheckBox from '../../../assets/svg/indeterminate_check_box.svg';
-import svgMenu from '../../../assets/svg/menu.svg';
-import svgPhone from '../../../assets/svg/phone.svg';
-import svgRadioButtonChecked from '../../../assets/svg/radio_button_checked.svg';
-import svgRadioButtonUnchecked from '../../../assets/svg/radio_button_unchecked.svg';
-import svgSearch from '../../../assets/svg/search.svg';
-import svgSend from '../../../assets/svg/send.svg';
-import svgShoppingCart from '../../../assets/svg/shopping_cart.svg';
-import svgSort from '../../../assets/svg/sort.svg';
-import svgViewSequential from '../../../assets/svg/view_sequential.svg';
+import search from '../../../assets/svg/search.svg';
+import grid from '../../../assets/svg/grid.svg';
+import grid2 from '../../../assets/svg/grid-2.svg';
+import send from '../../../assets/svg/send.svg';
+import cartShopping from '../../../assets/svg/cart-shopping.svg';
+import cartPlus from '../../../assets/svg/cart-plus.svg';
+import cartMinus from '../../../assets/svg/cart-minus.svg';
+import angleRight from '../../../assets/svg/angle-right.svg';
+import angleUp from '../../../assets/svg/angle-up.svg';
+import angleDown from '../../../assets/svg/angle-down.svg';
+import angleLeft from '../../../assets/svg/angle-left.svg';
+import anglesRight from '../../../assets/svg/angles-right.svg';
+import anglesUp from '../../../assets/svg/angles-up.svg';
+import anglesDown from '../../../assets/svg/angles-down.svg';
+import anglesLeft from '../../../assets/svg/angles-left.svg';
+
 //конец иконки
 
 
@@ -36,31 +27,22 @@ export default {
   name: "icon-svg",
   components: {
     //иконки
-    svgAddShoppingCart,
-    svgArrowDropDown,
-    svgArrowRight,
-    svgBarChart,
-    svgCart,
-    svgCheckBox,
-    svgCheckBoxOutlineBlank,
-    svgClose,
-    svgCompareEmpty,
-    svgCompareFull,
-    svgFavorite,
-    svgGrid,
-    svgHeart,
-    svgHeartOutline,
-    svgHome,
-    svgIndeterminateCheckBox,
-    svgMenu,
-    svgPhone,
-    svgRadioButtonChecked,
-    svgRadioButtonUnchecked,
-    svgSearch,
-    svgSend,
-    svgShoppingCart,
-    svgSort,
-    svgViewSequential,
+    cartShopping,
+    cartPlus,
+    cartMinus,
+    grid,
+    grid2,
+    search,
+    send,
+    angleRight,
+    angleLeft,
+    angleUp,
+    angleDown,
+    anglesRight,
+    anglesLeft,
+    anglesUp,
+    anglesDown,
+
     //конец иконки
   },
   props: {
@@ -76,33 +58,23 @@ export default {
   },
   data: function () {
     return {
-      fontSizeDefault: 14,
+      fontSizeDefault: 16,
       iconsName: {
-        'svg-add-shopping-cart': 'svgAddShoppingCart',
-        'svg-arrow-drop-down': 'svgArrowDropDown',
-        'svg-arrow-right': 'svgArrowRight',
-        'svg-bar-chart': 'svgBarChart',
-        'svg-cart': 'svgCart',
-        'svg-check-box': 'svgCheckBox',
-        'svg-check-box-outline-blank': 'svgCheckBoxOutlineBlank',
-        'svg-close': 'svgClose',
-        'svg-compare-empty': 'svgCompareEmpty',
-        'svg-compare-full': 'svgCompareFull',
-        'svg-favorite': 'svgFavorite',
-        'svg-grid': 'svgGrid',
-        'svg-heart': 'svgHeart',
-        'svg-heart-outline': 'svgHeartOutline',
-        'svg-home': 'svgHome',
-        'svg-indeterminate-check-box': 'svgIndeterminateCheckBox',
-        'svg-menu': 'svgMenu',
-        'svg-phone': 'svgPhone',
-        'svg-radio-button-checked': 'svgRadioButtonChecked',
-        'svg-radio-button-unchecked': 'svgRadioButtonUnchecked',
-        'svg-search': 'svgSearch',
-        'svg-send': 'svgSend',
-        'svg-shopping-cart': 'svgShoppingCart',
-        'svg-sort': 'svgSort',
-        'svg-view-sequential': 'svgViewSequential',
+        'grid': 'grid',
+        'grid-2': 'grid2',
+        'search': 'search',
+        'send': 'send',
+        'cart-shopping': 'cartShopping',
+        'cart-plus': 'cartPlus',
+        'cart-minus': 'cartMinus',
+        'angle-right': 'angleRight',
+        'angle-left': 'angleLeft',
+        'angle-up': 'angleUp',
+        'angle-down': 'angleDown',
+        'angles-right': 'anglesRight',
+        'angles-left': 'anglesLeft',
+        'angles-up': 'anglesUp',
+        'angles-down': 'anglesDown',
       }
     }
   },

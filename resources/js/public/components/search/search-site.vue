@@ -7,7 +7,7 @@
              :placeholder="placeholder_"
              v-model="inputVal_" @focusin="focusInput = true" @focusout="focusInput = false" autocomplete="off">
       <icon-svg class="icon-input-search" :class="{ [customClass_]:customClass_.length >0 }" v-if="iconShow_===true"
-                icon="svg-search" color="#"></icon-svg>
+                icon="search" color=""></icon-svg>
       <label v-if="labelPosition_==='after' && labelText_.length > 0" class="search-autocomplete-label"
              :class="{ [customClass_]:customClass_.length >0 }" :for="guid">{{ labelText_ }}</label>
     </div>

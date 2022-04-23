@@ -38,19 +38,18 @@
         </div>
         <div class="header-links-block">
           <vue-horizontal class="hlb-menu-style" v-if="headerFixed" snap="center"
-                          :button-between="false"
-          >
+                          :button-between="false" ref="menuStyleHeader">
             <template v-slot:btn-next>
-              <div class="replaced-btn">
-                <div>>></div>
+              <div class="hlb-menu-style-btn">
+                <icon-svg icon="angles-right"></icon-svg>
               </div>
             </template>
             <template v-slot:btn-prev>
-              <div class="replaced-btn">
-                <div><<</div>
+              <div class="hlb-menu-style-btn">
+                <icon-svg icon="angles-left"></icon-svg>
               </div>
             </template>
-            <div class="menu-style-item" v-for="(bathItem) in bathStyles">{{ bathItem.name }}</div>
+            <div class="menu-style-item" v-for="(bathItem, keyStyle) in bathStyles" :key="keyStyle">{{ bathItem.name }}</div>
           </vue-horizontal>
           <div class="hlb-links" v-else>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
@@ -97,7 +96,13 @@ export default {
       menuNav: [],
     }
   },
-  watch: {},
+  watch: {
+    selectBathStyleIndex(newVal){
+      if(newVal === this.$refs){
+
+      }
+    }
+  },
   computed: {
     sectionSite() {
       return this.$store.getters["templateData/section"];
@@ -113,6 +118,9 @@ export default {
     },
     bathStyles() {
       return this.$store.getters["bathStyle/all"];
+    },
+    selectBathStyleIndex(){
+      return this.$store.getters['bathStyle/selectKey'];
     },
     selectBindingFilterStyle() {
       return this.$store.getters['bathStyle/filterBy'];
