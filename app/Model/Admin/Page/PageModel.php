@@ -27,15 +27,18 @@ class PageModel implements DefaultMethodTableClass
         }
         $images = $val['images'] ?? [];
         if ($pageOld) {
+            $val['integrated'] = $pageOld->integrated;
+            $val['url'] = $pageOld->url;
             $imagesOld = $pageOld->images ?? [];
             $folder = $pageOld->folder;
         } else {
+            $val['url'] = MainModel::urlGeneration($val['title'], Page::find(), $val['id']);
             $imagesOld = [];
             $folder = uniqid('', true) . 'fldr' . time();
         }
         $val['folder'] = $folder;
         $val['images'] = MainModel::prepareImagesBeforeSave($images, false, $imagesOld, 'pages/' . $folder)['images'];
-        $val['url'] = MainModel::urlGeneration($val['title'], Page::find(), $val['id']);
+
 
 
         //проверка на существование категории
@@ -68,7 +71,7 @@ class PageModel implements DefaultMethodTableClass
     {
         $result = false;
         if ($page = Page::findOne($id)) {
-            if ($result = $page->del()) {
+            if (!$page->integrated && $result = $page->del()) {
                 if (!empty($page->images)) {
                     $images = $page->images;
                     foreach ($images as $image) {
