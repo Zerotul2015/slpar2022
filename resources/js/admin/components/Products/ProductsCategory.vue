@@ -77,6 +77,7 @@
         <select :id="'move-to-' + guid" v-model="item.binding_style">
           <option value="bath">Бань и саун</option>
           <option value="fireplace">Каминов и печей</option>
+          <option value="homestead">Каминов и печей</option>
         </select>
       </div>
     </div>

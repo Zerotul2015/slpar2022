@@ -27,12 +27,18 @@ Vue.config.productionTip = false;
 
 
 router.beforeEach((to, from, next) => {
-    next();
+    console.log(to);
+    if (to.params && to.params.isCustom) {
+        console.log(to.pat)
+        location.href = to.path;
+    } else {
+        next();
+    }
 });
 router.beforeResolve((to, from, next) => {
     if (to.name) {
         app.$store.commit('templateData/setSection', to.name);
-        if(to.params.url){
+        if (to.params.url) {
             app.$store.commit('templateData/setSectionKey', to.params.url);
         }
         // Start the route progress bar.
@@ -69,17 +75,26 @@ const app = new Vue({
     render: h => h(App),
     data() {
         return {
-            scrollY:0,
+            scrollY: 0,
         }
     },
-    created(){
+    created() {
         window.addEventListener('scroll', this.handleScroll);
     },
-    destroyed () {
+    destroyed() {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
-        handleScroll () {
+        isInViewport(elem) {
+            let bounding = elem.getBoundingClientRect();
+            return (
+                bounding.top >= 0 &&
+                bounding.left >= 0 &&
+                bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        },
+        handleScroll() {
             this.scrollY = window.scrollY;
         },
         guid() {

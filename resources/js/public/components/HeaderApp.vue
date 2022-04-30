@@ -41,7 +41,7 @@
           <div class="hlb-links" v-else>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
-                         :to="menuItem.value">{{ menuItem.title }}
+                         :to="{path:menuItem.value, params:{isCustom:(menuItem.typeItem === 'custom')}}">{{ menuItem.title }}
             </router-link>
           </div>
         </div>
@@ -70,6 +70,10 @@
         <div class="hf-s-binging-toggle"
              :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'fireplace'}"
              @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей
+        </div>
+        <div class="hf-s-binging-toggle"
+             :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'homestead'}"
+             @click="changeBindingCategoryStyle('homestead')">Для дома и усадьбы
         </div>
       </div>
     </div>
@@ -143,7 +147,7 @@ export default {
     },
     changeBindingCategoryStyle(bindingName) {
       console.log(bindingName);
-      if (bindingName === 'fireplace' || bindingName === 'bath') {
+      if (bindingName === 'fireplace' || bindingName === 'bath' || bindingName === 'homestead') {
         if (bindingName === this.selectBindingFilterStyle) {
           this.$store.dispatch('bathStyle/disableFilter');
         } else {

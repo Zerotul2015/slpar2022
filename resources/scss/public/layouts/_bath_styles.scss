@@ -16,9 +16,10 @@
 .bsp-h-middle {
   text-align: center;
   font-size: $font-size-big;
+  text-decoration: underline;
   line-height: 150%;
   font-weight: 600;
-  color: rgb(103, 84, 40);
+  color: $brown;
 }
 
 .bsp-h-bottom {
@@ -27,8 +28,26 @@
   margin: 0 10%;
   font-size: $font-size-medium;
   font-weight: 600;
+}
+
+.bsp-h-toggle-binding{
   color: $grey;
   text-decoration: underline;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.bsp-h-toggle-binding:hover{
+  text-decoration: none;
+}
+.bsp-h-toggle-binding_active{
+  text-decoration:none;
+  border-color: $grey;
+}
+
+.bsp-h-bottom-end-icon{
+  fill:$grey;
 }
 
 .bsp-h-bottom-end {
@@ -41,10 +60,6 @@
   grid-gap: 0.5rem;
   justify-content: center;
 }
-.bsp-h-bottom-end-icon{
-  fill:$grey;
-}
-
 
 //Слайдер
 .bsp-sliders {

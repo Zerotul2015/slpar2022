@@ -120,6 +120,9 @@
   fill: $white;
 }
 
+.header-icon-cart {
+  fill: $brown-light;
+}
 .header-icon-cart:hover {
   cursor: pointer;
   fill: $white;
@@ -133,6 +136,7 @@
 }
 
 .h-link:hover {
+  color: $white;
   text-shadow: 0 0 5px $white;
   text-decoration: none;
 }

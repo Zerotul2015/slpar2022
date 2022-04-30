@@ -6,7 +6,7 @@ const state = () => ({
     activeStyleId: null, //number
     styleUrl: '',
     bathStyles: [],
-    filterBy: '', //fireplace | bath
+    filterBy: '', //fireplace | bath | homestead
     filterToggle: false,
     productsData: {},
     productsCategoryData: {}
@@ -48,7 +48,7 @@ const getters = {
 // actions
 const actions = {
     setFilter({commit}, filterName) {
-        if (filterName === 'fireplace' || filterName === 'bath') {
+        if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
             commit('setFilterBy', filterName);
             commit('setFilterToggle', true);
         }
@@ -105,7 +105,7 @@ const actions = {
 // mutations
 const mutations = {
     setFilterBy(state, filterName) {
-        if (filterName === 'fireplace' || filterName === 'bath') {
+        if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
             state.filterBy = filterName;
         } else {
             state.filterBy = '';
