@@ -5434,6 +5434,7 @@ __metadata:
     uglify-js: ^3.14.5
     v-click-outside: ^3.1.2
     v-viewer: ^1.6.4
+    velocity-animate: beta
     vue: ^2.6.14
     vue-awesome-swiper: ^4.1.1
     vue-color: ^2.8.1
@@ -5961,6 +5962,13 @@ __metadata:
     throttle-debounce: ^2.0.1
     viewerjs: ^1.5.0
   checksum: 88304a21a6aaee3b8fa60ec88030222fa322ea384d41c02d2893b4bad1115ba9e2a8df0620c6b5a0559acba2f60e92386bd27cf99e4023eb690a0f4e3a27e30a
+  languageName: node
+  linkType: hard
+
+"velocity-animate@npm:beta":
+  version: 2.0.6
+  resolution: "velocity-animate@npm:2.0.6"
+  checksum: 4cef72e3d5228714db927d0f10398fdcd81ffd320592242527f06567c04645ca2212e178734f25d6a5148a2c0bc78e7fbc322e9627478f90539d5f85ffaf00b4
   languageName: node
   linkType: hard
 

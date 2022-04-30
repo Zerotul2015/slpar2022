@@ -16,9 +16,12 @@
       </div>
     </div>
     <div class="pc-buttons">
-      <button class="btn btn_favorite"  :class="{'btn_favorite-added':inFavorite}" v-html="btnFavoriteText" @click.prevent="addFavorite"></button>
+      <button class="btn btn_compare"  :class="{'btn_compare-added':inCompare}" @click.prevent="addCompare">
+<!--        <icon-svg class="btn-icon" :icon="compareIcon"></icon-svg>-->
+        <span class="btn-text" v-html="btnCompareText"></span>
+      </button>
       <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}"  @click.prevent="addCart">
-        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>
+<!--        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>-->
         <span class="btn-text" v-html="btnCartText"></span>
       </button>
     </div>
@@ -42,27 +45,25 @@ export default {
     },
   },
   computed: {
-    cartIcon(){
-      return this.inCart ? 'cart-shopping' : 'cart-plus';
-    },
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
     },
-    inFavorite() {
-      return !!this.$store.getters['favorite/products'][this.product.id];
-    },
-    btnFavoriteText() {
-      let text = this.inFavorite ? 'в закладках' : 'в закладки';
-      text = '<span class="btn-text">' + text + '</span>';
-      let icon = '';
-      return icon + text;
+    cartIcon(){
+      return this.inCart ? 'cart-shopping' : 'cart-plus';
     },
     btnCartText() {
-      let text = this.inCart ? 'в корзине' : 'в корзину';
-      text = '<span class="btn-text">' + text + '</span>';
-      let icon = '';
-      return icon + text;
+      return this.inCart ? 'уже в корзине' : 'в корзину';
     },
+    inCompare() {
+      return !!this.$store.getters['compare/products'][this.product.id];
+    },
+    compareIcon(){
+      return this.inCompare ? 'bookmark-solid' : 'bookmark';
+    },
+    btnCompareText() {
+      return this.inCompare ? 'в сравнение' : 'сравнить';
+    },
+
     imageMain() {
       let image = '/build/images/noimg.png/';
       let availableImageSize = {'thumb': true, 'thumb_medium': true}
@@ -74,8 +75,12 @@ export default {
     }
   },
   methods: {
-    addFavorite() {
-      this.$store.dispatch('favorite/addProduct', this.product.id);
+    addCompare() {
+      if(this.inCompare){
+        this.$store.dispatch('compare/removeProduct', this.product.id);
+      }else {
+        this.$store.dispatch('compare/addProduct', this.product.id);
+      }
     },
     addCart() {
       this.$store.dispatch('cart/addProduct', this.product.id);

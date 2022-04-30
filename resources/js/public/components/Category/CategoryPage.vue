@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     gridSize(){
-      return this.$store.getters['productCategory/gridSize'];
+      return this.$store.getters['templateData/gridSizeCategory'];
     },
     sizeImageProduct(){
       let size = 'thumb';

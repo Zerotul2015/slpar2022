@@ -36,7 +36,7 @@
   display: grid;
   position: relative;
   grid-template-areas: "h-logo h-catalog h-links h-search h-icon";
-  grid-template-columns: 13rem repeat(3, auto) 1fr;
+  grid-template-columns: 13rem repeat(2, auto) 1fr auto;
   justify-content: start;
   align-items: center;
   grid-gap: $margin-default;
@@ -70,11 +70,59 @@
   display: grid;
   grid-gap: $margin-default;
   z-index: 2;
+  justify-self: end;
+}
+
+.header-search-block:focus-within {
+  justify-self: stretch;
 }
 
 .header-icon-block {
   grid-area: h-icon;
   z-index: 2;
+  fill: $brown-light;
+  justify-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: $margin-default;
+}
+
+.header-icon-compare-wrap {
+  position: relative;
+}
+
+.header-icon-cart-wrap.header-icon-label-full::after {
+  position: absolute;
+  content: '';
+  background: $red;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  left: calc(100% - 10px);
+  border: 1px solid $grey;
+}
+
+.header-icon-cart-wrap:hover.header-icon-label-full::after {
+  background: $red;
+}
+
+.header-icon-compare {
+  cursor: pointer;
+  fill: $brown-light;
+}
+
+.header-icon-compare-full .fil1 {
+  fill: $red;
+}
+
+.header-icon-compare:hover {
+  cursor: pointer;
+  fill: $white;
+}
+
+.header-icon-cart:hover {
+  cursor: pointer;
+  fill: $white;
 }
 
 // ссылки в шапке
@@ -177,11 +225,12 @@
   color: $white;
 
   .menu-style-item {
-    width:100%;
+    width: 100%;
   }
 }
-.hlb-menu-style-btn{
-  fill:$white;
+
+.hlb-menu-style-btn {
+  fill: $white;
 }
 
 .menu-style-item {
@@ -223,6 +272,7 @@
   border: none;
   border-bottom: 1px solid rgb(131, 131, 131);
   background: rgb(131, 131, 131);
+  width: 100%;
 }
 
 .input_text.hs-block:focus + svg.icon-input-search.hs-block {
@@ -256,6 +306,7 @@ svg.icon-input-search.hs-block {
 
 .hf-s-title-binding {
   text-align: center;
+  margin-bottom: 0.35rem;
 }
 
 .hf-s-binging-toggle-wrap {
@@ -263,6 +314,7 @@ svg.icon-input-search.hs-block {
   grid-auto-flow: column;
   justify-content: center;
   grid-gap: 3rem;
+  margin-bottom: 0.15rem;
 }
 
 .hf-s-binging-toggle {
@@ -270,6 +322,8 @@ svg.icon-input-search.hs-block {
   border: 1px solid $grey-light;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
+  width: 209px;
+  text-align: center;
 }
 
 .hf-s-binging-toggle:hover {
@@ -301,4 +355,61 @@ svg.icon-input-search.hs-block {
 .hf-s-binding-toggle-reset:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+//Карусель стилей в шапке
+
+.bs-header-carousel {
+  color: $white;
+}
+
+.bs-c-button {
+  fill:$white;
+  cursor: pointer;
+  position:absolute;
+}
+
+.bs-c-button:hover {
+  fill:$brown-light;
+}
+
+.bs-header-carousel {
+  position:relative;
+  display:flex;
+}
+.bs-c-items{
+  display:flex;
+  justify-content: center;
+  transition: .5s;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bs-c-prev {
+  left:0;
+  padding-left:1rem;
+  background:linear-gradient(90deg,rgb(79,79,79,1) 0, rgb(79,79,79,0) 100%);
+}
+
+.bs-c-next {
+  right:0;
+  padding-right:1rem;
+  background:linear-gradient(90deg,rgb(79,79,79,0) 0, rgb(79,79,79,1) 100%);
+}
+
+.bs-c-item {
+  text-align:center;
+  margin-right:1rem;
+  white-space: nowrap;
+  scroll-snap-align: center;
+}
+.bs-c-item:last-child{
+  margin-right:0;
+}
+
+.bs-c-item-selected {
+  padding-left:2rem;
+  padding-right:2rem;
 }

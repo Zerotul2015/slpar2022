@@ -38,7 +38,8 @@ class CartModel
             $cart->promo_code_use = null;
         }
         if (!$skipSave) {
-            self::saveCart($cart);
+            $cart2 = clone $cart;
+            self::saveCart($cart2);
         }
         return $cart;
     }

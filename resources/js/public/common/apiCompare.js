@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const URL_GET_PATH = '/api/favorite/';
+const URL_GET_PATH = '/api/compare/';
 const ACTION_PATH = {
-    'getFavorite': 'get-favorite',
+    'getCompare': 'get-compare',
     'addProduct': 'add-product',
     'removeProduct': 'remove-product',
-    'deleteFavorite': 'del-favorite',
+    'deleteCompare': 'del-compare',
 }
 
 export default {
-    favoriteAct: async function (typeAction, sendData) {
+    compareAct: async function (typeAction, sendData) {
         return await new Promise(async function (resolve, reject) {
             if (!sendData) {
                 sendData = {}

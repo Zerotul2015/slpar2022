@@ -67,7 +67,7 @@ class PublicTemplateModel
             ];
         };
 
-        $returnData['breadcrumb'] = static::generateBreadcrumb($objectData);
+        $returnData['breadcrumb'] = is_string($objectData) ? $objectData : static::generateBreadcrumb($objectData);
         $returnData['seo'] = static::getSeo($section, $objectData);
 
         return ['result' => true, 'returnData' => $returnData];
@@ -98,7 +98,7 @@ class PublicTemplateModel
             }
         }
 
-        $pages = Page::find()->where(['id' => $pagesId])->select(['title', 'url', 'integrated', 'url_integrated'])->indexBy()->all();
+        $pages = Page::find()->where(['id' => $pagesId])->select(['id', 'title', 'url', 'integrated', 'url_integrated'])->indexBy()->all();
         foreach ($footerRaw as $keyCol => $footerCol) {
             $footerPrepared[$keyCol] = [];
             $footerPrepared[$keyCol]['type'] = $footerCol['type'];
@@ -106,7 +106,8 @@ class PublicTemplateModel
             if ($footerCol['type'] === 'pages') {
                 foreach ($footerCol['values'] as $keyPage => $pageCurrentId) {
                     if (isset($pages[$pageCurrentId])) {
-                        $footerPrepared[$keyCol]['values'][$keyPage] = $pages[$pageCurrentId];
+                        $url = $pages[$pageCurrentId]->integrated ? $pages[$pageCurrentId]->url_integrated : '/page/' . $pages[$pageCurrentId]->url;
+                        $footerPrepared[$keyCol]['values'][$keyPage] = ['title'=>$pages[$pageCurrentId]->title, 'url'=>$url];
                     }
                 }
             } else {
@@ -125,7 +126,7 @@ class PublicTemplateModel
      * @return string[]
      */
     #[ArrayShape(['title' => "string", 'description' => "string"])]
-    public static function getSeo(string $section, Main|null|false $objectData = null): array
+    public static function getSeo(string $section, Main|string|null|false $objectData = null): array
     {
         $seo = [
             'title' => '',

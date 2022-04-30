@@ -4,12 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок">
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил проверку integrated при удалении и при сохранении.">
+      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Compare.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Compare.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Compare/CompareModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/images/fooote_title.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/images/logo_footer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bookmark-solid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bookmark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-header.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiCompare.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_compare.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Favorite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Page/PageModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Page/PageModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/common/apiFavorite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Compare/Compare.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Compare/Compare.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Page/Page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Page/Page.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/compare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/favorite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_extends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -182,7 +240,7 @@
     <setting file="file://$PROJECT_DIR$/resources/scss/admin/_text.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/scss/admin/_var.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/scss/admin/admin.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/admin/index.twig" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -206,11 +264,17 @@
     <scope name="scss" pattern="file[slpar2022]:resources/scss//*" />
     <scope name="vue-component-resources" pattern="file[slpar2022]:resources/js//*.vue" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
-      <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="8080" use_path_mappings="true">
+      <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="443" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="/var/www" />
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
+        </path_mappings>
+      </server>
+      <server id="953ced72-b270-4e1e-b710-f6214910686b" port="443" use_path_mappings="true">
+        <path_mappings>
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
@@ -282,42 +346,43 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
     </include_path>
   </component>
+  <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
   <component name="ProjectId" id="1pOIZfyknMvvdDiP4eAEGNqhru9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Model\Notification" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\scss\public\elements" />
       <recent name="$PROJECT_DIR$/base_backup" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/resources/js/admin/components/MenuSettings" />
-      <recent name="$PROJECT_DIR$/resources/js/admin/components/Settings" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Page.Docker">
@@ -336,7 +401,7 @@
     <configuration name="GetData.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/marketplace/Controllers/Admin/Api/GetData.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Docker" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Docker" start_url="https://127.0.0.1/admin">
+    <configuration name="Docker" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="Docker" start_url="https://localhost">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
@@ -550,26 +615,12 @@
       <workItem from="1650432425783" duration="3971000" />
       <workItem from="1650533924285" duration="17104000" />
       <workItem from="1650596370505" duration="23758000" />
-      <workItem from="1650681712551" duration="11959000" />
-    </task>
-    <task id="TERMO42-18" summary="Убрать настройку шапки и логотипа">
-      <branch name="master" repository="$PROJECT_DIR$" />
-      <created>1639931640583</created>
-      <option name="issue" value="true" />
-      <url>https://kemit.myjetbrains.com/issue/TERMO42-18</url>
-      <option name="number" value="18" />
-      <option name="presentableId" value="TERMO42-18" />
-      <option name="project" value="TERMO42" />
-      <updated>1641396408831</updated>
-      <workItem from="1639931667358" duration="11000" />
-      <workItem from="1641385059174" duration="2212000" />
-    </task>
-    <task id="LOCAL-00111" summary="fix width for category in products-grid__product">
-      <created>1641396701294</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1641396701294</updated>
+      <workItem from="1650681712551" duration="27065000" />
+      <workItem from="1650807396924" duration="38000" />
+      <workItem from="1650807546631" duration="1895000" />
+      <workItem from="1650862294765" duration="28522000" />
+      <workItem from="1651029605561" duration="26623000" />
+      <workItem from="1651301591633" duration="1412000" />
     </task>
     <task id="LOCAL-00112" summary="fix style and other minor bugs">
       <created>1641400086102</created>
@@ -900,7 +951,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650695811411</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="починил загрузку товаров при смене категории">
+      <created>1650696040971</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1650696040971</updated>
+    </task>
+    <task id="LOCAL-00160" summary="добавил проверку integrated при удалении и при сохранении.">
+      <created>1651039363738</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1651039363739</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -923,9 +988,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="changed in admin product and productCategory" />
-    <MESSAGE value="написал методы для формирования и вывода меню" />
-    <MESSAGE value="добавил метод для обновления связанных данных" />
     <MESSAGE value="Перед демонстрацией" />
     <MESSAGE value="исправил опечатку в тексте кнопки" />
     <MESSAGE value="добавил проверку уникальности артикула" />
@@ -948,7 +1010,17 @@
     <MESSAGE value="успешно проветестировал добавление в корзину и закладки" />
     <MESSAGE value="переход на svg иконки fontawesome 6" />
     <MESSAGE value="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок" />
-    <option name="LAST_COMMIT_MESSAGE" value="уменьшил размер шрифта, для текста 16px луше подходит 14 для иконок" />
+    <MESSAGE value="починил загрузку товаров при смене категории" />
+    <MESSAGE value="переименовал favorite в compare" />
+    <MESSAGE value="добавил проверку integrated при удалении и при сохранении." />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил проверку integrated при удалении и при сохранении." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PhpWebAppRunConfigurationType">
+        <watch expression="$pagesId" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

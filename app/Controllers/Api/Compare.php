@@ -2,15 +2,16 @@
 
 namespace App\Controllers\Api;
 
-use App\Model\Shop\Favorite\FavoriteModel;
+use App\Model\Shop\Compare\CompareModel;
 
-class Favorite extends Main
+class Compare extends Main
 {
 
-    public function getFavorite()
+    public function getCompare()
     {
         $this->returnData['result'] = true;
-        $this->returnData['returnData'] = FavoriteModel::getFavorite();
+        $withCategories = $this->postData['withCategories'] ?? false;
+        $this->returnData['returnData'] = CompareModel::getCompare(false, $withCategories);
         $this->returnAnswer($this->returnData);
     }
 
@@ -18,7 +19,7 @@ class Favorite extends Main
     {
         $productId = $this->postData['productId'] ?? null;
         if ($productId) {
-            $this->returnData = FavoriteModel::addProduct($productId);
+            $this->returnData = CompareModel::addProduct($productId);
         }
         $this->returnAnswer($this->returnData);
     }
@@ -26,14 +27,14 @@ class Favorite extends Main
     {
         $productId = $this->postData['productId'] ?? null;
         if ($productId) {
-            $this->returnData = FavoriteModel::removeProduct($productId);
+            $this->returnData = CompareModel::removeProduct($productId);
         }
         $this->returnAnswer($this->returnData);
     }
 
-    public function delFavorite()
+    public function delCompare()
     {
-        $this->returnData['result'] = FavoriteModel::deleteFavorite();
+        $this->returnData['result'] = CompareModel::deleteCompare();
         $this->returnAnswer($this->returnData);
     }
 }

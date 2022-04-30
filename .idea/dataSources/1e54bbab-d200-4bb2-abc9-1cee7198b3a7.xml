@@ -898,23 +898,23 @@ app|schema||app||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="279" parent="274" name="customer">
+    <table id="279" parent="274" name="compare">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="280" parent="274" name="customer_company">
+    <table id="280" parent="274" name="customer">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="281" parent="274" name="delivery_methods">
+    <table id="281" parent="274" name="customer_company">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="282" parent="274" name="discounts">
+    <table id="282" parent="274" name="delivery_methods">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="283" parent="274" name="favorite">
+    <table id="283" parent="274" name="discounts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -1086,7 +1086,7 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>bath_style_url_uindex</UnderlyingIndexName>
     </key>
     <column id="324" parent="278" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1142,219 +1142,222 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>cart_sid_uindex</UnderlyingIndexName>
     </key>
     <column id="336" parent="279" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>bigint unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="337" parent="279" name="products">
+      <DataType>text|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="338" parent="279" name="sid">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="339" parent="279" name="date_last_edit">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>4</Position>
+    </column>
+    <index id="340" parent="279" name="favorite_id_uindex">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="341" parent="279" name="id">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="342" parent="279" name="favorite_sid_uindex">
+      <ColNames>sid</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="343" parent="279" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="344" parent="279" name="favorite_id_uindex">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>favorite_id_uindex</UnderlyingIndexName>
+    </key>
+    <key id="345" parent="279" name="id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id</UnderlyingIndexName>
+    </key>
+    <key id="346" parent="279" name="favorite_sid_uindex">
+      <ColNames>sid</ColNames>
+      <UnderlyingIndexName>favorite_sid_uindex</UnderlyingIndexName>
+    </key>
+    <column id="347" parent="280" name="id">
       <AutoIncrement>2</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="337" parent="279" name="name">
+    <column id="348" parent="280" name="name">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="338" parent="279" name="phone">
+    <column id="349" parent="280" name="phone">
       <DataType>varchar(32)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="339" parent="279" name="mail">
+    <column id="350" parent="280" name="mail">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="340" parent="279" name="pass">
+    <column id="351" parent="280" name="pass">
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="341" parent="279" name="status">
+    <column id="352" parent="280" name="status">
       <Comment>Статус покупателя(active, blocked и т.п)</Comment>
       <DataType>varchar(32)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="342" parent="279" name="note_hidden">
+    <column id="353" parent="280" name="note_hidden">
       <DataType>text|0s</DataType>
       <Position>7</Position>
     </column>
-    <column id="343" parent="279" name="deleted">
+    <column id="354" parent="280" name="deleted">
       <DataType>tinyint(1)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>8</Position>
     </column>
-    <index id="344" parent="279" name="customer_id_uindex">
+    <index id="355" parent="280" name="customer_id_uindex">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="345" parent="279" name="customer_phone_uindex">
+    <index id="356" parent="280" name="customer_phone_uindex">
       <ColNames>phone</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="346" parent="279" name="customer_mail_uindex">
+    <index id="357" parent="280" name="customer_mail_uindex">
       <ColNames>mail</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="347" parent="279" name="PRIMARY">
+    <key id="358" parent="280" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="348" parent="279" name="customer_id_uindex">
+    <key id="359" parent="280" name="customer_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>customer_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="349" parent="279" name="customer_phone_uindex">
+    <key id="360" parent="280" name="customer_phone_uindex">
       <ColNames>phone</ColNames>
       <UnderlyingIndexName>customer_phone_uindex</UnderlyingIndexName>
     </key>
-    <key id="350" parent="279" name="customer_mail_uindex">
+    <key id="361" parent="280" name="customer_mail_uindex">
       <ColNames>mail</ColNames>
       <UnderlyingIndexName>customer_mail_uindex</UnderlyingIndexName>
     </key>
-    <column id="351" parent="280" name="id">
+    <column id="362" parent="281" name="id">
       <AutoIncrement>5</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="352" parent="280" name="customer_id">
+    <column id="363" parent="281" name="customer_id">
       <DataType>bigint unsigned|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="353" parent="280" name="inn">
+    <column id="364" parent="281" name="inn">
       <DataType>varchar(12)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="354" parent="280" name="kpp">
+    <column id="365" parent="281" name="kpp">
       <DataType>varchar(9)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="355" parent="280" name="name">
+    <column id="366" parent="281" name="name">
       <DataType>text|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="356" parent="280" name="note">
+    <column id="367" parent="281" name="note">
       <Comment>Произвольный текст. Здесь покупатель может что то пометить для себя.</Comment>
       <DataType>text|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="357" parent="280" name="note_hidden">
+    <column id="368" parent="281" name="note_hidden">
       <Comment>Не доступно для покупателя. Используется менеджерами для заметок по контрагенту.</Comment>
       <DataType>text|0s</DataType>
       <Position>7</Position>
     </column>
-    <column id="358" parent="280" name="deleted">
+    <column id="369" parent="281" name="deleted">
       <Comment>контрагент не удаляется что бы не сбить заказы с ним, но для покупателя он скрыт</Comment>
       <DataType>tinyint(1)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>8</Position>
     </column>
-    <foreign-key id="359" parent="280" name="customer_company_customer_id_fk">
+    <foreign-key id="370" parent="281" name="customer_company_customer_id_fk">
       <ColNames>customer_id</ColNames>
       <OnDelete>set-null</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="360" parent="280" name="customer_company_id_uindex">
+    <index id="371" parent="281" name="customer_company_id_uindex">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="361" parent="280" name="customer_company_customer_id_fk">
+    <index id="372" parent="281" name="customer_company_customer_id_fk">
       <ColNames>customer_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="280" name="PRIMARY">
+    <key id="373" parent="281" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="363" parent="280" name="customer_company_id_uindex">
+    <key id="374" parent="281" name="customer_company_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>customer_company_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="364" parent="281" name="id">
+    <column id="375" parent="282" name="id">
       <AutoIncrement>7</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="365" parent="281" name="name">
+    <column id="376" parent="282" name="name">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="366" parent="281" name="description">
+    <column id="377" parent="282" name="description">
       <DataType>text|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="367" parent="281" name="price">
+    <column id="378" parent="282" name="price">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="368" parent="281" name="sum_for_free">
+    <column id="379" parent="282" name="sum_for_free">
       <DataType>int unsigned|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="369" parent="281" name="enable">
+    <column id="380" parent="282" name="enable">
       <DataType>tinyint(1)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="370" parent="281" name="protected">
+    <column id="381" parent="282" name="protected">
       <DataType>tinyint(1)|0s</DataType>
       <Position>7</Position>
     </column>
-    <index id="371" parent="281" name="id">
+    <index id="382" parent="282" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="372" parent="281" name="id">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id</UnderlyingIndexName>
-    </key>
-    <column id="373" parent="282" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="374" parent="282" name="active">
-      <DataType>tinyint(1)|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="375" parent="282" name="time_start">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="376" parent="282" name="time_end">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="377" parent="282" name="value">
-      <DataType>int|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="378" parent="282" name="unit">
-      <DataType>varchar(6)|0s</DataType>
-      <Position>6</Position>
-    </column>
-    <column id="379" parent="282" name="name">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>7</Position>
-    </column>
-    <column id="380" parent="282" name="composition">
-      <DataType>text|0s</DataType>
-      <Position>8</Position>
-    </column>
-    <index id="381" parent="282" name="id">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="382" parent="282" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
     <key id="383" parent="282" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
@@ -1365,50 +1368,47 @@ app|schema||app||UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="385" parent="283" name="products">
-      <DataType>text|0s</DataType>
+    <column id="385" parent="283" name="active">
+      <DataType>tinyint(1)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="386" parent="283" name="sid">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="386" parent="283" name="time_start">
+      <DataType>int|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="387" parent="283" name="date_last_edit">
-      <DataType>timestamp|0s</DataType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    <column id="387" parent="283" name="time_end">
+      <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="388" parent="283" name="favorite_id_uindex">
+    <column id="388" parent="283" name="value">
+      <DataType>int|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="389" parent="283" name="unit">
+      <DataType>varchar(6)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="390" parent="283" name="name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="391" parent="283" name="composition">
+      <DataType>text|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <index id="392" parent="283" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="389" parent="283" name="id">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="390" parent="283" name="favorite_sid_uindex">
-      <ColNames>sid</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="391" parent="283" name="PRIMARY">
+    <key id="393" parent="283" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="392" parent="283" name="favorite_id_uindex">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>favorite_id_uindex</UnderlyingIndexName>
-    </key>
-    <key id="393" parent="283" name="id">
+    <key id="394" parent="283" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
-    </key>
-    <key id="394" parent="283" name="favorite_sid_uindex">
-      <ColNames>sid</ColNames>
-      <UnderlyingIndexName>favorite_sid_uindex</UnderlyingIndexName>
     </key>
     <column id="395" parent="284" name="id">
       <AutoIncrement>1</AutoIncrement>
@@ -2180,7 +2180,7 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>url</UnderlyingIndexName>
     </key>
     <column id="563" parent="296" name="id">
-      <AutoIncrement>357</AutoIncrement>
+      <AutoIncrement>356</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2221,7 +2221,7 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
     <column id="572" parent="297" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2253,7 +2253,7 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
     <column id="579" parent="298" name="id">
-      <AutoIncrement>22</AutoIncrement>
+      <AutoIncrement>21</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2298,7 +2298,7 @@ app|schema||app||UPDATE|G</Grants>
       <UnderlyingIndexName>products_units_code_uindex</UnderlyingIndexName>
     </key>
     <column id="589" parent="299" name="id">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>5</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>

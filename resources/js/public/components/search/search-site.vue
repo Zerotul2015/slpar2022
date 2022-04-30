@@ -21,18 +21,18 @@
     <div class="found-values" :class="{ [customClass_]:customClass_.length >0 }" v-else v-show="displayFounded"
          @mouseover="focusFounded = true"
          @mouseout="focusFounded = false">
-      <div v-for="(foundItem, foundKey) in foundedCategory" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('productsCategory', foundKey)">
+      <router-link tag="div" v-for="(foundItem, foundKey) in foundedCategory" class="found-item"
+           :class="{ [customClass_]:customClass_.length >0 }" :key="$root.giud" :to="'/catalog/' + foundItem['url']">
         Категория "{{ foundItem['name'] }}"
-      </div>
-      <div v-for="(foundItem, foundKey) in foundedProducts" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('products', foundKey)">
+      </router-link>
+      <router-link tag="div" v-for="(foundItem, foundKey) in foundedProducts" class="found-item"
+           :class="{ [customClass_]:customClass_.length >0 }" :key="$root.giud" :to="'/product/' + foundItem['url']">
         {{ foundItem['name'] }}
-      </div>
-      <div v-for="(foundItem, foundKey) in foundedPages" class="found-item"
-           :class="{ [customClass_]:customClass_.length >0 }" @click.prevent="openLink('pages', foundKey)">
+      </router-link>
+      <router-link tag="div" v-for="(foundItem, foundKey) in foundedPages" class="found-item"
+           :class="{ [customClass_]:customClass_.length >0 }" :key="$root.giud"  :to="'/page/' + foundItem['url']">
         {{ foundItem['title'] }}
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -175,12 +175,12 @@ export default {
     openLink: function (typeData, keyFoundVal) {
       console.log(typeData);
       let typeDataUrl = {
-        'products': '/products/' + this.founded_[typeData][keyFoundVal].url,
+        'products': '/product/' + this.founded_[typeData][keyFoundVal].url,
         'productsCategory': '/catalog/' + this.founded_[typeData][keyFoundVal].url,
         'pages': '/page/' + this.founded_[typeData][keyFoundVal].url
-
       }
-      window.open(typeDataUrl[typeData], '_blank');
+      console.log(typeDataUrl[typeData]);
+      this.$router.push(typeDataUrl[typeData]);
     },
     filterUnique: function (arrayVal) {
       if (this.onlyUnique_) {
@@ -230,6 +230,7 @@ export default {
   position: absolute;
   z-index: 1;
   left: 0;
+  width: 100%;
   white-space: nowrap;
   top: 100%;
   display: flex;

@@ -4,7 +4,6 @@ import api from '../../common/api'
 const state = () => ({
     categoryData: [],
     products: [],
-    gridSize:'default', //big, default
 })
 
 // getters
@@ -27,9 +26,6 @@ const getters = {
     products(state) {
         return state.products;
     },
-    gridSize(state){
-        return state.gridSize;
-    }
 }
 
 // actions
@@ -68,13 +64,6 @@ const actions = {
 
 // mutations
 const mutations = {
-    setGridSize(state, gridSize){
-        if(gridSize === 'big'){
-            state.gridSize = 'big';
-        }else{
-            state.gridSize = 'default';
-        }
-    },
     setProducts(state, products) {
         state.products = products;
     },

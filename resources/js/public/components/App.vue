@@ -33,7 +33,7 @@ export default {
     this.$store.dispatch('templateData/getTemplateSettings');
     this.$store.dispatch('bathStyle/getAll');
     this.$store.dispatch('cart/getCart');
-    this.$store.dispatch('favorite/getFavorite');
+    this.$store.dispatch('compare/getCompare');
   },
   watch:{
     seo(newVal, oldVal){

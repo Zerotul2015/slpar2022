@@ -74,20 +74,21 @@ export default {
   }),
   beforeMount() {
     if (this.url) {
-      this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", this.url);
+      this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.url);
+      this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.url);
     } else {
 
     }
   },
   watch: {
-    selectStyleKey(newKey) {
+    activeStyleKey(newKey) {
       //выбираем текущий стил в каруселе стилей в шпаке
       if(this.$refs.menuStyleHeader){
         this.$refs.menuStyleHeader.scrollToIndex(newKey)
       }
       //меням урл на урл стиля
       if (this.url && this.bathStyles[newKey].url !== this.url) {
-        this.$router.push('/bath-style/' + this.bathStyles[this.selectStyleKey].url);
+        this.$router.push('/bath-style/' + this.bathStyles[this.activeStyleKey].url);
       } else {
         this.$store.dispatch("bathStyle/getProductsData");
       }
@@ -95,15 +96,15 @@ export default {
     bathStyles(newVal) {
       //для активации нужно стиля исходя при открытии страницы
       if (this.url) {
-        if (newVal[this.selectStyleKey] && newVal[this.selectStyleKey].url !== this.url) {
-          this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", this.url);
+        if (newVal[this.activeStyleKey] && newVal[this.activeStyleKey].url !== this.url) {
+          this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.url);
         }
       }
     },
     url(newUrl) {
       //смена стиля при смене url
-      if (this.bathStyles[this.selectStyleKey] && this.bathStyles[this.selectStyleKey].url !== newUrl) {
-        this.$store.dispatch("bathStyle/setActiveStyleKeyByUrl", newUrl);
+      if (this.bathStyles[this.activeStyleKey] && this.bathStyles[this.activeStyleKey].url !== newUrl) {
+        this.$store.dispatch("bathStyle/setActiveStyleByUrl", newUrl);
       }
     },
   },
@@ -120,8 +121,8 @@ export default {
     productsCategory() {
       return this.$store.getters['bathStyle/productsCategoryData'];
     },
-    selectStyleKey() {
-      return this.$store.getters['bathStyle/selectKey'];
+    activeStyleKey() {
+      return this.$store.getters['bathStyle/activeKey'];
     },
     bathStyles() {
       return this.$store.getters['bathStyle/all'];
@@ -130,22 +131,22 @@ export default {
       return this.bathStyles.length;
     },
     styleName() {
-      if (this.bathStyles[this.selectStyleKey]) {
-        return this.bathStyles[this.selectStyleKey].name;
+      if (this.bathStyles[this.activeStyleKey]) {
+        return this.bathStyles[this.activeStyleKey].name;
       } else {
         return '';
       }
     },
     styleDescription() {
-      if (this.bathStyles[this.selectStyleKey]) {
-        return this.bathStyles[this.selectStyleKey].description;
+      if (this.bathStyles[this.activeStyleKey]) {
+        return this.bathStyles[this.activeStyleKey].description;
       } else {
         return '';
       }
     },
     currentStyleImage() {
-      if (this.bathStyles[this.selectStyleKey]) {
-        return '/images/bath-style/' + this.bathStyles[this.selectStyleKey].folder + '/' + this.bathStyles[this.selectStyleKey].image;
+      if (this.bathStyles[this.activeStyleKey]) {
+        return '/images/bath-style/' + this.bathStyles[this.activeStyleKey].folder + '/' + this.bathStyles[this.activeStyleKey].image;
       } else {
         return '';
       }
@@ -156,15 +157,15 @@ export default {
   },
   methods: {
     nextStyle() {
-      if (this.selectStyleKey + 1 < this.countStyles) {
-        this.$store.dispatch("bathStyle/setActiveStyleKey", this.selectStyleKey + 1)
+      if (this.activeStyleKey + 1 < this.countStyles) {
+        this.$store.dispatch("bathStyle/setActiveStyleKey", this.activeStyleKey + 1)
       } else {
         this.$store.dispatch("bathStyle/setActiveStyleKey", 0)
       }
     },
     previousStyle() {
-      if (this.selectStyleKey > 0) {
-        this.$store.dispatch("bathStyle/setActiveStyleKey", this.selectStyleKey - 1)
+      if (this.activeStyleKey > 0) {
+        this.$store.dispatch("bathStyle/setActiveStyleKey", this.activeStyleKey - 1)
       } else {
         this.$store.dispatch("bathStyle/setActiveStyleKey", this.countStyles - 1)
       }

@@ -55,12 +55,6 @@ export default new Router({
             component: () => import("../components/Compare/Compare.vue"),
         },
         {
-            path: '/favorite',
-            name: 'favorite',
-            props: true,
-            component: () => import("../components/Favorite/Favorite.vue"),
-        },
-        {
             path: '/error/404',
             name: '404',
             component: () => import("../components/Errors/404.vue"),

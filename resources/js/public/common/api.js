@@ -9,6 +9,7 @@ const DATA_PATH = {
     'productUnit': 'product-unit',
     'productStockStatus': 'product-stock-status',
     'product': 'product',
+    'productRelated': 'product-related',
     'bathStyle':'bath-style',
     'searchSite':'search-site',
     'templateData':'template-data',

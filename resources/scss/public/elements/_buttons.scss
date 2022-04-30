@@ -5,11 +5,11 @@ button, .btn {
   align-content: center;
   justify-content: center;
   color: $white;
-  @extend %padding-button;
+  @extend .padding-button;
   background: $grey-middle;
   border: 1px solid $grey-middle;
   outline: none;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   transition: .25s;
 }
 
@@ -38,6 +38,7 @@ button:hover, .btn:hover {
 }
 
 
+//кнопка корзины в каталоге
 .btn_cart{
   fill:$white;
   background: $green;
@@ -56,4 +57,33 @@ button:hover, .btn:hover {
 .btn_cart-added:hover{
   background: $white;
   border: 1px solid $green-dark;
+}
+
+//кнопка закладки в каталоге
+
+.btn_compare{
+  fill:$white;
+  color:$white;
+  background: $grey-middle;
+  border: 1px solid $grey-middle;
+}
+.btn_compare:hover{
+  cursor: pointer;
+  fill:$white;
+  color:$white;
+  background: $grey;
+  border: 1px solid $grey;
+}
+
+.btn_compare-added{
+  fill:$grey;
+  color:$grey;
+  background: $white;
+  border: 1px solid $white;
+}
+.btn_compare-added:hover{
+  fill:$grey;
+  color:$grey;
+  background: $white;
+  border: 1px solid $grey;
 }

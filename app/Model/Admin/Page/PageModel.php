@@ -8,6 +8,7 @@ use App\Classes\ActiveRecord\Tables\PageCategory;
 use App\Classes\ActiveRecord\Tables\Page;
 use App\Model\Admin\MainModel;
 use App\Model\Interfaces\DefaultMethodTableClass;
+use JetBrains\PhpStorm\ArrayShape;
 
 class PageModel implements DefaultMethodTableClass
 {
@@ -16,9 +17,10 @@ class PageModel implements DefaultMethodTableClass
      * @param $val
      * @return array
      */
+    #[ArrayShape(['result' => "bool", 'id' => "mixed|null", 'returnData' => "\App\Classes\ActiveRecord\Main|\App\Classes\ActiveRecord\Tables\Page|null"])]
     public static function Save($val): array
     {
-        $returnResult = ['result' => false, 'id' => null, 'returnData' => null];
+        $returnResult = ['result' => false];
         $pageOld = false;
         if (isset($val['id']) && $val['id']) {
             $pageOld = Page::findOne($val['id']);

@@ -1,0 +1,83 @@
+.body-footer {
+  color:$white;
+  position: relative;
+  background: $grey;
+  //box-shadow: 0 0 5px $grey;
+  padding: calc(11px + .5rem) 1.5rem 1.5rem; // 11px нужно для линии
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-areas:
+          "bf-title bf-title bf-title bf-title"
+          "bf-logo bf-column1 bf-column2 bf-column3"
+          "bf-logo bf-column1 bf-column2-end bf-column3-end"
+          "bf-copyright bf-copyright bf-copyright bf-copyright";
+  grid-template-columns: 1fr auto auto 1fr;
+}
+
+.body-footer:before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  border: 1px solid $brown-light;
+}
+
+.bf-title{
+  grid-area: bf-title;
+  justify-self: end;
+  width:70%;
+}
+
+.bf-logo{
+  grid-area:bf-logo;
+  width:90%;
+  max-width: 350px;
+  align-content: start;
+  justify-self: center;
+}
+
+.bf-column-1{
+  grid-area:bf-column1;
+  display: grid;
+  align-content:start;
+}
+
+.bf-column-2{
+  grid-area:bf-column2;
+  display: grid;
+  align-content:start;
+}
+.bf-column-2-end{
+  grid-area:bf-column2-end;
+  display: grid;
+  align-content:start;
+  justify-content: start;
+}
+.bf-column-3{
+  grid-area:bf-column3;
+  display: grid;
+  justify-content: start;
+  align-content:start;
+}
+.bf-column-3-end{
+  grid-area:bf-column3-end;
+  display: grid;
+  justify-content: start;
+  align-content:start;
+}
+.bf-copyright{
+  grid-area:bf-copyright;
+  justify-content: center;
+  text-align: center;
+  font-size: .75rem;
+}
+
+.bf-link-icon{
+  cursor:pointer;
+  fill:$white;
+}
+.bf-link-icon:hover{
+  fill:$brown-light;
+}

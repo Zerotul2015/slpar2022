@@ -25,6 +25,8 @@ use App\Classes\ActiveRecord\Tables\SettingsNotifications;
 use App\Classes\ActiveRecord\Tables\Users;
 use App\Model\BathStyle\BathStyleModel;
 use App\Model\PublicTemplateModel;
+use App\Model\Shop\Product\ProductModel;
+use JetBrains\PhpStorm\ArrayShape;
 
 
 /**
@@ -118,6 +120,7 @@ class GetData extends Main
      * @param \App\Classes\ActiveRecord\Main $object
      * @return array
      */
+    #[ArrayShape(['result' => "bool", 'returnData' => "mixed"])]
     public function prepareReturnData(\App\Classes\ActiveRecord\Main $object): array
     {
         $result = false;
@@ -205,7 +208,23 @@ class GetData extends Main
     public function product(): void
     {
         $object = Product::find();
-        $this->returnAnswer($this->prepareReturnData($object));
+        $return = $this->prepareReturnData($object);
+        if(!empty($return['returnData'])){
+            $return['returnData'] = ProductModel::prepareProductsForTemplate($return['returnData']);
+        }
+        $this->returnAnswer($return);
+    }
+
+    public function productRelated(): void
+    {
+        $return =['result'=>false, 'returnData'=>null];
+        $object = Product::find();
+        $productBase = $this->prepareReturnData($object)['returnData'];
+        if(!empty($productBase)){
+            $return['returnData'] = ProductModel::getRelatedProducts($productBase[0]->id);
+            $return['result'] = true;
+        }
+        $this->returnAnswer($return);
     }
 
     /**
@@ -263,16 +282,6 @@ class GetData extends Main
         $simple = $this->postData['simple'] ?? false;
         $simple = !!$simple;
         $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey, $simple));
-    }
-
-    public function compare(): void
-    {
-
-    }
-
-    public function favorite(): void
-    {
-
     }
 
 }

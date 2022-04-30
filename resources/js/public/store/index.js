@@ -11,7 +11,7 @@ import productManufacturer from './modules/productManufacturer'
 import productCategory from './modules/productCategory'
 import templateData from './modules/templateData'
 import cart from './modules/cart'
-import favorite from './modules/favorite'
+import compare from './modules/compare'
 
 Vue.use(Vuex)
 
@@ -27,7 +27,7 @@ export default new Vuex.Store({
         productManufacturer,
         productCategory,
         cart,
-        favorite,
+        compare,
         templateData,
     },
     state: {

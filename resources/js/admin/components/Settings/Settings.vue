@@ -61,7 +61,7 @@
     <section class="content-block">
       <h2>Подвал сайта</h2>
       <div class="grid grid-col-3">
-        <div class="footer-column" v-for="(footerColumn, keyCol) in fetchedData.template_footer">
+        <div class="footer-column" v-for="(footerColumn, keyCol) in fetchedData.template_footer" v-if="keyCol !== 2">
           <div class="input-block input-block_highlight">
             <label :for="'footer-col-' + keyCol">
               Тип:

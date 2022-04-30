@@ -8,7 +8,9 @@ const state = () => ({
     footer: {},
     section: 'index', //index,page,pageCategory,product,productCategory,cart,compare,favorite,bathStyle Берется из названия route
     sectionKey: null, // Берется из параметра url в router
-    seo: {'title': '', 'description': ''}
+    seo: {'title': '', 'description': ''},
+    gridSizeCompare: 'big', //big, default
+    gridSizeCategory: 'default', //big, default
 })
 
 // getters
@@ -33,7 +35,13 @@ const getters = {
     },
     sectionKey(state) {
         return state.sectionKey;
-    }
+    },
+    gridSizeCompare(state) {
+        return state.gridSizeCompare;
+    },
+    gridSizeCategory(state) {
+        return state.gridSizeCategory;
+    },
 }
 
 // actions
@@ -94,6 +102,20 @@ const mutations = {
     },
     setFooter(state, footer) {
         state.footer = footer;
+    },
+    setGridSizeCompare(state, gridSize){
+        if(gridSize === 'big'){
+            state.gridSizeCompare = 'big';
+        }else{
+            state.gridSizeCompare = 'default';
+        }
+    },
+    setGridSizeCategory(state, gridSize){
+        if(gridSize === 'big'){
+            state.gridSizeCategory = 'big';
+        }else{
+            state.gridSizeCategory = 'default';
+        }
     },
 }
 

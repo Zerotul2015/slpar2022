@@ -13,6 +13,9 @@ const getters = {
     },
     promoCodeUsed(state) {
         return state.promoCodeUsed;
+    },
+    count(state){
+        return Object.keys(state.cartProducts).length;
     }
 }
 

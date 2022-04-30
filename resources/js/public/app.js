@@ -7,8 +7,9 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import axios from "axios";
 import SweetModal from "sweet-modal-vue/src/plugin";
+import Viewer from 'v-viewer'
 
-
+Vue.use(Viewer)
 Vue.use(SweetModal)
 
 Vue.filter('priceToLocale', function (value) {

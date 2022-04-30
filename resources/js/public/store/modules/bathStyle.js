@@ -2,23 +2,23 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    selectedStyleKey: 0,
-    selectedStyleId: null,
+    activeStyleKey: 0, //number
+    activeStyleId: null, //number
     styleUrl: '',
     bathStyles: [],
-    filterBy:'', //fireplace | bath
-    filterToggle:false,
+    filterBy: '', //fireplace | bath
+    filterToggle: false,
     productsData: {},
     productsCategoryData: {}
 })
 
 // getters
 const getters = {
-    selectKey(state) {
-        return state.selectedStyleKey;
+    activeKey(state) {
+        return state.activeStyleKey;
     },
-    selectId(state) {
-        return state.selectedStyleId;
+    activeId(state) {
+        return state.activeStyleId;
     },
     filterBy(state) {
         return state.filterBy;
@@ -47,21 +47,21 @@ const getters = {
 
 // actions
 const actions = {
-    setFilter({commit} ,filterName){
+    setFilter({commit}, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath') {
             commit('setFilterBy', filterName);
             commit('setFilterToggle', true);
         }
 
     },
-    disableFilter({commit}){
+    disableFilter({commit}) {
         commit('setFilterToggle', false);
         commit('setFilterBy', null);
     },
     getProductsData({commit, state}) {
         //getProductsData
-        if (state.bathStyles[state.selectedStyleKey]) {
-            let sendData = {'getProductsData': true, 'bathStyleId': state.bathStyles[state.selectedStyleKey].id};
+        if (state.bathStyles[state.activeStyleKey]) {
+            let sendData = {'getProductsData': true, 'bathStyleId': state.bathStyles[state.activeStyleKey].id};
             api.getData('bathStyle', sendData)
                 .then(r => {
                     if (r.result === true) {
@@ -72,10 +72,19 @@ const actions = {
                 .catch()
         }
     },
-    setActiveStyleKeyByUrl({commit, state}, urlStyle) {
+    setActiveStyleByUrl({commit, state}, urlStyle) {
         let keyStyle = state.bathStyles.findIndex(item => item.url === urlStyle);
         keyStyle = keyStyle !== -1 ? keyStyle : 0;
         commit('setActiveStyleKey', keyStyle);
+        if (state.bathStyles[keyStyle]) {
+            commit('setActiveStyleId', state.bathStyles[keyStyle].id);
+        }
+    },
+    setActiveStyleById({commit, state}, idStyle) {
+        let keyStyle = state.bathStyles.findIndex(item => item.id === idStyle);
+        keyStyle = keyStyle !== -1 ? keyStyle : 0;
+        commit('setActiveStyleKey', keyStyle);
+        commit('setActiveStyleId', idStyle);
     },
     setActiveStyleKey({commit, state}, keyStyle) {
         if (state.bathStyles[keyStyle]) {
@@ -98,7 +107,7 @@ const mutations = {
     setFilterBy(state, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath') {
             state.filterBy = filterName;
-        }else{
+        } else {
             state.filterBy = '';
         }
     },
@@ -109,7 +118,10 @@ const mutations = {
         state.styleUrl = styleUrl;
     },
     setActiveStyleKey(state, keyStyle) {
-        state.selectedStyleKey = keyStyle;
+        state.activeStyleKey = keyStyle;
+    },
+    setActiveStyleId(state, keyStyle) {
+        state.activeStyleId = keyStyle;
     },
     setProductsData(state, productsData) {
         state.productsData = productsData;

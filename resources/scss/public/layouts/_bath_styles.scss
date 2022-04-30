@@ -23,11 +23,11 @@
 
 .bsp-h-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 10%;
   font-size: $font-size-medium;
   font-weight: 600;
-  color: rgb(103, 84, 40);
+  color: $grey;
   text-decoration: underline;
 }
 

@@ -37,20 +37,7 @@
           </div>
         </div>
         <div class="header-links-block">
-          <vue-horizontal class="hlb-menu-style" v-if="headerFixed" snap="center"
-                          :button-between="false" ref="menuStyleHeader">
-            <template v-slot:btn-next>
-              <div class="hlb-menu-style-btn">
-                <icon-svg icon="angles-right"></icon-svg>
-              </div>
-            </template>
-            <template v-slot:btn-prev>
-              <div class="hlb-menu-style-btn">
-                <icon-svg icon="angles-left"></icon-svg>
-              </div>
-            </template>
-            <div class="menu-style-item" v-for="(bathItem, keyStyle) in bathStyles" :key="keyStyle">{{ bathItem.name }}</div>
-          </vue-horizontal>
+          <BathStylesHeaderCarousel v-if="headerFixed"></BathStylesHeaderCarousel>
           <div class="hlb-links" v-else>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
@@ -59,7 +46,15 @@
           </div>
         </div>
         <search-site class="header-search-block" :iconShow="true" custom-class="hs-block"></search-site>
-        <div class="header-icon-block"></div>
+        <div class="header-icon-block">
+          <router-link to="/compare" div class="header-icon-compare-wrap">
+            <icon-svg class="header-icon-compare" :class="{'header-icon-compare-full':compareCount}"
+                      :scaleX="2" :icon="compareIcon"></icon-svg>
+          </router-link>
+          <router-link to="/cart" class="header-icon-cart-wrap" :class="{'header-icon-label-full':cartCount}">
+            <icon-svg class="header-icon-cart" icon="cart-header"></icon-svg>
+          </router-link>
+        </div>
       </div>
     </div>
     <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">
@@ -97,8 +92,8 @@ export default {
     }
   },
   watch: {
-    selectBathStyleIndex(newVal){
-      if(newVal === this.$refs){
+    selectBathStyleIndex(newVal) {
+      if (newVal === this.$refs) {
 
       }
     }
@@ -119,7 +114,7 @@ export default {
     bathStyles() {
       return this.$store.getters["bathStyle/all"];
     },
-    selectBathStyleIndex(){
+    selectBathStyleIndex() {
       return this.$store.getters['bathStyle/selectKey'];
     },
     selectBindingFilterStyle() {
@@ -128,19 +123,19 @@ export default {
     selectBindingFilterStyleState() {
       return this.$store.getters['bathStyle/filterToggle'];
     },
-    cart: () => {
-      return {
-        items: [],
-        count: 0,
-        sum: 0,
-      }; // placeholder
+    cartCount() {
+      return this.$store.getters['cart/count'];
     },
-    compare: () => {
-      return {
-        items: [],
-        count: 0,
-      }; // placeholder
+    compareCount() {
+      return this.$store.getters['compare/count'];
     },
+    compareIcon() {
+      let iconName = 'compare-empty';
+      if (this.compareCount) {
+        iconName = 'compare-full';
+      }
+      return iconName;
+    }
   },
   methods: {
     resetBindingCategoryStyle() {

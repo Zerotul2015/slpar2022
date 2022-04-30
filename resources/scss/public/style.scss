@@ -6,3 +6,26 @@
 @import "elements/buttons";
 @import "layouts";
 @import "elements";
+
+
+body{
+  min-width:980px;
+  background: linear-gradient(rgb(240, 240, 240) 120px, #fff 180px) repeat-x;
+}
+#app{
+  background: url('../../../public/build/images/honeycomb_light.png') repeat-x;
+  background-size: 40px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: $brown-light
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}

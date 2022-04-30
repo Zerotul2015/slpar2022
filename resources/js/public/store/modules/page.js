@@ -2,29 +2,30 @@ import api from '../../common/api'
 
 // initial state
 const state = () => ({
-    all: [],
-    allById:{}
+    page: {},
+
 })
 
 // getters
-const getters = {}
+const getters = {
+    page(state) {
+        return state.page;
+    },
+}
 
 // actions
 const actions = {
-    getAll ({ commit }) {
-        api.getData('page',{})
-            .then(r=>{
-                if(r.result === true) {
-                    commit('setAll', r.returnData);
-                }
-            })
-            .catch()
-    },
-    getAllById ({ commit }) {
-        api.getData('page', {'indexBy':'id'})
-            .then(r=>{
-                if(r.result === true) {
-                    commit('setAllById', r.returnData);
+    getByUrl({commit}, url) {
+        let sendData = {
+            'where': 'url',
+            'searchString': url
+        }
+        api.getData('page', sendData)
+            .then(r => {
+                if (r.result === true) {
+                    if (r.returnData[0]) {
+                        commit('setPage', r.returnData[0]);
+                    }
                 }
             })
             .catch()
@@ -33,11 +34,8 @@ const actions = {
 
 // mutations
 const mutations = {
-    setAll (state, pages) {
-        state.all = pages
-    },
-    setAllById (state, pages) {
-        state.allById = {...state.allById, ...pages}
+    setPage(state, page) {
+        state.page = page;
     },
 }
 

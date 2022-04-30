@@ -2,6 +2,7 @@
 
 namespace App\Model\Shop\Product;
 
+use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Product;
 use App\Classes\ActiveRecord\Tables\ProductManufacturer;
 use App\Classes\ActiveRecord\Tables\ProductUnit;
@@ -66,19 +67,49 @@ class ProductModel
                     $manufacturersID[$product->manufacturer_id] = $product->manufacturer;
                 }
             }
-            $manufacturers = ProductManufacturer::find()->where(['id' => $manufacturersID])->indexBy()->all();
-            if ($manufacturers) {
-                foreach ($products as $key => $product) {
-                    if ($product->manufacturer_id && isset($manufacturers[$product->manufacturer_id])) {
-                        $products[$key]->manufacturer_id = $manufacturers[$product->manufacturer_id]->name;
+            if (!empty($manufacturersID)) {
+                $manufacturers = ProductManufacturer::find()->where(['id' => $manufacturersID])->indexBy()->all();
+                if ($manufacturers) {
+                    foreach ($products as $key => $product) {
+                        if ($product->manufacturer_id && isset($manufacturers[$product->manufacturer_id])) {
+                            $products[$key]->manufacturer_id = $manufacturers[$product->manufacturer_id]->name;
+                        } else {
+                            $products[$key]->manufacturer_id = 'С лёгким паром!';
+                        }
                     }
                 }
             }
+
         } elseif ($products->manufacturer_id) {
             if ($manufacturer = ProductManufacturer::findOne($products->manufacturer_id)) {
                 $products->manufacturer_id = $manufacturer->name;
+            } else {
+                $products->manufacturer_id = 'С лёгким паром!';
             }
         }
         return $products;
+    }
+
+    /**
+     * Возвращает товары из того же стиля
+     * @param $productID
+     * @param int $count нужное количество товаров
+     * @return Product|array
+     */
+    public static function getRelatedProducts($productID, $count = 10): Product|array
+    {
+        $returnProducts = [];
+        if ($baseProduct = Product::findOne($productID)) {
+            $styleId = $baseProduct->bath_style_id;
+            if ($bathStyle = BathStyle::findOne($styleId)) {
+                $relatedProductsId = $bathStyle->products_id;
+                if (!empty($relatedProductsId)) {
+                    $related10 = array_rand($relatedProductsId, $count);
+                    $products = Product::find()->where(['id' => $related10])->all();
+                    $returnProducts = static::prepareProductsForTemplate($products);
+                }
+            }
+        }
+        return $returnProducts;
     }
 }
