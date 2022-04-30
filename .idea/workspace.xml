@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="new logo">
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил третий отбор в стили(для усадьбы)">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Products/ProductsCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -565,14 +556,7 @@
       <workItem from="1650807546631" duration="1895000" />
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
-      <workItem from="1651301591633" duration="8054000" />
-    </task>
-    <task id="LOCAL-00114" summary="uncomment emit on change">
-      <created>1642527118459</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1642527118460</updated>
+      <workItem from="1651301591633" duration="8937000" />
     </task>
     <task id="LOCAL-00115" summary="change logo">
       <created>1642528251172</created>
@@ -910,7 +894,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651318517575</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="добавил третий отбор в стили(для усадьбы)">
+      <created>1651332192051</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1651332192051</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -933,7 +924,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="добавил проверку уникальности артикула" />
     <MESSAGE value="Сменил шрифт" />
     <MESSAGE value="Закончил раздел стилей" />
     <MESSAGE value="поправил стил переключателей слайдера товаров" />
@@ -958,7 +948,8 @@
     <MESSAGE value="добавил проверку integrated при удалении и при сохранении." />
     <MESSAGE value="fix" />
     <MESSAGE value="new logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="new logo" />
+    <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил третий отбор в стили(для усадьбы)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
