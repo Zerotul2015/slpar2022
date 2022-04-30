@@ -4,73 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил проверку integrated при удалении и при сохранении.">
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Compare.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Compare.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Shop/Compare/CompareModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/images/fooote_title.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/build/images/logo_footer.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bookmark-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/bookmark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-header.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiCompare.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_compare.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2022_15_28__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Favorite.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Page/PageModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Page/PageModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Favorite/FavoriteModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Product/ProductModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/Settings/Settings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/apiFavorite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Compare/Compare.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Compare/Compare.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Page/Page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Page/Page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/search/search-site.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/compare.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/favorite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/productCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_extends.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_extends.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/_layouts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/elements/_links.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_layouts_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix">
+      <change beforePath="$PROJECT_DIR$/public/build/images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/images/logo_footer.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/images/logo_footer.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,27 +289,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "settings.php.debug.servers",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
     </key>
@@ -620,14 +556,7 @@
       <workItem from="1650807546631" duration="1895000" />
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
-      <workItem from="1651301591633" duration="1412000" />
-    </task>
-    <task id="LOCAL-00112" summary="fix style and other minor bugs">
-      <created>1641400086102</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1641400086102</updated>
+      <workItem from="1651301591633" duration="1717000" />
     </task>
     <task id="LOCAL-00113" summary="init project">
       <created>1642523840226</created>
@@ -965,7 +894,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651039363739</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="fix">
+      <created>1651317984836</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1651317984837</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
     <servers />
@@ -988,7 +924,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Перед демонстрацией" />
     <MESSAGE value="исправил опечатку в тексте кнопки" />
     <MESSAGE value="добавил проверку уникальности артикула" />
     <MESSAGE value="Сменил шрифт" />
@@ -1013,7 +948,8 @@
     <MESSAGE value="починил загрузку товаров при смене категории" />
     <MESSAGE value="переименовал favorite в compare" />
     <MESSAGE value="добавил проверку integrated при удалении и при сохранении." />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил проверку integrated при удалении и при сохранении." />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
