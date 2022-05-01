@@ -7,6 +7,7 @@ namespace App\Controllers\Admin\Api;
 use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\CustomerCompany;
+use App\Classes\ActiveRecord\Tables\Discount;
 use App\Classes\ActiveRecord\Tables\GalleryCategory;
 use App\Classes\ActiveRecord\Tables\Menu;
 use App\Classes\ActiveRecord\Tables\Orders;
@@ -151,6 +152,12 @@ class GetData extends Main
         $object = Orders::find();
         $this->returnAnswer($this->prepareReturnData($object));
     }
+    public function discount(): void
+    {
+        $object = Discount::find();
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+
     public function ordersStatus(): void
     {
         $object = OrdersStatus::find();

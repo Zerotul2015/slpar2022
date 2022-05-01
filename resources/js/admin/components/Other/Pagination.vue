@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination" v-if="(pageCount_ > 1 && pageCount_ < 10) || pageCount_ === 1">
+  <div class="pagination" v-if="(pageCount_ > 1 && pageCount_ < 10)">
     <div class="pagination-title">Выберите страницу:</div>
     <router-link class="pagination-link" v-for="n in pageCount_"
                  :class="{'pagination-link-current':(pageNumber === n)}"
@@ -8,7 +8,7 @@
       {{ pageNumber }}
     </router-link>
   </div>
-  <div class="pagination" v-else>
+  <div class="pagination" v-else-if="pageCount_ !== 1">
     <div class="pagination-title">Выберите страницу:</div>
     <router-link class="pagination-link" v-for="n in 3"
                  :class="{'pagination-link-current':(pageNumber === n)}"

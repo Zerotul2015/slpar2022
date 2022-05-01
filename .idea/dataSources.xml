@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:33061/app</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="slp@212.109.198.215" uuid="bc25b414-39c2-4ac0-90b7-06e9a326abb3">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://212.109.198.215:3306/slp</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

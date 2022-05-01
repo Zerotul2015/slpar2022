@@ -124,7 +124,7 @@ export default new Router({
         {
             path: '/bath-style/edit/:id',
             props: true,
-            name: 'BathStyleCreate',
+            name: 'BathStyleEdit',
             component: () => import("../components/BathStyle/BathStyleCreate.vue"),
             meta: {title: 'Редактирование стиля - Панель управления'}
         },
@@ -285,6 +285,27 @@ export default new Router({
             props: true,
             component: () => import("../components/Orders/OrdersList.vue"),
             meta: {title: 'Заказы контрагенты :companyId - Панель управления'}
+        },
+        //---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---//
+        {
+            path: '/discount',
+            name: 'Discount',
+            component: () => import("../components/Discount/DiscountList.vue"),
+            meta: {title: 'Скидки - Панель управления'}
+        },
+        {
+            path: '/discount/create',
+            name: 'DiscountCreate',
+            props: true,
+            component: () => import("../components/Discount/DiscountCreate.vue"),
+            meta: {title: 'Новая скидка - Панель управления'}
+        },
+        {
+            path: '/discount/:itemId',
+            name: 'DiscountDetails',
+            props: true,
+            component: () => import("../components/Discount/DiscountCreate.vue"),
+            meta: {title: 'Скидка :discountId - Панель управления'}
         },
     ]
 });

@@ -13,6 +13,7 @@ const DATA_PATH = {
     'bathStyle':'bath-style',
     'orders': 'orders',
     'ordersStatus': 'orders-status',
+    'discount': 'discount',
     'customer': 'customer',
     'customerCompany': 'customer-company',
     'banners': 'banners',
