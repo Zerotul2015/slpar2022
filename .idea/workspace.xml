@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="добавил третий отбор в стили(для усадьбы)">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="68a749d3-8ce0-4b25-87f2-477b88dc6621" name="SR-8 Favicon" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    </list>
+    <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +47,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="SR-6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -291,8 +294,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/app/Model/Admin",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -301,8 +306,14 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "tasks.open.task.update.state.enabled": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -585,20 +596,6 @@
       <option name="presentableId" value="LOCAL-00118" />
       <option name="project" value="LOCAL" />
       <updated>1642532308036</updated>
-    </task>
-    <task id="LOCAL-00119" summary="fix name props">
-      <created>1643076991621</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1643076991621</updated>
-    </task>
-    <task id="LOCAL-00120" summary="fix stock_status to stock_status_id">
-      <created>1643077027452</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1643077027452</updated>
     </task>
     <task id="LOCAL-00121" summary="build app">
       <created>1643077055074</created>
@@ -901,10 +898,77 @@
       <option name="project" value="LOCAL" />
       <updated>1651332192051</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
-    <option name="createBranch" value="false" />
-    <option name="useBranch" value="true" />
-    <servers />
+    <task id="LOCAL-00164" summary="fix">
+      <created>1651332570515</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1651332570515</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Скидки от суммы заказа">
+      <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="sale-on-sum" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="" name="Скидки от суммы заказа" comment="" />
+      <created>1651333748912</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1651488823668</updated>
+      <workItem from="1651333775114" duration="31000" />
+      <workItem from="1651377979238" duration="28938000" />
+      <workItem from="1651479900805" duration="2650000" />
+    </task>
+    <task id="LOCAL-00166" summary="Скидки от суммы заказа">
+      <created>1651386600216</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1651386600216</updated>
+    </task>
+    <task id="LOCAL-00167" summary="Скидки от суммы заказа и страница корзины">
+      <created>1651486522371</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1651486522371</updated>
+    </task>
+    <task id="SR-6" summary="Корзина и оформление заказа">
+      <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="" name="SR-6 Корзина и оформление заказа" comment="" />
+      <created>1651488109934</created>
+      <option name="issue" value="true" />
+      <url>https://kemit.myjetbrains.com/issue/SR-6</url>
+      <option name="number" value="6" />
+      <option name="presentableId" value="SR-6" />
+      <option name="project" value="SR" />
+      <updated>1651489251335</updated>
+      <workItem from="1651488823868" duration="424000" />
+    </task>
+    <task active="true" id="SR-8" summary="Favicon">
+      <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="SR-8" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="68a749d3-8ce0-4b25-87f2-477b88dc6621" name="SR-8 Favicon" comment="" />
+      <created>1651489229027</created>
+      <option name="issue" value="true" />
+      <url>https://kemit.myjetbrains.com/issue/SR-8</url>
+      <option name="number" value="8" />
+      <option name="presentableId" value="SR-8" />
+      <option name="project" value="SR" />
+      <option name="type" value="BUG" />
+      <updated>1651489252090</updated>
+      <workItem from="1651489251354" duration="160000" />
+    </task>
+    <option name="localTasksCounter" value="169" />
+    <servers>
+      <YouTrack url="https://kemit.myjetbrains.com">
+        <option name="defaultSearch" value="Assignee: me sort by: updated project: slpar.ru State: -Completed " />
+        <option name="preferredOpenTaskState">
+          <CustomTaskState id="In progress" name="In progress" />
+        </option>
+        <username>zerotul</username>
+      </YouTrack>
+    </servers>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
