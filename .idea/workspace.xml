@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68a749d3-8ce0-4b25-87f2-477b88dc6621" name="SR-8 Favicon" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-    </list>
-    <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix">
+    <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
     </list>
+    <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +45,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="SR-6" />
+        <entry key="$PROJECT_DIR$" value="SR-8" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -297,7 +295,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/app/Model/Admin",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -332,7 +330,7 @@
       <recent name="$PROJECT_DIR$/resources/js/admin/components/MenuSettings" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Web Page.Docker">
+  <component name="RunManager" selected="npm.build">
     <configuration name="rest-api_1 | Worker1 Парсинг товаров со страниц категорий" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="9" requestIdentifier="Worker1 Парсинг товаров со страниц категорий" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -364,12 +362,23 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="wsl://Ubuntu@/home/zerotul/.nvm/versions/node/v16.13.2/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="HTTP Request.rest-api_1 | Worker1 Парсинг товаров со страниц категорий" />
       <item itemvalue="HTTP Request.rest-api_1 | Worker2 Парсинг товаров со страниц категорий" />
       <item itemvalue="HTTP Request.rest-api_1 | works1 загрузка изображений для товаров" />
       <item itemvalue="HTTP Request.rest-api#1" />
       <item itemvalue="JavaScript Debug.GetData.php" />
+      <item itemvalue="npm.build" />
       <item itemvalue="PHP Web Page.Docker" />
     </list>
     <recent_temporary>
@@ -568,34 +577,6 @@
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
-    </task>
-    <task id="LOCAL-00115" summary="change logo">
-      <created>1642528251172</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1642528251173</updated>
-    </task>
-    <task id="LOCAL-00116" summary="FIX: Deprecated: Automatic conversion of false to array">
-      <created>1642531248878</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1642531248878</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Исправил орфографию в комментариях">
-      <created>1642531412588</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1642531412589</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Добавил стилевые решения,">
-      <created>1642532308036</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1642532308036</updated>
     </task>
     <task id="LOCAL-00121" summary="build app">
       <created>1643077055074</created>
@@ -932,23 +913,25 @@
       <option name="project" value="LOCAL" />
       <updated>1651486522371</updated>
     </task>
-    <task id="SR-6" summary="Корзина и оформление заказа">
+    <task active="true" id="SR-6" summary="Корзина и оформление заказа">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
-      <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="" name="SR-6 Корзина и оформление заказа" comment="" />
+      <branch name="SR-6-cart-buy" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="" />
       <created>1651488109934</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-6</url>
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651489251335</updated>
-      <workItem from="1651488823868" duration="424000" />
+      <updated>1651491098400</updated>
+      <workItem from="1651490665523" duration="425000" />
+      <workItem from="1651491098560" duration="280000" />
     </task>
-    <task active="true" id="SR-8" summary="Favicon">
+    <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-8" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="68a749d3-8ce0-4b25-87f2-477b88dc6621" name="SR-8 Favicon" comment="" />
+      <changelist id="" name="SR-8 Favicon" comment="" />
+      <option name="closed" value="true" />
       <created>1651489229027</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-8</url>
@@ -956,8 +939,9 @@
       <option name="presentableId" value="SR-8" />
       <option name="project" value="SR" />
       <option name="type" value="BUG" />
-      <updated>1651489252090</updated>
+      <updated>1651491098400</updated>
       <workItem from="1651489251354" duration="160000" />
+      <workItem from="1651491093517" duration="5000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>
@@ -1014,13 +998,6 @@
     <MESSAGE value="new logo" />
     <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
     <option name="LAST_COMMIT_MESSAGE" value="добавил третий отбор в стили(для усадьбы)" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PhpWebAppRunConfigurationType">
-        <watch expression="$pagesId" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
