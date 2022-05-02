@@ -47,6 +47,9 @@
           <router-link to="/discount">Скидки</router-link>
         </li>
         <li class="menu_sidebar__item">
+          <router-link to="/promo-code">Промо-коды</router-link>
+        </li>
+        <li class="menu_sidebar__item">
           <router-link to="/settings/menu-settings">Меню</router-link>
         </li>
         <li class="menu_sidebar__item menu_sidebar__item_parent">

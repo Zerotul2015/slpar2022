@@ -5,6 +5,7 @@ button, .btn {
   align-content: center;
   justify-content: center;
   color: $white;
+  fill:$white;
   @extend .padding-button;
   background: $grey-middle;
   border: 1px solid $grey-middle;
@@ -30,6 +31,18 @@ button:hover, .btn:hover {
 .btn_green:hover{
   background: $green-dark;
   border: 1px solid $green-dark;
+}
+.btn_green-invert{
+  background: $white;
+  color:$green;
+  fill:$green;
+  border: 1px solid $green;
+}
+.btn_green-invert:hover{
+  background: $green;
+  color:$white;
+  fill:$white;
+  border: 1px solid $green;
 }
 
 .btn_as-text, .btn_as-text:hover{
@@ -86,4 +99,15 @@ button:hover, .btn:hover {
   color:$grey;
   background: $white;
   border: 1px solid $grey;
+}
+
+//корзина
+.btn_white{
+  background: $white;
+  color:$grey;
+  fill:$grey;
+  border:1px solid $grey;
+}
+.btn_white{
+
 }

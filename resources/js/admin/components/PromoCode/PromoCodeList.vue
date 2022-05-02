@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper-content">
-    <h1>Скидки</h1>
+    <h1>Промо-коды</h1>
     <div class="buttons-block">
-      <router-link class="button button_green" to="/discount/create">
+      <router-link class="button button_green" to="/promo-code/create">
         <span class="button-icon"><i class="far fa-plus"></i></span>
-        <span class="button-text">Создать скидку</span>
+        <span class="button-text">Создать промо-код</span>
       </router-link>
     </div>
     <div class="form-section">
       <div class="input-block">
-        <label for="search-page-input">Искать по названию:</label>
+        <label for="search-page-input">Искать:</label>
         <input id="search-page-input" class="input" type="text" v-model="searchString">
       </div>
     </div>
@@ -24,8 +24,8 @@
     <LoaderSpinner v-if="isLoadingItems"></LoaderSpinner>
     <div class="list" v-else>
       <router-link class="list-item" v-for="(item, pageKey) in items.objects" :key="$root.guid()"
-                   :to="'/discount/' + item.id">
-        <div>{{ item.name }}</div>
+                   :to="'/promo-code/' + item.id">
+        <div>{{ item.code_text }}</div>
       </router-link>
     </div>
   </div>
@@ -38,7 +38,7 @@ import api from "../../common/api";
 import {debounce} from "lodash";
 
 export default {
-  name: "DiscountList",
+  name: "PromoCodeList",
   components: {
     Pagination,
     LoaderSpinner,
@@ -83,7 +83,7 @@ export default {
         returnArray = {
           'andWhere': [
             {
-              'where': 'name',
+              'where': 'code_text',
               'searchString': this.searchString,
               'condition': 'like',
               'group': '0',
@@ -99,7 +99,7 @@ export default {
     getCount() {
       let sendData = {'count': true};
       sendData = Object.assign(sendData, this.searchArray);
-      api.getData('discount', sendData)
+      api.getData('promoCode', sendData)
           .then((r) => {
             this.pagesCount = r.returnData ? r.returnData : 0;
             if (r.error) {
@@ -116,7 +116,7 @@ export default {
       this.getCount();
       let sendData = {'pagination': {'page': pageNumber, 'perPage': 20}};
       sendData = Object.assign(sendData, this.searchArray);
-      api.getData('discount', sendData)
+      api.getData('promoCode', sendData)
           .then((r) => {
             setTimeout(()=>{this.isLoadingItems = false}, 1000);
             this.items = r.returnData ? r.returnData : {};

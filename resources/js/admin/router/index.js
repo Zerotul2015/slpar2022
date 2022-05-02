@@ -294,9 +294,15 @@ export default new Router({
             meta: {title: 'Скидки - Панель управления'}
         },
         {
+            path: '/discount/page/:pageNumber',
+            name: 'DiscountPage',
+            props: true,
+            component: () => import("../components/Discount/DiscountList.vue"),
+            meta: {title: 'Скидки - Панель управления'}
+        },
+        {
             path: '/discount/create',
             name: 'DiscountCreate',
-            props: true,
             component: () => import("../components/Discount/DiscountCreate.vue"),
             meta: {title: 'Новая скидка - Панель управления'}
         },
@@ -306,6 +312,33 @@ export default new Router({
             props: true,
             component: () => import("../components/Discount/DiscountCreate.vue"),
             meta: {title: 'Скидка :discountId - Панель управления'}
+        },
+        //---Промокод---Промокод---Промокод---Промокод---Промокод---Промокод---Промокод---Промокод---Промокод---//
+        {
+            path: '/promo-code/create',
+            name: 'PromoCodeCreate',
+            component: () => import("../components/PromoCode/PromoCode.vue"),
+            meta: {title: 'Создание промо-кода - Панель управления'}
+        },
+        {
+            path: '/promo-code/:itemId',
+            name: 'PromoCode',
+            props: true,
+            component: () => import("../components/PromoCode/PromoCode.vue"),
+            meta: {title: 'Промо-код :itemId - Панель управления'}
+        },
+        {
+            path: '/promo-code',
+            name: 'PromoCodeList',
+            component: () => import("../components/PromoCode/PromoCodeList.vue"),
+            meta: {title: 'Промо-коды - Панель управления'}
+        },
+        {
+            path: '/promo-code/page/:pageNumber',
+            name: 'PromoCodeListPage',
+            props: true,
+            component: () => import("../components/PromoCode/PromoCodeList.vue"),
+            meta: {title: 'Промо-коды - Панель управления'}
         },
     ]
 });

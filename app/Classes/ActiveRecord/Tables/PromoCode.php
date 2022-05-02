@@ -10,12 +10,10 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed dateStart regular read/write property
  * @property mixed date_end regular read/write property
  * @property mixed dateEnd regular read/write property
- * @property mixed discount regular read/write property
  * @property mixed code_text regular read/write property
  * @property mixed codeText regular read/write property
- * @property mixed auto_apply regular read/write property
- * @property mixed autoApply regular read/write property
- * @property mixed conditions regular read/write property
+ * @property mixed unit regular read/write property
+ * @property mixed amount regular read/write property
  */
 
 class PromoCode extends Main
@@ -49,14 +47,6 @@ class PromoCode extends Main
             'default' => null,
             'extra' => ''
         ],
-        'discount' => [
-            'field' => 'discount',
-            'type' => 'varchar(128)',
-            'null' => 'YES',
-            'key' => '',
-            'default' => null,
-            'extra' => ''
-        ],
         'code_text' => [
             'field' => 'code_text',
             'type' => 'varchar(255)',
@@ -65,17 +55,17 @@ class PromoCode extends Main
             'default' => null,
             'extra' => ''
         ],
-        'auto_apply' => [
-            'field' => 'auto_apply',
-            'type' => 'tinyint(1)',
+        'unit' => [
+            'field' => 'unit',
+            'type' => 'varchar(16)',
             'null' => 'YES',
             'key' => '',
             'default' => null,
             'extra' => ''
         ],
-        'conditions' => [
-            'field' => 'conditions',
-            'type' => 'text',
+        'amount' => [
+            'field' => 'amount',
+            'type' => 'int',
             'null' => 'YES',
             'key' => '',
             'default' => null,

@@ -1,6 +1,6 @@
 <template>
   <div v-if="componentIconName" :is="componentIconName"
-       :style="{'width':iconSizeX, 'height':iconSizeY, colorFill}"></div>
+       :style="{'width':iconSizeX, 'height':iconSizeY, 'fill':colorFill}"></div>
 </template>
 
 <script>
@@ -12,9 +12,6 @@ import grid from '../../../assets/svg/grid.svg';
 import grid2 from '../../../assets/svg/grid-2.svg';
 import send from '../../../assets/svg/send.svg';
 import cartHeader from '../../../assets/svg/cart-header.svg';
-import cartShopping from '../../../assets/svg/cart-shopping.svg';
-import cartPlus from '../../../assets/svg/cart-plus.svg';
-import cartMinus from '../../../assets/svg/cart-minus.svg';
 import bookmark from '../../../assets/svg/bookmark.svg';
 import bookmarkSolid from '../../../assets/svg/bookmark-solid.svg';
 import angleRight from '../../../assets/svg/angle-right.svg';
@@ -26,6 +23,13 @@ import anglesUp from '../../../assets/svg/angles-up.svg';
 import anglesDown from '../../../assets/svg/angles-down.svg';
 import anglesLeft from '../../../assets/svg/angles-left.svg';
 import instagram from '../../../assets/svg/instagram.svg';
+import trashCan from '../../../assets/svg/trash-can.svg';
+import xmark from '../../../assets/svg/xmark.svg';
+import xmarkLarge from '../../../assets/svg/xmark-large.svg';
+import plus from '../../../assets/svg/plus.svg';
+import minus from '../../../assets/svg/minus.svg';
+import turnDownLeft from '../../../assets/svg/turn-down-left.svg';
+import moneyCheckPen from '../../../assets/svg/money-check-pen.svg';
 
 //конец иконки
 
@@ -39,9 +43,6 @@ export default {
     bookmark,
     bookmarkSolid,
     cartHeader,
-    cartShopping,
-    cartPlus,
-    cartMinus,
     grid,
     grid2,
     search,
@@ -55,6 +56,13 @@ export default {
     anglesUp,
     anglesDown,
     instagram,
+    trashCan,
+    xmark,
+    xmarkLarge,
+    plus,
+    minus,
+    turnDownLeft,
+    moneyCheckPen,
 
     //конец иконки
   },
@@ -88,9 +96,7 @@ export default {
         'search': 'search',
         'send': 'send',
         'cart-header': 'cartHeader',
-        'cart-shopping': 'cartShopping',
-        'cart-plus': 'cartPlus',
-        'cart-minus': 'cartMinus',
+        'money-check-pen': 'moneyCheckPen',
         'angle-right': 'angleRight',
         'angle-left': 'angleLeft',
         'angle-up': 'angleUp',
@@ -100,6 +106,12 @@ export default {
         'angles-up': 'anglesUp',
         'angles-down': 'anglesDown',
         'instagram': 'instagram',
+        'trash-can': 'trashCan',
+        'xmark-large': 'xmarkLarge',
+        'xmark': 'xmark',
+        'plus': 'plus',
+        'minus': 'minus',
+        'turn-down-left': 'turnDownLeft',
       }
     }
   },
@@ -108,7 +120,7 @@ export default {
   },
   computed: {
     colorFill() {
-      return this.color ? 'fill:' + this.color : '';
+      return this.color ? this.color : '';
     },
     componentIconName: function () {
       if (this.iconsName[this.icon]) {

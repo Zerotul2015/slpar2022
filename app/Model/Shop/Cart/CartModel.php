@@ -52,19 +52,20 @@ class CartModel
      */
     private static function saveCart(Cart $cartAfterGet): void
     {
-        $cartProducts = $cartAfterGet->products;
+        $cartAfterGet2 = clone $cartAfterGet; // чтобы не испортить подготовленные к выводу в шаблон данные о товарах
+        $cartProducts = $cartAfterGet2->products;
         if (!empty($cartProducts)) {
             $cartProductCleaner = [];
             foreach ($cartProducts as $productId => $cartProductItem) {
                 $cartProductCleaner[$productId] = $cartProductItem['count'];
             }
-            $cartAfterGet->products = $cartProductCleaner;
+            $cartAfterGet2->products = $cartProductCleaner;
         }
-        $cartPromoCode = $cartAfterGet->promo_code_used;
+        $cartPromoCode = $cartAfterGet2->promo_code_used;
         if ($cartPromoCode) {
-            $cartAfterGet->promo_code_used = $cartPromoCode->id;
+            $cartAfterGet2->promo_code_used = $cartPromoCode->id;
         }
-        $cartAfterGet->save();
+        $cartAfterGet2->save();
     }
 
 
@@ -157,7 +158,7 @@ class CartModel
      * @return array
      */
     #[ArrayShape(['result' => "bool", 'returnData' => "\App\Classes\ActiveRecord\Tables\Cart"])]
-    public static function changeCount($idProduct, $newCount): array
+    public static function changeCount($idProduct, $newCount, $skip=true): array
     {
         $result = false;
         $newCount = (int)$newCount;

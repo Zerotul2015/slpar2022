@@ -99,6 +99,10 @@ class ChangeData extends Main
     {
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Discount\DiscountModel'));
     }
+    public function promoCode(): void
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\PromoCode\PromoCodeModel'));
+    }
 
     public function orders(): void
     {

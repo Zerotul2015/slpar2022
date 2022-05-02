@@ -14,6 +14,7 @@ const DATA_PATH = {
     'orders': 'orders',
     'ordersStatus': 'orders-status',
     'discount': 'discount',
+    'promoCode': 'promo-code',
     'customer': 'customer',
     'customerCompany': 'customer-company',
     'banners': 'banners',

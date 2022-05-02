@@ -4,6 +4,7 @@ import apiCart from '../../common/apiCart'
 const state = () => ({
     cartProducts: {},
     promoCodeUsed: null,
+    resultApplyCode: null, //false | true | null
 })
 
 // getters
@@ -14,8 +15,18 @@ const getters = {
     promoCodeUsed(state) {
         return state.promoCodeUsed;
     },
-    count(state){
+    count(state) {
         return Object.keys(state.cartProducts).length;
+    },
+    sum(state) {
+        let sum = 0;
+        Object.values(state.cartProducts).forEach((cartItem) => {
+            sum = (cartItem.product.price * cartItem.count) + sum;
+        });
+        return sum;
+    },
+    resultApplyCode(state){
+        return state.resultApplyCode;
     }
 }
 
@@ -60,11 +71,12 @@ const actions = {
             })
             .catch()
     },
-    changeCount({commit}, productId, newCount) {
+    changeCount({commit}, newVal) {
         let sendData = {
-            'productId': productId,
-            'count': newCount,
+            'productId': newVal[0],
+            'count': newVal[1],
         };
+        console.log(sendData);
         apiCart.cartAction('changeCount', sendData)
             .then(r => {
                 if (r.result === true) {
@@ -80,9 +92,14 @@ const actions = {
         };
         apiCart.cartAction('applyPromoCode', sendData)
             .then(r => {
+                commit('setResultApplyCode', r.result);
                 if (r.result === true) {
                     commit('setCartProducts', r.returnData['products']);
                     commit('setPromoCodeUsed', r.returnData['promo_code_used']);
+                }else{
+                    setTimeout(() => {
+                        commit('setResultApplyCode', null);
+                    }, 5000);
                 }
             })
             .catch()
@@ -103,6 +120,9 @@ const actions = {
 const mutations = {
     setCartProducts(state, cartProducts) {
         state.cartProducts = cartProducts;
+    },
+    setResultApplyCode(state, resultApply) {
+        state.resultApplyCode = resultApply;
     },
     setPromoCodeUsed(state, promoCodeUsed) {
         state.promoCodeUsed = promoCodeUsed;

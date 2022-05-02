@@ -16,7 +16,8 @@ class DiscountModel implements DefaultMethodTableClass
      * @return array
      */
 
-    #[ArrayShape(['result' => "bool", 'error' => "array", 'returnData' => "\App\Classes\ActiveRecord\Main|\App\Classes\ActiveRecord\Tables\Discount", 'id' => "mixed"])] public static function Save($val): array
+    #[ArrayShape(['result' => "bool", 'error' => "array", 'returnData' => "\App\Classes\ActiveRecord\Main|\App\Classes\ActiveRecord\Tables\Discount", 'id' => "mixed"])]
+    public static function Save($val): array
     {
         $returnResult = ['result' => false];
         $itemOld = false;
@@ -59,7 +60,7 @@ class DiscountModel implements DefaultMethodTableClass
 
         $availableValues = [
             'type' =>
-                ['count' => 'count'],
+                ['count' => 'count', 'sum'=>'sum'],
             'unit' =>
                 ['percent' => 'percent', 'rub' => 'rub']
         ];

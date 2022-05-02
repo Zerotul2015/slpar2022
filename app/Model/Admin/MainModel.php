@@ -429,4 +429,51 @@ class MainModel
         header('Content-Type: application/json');
         echo json_encode($returnResult);
     }
+
+    /**
+     * Возвращает id переданного массива или объекта
+     * Если id не найден возвращает null
+     * @param $val
+     * @return int|null
+     */
+    public static function returnID($val): ?int
+    {
+        $returnID = null;
+        if (is_object($val)) {
+            $returnID = $val->id ?? null;
+        } else {
+            $returnID = $val['id'] ?? null;
+        }
+        return $returnID;
+    }
+
+
+    /**
+     * @param $val array
+     * @param $className string|Main
+     * @return mixed
+     */
+    public static function save(array $val, string|Main $className): mixed
+    {
+        if (isset($val['id']) && $val['id'] && $newObject = $className::findOne($val['id'])) {
+            $newObject->set($val);
+        } else {
+            $newObject = $className::create()->set($val);
+        }
+        return $newObject->save();
+    }
+
+    /**
+     * @param $id
+     * @param $className string|Main
+     * @return bool
+     */
+    public static function delete($id, $className): bool
+    {
+        $result = false;
+        if ($objectInBase = $className::findOne($id)) {
+            $result = $objectInBase->del();
+        }
+        return $result;
+    }
 }

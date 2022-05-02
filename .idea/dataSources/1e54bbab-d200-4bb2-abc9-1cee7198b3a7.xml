@@ -2307,329 +2307,325 @@ app|schema||app||UPDATE|G</Grants>
       <DataType>varchar(32)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="591" parent="299" name="discount">
-      <DataType>varchar(128)|0s</DataType>
+    <column id="591" parent="299" name="code_text">
+      <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="592" parent="299" name="code_text">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="592" parent="299" name="unit">
+      <DataType>varchar(16)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="593" parent="299" name="auto_apply">
-      <DataType>tinyint(1)|0s</DataType>
+    <column id="593" parent="299" name="amount">
+      <DataType>int|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="594" parent="299" name="conditions">
-      <DataType>text|0s</DataType>
-      <Position>7</Position>
-    </column>
-    <index id="595" parent="299" name="id">
+    <index id="594" parent="299" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="596" parent="299" name="PRIMARY">
+    <key id="595" parent="299" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="597" parent="299" name="id">
+    <key id="596" parent="299" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="598" parent="300" name="id">
+    <column id="597" parent="300" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="599" parent="300" name="title_prefix">
+    <column id="598" parent="300" name="title_prefix">
       <DataType>varchar(128)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="600" parent="300" name="title_postfix">
+    <column id="599" parent="300" name="title_postfix">
       <DataType>varchar(128)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="601" parent="300" name="title_prefix_product">
+    <column id="600" parent="300" name="title_prefix_product">
       <DataType>varchar(128)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="602" parent="300" name="title_postfix_product">
+    <column id="601" parent="300" name="title_postfix_product">
       <DataType>varchar(128)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="603" parent="300" name="maintenance_mode">
+    <column id="602" parent="300" name="maintenance_mode">
       <DataType>tinyint(1)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="604" parent="300" name="image_header">
+    <column id="603" parent="300" name="image_header">
       <DataType>varchar(255)|0s</DataType>
       <Position>7</Position>
     </column>
-    <column id="605" parent="300" name="image_logo">
+    <column id="604" parent="300" name="image_logo">
       <DataType>varchar(255)|0s</DataType>
       <Position>8</Position>
     </column>
-    <column id="606" parent="300" name="logo_text">
+    <column id="605" parent="300" name="logo_text">
       <DataType>varchar(255)|0s</DataType>
       <Position>9</Position>
     </column>
-    <column id="607" parent="300" name="template_footer">
+    <column id="606" parent="300" name="template_footer">
       <DataType>text|0s</DataType>
       <Position>10</Position>
     </column>
-    <column id="608" parent="300" name="seo_index_page">
+    <column id="607" parent="300" name="seo_index_page">
       <DataType>text|0s</DataType>
       <Position>11</Position>
     </column>
-    <index id="609" parent="300" name="id">
+    <index id="608" parent="300" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="610" parent="300" name="id">
+    <key id="609" parent="300" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="611" parent="301" name="id">
+    <column id="610" parent="301" name="id">
       <AutoIncrement>12</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="612" parent="301" name="banner_name">
+    <column id="611" parent="301" name="banner_name">
       <DataType>varchar(64)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="613" parent="301" name="image">
+    <column id="612" parent="301" name="image">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="614" parent="301" name="href">
+    <column id="613" parent="301" name="href">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="615" parent="301" name="description">
+    <column id="614" parent="301" name="description">
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="616" parent="301" name="id">
+    <index id="615" parent="301" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="617" parent="301" name="PRIMARY">
+    <key id="616" parent="301" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="618" parent="301" name="id">
+    <key id="617" parent="301" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="619" parent="302" name="id">
+    <column id="618" parent="302" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="620" parent="302" name="seo">
+    <column id="619" parent="302" name="seo">
       <DataType>text|0s</DataType>
       <Position>2</Position>
     </column>
-    <index id="621" parent="302" name="id">
+    <index id="620" parent="302" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="622" parent="302" name="id">
+    <key id="621" parent="302" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="623" parent="303" name="id">
+    <column id="622" parent="303" name="id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="624" parent="303" name="layout_for">
+    <column id="623" parent="303" name="layout_for">
       <DataType>varchar(32)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="625" parent="303" name="is_default">
+    <column id="624" parent="303" name="is_default">
       <DataType>tinyint(1)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="626" parent="303" name="for_id">
+    <column id="625" parent="303" name="for_id">
       <DataType>bigint unsigned|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="627" parent="303" name="blocks">
+    <column id="626" parent="303" name="blocks">
       <DataType>text|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="628" parent="303" name="id">
+    <index id="627" parent="303" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="629" parent="303" name="id">
+    <key id="628" parent="303" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="630" parent="304" name="id">
+    <column id="629" parent="304" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="631" parent="304" name="smtp">
+    <column id="630" parent="304" name="smtp">
       <DataType>varchar(64)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="632" parent="304" name="email_login">
+    <column id="631" parent="304" name="email_login">
       <DataType>varchar(64)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="633" parent="304" name="email_pass">
+    <column id="632" parent="304" name="email_pass">
       <DataType>varchar(64)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="634" parent="304" name="email_to_send">
+    <column id="633" parent="304" name="email_to_send">
       <DataType>varchar(64)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="635" parent="304" name="email_to_receive">
+    <column id="634" parent="304" name="email_to_receive">
       <DataType>varchar(64)|0s</DataType>
       <Position>6</Position>
     </column>
-    <index id="636" parent="304" name="id">
+    <index id="635" parent="304" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="637" parent="304" name="id">
+    <key id="636" parent="304" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="638" parent="305" name="id">
+    <column id="637" parent="305" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="639" parent="305" name="offers">
+    <column id="638" parent="305" name="offers">
       <DataType>text|0s</DataType>
       <Position>2</Position>
     </column>
-    <index id="640" parent="305" name="id">
+    <index id="639" parent="305" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="641" parent="305" name="settings_product_page_id_uindex">
+    <index id="640" parent="305" name="settings_product_page_id_uindex">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="642" parent="305" name="PRIMARY">
+    <key id="641" parent="305" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="643" parent="305" name="id">
+    <key id="642" parent="305" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <key id="644" parent="305" name="settings_product_page_id_uindex">
+    <key id="643" parent="305" name="settings_product_page_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>settings_product_page_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="645" parent="306" name="id">
+    <column id="644" parent="306" name="id">
       <AutoIncrement>7</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="646" parent="306" name="section">
+    <column id="645" parent="306" name="section">
       <DataType>bigint unsigned|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="647" parent="306" name="seo">
+    <column id="646" parent="306" name="seo">
       <DataType>text|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="648" parent="306" name="title">
+    <column id="647" parent="306" name="title">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="649" parent="306" name="description">
+    <column id="648" parent="306" name="description">
       <DataType>text|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="650" parent="306" name="id">
+    <index id="649" parent="306" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="651" parent="306" name="section">
+    <index id="650" parent="306" name="section">
       <ColNames>section</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="652" parent="306" name="PRIMARY">
+    <key id="651" parent="306" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="653" parent="306" name="id">
+    <key id="652" parent="306" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <key id="654" parent="306" name="section">
+    <key id="653" parent="306" name="section">
       <ColNames>section</ColNames>
       <UnderlyingIndexName>section</UnderlyingIndexName>
     </key>
-    <column id="655" parent="307" name="id">
+    <column id="654" parent="307" name="id">
       <AutoIncrement>22</AutoIncrement>
       <DataType>bigint unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="656" parent="307" name="login">
+    <column id="655" parent="307" name="login">
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="657" parent="307" name="pass">
+    <column id="656" parent="307" name="pass">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="658" parent="307" name="token">
+    <column id="657" parent="307" name="token">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="659" parent="307" name="access_level">
+    <column id="658" parent="307" name="access_level">
       <DataType>varchar(32)|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="660" parent="307" name="id">
+    <index id="659" parent="307" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="661" parent="307" name="users_login_uindex">
+    <index id="660" parent="307" name="users_login_uindex">
       <ColNames>login</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="662" parent="307" name="id">
+    <key id="661" parent="307" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <key id="663" parent="307" name="users_login_uindex">
+    <key id="662" parent="307" name="users_login_uindex">
       <ColNames>login</ColNames>
       <UnderlyingIndexName>users_login_uindex</UnderlyingIndexName>
     </key>

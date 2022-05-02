@@ -1,7 +1,7 @@
 <template>
   <div class="form">
-    <h1><span v-if="item.id">Редактирование</span><span v-else>Создание</span> скидки <span v-if="item.name"
-                                                                                            v-html="item.name"></span>
+    <h1><span v-if="item.id">Редактирование</span><span v-else>Создание</span> промокода <span v-if="item.code_text"
+                                                                                            v-html="item.code_text"></span>
     </h1>
     <div v-if="loading" class="loading">
       Загрузка...
@@ -21,17 +21,22 @@
     </div>
     <div class="form-section">
       <div class="input-block input-block_highlight">
-        <label for="name">Название(не отображается на сайте):</label>
-        <input id="name" class="input" type="text" v-model="item.name">
+        <label for="name">Промокод:</label>
+        <input id="name" class="input" type="text" v-model="item.code_text">
       </div>
     </div>
     <div class="form-section">
       <div class="input-block input-block_highlight">
-        <label for="type">Тип скидки:</label>
-        <select id="type" class="select" v-model="item.type">
-          <option value="count">Количество товара в заказе</option>
-          <option value="sum">Сумма товара в заказе</option>
-        </select>
+        <label for="date-start">Действует с:</label>
+        <input id="date-start" type="date" v-model="item.date_start">
+        <label for="date-end">до:</label>
+        <input id="date-end" type="date" v-model="item.date_end">
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="input-block input-block_highlight">
+        <label for="amount">Размер скидки:</label>
+        <input id="name" class="input" type="number" min="0.5" step="0.5" v-model="item.amount">
       </div>
       <div class="input-block input-block_highlight">
         <label for="unit">Ед. изм.:</label>
@@ -40,34 +45,14 @@
           <option value="percent">проценты</option>
         </select>
       </div>
-      <div class="input-block input-block_highlight">
-        <label for="amount">Размер скидки:</label>
-        <input id="name" class="input" type="number" min="0.5" step="0.5" v-model="item.amount">
-      </div>
-    </div>
-    <div class="form-section">
-      <h2>Условия для активации скидки</h2>
-      <div class="" v-if="item.type==='count'">
-        <div class="input-block input-block_highlight">
-          <label for="min-count">Минимальное количество товара в корзине:</label>
-          <input id="name" class="input" type="number" min="1" step="1" v-model="conditionsMinCount">
-        </div>
-      </div>
-      <div class="" v-if="item.type==='sum'">
-        <div class="input-block input-block_highlight">
-          <label for="min-count">Минимальная сумма товаров в корзине:</label>
-          <input id="name" class="input" type="number" min="1" step="1" v-model="conditionsMinSum">
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import api from "../../common/api";
-
 export default {
-  name: "DiscountCreate",
+  name: "PromoCode",
   props: {
     itemId: {
       required: false
@@ -100,45 +85,15 @@ export default {
       this.getItem();
     } else {
       this.item = {
-        name: '',
-        type: 'count',
-        conditions: {},
-        enable: true,
-        unit: 'percent',
-        amount: 0
+        'date_start':null,
+        'date_end':null,
+        'code_text':null,
+        'unit': 'percent',
+        'amount': 0
       }
     }
-    this.conditionsPrepare();
   },
   watch: {
-    'item.type'(newVal) {
-      if (newVal === 'count') {
-        if(!this.item.conditions.minCount){
-          this.item.conditions = {'minCount': 0};
-        }
-      }
-      if (newVal === 'sum') {
-        if(!this.item.conditions.minSum){
-          this.item.conditions = {'minSum': 0};
-        }
-      }
-    },
-    conditionsMinCount(newVal) {
-      let count = parseInt(newVal)
-      if(isNaN(count)){
-        count = 0;
-      }
-      this.conditionsMinCount = count;
-      this.item.conditions.minCount = count;
-    },
-    conditionsMinSum(newVal) {
-      let sum = parseInt(newVal)
-      if(isNaN(sum)){
-        sum = 0;
-      }
-      this.conditionsMinSum = sum;
-      this.item.conditions.minSum = sum;
-    },
     //start save, delete
     saveStatus: function (newVal) {
       if (newVal) {
@@ -183,21 +138,12 @@ export default {
     //end save, delete
   },
   methods: {
-    conditionsPrepare() {
-      if (this.item.type === 'count') {
-        this.conditionsMinCount = this.item.conditions.minCount ? this.item.conditions.minCount : 0;
-      }
-      if (this.item.type === 'sum') {
-        this.conditionsMinSum = this.item.conditions.minSum ? this.item.conditions.minSum : 0;
-      }
-    },
     getItem: async function () {
-      api.getData('discount', {'where': 'id', 'searchString': this.itemId})
+      api.getData('promoCode', {'where': 'id', 'searchString': this.itemId})
           .then((r) => {
             this.loading = false;
             if (r.result === true) {
               this.item = r.returnData[0];
-              this.conditionsPrepare();
             }
           })
           .catch((e) => {
@@ -206,11 +152,11 @@ export default {
           })
     },
     saveItem: async function () {
-      api.applyData('discount', 'save', this.item)
+      api.applyData('promoCode', 'save', this.item)
           .then((r) => {
             if (r.result === true) {
               this.saveStatus = 1;
-              this.$router.push({'name': 'Discount'});
+              this.$router.push({'name': 'PromoCodeList'});
             } else {
               this.saveStatus = 2;
               this.errorSaveText = r.error ? r.error : 'неизвестная ошибка: ' + r;
@@ -223,10 +169,10 @@ export default {
     },
     deleteItem() {
       if (this.deleteStatus === 1) {
-        api.applyData('discount', 'delete', {'id': this.item.id})
+        api.applyData('promoCode', 'delete', {'id': this.item.id})
             .then((r) => {
               if (r.result === true) {
-                this.$router.push({'name': 'Discount'});
+                this.$router.push({'name': 'PromoCodeList'});
               } else {
                 this.deleteStatus = 2;
                 this.errorDeleteText = r.error ? r.error : 'неизвестная ошибка: ' + r;

@@ -19,6 +19,7 @@ use App\Classes\ActiveRecord\Tables\ProductCategory;
 use App\Classes\ActiveRecord\Tables\ProductManufacturer;
 use App\Classes\ActiveRecord\Tables\ProductStockStatus;
 use App\Classes\ActiveRecord\Tables\ProductUnit;
+use App\Classes\ActiveRecord\Tables\PromoCode;
 use App\Classes\ActiveRecord\Tables\Settings;
 use App\Classes\ActiveRecord\Tables\SettingsBanner;
 use App\Classes\ActiveRecord\Tables\SettingsLayouts;
@@ -155,6 +156,12 @@ class GetData extends Main
     public function discount(): void
     {
         $object = Discount::find();
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+
+    public function promoCode(): void
+    {
+        $object = PromoCode::find();
         $this->returnAnswer($this->prepareReturnData($object));
     }
 
