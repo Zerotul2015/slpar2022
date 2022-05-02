@@ -49,6 +49,7 @@ class PublicTemplateModel
                 'cart' => $breadcrumb->add('Корзина', '/cart')->render(),
                 'compare' => $breadcrumb->add('Сравнение товаров', '/compare')->render(),
                 'favorite' => $breadcrumb->add('Избранное', '/favorite')->render(),
+                'ordersPreview' => $breadcrumb->add('Просмотр заказов', '/orders/preview')->render(),
                 'bathStyle' => BathStyle::find()->where([$where => $indexOrUrlObject])->one(),
             };
         }
@@ -157,6 +158,9 @@ class PublicTemplateModel
                 break;
             case 'favorite':
                 $seo['title'] = 'Избранные товары';
+                break;
+            case 'ordersPreview':
+                $seo['title'] = 'Просмотр заказов';
                 break;
             case 'index':
                 $seo['title'] = $settings->seo_index_page['title'];
