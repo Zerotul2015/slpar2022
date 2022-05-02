@@ -7,6 +7,7 @@ namespace App\Controllers\Api;
 use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\CustomerCompany;
+use App\Classes\ActiveRecord\Tables\DeliveryMethods;
 use App\Classes\ActiveRecord\Tables\Discount;
 use App\Classes\ActiveRecord\Tables\GalleryCategory;
 use App\Classes\ActiveRecord\Tables\Menu;
@@ -14,6 +15,7 @@ use App\Classes\ActiveRecord\Tables\Orders;
 use App\Classes\ActiveRecord\Tables\OrdersStatus;
 use App\Classes\ActiveRecord\Tables\Page;
 use App\Classes\ActiveRecord\Tables\PageCategory;
+use App\Classes\ActiveRecord\Tables\PaymentMethods;
 use App\Classes\ActiveRecord\Tables\Product;
 use App\Classes\ActiveRecord\Tables\ProductCategory;
 use App\Classes\ActiveRecord\Tables\ProductManufacturer;
@@ -290,5 +292,18 @@ class GetData extends Main
         $object = Discount::find()->where(['enable' => 1]);
         $this->returnAnswer($this->prepareReturnData($object));
     }
+
+    public function deliveryMethods(): void
+    {
+        $object = DeliveryMethods::find()->where(['enable' => 1]);
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+
+    public function paymentMethods(): void
+    {
+        $object = PaymentMethods::find()->where(['enable' => 1]);
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+
 
 }

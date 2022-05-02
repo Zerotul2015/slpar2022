@@ -8,6 +8,7 @@ const ACTION_PATH = {
     'deleteCart': 'del-cart',
     'changeCount': 'change-count',
     'applyPromoCode': 'apply-promo-code',
+    'makingOrder': 'making-order',
 }
 
 export default {

@@ -52,6 +52,12 @@ class Cart extends Main
         $this->returnAnswer($this->returnData);
     }
 
+    public function makingOrder()
+    {
+        $this->returnData['result'] = CartModel::makingOrder();
+        $this->returnAnswer($this->returnData);
+    }
+
     public function delCart()
     {
         $this->returnData['result'] = CartModel::deleteCart();

@@ -17,6 +17,10 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed status regular read/write property
  * @property mixed priceorder regular read/write property
  * @property mixed pricedelivery regular read/write property
+ * @property mixed promo_code_used regular read/write property
+ * @property mixed promoCodeUsed regular read/write property
+ * @property mixed discount_used regular read/write property
+ * @property mixed discountUsed regular read/write property
  */
 
 class Orders extends Main
@@ -93,6 +97,22 @@ class Orders extends Main
         'priceDelivery' => [
             'field' => 'priceDelivery',
             'type' => 'int',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'promo_code_used' => [
+            'field' => 'promo_code_used',
+            'type' => 'text',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'discount_used' => [
+            'field' => 'discount_used',
+            'type' => 'text',
             'null' => 'YES',
             'key' => '',
             'default' => null,

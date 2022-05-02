@@ -13,6 +13,8 @@ import templateData from './modules/templateData'
 import cart from './modules/cart'
 import compare from './modules/compare'
 import discounts from './modules/discounts'
+import deliveryMethods from './modules/deliveryMethods'
+import paymentMethods from './modules/paymentMethods'
 
 Vue.use(Vuex)
 
@@ -31,6 +33,8 @@ export default new Vuex.Store({
         compare,
         templateData,
         discounts,
+        deliveryMethods,
+        paymentMethods,
     },
     state: {
 

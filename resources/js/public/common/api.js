@@ -15,6 +15,8 @@ const DATA_PATH = {
     'templateData':'template-data',
     'favorite':'favorite',
     'discount':'discount',
+    'deliveryMethods':'delivery-methods',
+    'paymentMethods':'payment-methods',
 }
 
 export default {

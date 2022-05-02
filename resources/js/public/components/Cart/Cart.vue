@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="cart-product cp-pre-footer" v-if="sumDiscountPromoCode > 0">
-          <div class="cp-price cp-pre-footer-title">Промо-код <i>{{cartPromoCodeUsed.code_text}}</i></div>
+          <div class="cp-price cp-pre-footer-title">Промо-код <i>{{ cartPromoCodeUsed.code_text }}</i></div>
           <div class="cp-sum cp-pre-footer-val">
             <span class="price-to-locale">-{{ sumDiscountPromoCode | priceToLocale }}</span>
             <span class="price-currency">р.</span></div>
@@ -66,7 +66,8 @@
           </div>
         </div>
         <div class="cart-product cp-pre-footer" v-if="sumDiscount > 0">
-          <div class="cp-price cp-pre-footer-title">{{textActiveDiscount}} <i>{{cartPromoCodeUsed.code_text}}</i></div>
+          <div class="cp-price cp-pre-footer-title">{{ textActiveDiscount }} <i>{{ cartPromoCodeUsed.code_text }}</i>
+          </div>
           <div class="cp-sum cp-pre-footer-val">
             <span class="price-to-locale">-{{ sumDiscountProd | priceToLocale }}</span>
             <span class="price-currency">р.</span></div>
@@ -89,14 +90,15 @@
           </button>
         </div>
         <div class="cp-btn-block">
-          <button class="btn">
+          <button class="btn" @click="$router.push('/')">
             <span class="btn-text">Продолжить покупки</span>
           </button>
-          <button class="btn btn_green">
+          <button class="btn btn_green" v-if="!isCheckoutStep" @click="isCheckoutStep = true">
             <icon-svg class="btn-icon" icon="money-check-pen"></icon-svg>
             <span class="btn-text">Перейти к оформлению</span>
           </button>
         </div>
+        <cart-checkout v-if="isCheckoutStep"></cart-checkout>
       </div>
     </div>
   </div>
@@ -105,18 +107,20 @@
 <script>
 import Breadcrumb from "../Breadcrumb";
 import IconSvg from "../Icon-svg/icon-svg";
+import CartCheckout from "./CartMakingOrder";
 
 export default {
   name: "Cart",
-  components: {IconSvg, Breadcrumb},
+  components: {CartCheckout, IconSvg, Breadcrumb},
   data() {
     return {
       countPos: 1,
       promoCode: '',
+      isCheckoutStep: false,
     }
   },
   computed: {
-    textActiveDiscount(){
+    textActiveDiscount() {
       let text = 'Дополнительная скидка на заказ';
       return text;
     },
@@ -151,19 +155,19 @@ export default {
     sumDiscountPromoCode() { //скидка от использования промокода
       let sumDiscount = 0;
       //{"id":6,"date_start":"2022-04-29","date_end":"2022-05-27","code_text":"тест5","unit":"percent","amount":10}
-      if(this.cartPromoCodeUsed && this.cartPromoCodeUsed.amount){
-        if(this.cartPromoCodeUsed.unit === 'percent'){
+      if (this.cartPromoCodeUsed && this.cartPromoCodeUsed.amount) {
+        if (this.cartPromoCodeUsed.unit === 'percent') {
           sumDiscount = this.cartSum / 100 * this.cartPromoCodeUsed.amount;
         }
-        if(this.cartPromoCodeUsed.unit === 'rub'){
+        if (this.cartPromoCodeUsed.unit === 'rub') {
           sumDiscount = this.cartPromoCodeUsed.amount;
         }
       }
       return sumDiscount;
     },
-    cartSumWithDiscountAndPromoCode(){ //итоговая сумма заказа с учетом всех скидок и промокода
+    cartSumWithDiscountAndPromoCode() { //итоговая сумма заказа с учетом всех скидок и промокода
       let sum = 0;
-      if(this.cartSum){
+      if (this.cartSum) {
         sum = this.cartSum - this.sumDiscountPromoCode - this.sumDiscount;
       }
       return sum;

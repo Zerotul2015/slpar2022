@@ -32,6 +32,19 @@ const getters = {
 
 // actions
 const actions = {
+    getCheckout({commit}, ordersDetails){
+        let sendData = {
+            'ordersDetails': ordersDetails,
+        };
+        apiCart.cartAction('makingOrder', sendData)
+            .then(r => {
+                if (r.result === true) {
+                    commit('setCartProducts', r.returnData['products']);
+                    commit('setPromoCodeUsed', r.returnData['promo_code_used']);
+                }
+            })
+            .catch()
+    },
     getCart({commit}) {
         apiCart.cartAction('getCart', {})
             .then(r => {
