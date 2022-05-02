@@ -4,15 +4,17 @@
 namespace App\Model;
 
 
+use Exception;
+
 class MainModel
 {
     /**
      * Генерирует токен длиной 64 символа /^[0-9a-f]{64}$/
      * @param $prefix string
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
-    public static function generateToken($prefix = '')
+    public static function generateToken($prefix = ''): string
     {
         $tokenBytes = random_bytes(32);
         return $prefix . bin2hex($tokenBytes);

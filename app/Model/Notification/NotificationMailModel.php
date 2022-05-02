@@ -8,6 +8,7 @@ use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\Orders;
 use App\Classes\ActiveRecord\Tables\OrdersStatus;
 use App\Classes\Mail;
+use App\Model\MainModel;
 use Exception;
 
 class NotificationMailModel
@@ -22,7 +23,7 @@ class NotificationMailModel
      * @return bool|int
      * @throws Exception
      */
-    public static function notificationOrder($status, Orders $order, $recipientMail = '')
+    public static function notificationOrder($status, Orders $order, string $recipientMail = ''): bool|int
     {
         $result = false;
         $statusInBase = OrdersStatus::findOne($status);
@@ -30,7 +31,7 @@ class NotificationMailModel
         $id = $order->id;
         $placeholder = ['[id]', '[link.details]', '[link.pay]', '[name]'];
 
-        $customer = Customers::findOne($order->customer_id);
+        $customer = Customer::findOne($order->customer_id);
         if ($customer->token) {
             $tokenDetails = $customer->token;
         } else {
@@ -124,71 +125,5 @@ class NotificationMailModel
             }
         }
         return $result;
-    }
-
-    /**
-     * Отправляет сертификат на указаную почту, если передатб $customMessage то
-     * оно будет использовано вместо стандартного письма.
-     * @param $certificate
-     * @param $mailTo
-     * @param string $customMessage
-     * @return int
-     */
-    public static function sendCertificate($certificate, $mailTo, $customMessage = ''): int
-    {
-        $mail = new Mail();
-        $mail->setSubject('Подарочный сертификат интернет-магазина ИзЛесуВестимо');
-
-        //состовляем сообщение если не передано готовое
-        if (empty($customMessage)) {
-            $customMessage = "<p style='text-align: center'><img style='display:block; width:100%' src='https://$_SERVER[SERVER_NAME]/images/certificates/large/$certificate->image' alt='подарочный сертификат'></p>";
-            $customMessage .= "<p>Подарочный сертификат на <b>$certificate->amount ₽</b>";
-            if ($certificate->delivery) {
-                $customMessage .= " для $certificate->recipien от $certificate->sender</p>";
-            } else {
-                if ($certificate->recipient) {
-                    $customMessage .= " для $certificate->recipient";
-                }
-                if ($certificate->sender) {
-                    $customMessage .= " от $certificate->sender";
-                }
-                $customMessage .= '.</p>';
-            }
-            if (!empty($certificate->message_for_recipient)) {
-                $customMessage .= "<p>Сообщение от отправителя:<br>$certificate->message_for_recipient</p>";
-            }
-            $customMessage .= "<p>
-                                Номер сертификата: $certificate->number
-                                <br>
-                                Пин-код: $certificate->pin
-                            </p>";
-        }
-
-        $mail->setRecipient($mailTo);
-        $mail->setMessage($customMessage);
-        return $mail->send();
-    }
-
-    /**
-     * @param $certificates
-     * @param $recipient
-     * @return bool|int
-     */
-    public static function sendCertificateRecovery($certificates, $recipient){
-        $mail = new Mail();
-        $mail->setSubject('Подарочные сертификаты "Каминно-Печной Дискаунтер КАМИН42"');
-        $mail->setRecipient($recipient);
-        $message = '';
-        if($certificates) {
-            $message = 'Вы запросили восстановление подарочных сертифкатов.<br>Ниже приведен список сертификатов зарегистрированных на ваш e-mail:<br>';
-            foreach ($certificates as $certificate) {
-                $message .= '<p>Сертификат №' . $certificate->number . '  Пин-код:' . $certificate->pin . '</p>';
-            }
-        }
-        else{
-            $message = 'Вы запросили восстановление подарочных сертификатов.<br>К сожалению мы не нашли сертификатов в которых вы указаны как получатель.<br>Возможно у вас есть другая почта и сертификат был оформлен на нее.';
-        }
-        $mail->setMessage($message);
-        return $mail->send();
     }
 }

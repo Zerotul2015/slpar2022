@@ -5,22 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/deliveryMethods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/paymentMethods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiOrders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Orders/Orders.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/MainModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/MainModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/apiCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/apiCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/CartCheckout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -336,10 +341,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
@@ -942,9 +947,9 @@
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651511739505</updated>
+      <updated>1651514551113</updated>
       <workItem from="1651490665523" duration="425000" />
-      <workItem from="1651491098560" duration="21105000" />
+      <workItem from="1651491098560" duration="31134000" />
     </task>
     <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />

@@ -6,7 +6,7 @@
       <h2 v-if="countCart < 1">Ваша корзина пуста.
         <router-link to="/">Перейти к готовым стилевым решениям.</router-link>
       </h2>
-      <div class="cart-products" v-else>
+      <div class="cart-details" v-else>
         <div class="cart-product cp-header">
           <div class="cp-number">№</div>
           <div class="cp-image">Фото</div>
@@ -100,6 +100,10 @@
         </div>
         <cart-checkout v-if="isCheckoutStep"></cart-checkout>
       </div>
+      <div v-if="resultMakingOrder === true">
+        Ваш заказ успешно оформлен.<br>
+        В ближайшее время с вами свяжется наш менеджер для уточнения деталей по вашему заказа.
+      </div>
     </div>
   </div>
 </template>
@@ -120,6 +124,9 @@ export default {
     }
   },
   computed: {
+    resultMakingOrder() {
+      return this.$store.getters['orders/resultMakingOrder'];
+    },
     textActiveDiscount() {
       let text = 'Дополнительная скидка на заказ';
       return text;

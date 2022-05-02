@@ -216,9 +216,6 @@ class CartModel
         return $returnData;
     }
 
-    public static function makingOrder($orderDetails){
-
-    }
 
     /**
      * Очищает корзину

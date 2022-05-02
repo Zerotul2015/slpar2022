@@ -55,6 +55,12 @@ export default new Router({
             component: () => import("../components/Compare/Compare.vue"),
         },
         {
+            path: '/orders/preview',
+            name: 'ordersPreview',
+            props: true,
+            component: () => import("../components/Orders/Orders.vue"),
+        },
+        {
             path: '/error/404',
             name: '404',
             component: () => import("../components/Errors/404.vue"),

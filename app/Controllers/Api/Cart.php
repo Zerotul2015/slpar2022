@@ -3,6 +3,8 @@
 namespace App\Controllers\Api;
 
 use App\Model\Shop\Cart\CartModel;
+use App\Model\Shop\Order\OrderModel;
+use Exception;
 
 class Cart extends Main
 {
@@ -52,9 +54,13 @@ class Cart extends Main
         $this->returnAnswer($this->returnData);
     }
 
+    /**
+     * @throws Exception
+     */
     public function makingOrder()
     {
-        $this->returnData['result'] = CartModel::makingOrder();
+        $ordersDetails = $this->postData['ordersDetails'] ?? null;
+        $this->returnData['result'] = OrderModel::newOrder($ordersDetails);
         $this->returnAnswer($this->returnData);
     }
 

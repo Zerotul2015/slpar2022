@@ -14,6 +14,9 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed note_hidden regular read/write property
  * @property mixed noteHidden regular read/write property
  * @property mixed deleted regular read/write property
+ * @property mixed token regular read/write property
+ * @property mixed verify_code regular read/write property
+ * @property mixed verifyCode regular read/write property
  */
 
 class Customer extends Main
@@ -85,6 +88,22 @@ class Customer extends Main
             'null' => 'YES',
             'key' => '',
             'default' => '',
+            'extra' => ''
+        ],
+        'token' => [
+            'field' => 'token',
+            'type' => 'varchar(128)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'verify_code' => [
+            'field' => 'verify_code',
+            'type' => 'varchar(12)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
             'extra' => ''
         ]
    ]; 
