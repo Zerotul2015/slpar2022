@@ -103,6 +103,23 @@
 .cp-footer{
   font-weight: 600;
   border: none;
+  .cp-price{
+    display: block;
+    grid-column: 1 / 6;
+    justify-self: end;
+  }
+  .cp-sum{
+    display: block;
+  }
+}
+.cp-pre-footer{
+  padding:0;
+  border-bottom: none;
+  .cp-price{
+    display: block;
+    grid-column: 1 / 6;
+    justify-self: end;
+  }
   .cp-sum{
     display: block;
   }

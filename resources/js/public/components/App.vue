@@ -34,6 +34,7 @@ export default {
     this.$store.dispatch('bathStyle/getAll');
     this.$store.dispatch('cart/getCart');
     this.$store.dispatch('compare/getCompare');
+    this.$store.dispatch('discounts/getDiscounts');
   },
   watch:{
     seo(newVal, oldVal){

@@ -231,6 +231,7 @@
       <excludeFolder url="file://$MODULE_DIR$/public/images/pages" />
       <excludeFolder url="file://$MODULE_DIR$/public/images/products" />
       <excludeFolder url="file://$MODULE_DIR$/storage" />
+      <excludeFolder url="file://$MODULE_DIR$/public/build/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

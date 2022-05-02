@@ -1,11 +1,11 @@
 <template>
   <div class="product-page">
     <breadcrumb></breadcrumb>
-    <div class="pp-wrap">
+    <div class="pp-wrap" v-if="product.name">
       <h1 class="pp-name">{{ product.name }}</h1>
       <div class="pp-details-wrap">
         <div class="pp-spec-desc">
-          <div class="pp-spec-wrap">
+          <div class="pp-spec-wrap" v-if="product.specifications && product.specifications.length">
             <div class="pp-spec-desc-title">Характеристики:</div>
             <div class="pp-spec-item" v-for="(spec) in product.specifications">
               <div class="pp-spec-item-name">{{ spec.name }}:</div>
@@ -40,14 +40,16 @@
               <span class="price-currency">р.</span>
             </div>
           </div>
-          <div class="pp-discounts"></div>
+          <div class="pp-discounts">
+            <div class="pp-discount" v-for="(discountItem) in discountsAsText" v-html="discountItem"></div>
+          </div>
           <div class="pp-act">
-            <button class="btn btn_compare"  :class="{'btn_compare-added':inCompare}" @click.prevent="addCompare">
-              <!--        <icon-svg class="btn-icon" :icon="compareIcon"></icon-svg>-->
+            <button class="btn btn_compare" :class="{'btn_compare-added':inCompare}" @click.prevent="addCompare">
+              <icon-svg class="btn-icon" :icon="compareIcon"></icon-svg>
               <span class="btn-text" v-html="btnCompareText"></span>
             </button>
-            <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}"  @click.prevent="addCart">
-              <!--        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>-->
+            <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}" @click.prevent="addCart">
+              <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>
               <span class="btn-text" v-html="btnCartText"></span>
             </button>
           </div>
@@ -66,13 +68,14 @@
 
 <script>
 import Breadcrumb from "../Breadcrumb";
+import IconSvg from "../Icon-svg/icon-svg";
 import VueHorizontal from "vue-horizontal";
 import ProductCard from "../Product/ProductCard";
 import 'viewerjs/dist/viewer.css'
 
 export default {
   name: "ProductPage",
-  components: {Breadcrumb,VueHorizontal,ProductCard},
+  components: {Breadcrumb, VueHorizontal, ProductCard, IconSvg},
   props: {
     url: {
       type: String,
@@ -98,32 +101,35 @@ export default {
     }
   },
   computed: {
-    productsRelated(){
+    discountsAsText() {
+      return this.$store.getters['discounts/discountsAsText'];
+    },
+    productsRelated() {
       return this.$store.getters['product/productsRelated'];
     },
-    product(){
+    product() {
       return this.$store.getters['product/product'];
     },
-    imageMain(){
+    imageMain() {
       return this.product.image_main;
     },
-    imageDir(){
-      return '/images/products/' + this.product.folder +'/';
+    imageDir() {
+      return '/images/products/' + this.product.folder + '/';
     },
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
     },
     cartIcon() {
-      return this.inCart ? 'cart-shopping' : 'cart-plus';
+      return this.inCart ? 'cart-circle-check' : 'cart-circle-plus';
     },
     btnCartText() {
-      return this.inCart ? 'уже в корзине' : 'в корзину';
+      return this.inCart ? 'в корзине' : 'в корзину';
     },
     inCompare() {
       return !!this.$store.getters['compare/products'][this.product.id];
     },
     compareIcon() {
-      return this.inCompare ? 'bookmark-solid' : 'bookmark';
+      return this.inCompare ? 'square-check' : '';
     },
     btnCompareText() {
       return this.inCompare ? 'в сравнение' : 'сравнить';

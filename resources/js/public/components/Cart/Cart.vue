@@ -57,23 +57,36 @@
             </div>
           </div>
         </div>
+        <div class="cart-product cp-pre-footer" v-if="sumDiscountPromoCode > 0">
+          <div class="cp-price cp-pre-footer-title">Промо-код <i>{{cartPromoCodeUsed.code_text}}</i></div>
+          <div class="cp-sum cp-pre-footer-val">
+            <span class="price-to-locale">-{{ sumDiscountPromoCode | priceToLocale }}</span>
+            <span class="price-currency">р.</span></div>
+          <div class="cp-del">
+          </div>
+        </div>
+        <div class="cart-product cp-pre-footer" v-if="sumDiscount > 0">
+          <div class="cp-price cp-pre-footer-title">{{textActiveDiscount}} <i>{{cartPromoCodeUsed.code_text}}</i></div>
+          <div class="cp-sum cp-pre-footer-val">
+            <span class="price-to-locale">-{{ sumDiscountProd | priceToLocale }}</span>
+            <span class="price-currency">р.</span></div>
+          <div class="cp-del">
+          </div>
+        </div>
         <div class="cart-product cp-footer">
-          <div class="cp-number"></div>
-          <div class="cp-image"></div>
-          <div class="cp-name"></div>
-          <div class="cp-count"></div>
-          <div class="cp-price">Итого</div>
-          <div class="cp-sum">
-            <span class="price-to-locale">{{ cartSum | priceToLocale }}</span>
+          <div class="cp-price cp-footer-title">Итого</div>
+          <div class="cp-sum cp-footer-val">
+            <span class="price-to-locale">{{ cartSumWithDiscountAndPromoCode | priceToLocale }}</span>
             <span class="price-currency">р.</span></div>
           <div class="cp-del">
             <button class="btn btn_white" @click="clearCart">Очистить корзину</button>
           </div>
         </div>
         <div class="cp-promo-code-block">
-          <input type="text" placeholder="промокод" minlength="2" v-model="promoCode">
+          <input type="text" placeholder="промокод" minlength="2" v-model="promoCode" @keydown.enter="applyPromoCode">
           <button class="btn btn_green-invert" @click="applyPromoCode"
-                  v-html="textPromoCodeBtn">Применить ПРОМО-код</button>
+                  v-html="textPromoCodeBtn">Применить ПРОМО-код
+          </button>
         </div>
         <div class="cp-btn-block">
           <button class="btn">
@@ -103,6 +116,10 @@ export default {
     }
   },
   computed: {
+    textActiveDiscount(){
+      let text = 'Дополнительная скидка на заказ';
+      return text;
+    },
     textPromoCodeBtn() {
       let text = 'Применить ПРОМО-код';
       if (this.resultApplyCode === true) {
@@ -113,8 +130,43 @@ export default {
       }
       return text;
     },
-    resultApplyCode(){
+    resultApplyCode() {
       return this.$store.getters['cart/resultApplyCode'];
+    },
+    sumDiscountProd() { //общая скидка на товары в корзине
+      let sum = 0;
+      Object.keys(this.cartProducts).forEach(key => {
+        if (this.cartProducts[key].product.price_old > this.cartProducts[key].product.price) {
+          let difference = this.cartProducts[key].product.price_old - this.cartProducts[key].product.price;
+          difference = difference * this.cartProducts[key].count;
+          sum = sum + difference;
+        }
+      });
+      return sum;
+    },
+    sumDiscount() { //сумма скидки за счет автоматических скидок
+      let sumDiscount = 0;
+      return sumDiscount;
+    },
+    sumDiscountPromoCode() { //скидка от использования промокода
+      let sumDiscount = 0;
+      //{"id":6,"date_start":"2022-04-29","date_end":"2022-05-27","code_text":"тест5","unit":"percent","amount":10}
+      if(this.cartPromoCodeUsed && this.cartPromoCodeUsed.amount){
+        if(this.cartPromoCodeUsed.unit === 'percent'){
+          sumDiscount = this.cartSum / 100 * this.cartPromoCodeUsed.amount;
+        }
+        if(this.cartPromoCodeUsed.unit === 'rub'){
+          sumDiscount = this.cartPromoCodeUsed.amount;
+        }
+      }
+      return sumDiscount;
+    },
+    cartSumWithDiscountAndPromoCode(){ //итоговая сумма заказа с учетом всех скидок и промокода
+      let sum = 0;
+      if(this.cartSum){
+        sum = this.cartSum - this.sumDiscountPromoCode - this.sumDiscount;
+      }
+      return sum;
     },
     cartSum() {
       return this.$store.getters['cart/sum'];

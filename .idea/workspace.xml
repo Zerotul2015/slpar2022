@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-circle-check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-circle-plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/square-check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/square.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/discounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/slpar2022.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/slpar2022.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/check_box.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/check_box_outline_blank.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +236,12 @@
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
+      <server host="" id="6c163886-912d-4c7a-8abe-2162b7657da9" />
+      <server host="" id="751660f4-7fb9-4120-9be1-c133d7bc7337" port="443" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="PhpWebServerValidation" path_to_validation_script="$PROJECT_DIR$/public" selected_validation_type="LOCAL" web_path_to_validation_script="https://127.0.0.1:8080" />
@@ -295,7 +322,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -316,11 +343,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
@@ -330,7 +357,7 @@
       <recent name="$PROJECT_DIR$/resources/js/admin/components/MenuSettings" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="PHP Web Page.Docker">
     <configuration name="rest-api_1 | Worker1 Парсинг товаров со страниц категорий" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="9" requestIdentifier="Worker1 Парсинг товаров со страниц категорий" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -923,9 +950,9 @@
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651491098400</updated>
+      <updated>1651491396462</updated>
       <workItem from="1651490665523" duration="425000" />
-      <workItem from="1651491098560" duration="280000" />
+      <workItem from="1651491098560" duration="11458000" />
     </task>
     <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
@@ -972,7 +999,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Сменил шрифт" />
     <MESSAGE value="Закончил раздел стилей" />
     <MESSAGE value="поправил стил переключателей слайдера товаров" />
     <MESSAGE value="Добавил проверку на пустую ссылку в меню" />
@@ -997,7 +1023,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="new logo" />
     <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил третий отбор в стили(для усадьбы)" />
+    <MESSAGE value="SR-6 Корзина и оформление заказа" />
+    <option name="LAST_COMMIT_MESSAGE" value="SR-6 Корзина и оформление заказа" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

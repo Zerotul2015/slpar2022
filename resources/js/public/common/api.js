@@ -13,9 +13,8 @@ const DATA_PATH = {
     'bathStyle':'bath-style',
     'searchSite':'search-site',
     'templateData':'template-data',
-    'cart':'cart',
-    'compare':'compare',
     'favorite':'favorite',
+    'discount':'discount',
 }
 
 export default {

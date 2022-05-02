@@ -7,6 +7,7 @@ namespace App\Controllers\Api;
 use App\Classes\ActiveRecord\Tables\BathStyle;
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\CustomerCompany;
+use App\Classes\ActiveRecord\Tables\Discount;
 use App\Classes\ActiveRecord\Tables\GalleryCategory;
 use App\Classes\ActiveRecord\Tables\Menu;
 use App\Classes\ActiveRecord\Tables\Orders;
@@ -209,7 +210,7 @@ class GetData extends Main
     {
         $object = Product::find();
         $return = $this->prepareReturnData($object);
-        if(!empty($return['returnData'])){
+        if (!empty($return['returnData'])) {
             $return['returnData'] = ProductModel::prepareProductsForTemplate($return['returnData']);
         }
         $this->returnAnswer($return);
@@ -217,10 +218,10 @@ class GetData extends Main
 
     public function productRelated(): void
     {
-        $return =['result'=>false, 'returnData'=>null];
+        $return = ['result' => false, 'returnData' => null];
         $object = Product::find();
         $productBase = $this->prepareReturnData($object)['returnData'];
-        if(!empty($productBase)){
+        if (!empty($productBase)) {
             $return['returnData'] = ProductModel::getRelatedProducts($productBase[0]->id);
             $return['result'] = true;
         }
@@ -282,6 +283,12 @@ class GetData extends Main
         $simple = $this->postData['simple'] ?? false;
         $simple = !!$simple;
         $this->returnAnswer(PublicTemplateModel::templateSettings($section, $sectionKey, $simple));
+    }
+
+    public function discount(): void
+    {
+        $object = Discount::find()->where(['enable' => 1]);
+        $this->returnAnswer($this->prepareReturnData($object));
     }
 
 }

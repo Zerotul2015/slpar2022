@@ -94,6 +94,8 @@
 
 }
 .pp-discounts {
+  display: grid;
+  justify-content: center;
 }
 .pp-price {
   font-size:1.8rem;

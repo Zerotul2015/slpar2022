@@ -30,6 +30,10 @@ import plus from '../../../assets/svg/plus.svg';
 import minus from '../../../assets/svg/minus.svg';
 import turnDownLeft from '../../../assets/svg/turn-down-left.svg';
 import moneyCheckPen from '../../../assets/svg/money-check-pen.svg';
+import cartCircleCheck from '../../../assets/svg/cart-circle-check.svg';
+import cartCirclePlus from '../../../assets/svg/cart-circle-plus.svg';
+import squareCheck from '../../../assets/svg/square-check.svg';
+import square from '../../../assets/svg/square.svg';
 
 //конец иконки
 
@@ -63,6 +67,10 @@ export default {
     minus,
     turnDownLeft,
     moneyCheckPen,
+    cartCircleCheck,
+    cartCirclePlus,
+    squareCheck,
+    square,
 
     //конец иконки
   },
@@ -112,6 +120,10 @@ export default {
         'plus': 'plus',
         'minus': 'minus',
         'turn-down-left': 'turnDownLeft',
+        'cart-circle-check':'cartCircleCheck',
+        'cart-circle-plus':'cartCirclePlus',
+        'square-check':'squareCheck',
+        'square':'square',
       }
     }
   },

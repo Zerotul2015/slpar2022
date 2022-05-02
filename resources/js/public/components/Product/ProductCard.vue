@@ -16,12 +16,12 @@
       </div>
     </div>
     <div class="pc-buttons">
-      <button class="btn btn_compare"  :class="{'btn_compare-added':inCompare}" @click.prevent="addCompare">
-<!--        <icon-svg class="btn-icon" :icon="compareIcon"></icon-svg>-->
+      <button class="btn btn_compare" :class="{'btn_compare-added':inCompare}" @click.prevent="addCompare">
+        <icon-svg class="btn-icon" :icon="compareIcon"></icon-svg>
         <span class="btn-text" v-html="btnCompareText"></span>
       </button>
-      <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}"  @click.prevent="addCart">
-<!--        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>-->
+      <button class="btn btn_green btn_cart" :class="{'btn_cart-added':inCart}" @click.prevent="addCart">
+        <icon-svg class="btn-icon" :icon="cartIcon"></icon-svg>
         <span class="btn-text" v-html="btnCartText"></span>
       </button>
     </div>
@@ -44,21 +44,29 @@ export default {
       required: false
     },
   },
+  data() {
+    return {
+
+    }
+  },
+  watch: {
+
+  },
   computed: {
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
     },
-    cartIcon(){
-      return this.inCart ? 'cart-shopping' : 'cart-plus';
+    cartIcon() {
+      return this.inCart ? 'cart-circle-check' : 'cart-circle-plus';
     },
     btnCartText() {
-      return this.inCart ? 'уже в корзине' : 'в корзину';
+      return this.inCart ? 'в корзине' : 'в корзину';
     },
     inCompare() {
       return !!this.$store.getters['compare/products'][this.product.id];
     },
-    compareIcon(){
-      return this.inCompare ? 'bookmark-solid' : 'bookmark';
+    compareIcon() {
+      return this.inCompare ? 'square-check' : '';
     },
     btnCompareText() {
       return this.inCompare ? 'в сравнение' : 'сравнить';
@@ -76,14 +84,18 @@ export default {
   },
   methods: {
     addCompare() {
-      if(this.inCompare){
+      if (this.inCompare) {
         this.$store.dispatch('compare/removeProduct', this.product.id);
-      }else {
+      } else {
         this.$store.dispatch('compare/addProduct', this.product.id);
       }
     },
     addCart() {
-      this.$store.dispatch('cart/addProduct', this.product.id);
+      if (this.inCart) {
+        this.$router.push('/Cart');
+      } else {
+        this.$store.dispatch('cart/addProduct', this.product.id);
+      }
     },
   }
 }

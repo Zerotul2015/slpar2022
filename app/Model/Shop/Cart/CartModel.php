@@ -31,15 +31,14 @@ class CartModel
         //В базе хранится в виде products [id=>count,...]
         //на выходе получим products [id=>['count'=>3, 'product'=>Product], ...]
         $cart->products = self::getProductsDataForCart($cart->products);
-        $promoCode = $cart->promo_code_use ? PromoCode::findOne($cart->promo_code_use) : null;
+        $promoCode = $cart->promo_code_used ? PromoCode::findOne($cart->promo_code_used) : null;
         if ($promoCode && self::checkActivePromoCode($promoCode)) {
-            $cart->promo_code_use = $promoCode;
+            $cart->promo_code_used = $promoCode;
         } else {
-            $cart->promo_code_use = null;
+            $cart->promo_code_used = null;
         }
         if (!$skipSave) {
-            $cart2 = clone $cart;
-            self::saveCart($cart2);
+            self::saveCart($cart);
         }
         return $cart;
     }

@@ -12,6 +12,7 @@ import productCategory from './modules/productCategory'
 import templateData from './modules/templateData'
 import cart from './modules/cart'
 import compare from './modules/compare'
+import discounts from './modules/discounts'
 
 Vue.use(Vuex)
 
@@ -29,6 +30,7 @@ export default new Vuex.Store({
         cart,
         compare,
         templateData,
+        discounts,
     },
     state: {
 

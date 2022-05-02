@@ -109,9 +109,9 @@ module.exports = {
             filename: './../../../resources/views/public/layouts/webpackStyle.twig'
         }),
     ],
-    watch: false,
+    watch: true,
     watchOptions: {
-        aggregateTimeout: 200,
+        aggregateTimeout: 1000,
         poll: 1000,
         ignored: /node_modules/
     },
