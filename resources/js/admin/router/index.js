@@ -286,6 +286,12 @@ export default new Router({
             component: () => import("../components/Orders/OrdersList.vue"),
             meta: {title: 'Заказы контрагенты :companyId - Панель управления'}
         },
+        {
+            path: '/orders-status',
+            name: 'OrdersStatus',
+            component: () => import("../components/OrdersStatus/OrdersStatus.vue"),
+            meta: {title: 'Статусы заказов - Панель управления'}
+        },
         //---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---Скидки---//
         {
             path: '/discount',
@@ -339,6 +345,60 @@ export default new Router({
             props: true,
             component: () => import("../components/PromoCode/PromoCodeList.vue"),
             meta: {title: 'Промо-коды - Панель управления'}
+        },
+        //---Методы доставки---Методы доставки---Методы доставки---Методы доставки---Методы доставки---//
+        {
+            path: '/delivery-methods/create',
+            name: 'DeliveryMethodsCreate',
+            component: () => import("../components/DeliveryMethods/DeliveryMethods.vue"),
+            meta: {title: 'Создание способа доставки - Панель управления'}
+        },
+        {
+            path: '/delivery-methods/:itemId',
+            name: 'DeliveryMethodsDetails',
+            props: true,
+            component: () => import("../components/DeliveryMethods/DeliveryMethods.vue"),
+            meta: {title: 'Способ доставки :itemId - Панель управления'}
+        },
+        {
+            path: '/delivery-methods',
+            name: 'DeliveryMethods',
+            component: () => import("../components/DeliveryMethods/DeliveryMethodsList.vue"),
+            meta: {title: 'Способы доставки - Панель управления'}
+        },
+        {
+            path: '/delivery-methods/page/:pageNumber',
+            name: 'DeliveryMethodsPage',
+            props: true,
+            component: () => import("../components/DeliveryMethods/DeliveryMethodsList.vue"),
+            meta: {title: 'Способы доставки - Панель управления'}
+        },
+        //---Методы оплаты---Методы оплаты---Методы оплаты---Методы оплаты---Методы оплаты---Методы оплаты---//
+        {
+            path: '/payment-methods/create',
+            name: 'PaymentMethodsCreate',
+            component: () => import("../components/PaymentMethods/PaymentMethods.vue"),
+            meta: {title: 'Создание способа оплаты - Панель управления'}
+        },
+        {
+            path: '/payment-methods/:itemId',
+            name: 'DPaymentMethodsDetails',
+            props: true,
+            component: () => import("../components/PaymentMethods/PaymentMethods.vue"),
+            meta: {title: 'Способ оплаты :itemId - Панель управления'}
+        },
+        {
+            path: '/payment-methods',
+            name: 'PaymentMethods',
+            component: () => import("../components/PaymentMethods/PaymentMethodsList.vue"),
+            meta: {title: 'Способы оплаты - Панель управления'}
+        },
+        {
+            path: '/payment-methods/page/:pageNumber',
+            name: 'PaymentMethodsPage',
+            props: true,
+            component: () => import("../components/PaymentMethods/PaymentMethodsList.vue"),
+            meta: {title: 'Способы оплаты - Панель управления'}
         },
     ]
 });

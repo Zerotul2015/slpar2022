@@ -5,29 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-circle-check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/cart-circle-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/square-check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/assets/svg/square.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/discounts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/slpar2022.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/slpar2022.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/DeliveryMethods/DeliveryMethodsModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/PaymentMethods/PaymentMethodsModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/DeliveryMethods/DeliveryMethods.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/DeliveryMethods/DeliveryMethodsList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/OrdersStatus/OrdersStatus.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/PaymentMethods/PaymentMethods.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/components/PaymentMethods/PaymentMethodsList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/CartCheckout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/GetData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/check_box.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/assets/svg/check_box_outline_blank.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/common/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Icon-svg/icon-svg.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Product/ProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_product_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Orders/OrdersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Orders/OrdersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Admin/Orders/OrdersStatusModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Admin/Orders/OrdersStatusModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/common/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/common/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +44,8 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="HTTP Public Environment File" />
-        <option value="Vue Single File Component" />
         <option value="SCSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -222,7 +216,6 @@
     <scope name="scss" pattern="file[slpar2022]:resources/scss//*" />
     <scope name="vue-component-resources" pattern="file[slpar2022]:resources/js//*.vue" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="443" use_path_mappings="true">
@@ -357,7 +350,7 @@
       <recent name="$PROJECT_DIR$/resources/js/admin/components/MenuSettings" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Web Page.Docker">
+  <component name="RunManager" selected="npm.build">
     <configuration name="rest-api_1 | Worker1 Парсинг товаров со страниц категорий" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="9" requestIdentifier="Worker1 Парсинг товаров со страниц категорий" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -950,9 +943,9 @@
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651491396462</updated>
+      <updated>1651504143756</updated>
       <workItem from="1651490665523" duration="425000" />
-      <workItem from="1651491098560" duration="11458000" />
+      <workItem from="1651491098560" duration="16352000" />
     </task>
     <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />

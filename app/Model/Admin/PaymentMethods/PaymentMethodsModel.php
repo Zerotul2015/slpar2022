@@ -1,15 +1,12 @@
 <?php
 
+namespace App\Model\Admin\PaymentMethods;
 
-namespace App\Model\Admin\Orders;
-
-
-use App\Classes\ActiveRecord\Tables\Orders;
+use App\Classes\ActiveRecord\Tables\PaymentMethods;
 use JetBrains\PhpStorm\ArrayShape;
 
-class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
+class PaymentMethodsModel
 {
-
     /**
      * @param $val
      * @return array
@@ -21,12 +18,14 @@ class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
         $returnResult = ['result' => false];
         $itemOld = false;
         if (isset($val['id']) && $val['id']) {
-            $itemOld = Orders::findOne($val['id']);
+            $itemOld = PaymentMethods::findOne($val['id']);
         } else {
             $val['id'] = '';
         }
         if ($itemOld) {
             //обработчики старых значений на случай необходимости
+            $val['protected'] = $itemOld->protected ?: 0;
+            $val['protected_name'] = $itemOld->protected_name ?: '';
         } else {
             //обработчики новых значений на случай необходимости
         }
@@ -34,7 +33,7 @@ class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
         //проверка значений
         $errors = self::checkValues($val);
         if (empty($errors)) {
-            $itemSave = Orders::create($val);
+            $itemSave = PaymentMethods::create($val);
             if ($resultSave = $itemSave->save()) {
                 $returnResult['id'] = $itemSave->id;
                 $returnResult['result'] = true;
@@ -68,8 +67,10 @@ class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
     public static function Delete($id): array
     {
         $result = false;
-        if ($item = Orders::findOne($id)) {
+        if ($item = PaymentMethods::findOne($id)) {
+            if (!$item->protected) {
                 $result = $item->del();
+            }
         }
         return ['result' => $result];
     }

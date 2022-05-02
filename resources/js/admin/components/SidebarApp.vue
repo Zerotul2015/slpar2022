@@ -24,22 +24,22 @@
           </ul>
         </li>
         <li class="menu_sidebar__item menu_sidebar__item_parent">
-          <a href="/orders">Заказы</a>
+          <router-link to="/orders">Заказы</router-link>
           <ul class="menu_sidebar_submenu">
             <li class="menu_sidebar__item">
-              <a href="/admin/orders/list-orders">Список заказов</a>
+              <router-link to="/orders">Список заказов</router-link>
             </li>
             <li class="menu_sidebar__item">
               <hr>
             </li>
             <li class="menu_sidebar__item">
-              <a href="/admin/orders/status">Статусы</a>
+              <router-link to="/orders-status">Статусы</router-link>
             </li>
             <li class="menu_sidebar__item">
-              <a href="/admin/orders/delivery-methods">Способы доставки</a>
+              <router-link to="/delivery-methods">Способы доставки</router-link>
             </li>
             <li class="menu_sidebar__item">
-              <a href="/admin/orders/payment-methods">Способы оплаты</a>
+              <router-link to="/payment-methods">Способы оплаты</router-link>
             </li>
           </ul>
         </li>

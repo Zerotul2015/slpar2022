@@ -11,6 +11,8 @@ const DATA_PATH = {
     'productStockStatus': 'product-stock-status',
     'product': 'product',
     'bathStyle':'bath-style',
+    'paymentMethods': 'payment-methods',
+    'deliveryMethods': 'delivery-methods',
     'orders': 'orders',
     'ordersStatus': 'orders-status',
     'discount': 'discount',

@@ -104,6 +104,15 @@ class ChangeData extends Main
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\PromoCode\PromoCodeModel'));
     }
 
+    public function deliveryMethods(): void
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\DeliveryMethods\DeliveryMethodsModel'));
+    }
+    public function paymentMethods(): void
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\PaymentMethods\PaymentMethodsModel'));
+    }
+
     public function orders(): void
     {
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Orders\OrdersModel'));

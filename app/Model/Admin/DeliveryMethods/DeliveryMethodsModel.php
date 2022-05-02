@@ -1,32 +1,30 @@
 <?php
 
+namespace App\Model\Admin\DeliveryMethods;
 
-namespace App\Model\Admin\Orders;
-
-
-use App\Classes\ActiveRecord\Tables\Orders;
+use App\Classes\ActiveRecord\Tables\DeliveryMethods;
 use JetBrains\PhpStorm\ArrayShape;
 
-class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
+class DeliveryMethodsModel
 {
-
     /**
      * @param $val
      * @return array
      */
 
-    #[ArrayShape(['result' => "bool", 'error' => "array", 'returnData' => "\App\Classes\ActiveRecord\Main|\App\Classes\ActiveRecord\Tables\PaymentMethods", 'id' => "mixed"])]
+    #[ArrayShape(['result' => "bool", 'error' => "array", 'returnData' => "\App\Classes\ActiveRecord\Main|\App\Classes\ActiveRecord\Tables\DeliveryMethods", 'id' => "mixed"])]
     public static function Save($val): array
     {
         $returnResult = ['result' => false];
         $itemOld = false;
         if (isset($val['id']) && $val['id']) {
-            $itemOld = Orders::findOne($val['id']);
+            $itemOld = DeliveryMethods::findOne($val['id']);
         } else {
             $val['id'] = '';
         }
         if ($itemOld) {
             //обработчики старых значений на случай необходимости
+            $val['protected'] = $itemOld->protected ?: 0;
         } else {
             //обработчики новых значений на случай необходимости
         }
@@ -34,7 +32,7 @@ class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
         //проверка значений
         $errors = self::checkValues($val);
         if (empty($errors)) {
-            $itemSave = Orders::create($val);
+            $itemSave = DeliveryMethods::create($val);
             if ($resultSave = $itemSave->save()) {
                 $returnResult['id'] = $itemSave->id;
                 $returnResult['result'] = true;
@@ -68,8 +66,10 @@ class OrdersModel implements \App\Model\Interfaces\DefaultMethodTableClass
     public static function Delete($id): array
     {
         $result = false;
-        if ($item = Orders::findOne($id)) {
+        if ($item = DeliveryMethods::findOne($id)) {
+            if (!$item->protected) {
                 $result = $item->del();
+            }
         }
         return ['result' => $result];
     }
