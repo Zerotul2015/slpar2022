@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
-      <change afterPath="$PROJECT_DIR$/public/build/images/honeycomb_grey.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +205,6 @@
     <scope name="scss" pattern="file[slpar2022]:resources/scss//*" />
     <scope name="vue-component-resources" pattern="file[slpar2022]:resources/js//*.vue" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="443" use_path_mappings="true">
@@ -305,6 +300,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
@@ -946,10 +943,10 @@
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651525051556</updated>
+      <updated>1651549714618</updated>
       <workItem from="1651490665523" duration="425000" />
       <workItem from="1651491098560" duration="31354000" />
-      <workItem from="1651543299371" duration="4286000" />
+      <workItem from="1651543299371" duration="13440000" />
     </task>
     <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />

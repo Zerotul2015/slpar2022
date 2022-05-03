@@ -37,11 +37,16 @@
           </div>
         </div>
         <div class="header-links-block">
-          <BathStylesHeaderCarousel v-if="headerFixed"></BathStylesHeaderCarousel>
+          <BathStylesHeaderCarousel v-if="headerFixed" class="hcd-wrapper">
+            <rl-carousel-slide v-for="(styleItem) in bathStyles" :key="$root.guid()">
+              <div class="bs-c-item">{{ styleItem.name }}</div>
+            </rl-carousel-slide>
+          </BathStylesHeaderCarousel>
           <div class="hlb-links" v-else>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
-                         :to="{path:menuItem.value, params:{isCustom:(menuItem.typeItem === 'custom')}}">{{ menuItem.title }}
+                         :to="{path:menuItem.value, params:{isCustom:(menuItem.typeItem === 'custom')}}">
+              {{ menuItem.title }}
             </router-link>
           </div>
         </div>
@@ -85,11 +90,11 @@ import VueHorizontal from "vue-horizontal";
 import IconSvg from "./Icon-svg/icon-svg";
 import SearchSite from "./search/search-site";
 import BathStylesHeaderCarousel from "./BathStyle/BathStylesHeaderCarousel.vue";
-
+import {RlCarouselSlide} from 'vue-renderless-carousel'
 
 export default {
   name: "HeaderApp",
-  components: {BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal},
+  components: {BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal, RlCarouselSlide},
   data() {
     return {
       menuNav: [],
@@ -160,6 +165,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .hlb-menu-style >>> .v-hl-btn-prev {
   background: linear-gradient(to left, #4f4f4f00 0, #4f4f4f 66%, #4f4f4f);
   padding-right: 1rem;

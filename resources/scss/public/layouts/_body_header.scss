@@ -363,14 +363,15 @@ svg.icon-input-search.hs-block {
 
 //Карусель стилей в шапке
 
-.bs-header-carousel {
-  color: $white;
+.hcd-wrapper{
+  width:190px;
 }
 
 .bs-c-button {
   fill:$white;
   cursor: pointer;
   position:absolute;
+  top:0;
 }
 
 .bs-c-button:hover {
@@ -381,36 +382,23 @@ svg.icon-input-search.hs-block {
   position:relative;
   display:flex;
 }
-.bs-c-items{
-  display:flex;
-  justify-content: center;
-  transition: .5s;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
 
 .bs-c-prev {
   left:0;
-  padding-left:1rem;
-  background:linear-gradient(90deg,rgb(79,79,79,1) 0, rgb(79,79,79,0) 100%);
+  padding-right:1rem;
+  background:linear-gradient(90deg,rgb(79,79,79,1) 30%, rgb(79,79,79,0) 100%);
 }
 
 .bs-c-next {
   right:0;
-  padding-right:1rem;
-  background:linear-gradient(90deg,rgb(79,79,79,0) 0, rgb(79,79,79,1) 100%);
+  padding-left: 1rem;
+  background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, #4f4f4f 70%);
 }
 
 .bs-c-item {
   text-align:center;
-  margin-right:1rem;
-  white-space: nowrap;
-  scroll-snap-align: center;
-}
-.bs-c-item:last-child{
-  margin-right:0;
+  color:$white;
+  width:120px;
 }
 
 .bs-c-item-selected {

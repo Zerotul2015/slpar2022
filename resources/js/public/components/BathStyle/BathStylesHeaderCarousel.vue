@@ -1,51 +1,49 @@
 <template>
-  <div class="bs-header-carousel">
-    <div class="bs-c-button bs-c-prev" @click="prevStyle()">
-      <icon-svg class="bs-c-button-icon" icon="angles-left"></icon-svg>
-    </div>
-    <div class="bs-c-button bs-c-next" @click="nextStyle()">
-      <icon-svg class="bs-c-button-icon" icon="angles-right"></icon-svg>
-    </div>
-    <div class="bs-c-items" :style="{'width':widthSlider}">
-      <div class="bs-c-item" v-for="(bathItem,keyBath) in bathStyles" :key="$root.guid()" ref="bathSlider">
-        {{ bathItem.name }}
+  <rl-carousel v-model="slide" no-wrap>
+    <div slot-scope="{ wrapperStyles, slides: { count, active} }">
+      <div class="overflow-hidden">
+        <div v-bind="wrapperStyles">
+          <slot>
+          </slot>
+        </div>
+      </div>
+      <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left')">
+        <div class="group flex-grow flex items-center justify-center cursor-pointer">
+          <span class="control-chevron" :class="{ 'animate-left': animateLeft }">
+            <icon-svg class="bs-c-button-icon" icon="angles-left" style="fill:#ffffff"></icon-svg>
+          </span>
+        </div>
+      </div>
+      <div class="bs-c-button bs-c-next" @click="slide = active + 1; triggerAnimation('Right')">
+        <div class="group flex-grow flex items-center justify-center cursor-pointer">
+          <span class="control-chevron" :class="{ 'animate-right': animateRight }">
+            <icon-svg class="bs-c-button-icon" icon="angles-right" style="fill:#ffffff"></icon-svg>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
+  </rl-carousel>
 </template>
 
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
+import { RlCarouselSlide, RlCarousel } from 'vue-renderless-carousel'
 
 export default {
   name: "BathStylesHeaderCarousel",
-  components: {IconSvg},
+  components: {IconSvg, RlCarousel, RlCarouselSlide},
   data() {
     return {
-      widthContainer: 0,
-      widthCurrentStyle: 0,
-      marginToNext: 0,
-      marginToPrev: 0,
+      slide: 0,
+      animateLeft: true,
+      animateRight: true
     }
   },
   mounted() {
-    this.calcWidthSliders();
-    this.calcWidthContainer();
+
   },
   watch: {
-    widthCurrentStyle(newWidth) {
-      console.log('widthCurrentStyle ' + newWidth);
-    },
-    widthContainer(newWidth) {
-      console.log('widthContainer ' + newWidth);
-    },
-    marginToPrev() {
-    },
-    marginToNext() {
-    },
-    activeStyleKey(newKey) {
-      this.calcWidthSliders();
-    }
+
   },
   computed: {
     countStyle() {
@@ -55,9 +53,7 @@ export default {
       }
       return count;
     },
-    widthSlider() {
-      return 'calc(' + this.widthCurrentStyle + 'px + ' + '6rem)';
-    },
+
     bathStyleCarousel() {
 
     },
@@ -76,6 +72,10 @@ export default {
 
   },
   methods: {
+    triggerAnimation (direction) {
+      this[`animate${direction}`] = true
+      setTimeout(() => { this[`animate${direction}`] = false }, 1000)
+    },
     nextStyle() {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
 
@@ -83,27 +83,6 @@ export default {
     prevStyle() {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
 
-    },
-    calcWidthContainer() {
-      console.log('начало calcWidthContainer');
-      let widthContainer = 0;
-      if (this.bathStyles[this.activeStyleKey]) {
-        if (this.$refs.bathSlider[this.activeStyleKey]) {
-          this.$refs.bathSlider.forEach(slide => {
-            console.log(slide);
-            widthContainer = widthContainer + slide.clientWidth;
-          })
-        }
-      }
-      this.widthContainer = widthContainer;
-    },
-    calcWidthSliders() {
-      console.log('начало calcWidthSliders');
-      if (this.bathStyles[this.activeStyleKey]) {
-        if (this.$refs.bathSlider[this.activeStyleKey]) {
-          this.widthCurrentStyle = this.$refs.bathSlider[this.activeStyleKey].clientWidth;
-        }
-      }
     },
     changeCurrentStyle(id) {
       if (this.currentSiteSection === 'bathStyle' || this.currentSiteSection === 'index') {
@@ -115,5 +94,30 @@ export default {
 </script>
 
 <style scoped>
+.overflow-hidden{
+  overflow: hidden;
+}
 
+svg { transition: color .5s ease; }
+
+.control-chevron {
+  transition: font-size .5s ease;
+}
+.control-chevron.animate-left {
+    animation: animate-left 1s;
+  }
+.control-chevron.animate-right {
+    animation: animate-right 1s;
+  }
+
+@keyframes animate-left {
+  50% {
+    transform: translateX(-10px)
+  }
+}
+@keyframes animate-right {
+  50% {
+    transform: translateX(10px)
+  }
+}
 </style>

@@ -14,7 +14,7 @@
     <div v-if="error" class="error">
       {{ error }}
     </div>
-    <orders-status-item v-for="(itemCurrent) in items" :item="itemCurrent"></orders-status-item>
+    <orders-status-item v-for="(itemCurrent) in items" :item="itemCurrent"  :key="$root.guid()"></orders-status-item>
   </div>
 </template>
 

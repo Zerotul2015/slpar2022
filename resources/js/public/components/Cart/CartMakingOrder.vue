@@ -34,7 +34,7 @@
       </div>
       <div class="mob-delivery" v-if="deliveryMethods">
         <div class="mob-title">Способ доставки</div>
-        <div class="mob-radio-block" v-for="(deliveryItem, keyDelivery) in deliveryMethods">
+        <div class="mob-radio-block" v-for="(deliveryItem, keyDelivery) in deliveryMethods"  :key="$root.guid()">
           <input :id="'delivery-' + deliveryItem.id" class="checkbox" type="radio" :value="deliveryItem.id"
                  v-model="deliveryMethod">
           <label :for="'delivery-' + deliveryItem.id" class="label"><span></span>{{ deliveryItem.name }}</label>
@@ -42,7 +42,7 @@
       </div>
       <div class="mob-payments" v-if="paymentsMethods">
         <div class="mob-title">Способ оплаты</div>
-        <div class="mob-radio-block" v-for="(paymentItem, keyPayment) in paymentsMethods">
+        <div class="mob-radio-block" v-for="(paymentItem, keyPayment) in paymentsMethods" :key="$root.guid()">
           <input :id="'payment-' + paymentItem.id" class="checkbox" type="radio" :value="paymentItem.id"
                  v-model="paymentMethod">
           <label :for="'payment-' + paymentItem.id" class="label"><span></span>{{ paymentItem.name }}</label>
