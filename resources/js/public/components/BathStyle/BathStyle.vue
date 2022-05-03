@@ -97,9 +97,8 @@ export default {
       //меням урл на урл стиля
       if (this.url && this.bathStyles[newKey].url !== this.url) {
         this.$router.push('/bath-style/' + this.bathStyles[this.activeStyleKey].url);
-      } else {
-        this.$store.dispatch("bathStyle/getProductsData");
       }
+      this.$store.dispatch("bathStyle/getProductsData");
     },
     bathStyles(newVal) {
       //для активации нужно стиля исходя при открытии страницы

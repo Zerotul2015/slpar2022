@@ -7,18 +7,17 @@
           </slot>
         </div>
       </div>
-      <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left')">
-        <div class="group flex-grow flex items-center justify-center cursor-pointer">
-          <span class="control-chevron" :class="{ 'animate-left': animateLeft }">
-            <icon-svg class="bs-c-button-icon" icon="angles-left" style="fill:#ffffff"></icon-svg>
-          </span>
+      <div class="bs-c-title">Выбрать стиль</div>
+      <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left')"
+           :class="{'bs-c-button-disable':slide === 0}">
+        <div class="bs-c-button-icon-wrap cursor-pointer">
+          <icon-svg class="bs-c-button-icon" :class="{ 'animate-left': animateLeft }" icon="angles-left"></icon-svg>
         </div>
       </div>
-      <div class="bs-c-button bs-c-next" @click="slide = active + 1; triggerAnimation('Right')">
-        <div class="group flex-grow flex items-center justify-center cursor-pointer">
-          <span class="control-chevron" :class="{ 'animate-right': animateRight }">
-            <icon-svg class="bs-c-button-icon" icon="angles-right" style="fill:#ffffff"></icon-svg>
-          </span>
+      <div class="bs-c-button bs-c-next" @click="slide = active + 1; triggerAnimation('Right')"
+           :class="{'bs-c-button-disable':slide === (countStyle-1)}">
+        <div class="bs-c-button-icon-wrap cursor-pointer">
+          <icon-svg class="bs-c-button-icon" :class="{ 'animate-right': animateRight }" icon="angles-right"></icon-svg>
         </div>
       </div>
     </div>
@@ -27,7 +26,7 @@
 
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
-import { RlCarouselSlide, RlCarousel } from 'vue-renderless-carousel'
+import {RlCarouselSlide, RlCarousel} from 'vue-renderless-carousel'
 
 export default {
   name: "BathStylesHeaderCarousel",
@@ -39,11 +38,16 @@ export default {
       animateRight: true
     }
   },
-  mounted() {
-
+  beforeMount() {
+    this.slide = this.activeStyleKey;
   },
   watch: {
-
+    slide(newKey) {
+      this.changeCurrentStyle(newKey);
+    },
+    activeStyleKey(newKey){
+      this.slide = newKey;
+    }
   },
   computed: {
     countStyle() {
@@ -72,9 +76,11 @@ export default {
 
   },
   methods: {
-    triggerAnimation (direction) {
+    triggerAnimation(direction) {
       this[`animate${direction}`] = true
-      setTimeout(() => { this[`animate${direction}`] = false }, 1000)
+      setTimeout(() => {
+        this[`animate${direction}`] = false
+      }, 1000)
     },
     nextStyle() {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
@@ -82,11 +88,10 @@ export default {
     },
     prevStyle() {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
-
     },
-    changeCurrentStyle(id) {
+    changeCurrentStyle(key) {
       if (this.currentSiteSection === 'bathStyle' || this.currentSiteSection === 'index') {
-        this.$store.dispatch("bathStyle/setActiveStyleKeyById", id);
+        this.$store.dispatch("bathStyle/setActiveStyleKey", key);
       }
     }
   },
@@ -94,27 +99,32 @@ export default {
 </script>
 
 <style scoped>
-.overflow-hidden{
+.overflow-hidden {
   overflow: hidden;
 }
 
-svg { transition: color .5s ease; }
+svg {
+  transition: color .5s ease;
+}
 
 .control-chevron {
   transition: font-size .5s ease;
 }
+
 .control-chevron.animate-left {
-    animation: animate-left 1s;
-  }
+  animation: animate-left 1s;
+}
+
 .control-chevron.animate-right {
-    animation: animate-right 1s;
-  }
+  animation: animate-right 1s;
+}
 
 @keyframes animate-left {
   50% {
     transform: translateX(-10px)
   }
 }
+
 @keyframes animate-right {
   50% {
     transform: translateX(10px)

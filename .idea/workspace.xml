@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
+    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
@@ -49,7 +51,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="SR-8" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -224,12 +226,12 @@
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
-      <server host="" id="fe73b8c0-dd8e-4435-ae5b-4da0d5e181f3" port="443" use_path_mappings="true">
+      <server id="fe73b8c0-dd8e-4435-ae5b-4da0d5e181f3" port="443" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
-      <server host="" id="86d3201d-96cc-450d-8b3e-32484673c906" use_path_mappings="true">
+      <server id="86d3201d-96cc-450d-8b3e-32484673c906" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
@@ -311,30 +313,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "tasks.open.task.update.state.enabled": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;tasks.open.task.update.state.enabled&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
@@ -598,13 +600,6 @@
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
-    </task>
-    <task id="LOCAL-00121" summary="build app">
-      <created>1643077055074</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1643077055074</updated>
     </task>
     <task id="LOCAL-00122" summary="fix before make design">
       <created>1648982555608</created>
@@ -936,14 +931,14 @@
     <task active="true" id="SR-6" summary="Корзина и оформление заказа">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-6-cart-buy" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="" />
+      <changelist id="" name="SR-6 Корзина и оформление заказа" comment="" />
       <created>1651488109934</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-6</url>
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651549714618</updated>
+      <updated>1651568508741</updated>
       <workItem from="1651490665523" duration="425000" />
       <workItem from="1651491098560" duration="31354000" />
       <workItem from="1651543299371" duration="13440000" />
@@ -962,6 +957,19 @@
       <updated>1651491098400</updated>
       <workItem from="1651489251354" duration="160000" />
       <workItem from="1651491093517" duration="5000" />
+    </task>
+    <task active="true" id="SR-9" summary="Слайдер стилей в  шапке сайт при прокрутке">
+      <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="SR-9" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="" />
+      <created>1651568492651</created>
+      <option name="issue" value="true" />
+      <url>https://kemit.myjetbrains.com/issue/SR-9</url>
+      <option name="number" value="9" />
+      <option name="presentableId" value="SR-9" />
+      <option name="project" value="SR" />
+      <updated>1651568581163</updated>
+      <workItem from="1651568578578" duration="5188000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>
@@ -1018,17 +1026,6 @@
     <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
     <MESSAGE value="SR-6 Корзина и оформление заказа" />
     <option name="LAST_COMMIT_MESSAGE" value="SR-6 Корзина и оформление заказа" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php</url>
-          <line>170</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -37,11 +37,13 @@
           </div>
         </div>
         <div class="header-links-block">
-          <BathStylesHeaderCarousel v-if="headerFixed" class="hcd-wrapper">
-            <rl-carousel-slide v-for="(styleItem) in bathStyles" :key="$root.guid()">
-              <div class="bs-c-item">{{ styleItem.name }}</div>
-            </rl-carousel-slide>
-          </BathStylesHeaderCarousel>
+          <div class="hcs-wrapper" v-if="headerFixed && carouselActive">
+            <BathStylesHeaderCarousel class="hcd-wrapper">
+              <rl-carousel-slide v-for="(styleItem) in bathStyles" :key="$root.guid()">
+                <div class="bs-c-item">{{ styleItem.name }}</div>
+              </rl-carousel-slide>
+            </BathStylesHeaderCarousel>
+          </div>
           <div class="hlb-links" v-else>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
@@ -108,6 +110,14 @@ export default {
     }
   },
   computed: {
+    carouselActive() {
+      let siteSectionUsed = ['productCategory', 'compare', 'bathStyle', 'index'];
+      let isActive = false;
+      if (this.sectionSite) {
+        isActive = siteSectionUsed.includes(this.sectionSite);
+      }
+      return isActive;
+    },
     sectionSite() {
       return this.$store.getters["templateData/section"];
     },
