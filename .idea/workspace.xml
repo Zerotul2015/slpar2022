@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/templateData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-    </list>
+    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="SR-9 Слайдер стилей в  шапке сайт при прокрутке" />
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -968,8 +959,8 @@
       <option name="number" value="9" />
       <option name="presentableId" value="SR-9" />
       <option name="project" value="SR" />
-      <updated>1651568581163</updated>
-      <workItem from="1651568578578" duration="5188000" />
+      <updated>1651586679675</updated>
+      <workItem from="1651568578578" duration="5530000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>
@@ -1000,7 +991,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Закончил раздел стилей" />
     <MESSAGE value="поправил стил переключателей слайдера товаров" />
     <MESSAGE value="Добавил проверку на пустую ссылку в меню" />
     <MESSAGE value="Добавил свойста(массив возвращаемых данных) для стандартизации api." />
@@ -1025,7 +1015,8 @@
     <MESSAGE value="new logo" />
     <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
     <MESSAGE value="SR-6 Корзина и оформление заказа" />
-    <option name="LAST_COMMIT_MESSAGE" value="SR-6 Корзина и оформление заказа" />
+    <MESSAGE value="SR-9 Слайдер стилей в  шапке сайт при прокрутке" />
+    <option name="LAST_COMMIT_MESSAGE" value="SR-9 Слайдер стилей в  шапке сайт при прокрутке" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
