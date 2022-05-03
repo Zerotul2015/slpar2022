@@ -24,6 +24,7 @@
     "vue-horizontal": "^0.8.12",
     "vue-horizontal-list": "*",
     "vue-multiselect": "^2.1.6",
+    "vue-renderless-carousel": "^1.3.1",
     "vue-router": "^3.5.3",
     "vue-slim-tabs": "^0.4.0",
     "vue-tinybox": "^1.3.0",

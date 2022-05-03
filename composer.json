@@ -3,6 +3,7 @@
     "php": ">=8.1",
     "php-amqplib/php-amqplib": "*",
     "twig/twig": "3.*",
+    "swiftmailer/swiftmailer": "^6.0",
     "symfony/mailer":"*",
     "mobiledetect/mobiledetectlib":"2.*",
     "intervention/image":"2.*",

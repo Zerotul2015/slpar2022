@@ -83,10 +83,16 @@ class CartModel
                 ->where(['id' => $keysProductsInCart])
                 ->select([
                     'id',
+                    'article',
                     'name',
                     'image_main',
                     'folder',
                     'stock_status_id',
+                    'category_id',
+                    'manufacturer_id',
+                    'unit_id',
+                    'dimensions',
+                    'specifications',
                     'url',
                     'price',
                     'price_old',

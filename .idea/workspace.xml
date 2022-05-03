@@ -5,27 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02858286-594a-4eaf-ba4b-a944f7ffb217" name="SR-6 Корзина и оформление заказа" comment="SR-6 Корзина и оформление заказа">
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/common/apiOrders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Orders/Orders.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/build/images/honeycomb_grey.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/MainModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/MainModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PublicTemplateModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Cart/CartModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_cart_page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/FooterApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_body_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,6 +209,7 @@
     <scope name="scss" pattern="file[slpar2022]:resources/scss//*" />
     <scope name="vue-component-resources" pattern="file[slpar2022]:resources/js//*.vue" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="443" use_path_mappings="true">
@@ -233,8 +223,18 @@
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
-      <server host="" id="6c163886-912d-4c7a-8abe-2162b7657da9" />
-      <server host="" id="751660f4-7fb9-4120-9be1-c133d7bc7337" port="443" use_path_mappings="true">
+      <server id="6c163886-912d-4c7a-8abe-2162b7657da9" />
+      <server id="751660f4-7fb9-4120-9be1-c133d7bc7337" port="443" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
+        </path_mappings>
+      </server>
+      <server host="" id="fe73b8c0-dd8e-4435-ae5b-4da0d5e181f3" port="443" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
+        </path_mappings>
+      </server>
+      <server host="" id="86d3201d-96cc-450d-8b3e-32484673c906" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
@@ -319,7 +319,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/public/store/modules",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -340,11 +340,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
@@ -354,7 +354,7 @@
       <recent name="$PROJECT_DIR$/resources/js/admin/components/MenuSettings" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="PHP Web Page.Docker">
     <configuration name="rest-api_1 | Worker1 Парсинг товаров со страниц категорий" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="9" requestIdentifier="Worker1 Парсинг товаров со страниц категорий" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -427,7 +427,7 @@
     <configuration>C:\Users\kosty\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <branch name="master" repository="$PROJECT_DIR$" original="true" />
       <changelist id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="" />
       <created>1615047766114</created>
@@ -913,7 +913,6 @@
     <task id="LOCAL-00165" summary="Скидки от суммы заказа">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="sale-on-sum" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="" name="Скидки от суммы заказа" comment="" />
       <created>1651333748912</created>
       <option name="number" value="00165" />
       <option name="presentableId" value="LOCAL-00165" />
@@ -947,14 +946,14 @@
       <option name="number" value="6" />
       <option name="presentableId" value="SR-6" />
       <option name="project" value="SR" />
-      <updated>1651514551113</updated>
+      <updated>1651525051556</updated>
       <workItem from="1651490665523" duration="425000" />
-      <workItem from="1651491098560" duration="31134000" />
+      <workItem from="1651491098560" duration="31354000" />
+      <workItem from="1651543299371" duration="4286000" />
     </task>
     <task id="SR-8" summary="Favicon">
       <branch name="SR-6" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-8" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="" name="SR-8 Favicon" comment="" />
       <option name="closed" value="true" />
       <created>1651489229027</created>
       <option name="issue" value="true" />
@@ -1022,6 +1021,17 @@
     <MESSAGE value="добавил третий отбор в стили(для усадьбы)" />
     <MESSAGE value="SR-6 Корзина и оформление заказа" />
     <option name="LAST_COMMIT_MESSAGE" value="SR-6 Корзина и оформление заказа" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php</url>
+          <line>170</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
