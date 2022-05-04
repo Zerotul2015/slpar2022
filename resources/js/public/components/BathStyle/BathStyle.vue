@@ -83,9 +83,6 @@ export default {
   beforeMount() {
     if (this.url) {
       this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.url);
-      this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.url);
-    } else {
-
     }
   },
   watch: {
@@ -140,7 +137,7 @@ export default {
       return this.$store.getters['bathStyle/productsCategoryData'];
     },
     activeStyleKey() {
-      return this.$store.getters['bathStyle/activeKey'];
+      return this.$store.getters['bathStyle/activeKey'] ? this.$store.getters['bathStyle/activeKey'] : 0 ;
     },
     bathStyles() {
       return this.$store.getters['bathStyle/all'];

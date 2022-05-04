@@ -7,7 +7,7 @@
           </slot>
         </div>
       </div>
-      <div class="bs-c-title">Выбрать стиль</div>
+      <div class="bs-c-title" v-html="textCarouselTop" @click="disableFilterCategory()">Выбрать стиль</div>
       <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left')"
            :class="{'bs-c-button-disable':slide === 0}">
         <div class="bs-c-button-icon-wrap cursor-pointer">
@@ -27,6 +27,7 @@
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
 import {RlCarouselSlide, RlCarousel} from 'vue-renderless-carousel'
+import {isNull} from "lodash";
 
 export default {
   name: "BathStylesHeaderCarousel",
@@ -44,12 +45,27 @@ export default {
   watch: {
     slide(newKey) {
       this.changeCurrentStyle(newKey);
+      if (this.currentSiteSection === 'productCategory') {
+        this.$store.dispatch('bathStyle/changeFilterCategoryActive', true);
+      }
     },
-    activeStyleKey(newKey){
+    activeStyleKey(newKey) {
       this.slide = newKey;
+    },
+    currentSiteSection(){
+      if(this.currentSiteSection !== 'productCategory'){
+        this.disableFilterCategory();
+      }
     }
   },
   computed: {
+    textCarouselTop() {
+      let text = 'выбрать стиль';
+      if (this.currentSiteSection === 'productCategory' && this.categoryFilterActive === true) {
+        text = 'сбросить выбор';
+      }
+      return text;
+    },
     countStyle() {
       let count = 0;
       if (this.bathStyles) {
@@ -57,9 +73,8 @@ export default {
       }
       return count;
     },
-
-    bathStyleCarousel() {
-
+    categoryFilterActive() {
+      return this.$store.getters['bathStyle/filterCategoryActive'];
     },
     bathStyles() {
       return this.$store.getters['bathStyle/all']
@@ -76,6 +91,11 @@ export default {
 
   },
   methods: {
+    disableFilterCategory(){
+      if(this.categoryFilterActive === true) {
+        this.$store.dispatch('bathStyle/changeFilterCategoryActive', false);
+      }
+    },
     triggerAnimation(direction) {
       this[`animate${direction}`] = true
       setTimeout(() => {
@@ -90,7 +110,7 @@ export default {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
     },
     changeCurrentStyle(key) {
-      if (this.currentSiteSection === 'bathStyle' || this.currentSiteSection === 'index') {
+      if (this.currentSiteSection === 'bathStyle' || this.currentSiteSection === 'index'|| this.currentSiteSection === 'productCategory') {
         this.$store.dispatch("bathStyle/setActiveStyleKey", key);
       }
     }

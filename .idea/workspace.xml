@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="SR-9 Слайдер стилей в  шапке сайт при прокрутке" />
+    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="SR-9 Слайдер стилей в  шапке сайт при прокрутке">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+    </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -919,10 +928,9 @@
       <option name="project" value="LOCAL" />
       <updated>1651486522371</updated>
     </task>
-    <task active="true" id="SR-6" summary="Корзина и оформление заказа">
+    <task id="SR-6" summary="Корзина и оформление заказа">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-6-cart-buy" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="" name="SR-6 Корзина и оформление заказа" comment="" />
       <created>1651488109934</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-6</url>
@@ -959,8 +967,9 @@
       <option name="number" value="9" />
       <option name="presentableId" value="SR-9" />
       <option name="project" value="SR" />
-      <updated>1651586679675</updated>
-      <workItem from="1651568578578" duration="5530000" />
+      <updated>1651589489059</updated>
+      <workItem from="1651568578578" duration="6229000" />
+      <workItem from="1651633205471" duration="8415000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>

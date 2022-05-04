@@ -8,8 +8,10 @@ const state = () => ({
     bathStyles: [],
     filterBy: '', //fireplace | bath | homestead
     filterToggle: false,
+    filterCategoryActive: false, //
     productsData: {},
-    productsCategoryData: {}
+    productsCategoryData: {},
+
 })
 
 // getters
@@ -26,13 +28,16 @@ const getters = {
     filterToggle(state) {
         return state.filterToggle;
     },
+    filterCategoryActive(state) {
+        return state.filterCategoryActive;
+    },
     bathStylesByUrl: (state) => (url) => {
-        let bathStyle = state.bathStyles.filter(item => item.url === url);
-        return bathStyle.length > 0 ? bathStyle[0] : null;
+        return state.bathStyles.find(item => item.url === url);
+        //return bathStyle.length > 0 ? bathStyle[0] : null;
     },
     bathStylesById: (state) => (id) => {
-        let bathStyle = state.bathStyles.filter(item => item.id === id);
-        return bathStyle.length > 0 ? bathStyle[0] : null;
+        return state.bathStyles.find(item => item.id === id);
+        //return bathStyle.length > 0 ? bathStyle[0] : null;
     },
     all(state) {
         return state.bathStyles;
@@ -47,12 +52,15 @@ const getters = {
 
 // actions
 const actions = {
+    changeFilterCategoryActive({commit}, statusNew) {
+        statusNew = !!statusNew;
+        commit('setFilterCategoryActive', statusNew);
+    },
     setFilter({commit}, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
             commit('setFilterBy', filterName);
             commit('setFilterToggle', true);
         }
-
     },
     disableFilter({commit}) {
         commit('setFilterToggle', false);
@@ -89,6 +97,7 @@ const actions = {
     setActiveStyleKey({commit, state}, keyStyle) {
         if (state.bathStyles[keyStyle]) {
             commit('setActiveStyleKey', keyStyle);
+            commit('setActiveStyleId', state.bathStyles[keyStyle].id);
         }
     },
     getAll({commit}) {
@@ -104,6 +113,9 @@ const actions = {
 
 // mutations
 const mutations = {
+    setFilterCategoryActive(state, statusNew){
+        state.filterCategoryActive = statusNew;
+    },
     setFilterBy(state, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
             state.filterBy = filterName;
