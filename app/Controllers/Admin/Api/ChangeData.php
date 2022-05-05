@@ -122,48 +122,4 @@ class ChangeData extends Main
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Orders\OrdersStatusModel'));
     }
 
-
-    /**
-     * Метод обертка для типового редактирования и удаления обекта
-     * @param $nameModel
-     * @return false|array
-     */
-    public function wrapperApplyChange($nameModel)
-    {
-        $result = false;
-        if ($this->action) {
-            switch ($this->action) {
-                case 'save':
-                    if (!empty($this->values)) {
-                        $result = $nameModel::Save($this->values);
-                    }
-                    break;
-                case 'delete':
-                    if (isset($this->values['id'])) {
-                        $id = $this->values['id'];
-                        $result = $nameModel::Delete($id);
-                    }
-                    break;
-            }
-        }
-        return $result;
-    }
-
-
-    /**
-     * Формирует объект для ответа на запрос изменений данных в базе а также выводит его.
-     * @param $result
-     */
-    public static function printResultChangeForAjax($result)
-    {
-        if (is_numeric($result)) {
-            $returnResult = ['result' => (bool)$result, 'id' => $result];
-        } elseif (is_array($result)) {
-            $returnResult = $result;
-        } else {
-            $returnResult = ['result' => $result];
-        }
-        header('Content-Type: application/json');
-        echo json_encode($returnResult);
-    }
 }

@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="SR-9 Слайдер стилей в  шапке сайт при прокрутке">
+    <list default="true" id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Выгрузка каталога" comment="SR-10 Учитывать автоскидку">
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/Export.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Export/FormatYml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/Shop/Export/FormatYml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Admin/Export/ExportModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/common/apiExport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStyle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/BathStyle/BathStylesHeaderCarousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Category/CategoryPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/bathStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/ChangeData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/GetData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Admin/Api/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Admin/Api/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -304,6 +309,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/bukashk0zzz/yml-generator" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
@@ -313,37 +319,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/public/build/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;tasks.open.task.update.state.enabled&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/app/Controllers/Shop",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "tasks.open.task.update.state.enabled": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\common" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
@@ -600,13 +606,6 @@
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
-    </task>
-    <task id="LOCAL-00122" summary="fix before make design">
-      <created>1648982555608</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1648982555609</updated>
     </task>
     <task id="LOCAL-00123" summary="remove duplicate string in created method">
       <created>1648984092249</created>
@@ -957,10 +956,9 @@
       <workItem from="1651489251354" duration="160000" />
       <workItem from="1651491093517" duration="5000" />
     </task>
-    <task active="true" id="SR-9" summary="Слайдер стилей в  шапке сайт при прокрутке">
+    <task id="SR-9" summary="Слайдер стилей в  шапке сайт при прокрутке">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-9" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="96ed9d99-93c8-4c47-ac62-f5775d84530e" name="SR-9 Слайдер стилей в  шапке сайт при прокрутке" comment="" />
       <created>1651568492651</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-9</url>
@@ -970,6 +968,22 @@
       <updated>1651589489059</updated>
       <workItem from="1651568578578" duration="6229000" />
       <workItem from="1651633205471" duration="8415000" />
+    </task>
+    <task active="true" id="SR-10" summary="Выгрузка каталога">
+      <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="SR-10" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Учитывать автоскидку" comment="" />
+      <created>1651587691939</created>
+      <option name="issue" value="true" />
+      <url>https://kemit.myjetbrains.com/issue/SR-10</url>
+      <option name="number" value="10" />
+      <option name="presentableId" value="SR-10" />
+      <option name="project" value="SR" />
+      <option name="type" value="BUG" />
+      <updated>1651724993407</updated>
+      <workItem from="1651675700383" duration="48000" />
+      <workItem from="1651718145915" duration="3192000" />
+      <workItem from="1651725755358" duration="3654000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>

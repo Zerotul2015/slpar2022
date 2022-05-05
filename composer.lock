@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c5ee9cb6c135990de82443fad3fc7b8",
+    "content-hash": "35d9184f54ccf858b25d4de72b8612d4",
     "packages": [
         {
             "name": "amphp/amp",
@@ -937,6 +937,66 @@
                 }
             ],
             "time": "2020-07-10T16:13:29+00:00"
+        },
+        {
+            "name": "bukashk0zzz/yml-generator",
+            "version": "v1.11.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bukashk0zzz/YmlGenerator.git",
+                "reference": "49c05290076d8218f2d063f7d4e8db58f167f5b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bukashk0zzz/YmlGenerator/zipball/49c05290076d8218f2d063f7d4e8db58f167f5b6",
+                "reference": "49c05290076d8218f2d063f7d4e8db58f167f5b6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.6.1"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "escapestudios/symfony2-coding-standard": "^3.0",
+                "ext-dom": "*",
+                "friendsofphp/php-cs-fixer": "^2.3",
+                "fzaninotto/faker": "^1.6",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bukashk0zzz\\YmlGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Golubovskiy",
+                    "email": "bukashk0zzz@gmail.com",
+                    "role": "Creator"
+                }
+            ],
+            "description": "YML (Yandex Market Language) file generator",
+            "homepage": "https://github.com/Bukashk0zzz/YmlGenerator",
+            "keywords": [
+                "market",
+                "yandex",
+                "yml",
+                "yml-generator"
+            ],
+            "support": {
+                "email": "bukashk0zzz@gmail.com",
+                "issues": "https://github.com/Bukashk0zzz/YmlGenerator/issues",
+                "source": "https://github.com/Bukashk0zzz/YmlGenerator/tree/v1.11.5"
+            },
+            "time": "2021-04-03T10:32:19+00:00"
         },
         {
             "name": "daverandom/libdns",
@@ -4270,12 +4330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "0e5a0abdd695cd45870e442647ef03a70f2ec1e5"
+                "reference": "54c08f02765d00fd520897873f163703b08f68f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0e5a0abdd695cd45870e442647ef03a70f2ec1e5",
-                "reference": "0e5a0abdd695cd45870e442647ef03a70f2ec1e5",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/54c08f02765d00fd520897873f163703b08f68f2",
+                "reference": "54c08f02765d00fd520897873f163703b08f68f2",
                 "shasum": ""
             },
             "conflict": {
@@ -4462,6 +4522,7 @@
                 "livewire/livewire": ">2.2.4,<2.2.6",
                 "lms/routes": "<2.1.1",
                 "localizationteam/l10nmgr": "<7.4|>=8,<8.7|>=9,<9.2",
+                "luyadev/yii-helpers": "<1.2.1",
                 "magento/community-edition": ">=2,<2.2.10|>=2.3,<2.3.3",
                 "magento/magento1ce": "<1.9.4.3",
                 "magento/magento1ee": ">=1,<1.14.4.3",
@@ -4547,7 +4608,7 @@
                 "pusher/pusher-php-server": "<2.2.1",
                 "pwweb/laravel-core": "<=0.3.6-beta",
                 "rainlab/debugbar-plugin": "<3.1",
-                "remdex/livehelperchat": "<3.96",
+                "remdex/livehelperchat": "<3.99",
                 "rmccue/requests": ">=1.6,<1.8",
                 "robrichards/xmlseclibs": "<3.0.4",
                 "rudloff/alltube": "<3.0.3",
@@ -4748,7 +4809,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-29T21:04:00+00:00"
+            "time": "2022-05-04T03:31:04+00:00"
         },
         {
             "name": "symfony/config",

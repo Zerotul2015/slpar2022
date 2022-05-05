@@ -14,6 +14,7 @@
     "amphp/amp": "*",
     "amphp/http-client": "*",
     "imangazaliev/didom": "*",
+    "bukashk0zzz/yml-generator": "*",
     "ext-json": "*",
     "ext-pdo": "*",
     "ext-fileinfo": "*",
