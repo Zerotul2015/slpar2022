@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Выгрузка каталога" comment="SR-10 Выгрузка в yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -968,10 +972,11 @@
       <option name="presentableId" value="SR-10" />
       <option name="project" value="SR" />
       <option name="type" value="BUG" />
-      <updated>1651729693482</updated>
+      <updated>1651741124380</updated>
       <workItem from="1651675700383" duration="48000" />
       <workItem from="1651718145915" duration="3192000" />
       <workItem from="1651725755358" duration="4831000" />
+      <workItem from="1651741065066" duration="1203000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>
