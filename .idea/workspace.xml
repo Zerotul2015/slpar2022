@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Выгрузка каталога" comment="SR-10 Выгрузка в yml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin/components/SidebarApp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
-    </list>
+    <list default="true" id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Выгрузка каталога" comment="" />
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +42,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="SR-10" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -964,7 +958,7 @@
     <task active="true" id="SR-10" summary="Выгрузка каталога">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-10" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
-      <changelist id="35004923-fe0e-4259-b4e0-35f5b335527d" name="SR-10 Учитывать автоскидку" comment="" />
+      <branch name="SR-10" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <created>1651587691939</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-10</url>
@@ -972,18 +966,20 @@
       <option name="presentableId" value="SR-10" />
       <option name="project" value="SR" />
       <option name="type" value="BUG" />
-      <updated>1651741124380</updated>
+      <updated>1651744933858</updated>
       <workItem from="1651675700383" duration="48000" />
       <workItem from="1651718145915" duration="3192000" />
       <workItem from="1651725755358" duration="4831000" />
-      <workItem from="1651741065066" duration="1203000" />
+      <workItem from="1651741065066" duration="1849000" />
     </task>
     <option name="localTasksCounter" value="169" />
+    <option name="createBranch" value="false" />
+    <option name="useBranch" value="true" />
     <servers>
       <YouTrack url="https://kemit.myjetbrains.com">
         <option name="defaultSearch" value="Assignee: me sort by: updated project: slpar.ru State: -Completed " />
         <option name="preferredOpenTaskState">
-          <CustomTaskState id="In progress" name="In progress" />
+          <CustomTaskState id="Completed" name="Completed" />
         </option>
         <username>zerotul</username>
       </YouTrack>
