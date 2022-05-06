@@ -17,6 +17,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed token regular read/write property
  * @property mixed verify_code regular read/write property
  * @property mixed verifyCode regular read/write property
+ * @property mixed is_wholesale regular read/write property
+ * @property mixed isWholesale regular read/write property
  */
 
 class Customer extends Main
@@ -101,6 +103,14 @@ class Customer extends Main
         'verify_code' => [
             'field' => 'verify_code',
             'type' => 'varchar(12)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'is_wholesale' => [
+            'field' => 'is_wholesale',
+            'type' => 'tinyint(1)',
             'null' => 'YES',
             'key' => '',
             'default' => null,

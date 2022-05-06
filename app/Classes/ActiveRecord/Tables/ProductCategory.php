@@ -21,6 +21,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed customLink regular read/write property
  * @property mixed binding_style regular read/write property
  * @property mixed bindingStyle regular read/write property
+ * @property mixed wholesale_discount_size regular read/write property
+ * @property mixed wholesaleDiscountSize regular read/write property
  */
 
 class ProductCategory extends Main
@@ -121,6 +123,14 @@ class ProductCategory extends Main
         'binding_style' => [
             'field' => 'binding_style',
             'type' => 'varchar(16)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'wholesale_discount_size' => [
+            'field' => 'wholesale_discount_size',
+            'type' => 'int',
             'null' => 'YES',
             'key' => '',
             'default' => null,

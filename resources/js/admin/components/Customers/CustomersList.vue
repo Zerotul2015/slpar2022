@@ -1,11 +1,15 @@
 <template>
   <div class="wrapper-content">
-    <h1>Покупатели</h1>
+    <h1 v-html="typeCustomerView">Покупатели</h1>
     <div class="buttons-block">
       <router-link class="button button_green" to="/customers/create">
         <span class="button-icon"><i class="far fa-user-plus"></i></span>
         <span class="button-text">Добавить покупателя</span>
       </router-link>
+    </div>
+    <div class="form-section">
+      <button class="button" @click="filterWholesale = true">Оптовые покупатели</button>
+      <button class="button" @click="filterWholesale = false" >Обычные покупатели</button>
     </div>
     <div class="form-section">
       <div class="input-block">
@@ -69,6 +73,7 @@ export default {
       isLoading: false,
       error: null,
       items: [],
+      filterWholesale:false,
       //поиск
       searchString: '',
       // навигация по страницам
@@ -80,43 +85,49 @@ export default {
   mounted() {
     this.getItems();
   },
+  watch:{
+    filterWholesale(){
+      this.getItems();
+    }
+  },
   computed: {
+    typeCustomerView(){
+      let text = 'Покупатели';
+      if (this.filterWholesale === true){
+        text = 'Оптовые покупатели';
+      }
+      return text;
+    },
     paginationPageCount() {
       return Math.ceil(this.itemsCount / this.paginationPerPage);
     },
     searchArray() {
-      let returnArray = {};
+      let returnArray = {
+        'andWhere': [
+          {
+            'where': 'deleted',
+            'searchString': 0,
+            'condition': '=',
+            'group': '0',
+            'groupCondition': 'AND',
+          },
+          {
+            'where': 'is_wholesale',
+            'searchString': 1,
+            'condition': this.filterWholesale ? '=' : '<>',
+            'group': '0',
+            'groupCondition': 'AND',
+          }
+        ]
+      };
       if (this.searchString.length > 1) {
-        returnArray = {
-          'andWhere': [
-            {
-              'where': 'name',
-              'searchString': this.searchString,
-              'condition': 'like',
-              'group': '0',
-              'groupCondition': 'AND',
-            },
-            {
-              'where': 'deleted',
-              'searchString': 0,
-              'condition': '=',
-              'group': '0',
-              'groupCondition': 'AND',
-            }
-          ]
-        }
-      }else{
-        returnArray = {
-          'andWhere': [
-            {
-              'where': 'deleted',
-              'searchString': 0,
-              'condition': '=',
-              'group': '0',
-              'groupCondition': 'AND',
-            }
-          ]
-        }
+        returnArray['andWhere'].push({
+          'where': 'name',
+          'searchString': this.searchString,
+          'condition': 'like',
+          'group': '0',
+          'groupCondition': 'AND',
+        });
       }
       return returnArray;
     },

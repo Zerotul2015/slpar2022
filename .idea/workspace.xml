@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="SR-12 Автоскидки" comment="SR-12 Автоскидки">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Shop/Order/OrderModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/CartMakingOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,9 +118,9 @@
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersCompanies.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemCompany.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemDetails.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersItemOrders.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersList.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersListItem.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Customers/CustomersOrdersList.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/Login.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettings.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/js/admin/components/MenuSettings/MenuSettingsMenu.vue" root0="FORCE_HIGHLIGHTING" />
@@ -205,42 +202,12 @@
     <scope name="scss" pattern="file[slpar2022]:resources/scss//*" />
     <scope name="vue-component-resources" pattern="file[slpar2022]:resources/js//*.vue" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="https://127.0.0.1" id="57ff352b-0899-4a5a-aee8-e85bafd57ea5" name="Docker" port="443" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="/var/www" />
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server id="953ced72-b270-4e1e-b710-f6214910686b" port="443" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server id="6c163886-912d-4c7a-8abe-2162b7657da9" />
-      <server id="751660f4-7fb9-4120-9be1-c133d7bc7337" port="443" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server id="fe73b8c0-dd8e-4435-ae5b-4da0d5e181f3" port="443" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server id="86d3201d-96cc-450d-8b3e-32484673c906" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server host="" id="4f58065d-e9f0-4d88-8209-6b2d036a2967" port="443" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
-        </path_mappings>
-      </server>
-      <server host="" id="ba1459be-1c45-47e9-bc2a-c25ded800704" use_path_mappings="true">
-        <path_mappings>
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/public" />
         </path_mappings>
       </server>
@@ -322,37 +289,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/dshi50.ru&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;tasks.open.task.update.state.enabled&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/admin/store/modules",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "settings.php.debug.servers",
+    "tasks.open.task.update.state.enabled": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\store\modules" />
+      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Wholesale" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Shop" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\common" />
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\public\build\images" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\public\store\modules" />
-      <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\admin\components\Other" />
@@ -975,7 +942,7 @@
       <workItem from="1651725755358" duration="4831000" />
       <workItem from="1651741065066" duration="1849000" />
     </task>
-    <task active="true" id="SR-11" summary="Размер текста и заголовков">
+    <task id="SR-11" summary="Размер текста и заголовков">
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-11" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
       <branch name="SR-11" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
@@ -993,14 +960,19 @@
       <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
       <branch name="SR-12" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
       <changelist id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="SR-12 Автоскидки" comment="" />
+      <option name="closed" value="true" />
       <created>1651808183919</created>
       <option name="issue" value="true" />
       <url>https://kemit.myjetbrains.com/issue/SR-12</url>
       <option name="number" value="12" />
       <option name="presentableId" value="SR-12" />
       <option name="project" value="SR" />
-      <updated>1651858180441</updated>
+      <updated>1651860331311</updated>
       <workItem from="1651808311912" duration="8343000" />
+      <workItem from="1651860914514" duration="35000" />
+      <workItem from="1651861826066" duration="36000" />
+      <workItem from="1651862737623" duration="21000" />
+      <workItem from="1651862787346" duration="12240000" />
     </task>
     <option name="localTasksCounter" value="169" />
     <servers>

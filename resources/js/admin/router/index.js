@@ -242,7 +242,7 @@ export default new Router({
             path: '/customers/companies/:customerId',
             name: 'CustomersCompanies',
             props: true,
-            component: () => import("../components/Customers/CustomersItemOrders.vue"),
+            component: () => import("../components/Customers/CustomersOrdersList.vue"),
             meta: {title: 'Заказы покупателя :customerId - Панель управления'}
         },
         //---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---//

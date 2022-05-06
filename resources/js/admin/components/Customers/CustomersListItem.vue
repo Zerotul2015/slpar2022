@@ -14,10 +14,10 @@
         <span class="button-icon"><i class="far fa-shopping-basket"></i></span>
         <span class="button-text">заказы</span>
       </router-link>
-      <router-link class="button" :to="'/customers/сompanies/' + item.id" title="контрагенты">
-        <span class="button-icon"><i class="far fa-user-tie"></i></span>
-        <span class="button-text">Контрагенты</span>
-      </router-link>
+<!--      <router-link class="button" :to="'/customers/сompanies/' + item.id" title="контрагенты">-->
+<!--        <span class="button-icon"><i class="far fa-user-tie"></i></span>-->
+<!--        <span class="button-text">Контрагенты</span>-->
+<!--      </router-link>-->
       <button class="button button_red" v-html="deleteButtonText" @click="removeItem"></button>
       <div class="button-block-error" v-if="errorText" v-html="errorText"></div>
     </div>

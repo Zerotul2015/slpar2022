@@ -1,19 +1,19 @@
 <template>
   <div class="wrapper-content">
-    <h1 v-html="title"></h1>
-    <div class="wrapper-content" v-if="!customerNotFound">
+    <h1 v-html="titleText"></h1>
+    <div class="wrapper-content">
       <div class="buttons-block">
-        <button class="button button_green" v-if="changed" v-html="saveButtonText" @click="saveItem"></button>
+        <button class="button button_green" v-html="saveButtonText" @click="saveItem"></button>
         <button class="button button_red" v-html="deleteButtonText" @click="removeItem"></button>
         <div class="button-block-error" v-if="errorText" v-html="errorText"></div>
       </div>
       <h2>Основные данные</h2>
       <div class="form-section form-section_column">
         <div class="input-block input-block_highlight">
-          <label class="label" :for="'customer-phone-' +guid">
+          <label class="label" :for="'customer-status-' +guid">
             Статус:
           </label>
-          <select class="select" v-model="customerStatus">
+          <select class="select" :id="'customer-status-' +guid" v-model="customer.status">
             <option v-for="(statusName, statusKey) in customerStatuses" :key="statusKey" :value="statusKey">{{
                 statusName
               }}
@@ -23,10 +23,21 @@
       </div>
       <div class="form-section form-section_column">
         <div class="input-block input-block_highlight">
+          <label class="label" :for="'customer-is-wholesale-' +guid">
+            Тип:
+          </label>
+          <select class="select" :id="'customer-is-wholesale-' +guid" v-model="customer.is_wholesale">
+            <option :value="1">Оптовик</option>
+            <option :value="0">Обычный покупатель</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-section form-section_column">
+        <div class="input-block input-block_highlight">
           <label class="label" :for="'customer-name-' +guid">
             Имя:
           </label>
-          <input :id="'customer-name-' +guid" class="text" type="text" v-model.lazy="customerName">
+          <input :id="'customer-name-' +guid" class="text" type="text" v-model.lazy="customer.name">
         </div>
       </div>
       <div class="form-section form-section_column">
@@ -34,13 +45,13 @@
           <label class="label" :for="'customer-mail-' +guid">
             Почта:
           </label>
-          <input :id="'customer-mail-' +guid" class="text" type="email" v-model.lazy="customerMail">
+          <input :id="'customer-mail-' +guid" class="text" type="email" v-model.lazy="customer.mail">
         </div>
         <div class="input-block input-block_highlight">
           <label class="label" :for="'customer-phone-' +guid">
             Телефон:
           </label>
-          <input :id="'customer-phone-' +guid" class="text" type="tel" v-model.lazy="customerPhone">
+          <input :id="'customer-phone-' +guid" class="text" type="tel" v-model.lazy="customer.phone">
         </div>
       </div>
 
@@ -50,7 +61,7 @@
             Пароль:
           </label>
           <button class="button button_small" v-if="changePass === false" @click="changePass = true">изменить</button>
-          <input :id="'customer-pass-' +guid" class="text" type="text" v-else v-model.lazy="customerPass">
+          <input :id="'customer-pass-' +guid" class="text" type="text" v-else v-model.lazy="customer.pass">
         </div>
 
       </div>
@@ -59,78 +70,13 @@
           <label class="label" :for="'customer-note-hidden-' +guid">
             Примечание(покупатель его не увидит):
           </label>
-          <textarea :id="'customer-note-hidden-' +guid" class="text" type="email" v-model.lazy="customerNoteHidden">
+          <textarea :id="'customer-note-hidden-' +guid" class="text" type="email" v-model.lazy="customer.note_hidden">
 
         </textarea>
         </div>
       </div>
-      <div class="grid" v-if="customerId && !customerNotFound">
-        <h2>Последние 10 заказов</h2>
-        <div class="buttons-block">
-          <router-link class="button button_small button_green" to="/orders/create">
-            <span class="button-icon"><i class="far fa-plus"></i></span>
-            <span class="button-text">Создать заказ</span>
-          </router-link>
-          <router-link v-if="!orders || orders.length < 1" class="link" :to="'/orders/customer/' + customerId">
-            <span class="link-text">все заказы</span>
-          </router-link>
-        </div>
-        <div v-if="!orders || orders.length < 1">
-          Покупатель еще ничего не заказывал.
-        </div>
-        <div class="grid background-alternation" v-else>
-          <customers-item-orders :customer-id="customer.id"></customers-item-orders>
-        </div>
-      </div>
-      <div class="grid" v-if="customerId && !customerNotFound">
-        <h2>Контрагенты</h2>
-        <div class="grid customer-company p-1">
-          <button class="button button_small button_green" v-if="companyAddToggle === false" @click="companyAddToggle = true">
-            <span class="button-text">добавить контрагента</span>
-          </button>
-          <transition name="component-fade" mode="out-in">
-            <div class="form-section form-section_with-title background-green" v-if="companyAddToggle === true">
-              <div class="form-title">
-                Новый контрагент
-              </div>
-              <div class="form-section form-section_column">
-                <div class="input-block input-block_column input-block_highlight">
-                  <label class="label" :for="'new-company-name-' + guid">Наименование</label>
-                  <input class="text" :id="'new-company-name-' + guid" type="text" v-model="companyNew.name">
-                </div>
-                <div class="input-block input-block_column input-block_highlight">
-                  <label class="label" :for="'new-company-inn-' + guid">ИНН</label>
-                  <input class="text" :id="'new-company-inn-' + guid" type="number" minlength="10" maxlength="12"
-                         v-model="companyNew.inn">
-                </div>
-                <div class="input-block input-block_column input-block_highlight">
-                  <label class="label" :for="'new-company-inn-' + guid">КПП</label>
-                  <input class="text" :id="'new-company-kpp-' + guid" type="number" minlength="9" maxlength="9"
-                         v-model="companyNew.kpp">
-                </div>
-              </div>
-              <div class="buttons-block">
-                <button class="button button_small button_green" @click="addCompany" v-html="addCompanyText"></button>
-                <button class="button button_small" @click="companyAddToggle = false">
-                  <span class="button-icon"><i class="far fa-times"></i></span>
-                  <span class="button-text">отменить</span>
-                </button>
-                <div v-if="errorTextCompany.length > 0" class="errorText" v-html="errorTextCompany"></div>
-              </div>
-            </div>
-          </transition>
-        </div>
-        <div v-if="!company || company.length < 1">
-          У покупателя нет контрагенов.
-        </div>
-        <div class="grid background-alternation p-1" v-else>
-          <customers-item-company v-for="(companyItem, companyKey) in company"
-                                  :customer-id="customer.id"
-                                  :company="companyItem"
-                                  v-on:item-removed="$store.dispatch('customer/getCompany', {'id': customerId})"
-                                  :key="$root.guid()">
-          </customers-item-company>
-        </div>
+      <div class="grid" v-if="orders">
+        <customers-orders-list :customer-id="customer.id"></customers-orders-list>
       </div>
     </div>
   </div>
@@ -139,15 +85,13 @@
 <script>
 import api from "../../common/api";
 import CustomersItemCompany from "./CustomersItemCompany";
-import CustomersItemOrders from "./CustomersItemOrders";
+import CustomersItemOrders from "./CustomersOrdersList";
+import CustomersOrdersList from "./CustomersOrdersList";
 
 export default {
   name: "CustomersItemDetails",
-  components: {CustomersItemOrders, CustomersItemCompany},
+  components: {CustomersOrdersList, CustomersItemOrders, CustomersItemCompany},
   props: {
-    customerCreate: {
-      type: Boolean
-    },
     customerId: {}
   },
   data() {
@@ -155,34 +99,28 @@ export default {
       guid: this.$root.guid(),
       changed: false,
       changePass: false,
-      customerNew: {
+      customer: {
         'name': '',
         'phone': '',
         'mail': '',
-        'pass': Math.random().toString(36).slice(-8),
         'status': 'active',
         'note_hidden': '',
+        'is_wholesale': false,
       },
       customerStatuses: {
         'active': 'Активен',
         'blocked': 'Заблокирован',
         'confirm_wait': 'Ожидает подтверждения',
       },
-      companyNew: {
-        'customer_id': this.customerId,
-        'name': '',
-        'inn': '',
-        'kpp': '',
-        'note': '',
-        'note_hidden': '',
-      },
-      companyAddToggle: false,
-      errorTextCompany: "",
+      // companyNew: {
+      //   'customer_id': this.customerId,
+      //   'name': '',
+      //   'inn': '',
+      //   'kpp': '',
+      //   'note': '',
+      //   'note_hidden': '',
+      // },
       errorText: "",
-      addStatus: null, // 1 -  успешно, 2 - ошибка, 0 | null - без изменений
-      addCompanyDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-text">сохранить контрагента</span>',
-      addCompanySuccess: '<span class="button-icon"><i class="far fa-user-check"></i></span><span class="button-text">контрагент добавлен</span>',
-      addCompanyError: '<span class="button-icon"><i class="far fa-times"></i></span><span class="button-text">ошибка при добавить</span>\',',
       //start save, delete
       saveStatus: null, // 1 -  успешно, 2 - ошибка, 0 | null - без изменений
       saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-text">сохарнить</span>',
@@ -195,129 +133,34 @@ export default {
       //end save, delete
     }
   },
-  created() {
+  beforeMount() {
     if (this.customerId) {
-      this.$store.dispatch('customer/getData', {'id': this.customerId});
-    } else {
-      this.changed = true;
-      this.$store.dispatch('customer/reset');
+      this.getItem();
     }
   },
   watch: {
     changePass(newVal) {
       if (newVal === true) {
-        this.customerPass = Math.random().toString(36).slice(-8);
+        this.customer.pass = Math.random().toString(36).slice(-8);
       }
     }
   },
   computed: {
-    customerNotFound() {
-      return this.$store.state.customer.notFound;
-    },
-    customerPass: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.pass ? this.$store.state.customer.profile.pass : null;
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['pass'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet, 'changedPass': true})
+    titleText() {
+      let text = 'Создание ';
+      if (this.customer.id) {
+        text = 'Редактирование ';
       }
-    },
-    customerName: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.name ? this.$store.state.customer.profile.name : null;
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['name'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet})
+      if (this.customer.is_wholesale) {
+        text = text + 'оптового';
       }
-    },
-    customerPhone: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.phone ? this.$store.state.customer.profile.phone : null;
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['phone'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet})
-      }
-    },
-    customerMail: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.mail ? this.$store.state.customer.profile.mail : null;
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['mail'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet})
-      }
-    },
-    customerNoteHidden: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.note_hidden ? this.$store.state.customer.profile.note_hidden : null;
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['note_hidden'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet})
-      }
-    },
-    customerStatus: {
-      get() {
-        return this.$store.state.customer.profile && this.$store.state.customer.profile.status ? this.$store.state.customer.profile.status : 'active';
-      },
-      set(newVal) {
-        this.changed = true;
-        let newValSet = this.customer;
-        newValSet['status'] = newVal;
-        this.$store.commit('customer/setProfile', {'profile': newValSet})
-      }
-    },
-    customer: {
-      get() {
-        return this.$store.state.customer.profile;
-      },
-      set(newVal) {
-        this.$store.commit('customer/setProfile', {'profile': newVal})
-      }
+      text = text + ' покпателя' + this.customer.name;
     },
     orders() {
-      return this.$store.state.customer.orders;
+      return this.$store.getters['customer/orders'];
     },
     company() {
-      return this.$store.state.customer.company;
-    },
-    title() {
-      let titleText = '';
-      if (this.customerCreate) {
-        titleText = 'Создание нового покупателя';
-      }
-      if (this.customerId) {
-        if (this.customerNotFound === true) {
-          titleText = 'Покупателя с ID ' + this.customerId + ' не существует.';
-        } else {
-          titleText = 'Редактирование покупателя';
-        }
-      }
-      return titleText;
-    },
-    addCompanyText() {
-      if (this.addStatus === 1) {
-        return this.addCompanySuccess;
-      }
-      if (this.addStatus === 2) {
-        return this.addCompanyError;
-      }
-      if (this.addStatus === 0 || this.addStatus === null) {
-        return this.addCompanyDefault;
-      }
+      return this.$store.getters['customer/company'];
     },
     //start save, delete
     saveButtonText() {
@@ -346,26 +189,19 @@ export default {
   }
   ,
   methods: {
-    async addCompany() {
-      this.errorTextCompany = '';
-      await api.applyData('customerCompany', 'save', this.companyNew)
+    getItem: async function () {
+      api.getData('customer', {'where': 'id', 'searchString': this.customerId})
           .then((r) => {
-            console.log(r);
-            if (r.result && r.result === true) {
-              this.companyNew = {
-                'customer_id': this.customerId,
-                'name': '',
-                'inn': '',
-                'kpp': '',
-                'note': '',
-                'note_hidden': '',
-              };
-              this.$store.dispatch('customer/getCompany', {'id': this.customerId});
-            } else {
-              this.errorTextCompany = r.error ? r.error : 'неизвестная ошибка: ' + r;
+            this.loading = false;
+            if (r.result === true) {
+              this.customer = r.returnData[0];
+              this.$store.dispatch('customer/setCustomerData', this.customer);
+              this.$store.dispatch('customer/getRelatedData');
             }
-          }).catch((e) => {
-            this.errorTextCompany = e.error ? e.error : 'неизвестная ошибка: ' + e;
+          })
+          .catch((e) => {
+            this.loading = false;
+            this.error = e.error ? e.error : 'неизвестная ошибка: ' + e;
           })
     },
     saveItem() {
@@ -377,8 +213,8 @@ export default {
                 this.changed = false;
               }, 1500);
               this.saveStatus = 1;
-              this.$store.commit('customer/setId', r.returnData.id ? r.returnData.id : undefined)
-              this.$store.dispatch('customer/getData');
+              this.customer.id = r.returnData.id ? r.returnData.id : undefined;
+              this.$store.dispatch('customer/getRelatedData');
             } else {
               this.saveStatus = 2;
               this.errorText = r.error ? r.error : 'неизвестная ошибка: ' + r;

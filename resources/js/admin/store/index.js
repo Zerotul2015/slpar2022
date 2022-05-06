@@ -10,9 +10,13 @@ import productUnit from './modules/productUnit'
 import productManufacturer from './modules/productManufacturer'
 import productCategory from './modules/productCategory'
 import customer from './modules/customer'
+import customers from './modules/customers'
 import customerCompany from './modules/customerCompany'
 import orders from './modules/orders'
+import ordersStatus from './modules/ordersStatus'
 import galleryCategory from './modules/galleryCategory'
+import wholesaleCustomer from './modules/wholesale_customer'
+import wholesaleLevel from './modules/wholesale_level'
 
 Vue.use(Vuex)
 
@@ -28,9 +32,13 @@ export default new Vuex.Store({
         productManufacturer,
         productCategory,
         customer,
+        customers,
         customerCompany,
         orders,
+        ordersStatus,
         galleryCategory,
+        wholesaleCustomer,
+        wholesaleLevel,
     },
     state: {
         authData: {

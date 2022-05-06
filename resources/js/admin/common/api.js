@@ -26,6 +26,8 @@ const DATA_PATH = {
     'settings': 'settings',
     'settingsNotifications': 'settings-notifications',
     'users': 'users',
+    'wholesaleCustomer': 'wholesale-customer',
+    'wholesaleLevel': 'wholesale-level',
 }
 
 export default {
