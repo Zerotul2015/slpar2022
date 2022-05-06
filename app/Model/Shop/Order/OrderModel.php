@@ -4,6 +4,7 @@ namespace App\Model\Shop\Order;
 
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\DeliveryMethods;
+use App\Classes\ActiveRecord\Tables\Discount;
 use App\Classes\ActiveRecord\Tables\Orders;
 use App\Classes\ActiveRecord\Tables\PaymentMethods;
 use App\Classes\ActiveRecord\Tables\PaymentYandex;
@@ -34,13 +35,14 @@ class OrderModel
         if (static::checkFormDataNewOrder($valOrder)) {
             $cartProducts = $cart->products;
 
-            if ($cartProducts) {
+            if (empty($cartProducts)) {
                 //получаем или создаем покупателя
                 $customer = static::getOrCreateCustomer($valOrder['customer']);
 
                 $newOrder = Orders::create();
                 $newOrder->products = $cartProducts;
                 $newOrder->promo_code_used = $cart->promo_code_used;
+                $newOrder->discount_used = static::getAutoDiscount($cartProducts);
                 $newOrder->delivery_address = $valOrder['address'];
                 $newOrder->customer_id = $customer->id;
                 $newOrder->delivery_id = $valOrder['delivery'];
@@ -71,7 +73,8 @@ class OrderModel
      * @param bool quickOrder
      * @return bool
      */
-    private static function checkFormDataNewOrder($valOrder): bool
+    private
+    static function checkFormDataNewOrder($valOrder): bool
     {
         //проверка запроолнености данных покупателя
         if (isset($valOrder['customer']) && is_array($valOrder['customer'])) {
@@ -125,7 +128,8 @@ class OrderModel
      * @param $customer
      * @return Customer|bool
      */
-    private static function getOrCreateCustomer($customer): Customer|bool
+    private
+    static function getOrCreateCustomer($customer): Customer|bool
     {
         $existCustomer = false;
         if (isset($customer['mail']) && !empty($customer['mail'])) {
@@ -144,12 +148,56 @@ class OrderModel
     }
 
     /**
+     * Возвращает максимальную из скидок подходящих под переданный состав корзины.
+     * @param $cartProducts
+     * @return Discount|null
+     */
+    public static function getAutoDiscount($cartProducts):Discount|null
+    {
+        $countCart = 0;
+        $sumCart = 0;
+        foreach ($cartProducts as $cartProdItem) {
+            $countCart += $cartProdItem['count'];
+            if (!$cartProdItem['product']['price_on_request'] && $cartProdItem['product']['price']) {
+                $sumCart += $cartProdItem['count'] * $cartProdItem['product']['price'];
+            }
+        }
+        $discounts = Discount::findAll();
+        $discountAvailable = [];
+        foreach ($discounts as $discount) {
+            $discountConditions = $discount['conditions'];
+            if ($discount->type === 'count' && $countCart >=$discountConditions['minCount']) {
+                $discountAvailable[]= $discount;
+            }
+            if ($discount->type === 'sum' && $sumCart >=$discountConditions['minSum']) {
+                $discountAvailable[]= $discount;
+            }
+        }
+        $discountMaxSum = 0;
+        foreach ($discountAvailable as $discountItem) {
+            $discountItemVal = 0;
+                if ($discountItem['unit'] === 'percent') {
+                    $discountItemVal = $sumCart / 100 * $discountItem['amount'];
+                }
+                if ($discountItem['unit'] === 'rub') {
+                    $discountItemVal = $discountItem['amount'];
+                }
+                if ($discountItemVal > $discountMaxSum) {
+                    $discountMaxSum = $discountItemVal;
+                    $discountActive = $discountItem;
+                }
+        }
+        return $discountActive ?? null;
+    }
+
+    /**
      * Принимате в качестве параметра массив товаров из корзины
      * Возвращает массив товаров для отпарвки в метрику для фиксации продажи
      * @param $productsInCart
      * @return array
      */
-    public static function getDataForMetrica($productsInCart): array
+    public
+    static function getDataForMetrica($productsInCart): array
     {
         $categoryArray = [];
         $productsForMetrica = [];
@@ -182,7 +230,8 @@ class OrderModel
      * @return bool|int
      * @throws Exception
      */
-    public static function generateVerifyCode($orderID = null, $customerMail = null): bool|int
+    public
+    static function generateVerifyCode($orderID = null, $customerMail = null): bool|int
     {
         $result = false;
         if ($orderID) {
@@ -220,7 +269,8 @@ class OrderModel
      * @param null $token
      * @return array
      */
-    #[ArrayShape(['result' => "bool", 'returnData' => "\App\Classes\ActiveRecord\Main[]|\App\Classes\ActiveRecord\Tables\Orders[]|array"])]
+    #[
+        ArrayShape(['result' => "bool", 'returnData' => "\App\Classes\ActiveRecord\Main[]|\App\Classes\ActiveRecord\Tables\Orders[]|array"])]
     public static function getOrdersPreview(int $orderID = null, string $customerMail = null, int $pin = null, $token = null): array
     {
         $returnData = ['result' => false, 'returnData' => []];
@@ -247,7 +297,7 @@ class OrderModel
             }
         }
 
-        if(!empty($orders)){
+        if (!empty($orders)) {
             $returnData = ['result' => true, 'returnData' => $orders];
         }
         return $returnData;
