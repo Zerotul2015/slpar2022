@@ -35,7 +35,7 @@ class OrderModel
         if (static::checkFormDataNewOrder($valOrder)) {
             $cartProducts = $cart->products;
 
-            if (empty($cartProducts)) {
+            if (!empty($cartProducts)) {
                 //получаем или создаем покупателя
                 $customer = static::getOrCreateCustomer($valOrder['customer']);
 
@@ -158,14 +158,14 @@ class OrderModel
         $sumCart = 0;
         foreach ($cartProducts as $cartProdItem) {
             $countCart += $cartProdItem['count'];
-            if (!$cartProdItem['product']['price_on_request'] && $cartProdItem['product']['price']) {
-                $sumCart += $cartProdItem['count'] * $cartProdItem['product']['price'];
+            if (!$cartProdItem['product']->price_on_request && $cartProdItem['product']->price) {
+                $sumCart += $cartProdItem['count'] * $cartProdItem['product']->price;
             }
         }
         $discounts = Discount::findAll();
         $discountAvailable = [];
         foreach ($discounts as $discount) {
-            $discountConditions = $discount['conditions'];
+            $discountConditions = $discount->conditions;
             if ($discount->type === 'count' && $countCart >=$discountConditions['minCount']) {
                 $discountAvailable[]= $discount;
             }
@@ -176,11 +176,11 @@ class OrderModel
         $discountMaxSum = 0;
         foreach ($discountAvailable as $discountItem) {
             $discountItemVal = 0;
-                if ($discountItem['unit'] === 'percent') {
-                    $discountItemVal = $sumCart / 100 * $discountItem['amount'];
+                if ($discountItem->unit === 'percent') {
+                    $discountItemVal = $sumCart / 100 * $discountItem->amount;
                 }
-                if ($discountItem['unit'] === 'rub') {
-                    $discountItemVal = $discountItem['amount'];
+                if ($discountItem->unit === 'rub') {
+                    $discountItemVal = $discountItem->amount;
                 }
                 if ($discountItemVal > $discountMaxSum) {
                     $discountMaxSum = $discountItemVal;

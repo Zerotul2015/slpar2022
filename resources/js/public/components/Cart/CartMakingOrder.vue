@@ -1,7 +1,12 @@
 <template>
   <div class="making-order-block">
     <h2 class="order-block-title">Оформление заказа</h2>
-    <div class="mob-form">
+    <transition name="component-fade" mode="out-in">
+    <div class="mob-form" v-if="resultMakingOrder">
+      Ваш заказ успешно оформлен.<br>
+      В ближайшее время с вами свяжется наш менеджер для уточнения деталей по вашему заказа.
+    </div>
+    <div class="mob-form" v-else>
       <div class="mob-customer">
         <div class="mob-title">Данные покупателя</div>
         <div class="mob-input-block">
@@ -58,6 +63,7 @@
         </button>
       </div>
     </div>
+    </transition>
   </div>
 </template>
 
@@ -259,5 +265,15 @@ export default {
   background: rgba(243, 243, 243, 1);
   color: #1f1b20;
 
+}
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active до версии 2.1.8 */
+{
+  opacity: 0;
 }
 </style>

@@ -100,10 +100,6 @@
         </div>
         <cart-checkout v-if="isCheckoutStep"></cart-checkout>
       </div>
-      <div v-if="resultMakingOrder === true">
-        Ваш заказ успешно оформлен.<br>
-        В ближайшее время с вами свяжется наш менеджер для уточнения деталей по вашему заказа.
-      </div>
     </div>
   </div>
 </template>
@@ -127,9 +123,6 @@ export default {
     this.$store.dispatch('discounts/getDiscounts');
   },
   computed: {
-    resultMakingOrder() {
-      return this.$store.getters['orders/resultMakingOrder'];
-    },
     textActiveDiscount() {
       let text = 'Дополнительная скидка на заказ';
       return text;
@@ -217,7 +210,11 @@ export default {
       return this.$store.getters['cart/count'];
     },
     cartProducts() {
-      return this.$store.getters['cart/products'];
+      if (this.resultMakingOrder) {
+        return [];
+      } else {
+        return this.$store.getters['cart/products'];
+      }
     },
     cartPromoCodeUsed() {
       return this.$store.getters['cart/promoCodeUsed'];

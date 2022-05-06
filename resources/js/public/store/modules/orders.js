@@ -40,6 +40,9 @@ const actions = {
                 }else{
                     commit('setResultMakingOrder', false);
                 }
+                setTimeout(()=>{
+                    commit('setResultMakingOrder', null);
+                },)
             })
             .catch()
     },
