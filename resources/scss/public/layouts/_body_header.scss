@@ -28,7 +28,7 @@
   z-index: 1;
   bottom: 5px;
   width: 100%;
-  border: 1px solid rgb(237, 212, 182);
+  border: 1px solid $brown-light;
 }
 
 .header-content {
@@ -265,7 +265,7 @@
   outline: none;
   background: none;
   border: none;
-  color: rgb(131, 131, 131);
+  color: $grey-middle;
   width: 9.5rem;
   padding: .25rem 1.5rem .25rem .5rem;
   border-radius: $border-radius;
@@ -275,19 +275,19 @@
   outline: none;
   color: #fff;
   border: none;
-  border-bottom: 1px solid rgb(131, 131, 131);
-  background: rgb(131, 131, 131);
+  border-bottom: 1px solid $grey-middle;
+  background: $grey-middle;
   width: 100%;
 }
 
 .input_text.hs-block:focus + svg.icon-input-search.hs-block {
-  fill: rgb(255, 255, 255);
+  fill: $white;
 
 }
 
 svg.icon-input-search.hs-block {
   transition: .5s;
-  fill: rgb(131, 131, 131);
+  fill: $grey-middle;
   margin-left: -1.5rem;
 
 }
@@ -420,13 +420,13 @@ svg.icon-input-search.hs-block {
 .bs-c-prev {
   left: 0;
   padding-right: 1rem;
-  background: linear-gradient(90deg, rgb(79, 79, 79, 1) 30%, rgb(79, 79, 79, 0) 100%);
+  background: linear-gradient(90deg, $grey 30%, rgb(79, 79, 79, 0) 100%);
 }
 
 .bs-c-next {
   right: 0;
   padding-left: 1rem;
-  background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, #4f4f4f 70%);
+  background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, $grey 70%);
 }
 
 .bs-c-item {

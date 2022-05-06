@@ -9,15 +9,13 @@
 }
 
 .bsp-h-top {
-  font-size: $font-size-medium;
+  //font-size: $font-size-medium;
   color: rgb(74, 74, 74);
 }
 
 .bsp-h-middle {
   text-align: center;
-  font-size: $font-size-big;
-  text-decoration: underline;
-  line-height: 150%;
+  font-size: 2.5rem;
   font-weight: 600;
   color: $brown;
 }
@@ -26,16 +24,18 @@
   display: flex;
   justify-content: space-evenly;
   margin: 0 10%;
-  font-size: $font-size-medium;
+  //font-size: $font-size-medium;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .bsp-h-toggle-binding{
   color: $grey;
-  text-decoration: underline;
+  //text-decoration: underline;
   border: 1px solid transparent;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
+  border-bottom:1px solid $grey;
+  padding: 0.25rem 0.5rem 0;
+  border-radius: 0;
   cursor:pointer;
 }
 .bsp-h-toggle-binding:hover{
@@ -44,6 +44,8 @@
 .bsp-h-toggle-binding_active{
   text-decoration:none;
   border-color: $grey;
+  border-radius: 5px;
+  padding-bottom:.25rem;
 }
 
 .bsp-h-bottom-end-icon{
@@ -51,10 +53,8 @@
 }
 
 .bsp-h-bottom-end {
-  font-size: $font-size-medium;
+  //font-size: $font-size-medium;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
   display:grid;
   grid-auto-flow: column;
   grid-gap: 0.5rem;

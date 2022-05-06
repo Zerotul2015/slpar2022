@@ -3,6 +3,11 @@
     <div class="bsp-header">
       <div class="bsp-h-top">Комплексный подход к декорированию бань и саун</div>
       <div class="bsp-h-middle">Аксессуары и декор</div>
+      <div class="bsp-h-bottom-end">
+        <icon-svg class="bsp-h-bottom-end-icon" icon="angle-down" color="#fff"></icon-svg>
+        <span>РАЗЛИЧНЫХ ГОТОВЫХ СТИЛЕВЫХ РЕШЕНИЙ</span>
+        <icon-svg class="bsp-h-bottom-end-icon" icon="angle-down" color="#fff"></icon-svg>
+      </div>
       <div class="bsp-h-bottom">
         <div class="bsp-h-toggle-binding" :class="{'bsp-h-toggle-binding_active':selectBindingFilterStyle === 'bath'}"
              @click="changeBindingCategoryStyle('bath')">Для бань и саун
@@ -15,11 +20,6 @@
              :class="{'bsp-h-toggle-binding_active':selectBindingFilterStyle === 'homestead'}"
              @click="changeBindingCategoryStyle('fireplace')">Для дома и усадьбы
         </div>
-      </div>
-      <div class="bsp-h-bottom-end">
-        <icon-svg class="bsp-h-bottom-end-icon" icon="angle-down" color="#fff"></icon-svg>
-        <span>РАЗЛИЧНЫХ ГОТОВЫХ СТИЛЕВЫХ РЕШЕНИЙ</span>
-        <icon-svg class="bsp-h-bottom-end-icon" icon="angle-down" color="#fff"></icon-svg>
       </div>
     </div>
     <div id="main-sliders-bath-styles" class="bsp-sliders">
