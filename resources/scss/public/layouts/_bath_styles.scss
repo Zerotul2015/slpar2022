@@ -9,7 +9,6 @@
 }
 
 .bsp-h-top {
-  //font-size: $font-size-medium;
   color: rgb(74, 74, 74);
 }
 
@@ -23,15 +22,13 @@
 .bsp-h-bottom {
   display: flex;
   justify-content: space-evenly;
-  margin: 0 10%;
-  //font-size: $font-size-medium;
+  align-items: end;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin: 0 10% 1rem;
 }
 
 .bsp-h-toggle-binding{
   color: $grey;
-  //text-decoration: underline;
   border: 1px solid transparent;
   border-bottom:1px solid $grey;
   padding: 0.25rem 0.5rem 0;
@@ -53,7 +50,6 @@
 }
 
 .bsp-h-bottom-end {
-  //font-size: $font-size-medium;
   text-align: center;
   display:grid;
   grid-auto-flow: column;
@@ -152,12 +148,9 @@
 }
 .bsp-products-wrap{
   display:grid;
-  //justify-content:center;
-  //grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap:1rem;
   .product-card{
     margin-right:1rem;
-
   }
 }
 

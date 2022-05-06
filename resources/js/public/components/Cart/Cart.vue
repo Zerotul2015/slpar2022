@@ -65,11 +65,11 @@
           <div class="cp-del">
           </div>
         </div>
-        <div class="cart-product cp-pre-footer" v-if="sumDiscount > 0">
-          <div class="cp-price cp-pre-footer-title">{{ textActiveDiscount }} <i>{{ cartPromoCodeUsed.code_text }}</i>
+        <div class="cart-product cp-pre-footer" v-if="sumAutoDiscount > 0">
+          <div class="cp-price cp-pre-footer-title">{{ textAutoDiscount }}
           </div>
           <div class="cp-sum cp-pre-footer-val">
-            <span class="price-to-locale">-{{ sumDiscountProd | priceToLocale }}</span>
+            <span class="price-to-locale">-{{ sumAutoDiscount | priceToLocale }}</span>
             <span class="price-currency">р.</span></div>
           <div class="cp-del">
           </div>
@@ -123,6 +123,9 @@ export default {
       isCheckoutStep: false,
     }
   },
+  beforeMount() {
+    this.$store.dispatch('discounts/getDiscounts');
+  },
   computed: {
     resultMakingOrder() {
       return this.$store.getters['orders/resultMakingOrder'];
@@ -144,7 +147,7 @@ export default {
     resultApplyCode() {
       return this.$store.getters['cart/resultApplyCode'];
     },
-    sumDiscountProd() { //общая скидка на товары в корзине
+    sumDiscountProd() { //общая скидка на товары в корзине/ Решил не использовать.
       let sum = 0;
       Object.keys(this.cartProducts).forEach(key => {
         if (this.cartProducts[key].product.price_old > this.cartProducts[key].product.price) {
@@ -155,27 +158,55 @@ export default {
       });
       return sum;
     },
-    sumDiscount() { //сумма скидки за счет автоматических скидок
-      let sumDiscount = 0;
-      return sumDiscount;
+    sumAutoDiscount() { //сумма скидки за счет автоматических скидок
+      let discount = 0;
+      if (this.discountActive && this.cartSum) {
+        if (this.discountActive.unit === 'percent') {
+          discount = this.cartSum / 100 * this.discountActive.amount;
+        }
+        if (this.discountActive.unit === 'rub') {
+          discount = this.discountActive.amount;
+        }
+      }
+      return discount;
+    },
+    textAutoDiscount() { //сумма скидки за счет автоматических скидок
+      let text = '';
+      if (this.discountActive) {
+        text = '-' + this.discountActive.amount;
+        if (this.discountActive.unit === 'percent') {
+          text = text + '%';
+        }
+        if (this.discountActive.unit === 'rub') {
+          text = text + 'р.';
+        }
+        text = text + ' при покупке ';
+        if (this.discountActive.type === 'count') {
+          text = text + this.discountActive.conditions.minCount + ' товаров';
+        }
+        if (this.discountActive.type === 'sum') {
+          text = text + 'на ' + this.discountActive.conditions.minSum + 'р.';
+        }
+      }
+      return text;
     },
     sumDiscountPromoCode() { //скидка от использования промокода
-      let sumDiscount = 0;
+      let sumDiscountPromoCode = 0;
       //{"id":6,"date_start":"2022-04-29","date_end":"2022-05-27","code_text":"тест5","unit":"percent","amount":10}
       if (this.cartPromoCodeUsed && this.cartPromoCodeUsed.amount) {
         if (this.cartPromoCodeUsed.unit === 'percent') {
-          sumDiscount = this.cartSum / 100 * this.cartPromoCodeUsed.amount;
+          sumDiscountPromoCode = this.cartSum / 100 * this.cartPromoCodeUsed.amount;
         }
         if (this.cartPromoCodeUsed.unit === 'rub') {
-          sumDiscount = this.cartPromoCodeUsed.amount;
+          sumDiscountPromoCode = this.cartPromoCodeUsed.amount;
         }
       }
-      return sumDiscount;
+      return sumDiscountPromoCode;
     },
     cartSumWithDiscountAndPromoCode() { //итоговая сумма заказа с учетом всех скидок и промокода
       let sum = 0;
       if (this.cartSum) {
-        sum = this.cartSum - this.sumDiscountPromoCode - this.sumDiscount;
+        sum = this.cartSum - this.sumDiscountPromoCode - this.sumAutoDiscount;
       }
       return sum;
     },
@@ -190,6 +221,9 @@ export default {
     },
     cartPromoCodeUsed() {
       return this.$store.getters['cart/promoCodeUsed'];
+    },
+    discountActive() {
+      return this.$store.getters['discounts/discountActive'](this.cartSum, this.countCart);
     }
   },
   methods: {

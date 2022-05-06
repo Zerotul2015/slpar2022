@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96196e9c-f52e-4de1-978e-68bd80fbeba9" name="SR-11 Размер текста и заголовков" comment="SR-11 Размер текста и заголовков" />
+    <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="SR-12 Автоскидки" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/Cart/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/public/store/modules/discounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/store/modules/discounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/public/layouts/_bath_styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpack.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
+    </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +50,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="SR-11" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -305,30 +313,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/dshi50.ru",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "tasks.open.task.update.state.enabled": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/dshi50.ru&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;tasks.open.task.update.state.enabled&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\app\Controllers\Shop" />
@@ -592,13 +600,6 @@
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
-    </task>
-    <task id="LOCAL-00124" summary="закончил страницу настройки банных стилей">
-      <created>1649047344647</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1649047344648</updated>
     </task>
     <task id="LOCAL-00125" summary="Дописал поиск и виджет поиска в шапке">
       <created>1649577225262</created>
@@ -979,14 +980,25 @@
       <workItem from="1651745171929" duration="2484000" />
       <workItem from="1651804737463" duration="2154000" />
     </task>
+    <task active="true" id="SR-12" summary="Автоскидки">
+      <branch name="master" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" original="true" />
+      <branch name="SR-12" repository="\\wsl$\Ubuntu\home\zerotul\www\slpar2022" />
+      <changelist id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="SR-12 Автоскидки" comment="" />
+      <created>1651808183919</created>
+      <option name="issue" value="true" />
+      <url>https://kemit.myjetbrains.com/issue/SR-12</url>
+      <option name="number" value="12" />
+      <option name="presentableId" value="SR-12" />
+      <option name="project" value="SR" />
+      <updated>1651808315209</updated>
+      <workItem from="1651808311912" duration="4703000" />
+    </task>
     <option name="localTasksCounter" value="169" />
-    <option name="createBranch" value="false" />
-    <option name="useBranch" value="true" />
     <servers>
       <YouTrack url="https://kemit.myjetbrains.com">
         <option name="defaultSearch" value="Assignee: me sort by: updated project: slpar.ru State: -Completed " />
         <option name="preferredOpenTaskState">
-          <CustomTaskState id="Completed" name="Completed" />
+          <CustomTaskState id="In progress" name="In progress" />
         </option>
         <username>zerotul</username>
       </YouTrack>

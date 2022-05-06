@@ -16,9 +16,14 @@ const getters = {
         return state.promoCodeUsed;
     },
     count(state) {
-        return Object.keys(state.cartProducts).length;
+        let count = 0;
+        Object.values(state.cartProducts).forEach((cartItem) => {
+            count = cartItem.count + count;
+        });
+        return count;
+
     },
-    sum(state) {
+    sum(state) { // сумма товара в корзине. учитывается только действующая цена(старая игнорируется).
         let sum = 0;
         Object.values(state.cartProducts).forEach((cartItem) => {
             sum = (cartItem.product.price * cartItem.count) + sum;
