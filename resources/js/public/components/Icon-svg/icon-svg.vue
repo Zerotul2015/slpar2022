@@ -35,7 +35,7 @@ import cartCircleCheck from '../../../assets/svg/cart-circle-check.svg';
 import cartCirclePlus from '../../../assets/svg/cart-circle-plus.svg';
 import squareCheck from '../../../assets/svg/square-check.svg';
 import square from '../../../assets/svg/square.svg';
-import userTie from '../../../assets/svg/user-tie.svg';
+import userLarge from '../../../assets/svg/user-large.svg';
 
 //конец иконки
 
@@ -74,7 +74,7 @@ export default {
     squareCheck,
     square,
     check,
-    userTie,
+    userLarge,
 
     //конец иконки
   },
@@ -129,7 +129,7 @@ export default {
         'square-check':'squareCheck',
         'square':'square',
         'check':'check',
-        'user-tie':'userTie',
+        'user-large':'userLarge',
       }
     }
   },

@@ -105,10 +105,12 @@
 
 .bsp-s-current-image {
   width: 100%;
+
 }
 
 .bsp-s-current-image img {
   width: 100%;
+  box-shadow: 0 0 5px $grey;
 }
 
 .bsp-s-current-description-wrap {

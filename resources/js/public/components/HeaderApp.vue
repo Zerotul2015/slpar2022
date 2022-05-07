@@ -58,7 +58,7 @@
                      :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block">
           <router-link class="header-link-enter" to="/dealer/home" title="Вход для дилера">
-            <icon-svg class="header-icon-cart" icon="user-tie"></icon-svg>
+            <icon-svg class="header-icon-cart" icon="user-large"></icon-svg>
           </router-link>
           <router-link to="/compare" div class="header-icon-compare-wrap">
             <icon-svg class="header-icon-compare" :class="{'header-icon-compare-full':compareCount}"

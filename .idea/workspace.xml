@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="Покупатели и заказы" comment="SR-12 Автоскидки">
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/WholesaleCustomer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/WholesaleLevel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Authorization.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Api/Dealer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Controllers/Authorization.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Dealer/DealerModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Dealer/DealerHomePage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Dealer/DealerLogin.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Dealer/DealerOrderForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Dealer/DealerProfile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/public/components/Dealer/DealerRegister.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1e54bbab-d200-4bb2-abc9-1cee7198b3a7.xml" afterDir="false" />
+    <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="Покупатели и заказы" comment="Дилеры и управление заказами">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActiveRecord/Tables/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Api/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification/NotificationMailModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/images/fooote_title.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/images/fooote_title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/public/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/router/index.js" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -596,13 +579,6 @@
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
     </task>
-    <task id="LOCAL-00125" summary="Дописал поиск и виджет поиска в шапке">
-      <created>1649577225262</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1649577225262</updated>
-    </task>
     <task id="LOCAL-00126" summary="Верстаю шапку">
       <created>1649581595472</created>
       <option name="number" value="00126" />
@@ -992,9 +968,16 @@
       <workItem from="1651861826066" duration="36000" />
       <workItem from="1651862737623" duration="21000" />
       <workItem from="1651862787346" duration="12478000" />
-      <workItem from="1651888106946" duration="15937000" />
+      <workItem from="1651888106946" duration="17493000" />
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="Дилеры и управление заказами">
+      <created>1651932753905</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1651932753905</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers>
       <YouTrack url="https://kemit.myjetbrains.com">
         <option name="defaultSearch" value="Assignee: me sort by: updated project: slpar.ru State: -Completed " />
@@ -1023,7 +1006,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Начал делать функционал корзины" />
     <MESSAGE value="Перенес модели из прошлых проектов" />
     <MESSAGE value="Создал отдельную модель для работы с заказами" />
     <MESSAGE value="Удалил label" />
@@ -1048,7 +1030,8 @@
     <MESSAGE value="SR-10 Выгрузка в yml" />
     <MESSAGE value="SR-11 Размер текста и заголовков" />
     <MESSAGE value="SR-12 Автоскидки" />
-    <option name="LAST_COMMIT_MESSAGE" value="SR-12 Автоскидки" />
+    <MESSAGE value="Дилеры и управление заказами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дилеры и управление заказами" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
