@@ -39,7 +39,20 @@ class PublicTemplateModel
         }
         $breadcrumb = new Breadcrumbs('Главная', '/');
         $objectData = null;
-        $sectionCheck = ['page' => true, 'pageCategory' => true, 'product' => true, 'productCategory' => true, 'cart' => true, 'compare' => true, 'bathStyle' => true];
+        $sectionCheck = [
+            'page' => true,
+            'pageCategory' => true,
+            'product' => true,
+            'productCategory' => true,
+            'cart' => true,
+            'compare' => true,
+            'bathStyle' => true,
+            'ordersPreview' => true,
+            'dealerHome' => true,
+            'dealerRegister' => true,
+            'dealerOrderForm' => true,
+            'dealerProfile' => true,
+        ];
         if (isset($sectionCheck[$section])) {
             $objectData = match ($section) {
                 'page' => Page::find()->where([$where => $indexOrUrlObject])->one(),
@@ -50,6 +63,10 @@ class PublicTemplateModel
                 'compare' => $breadcrumb->add('Сравнение товаров', '/compare')->render(),
                 'favorite' => $breadcrumb->add('Избранное', '/favorite')->render(),
                 'ordersPreview' => $breadcrumb->add('Просмотр заказов', '/orders/preview')->render(),
+                'dealerHome' => $breadcrumb->add('Кабинет дилера', '/dealer/home')->render(),
+                'dealerRegister' => $breadcrumb->add('Регистрация дилера', '/dealer/register')->render(),
+                'dealerOrderForm' => $breadcrumb->add('Бланк заказа', '/dealer/order-form')->render(),
+                'dealerProfile' => $breadcrumb->add('Профиль дилера', '/dealer/profile')->render(),
                 'bathStyle' => BathStyle::find()->where([$where => $indexOrUrlObject])->one(),
             };
         }

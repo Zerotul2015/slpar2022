@@ -15,6 +15,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed noteHidden regular read/write property
  * @property mixed deleted regular read/write property
  * @property mixed token regular read/write property
+ * @property mixed token_auth regular read/write property
+ * @property mixed tokenAuth regular read/write property
  * @property mixed verify_code regular read/write property
  * @property mixed verifyCode regular read/write property
  * @property mixed is_wholesale regular read/write property
@@ -100,6 +102,14 @@ class Customer extends Main
             'default' => null,
             'extra' => ''
         ],
+        'token_auth' => [
+            'field' => 'token_auth',
+            'type' => 'varchar(255)',
+            'null' => 'YES',
+            'key' => 'UNI',
+            'default' => null,
+            'extra' => ''
+        ],
         'verify_code' => [
             'field' => 'verify_code',
             'type' => 'varchar(12)',
@@ -119,6 +129,6 @@ class Customer extends Main
    ]; 
 
     static string $primaryKey = 'id';
-    static array  $uniqueKey = ['phone' => '','mail' => '']; 
+    static array  $uniqueKey = ['phone' => '','mail' => '','token_auth' => '']; 
 
 }

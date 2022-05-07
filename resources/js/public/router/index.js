@@ -61,6 +61,29 @@ export default new Router({
             component: () => import("../components/Orders/Orders.vue"),
         },
         {
+            path: '/dealer/register',
+            name: 'dealerRegister',
+            props: true,
+            component: () => import("../components/Dealer/DealerHomePage.vue"),
+        },
+        {
+            path: '/dealer/home',
+            name: 'dealerHome',
+            component: () => import("../components/Dealer/DealerHomePage.vue"),
+        },
+        {
+            path: '/dealer/order-form',
+            name: 'dealerOrderForm',
+            props: true,
+            component: () => import("../components/Dealer/DealerOrderForm.vue"),
+        },
+        {
+            path: '/dealer/profile',
+            name: 'dealerProfile',
+            props: true,
+            component: () => import("../components/Dealer/DealerProfile.vue"),
+        },
+        {
             path: '/error/404',
             name: '404',
             component: () => import("../components/Errors/404.vue"),

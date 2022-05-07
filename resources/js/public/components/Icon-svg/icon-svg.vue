@@ -12,6 +12,7 @@ import grid from '../../../assets/svg/grid.svg';
 import grid2 from '../../../assets/svg/grid-2.svg';
 import send from '../../../assets/svg/send.svg';
 import cartHeader from '../../../assets/svg/cart-header.svg';
+import check from '../../../assets/svg/check.svg';
 import bookmark from '../../../assets/svg/bookmark.svg';
 import bookmarkSolid from '../../../assets/svg/bookmark-solid.svg';
 import angleRight from '../../../assets/svg/angle-right.svg';
@@ -34,6 +35,7 @@ import cartCircleCheck from '../../../assets/svg/cart-circle-check.svg';
 import cartCirclePlus from '../../../assets/svg/cart-circle-plus.svg';
 import squareCheck from '../../../assets/svg/square-check.svg';
 import square from '../../../assets/svg/square.svg';
+import userTie from '../../../assets/svg/user-tie.svg';
 
 //конец иконки
 
@@ -71,6 +73,8 @@ export default {
     cartCirclePlus,
     squareCheck,
     square,
+    check,
+    userTie,
 
     //конец иконки
   },
@@ -124,6 +128,8 @@ export default {
         'cart-circle-plus':'cartCirclePlus',
         'square-check':'squareCheck',
         'square':'square',
+        'check':'check',
+        'user-tie':'userTie',
       }
     }
   },

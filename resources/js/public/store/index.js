@@ -16,6 +16,7 @@ import discounts from './modules/discounts'
 import deliveryMethods from './modules/deliveryMethods'
 import paymentMethods from './modules/paymentMethods'
 import orders from './modules/orders'
+import customer from './modules/customer'
 
 Vue.use(Vuex)
 
@@ -37,6 +38,7 @@ export default new Vuex.Store({
         deliveryMethods,
         paymentMethods,
         orders,
+        customer,
     },
     state: {
 

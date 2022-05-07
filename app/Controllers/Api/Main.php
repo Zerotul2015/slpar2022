@@ -4,9 +4,13 @@
 namespace App\Controllers\Api;
 
 
+use App\Controllers\Authorization;
+
 abstract class Main
 {
-    public bool $auth = false;
+    public bool $isAuth = false;
+    public bool|int $isWholesale = 0;
+    public mixed $customerId = null;
     public array $postData = [];
     public string $action = ''; // save, delete, get
     public array $where = [];
@@ -16,6 +20,12 @@ abstract class Main
 
     public function __construct()
     {
+        //auth
+        $resultAuthCheck = Authorization::isAuth();
+        $this->isAuth = $resultAuthCheck['result'];
+        $this->customerId = $resultAuthCheck['customerId'];
+        $this->isWholesale = $resultAuthCheck['isWholesale'];
+        //prepare post data
         $postData = file_get_contents("php://input");
         if (!empty($postData)) {
             $this->postData = json_decode($postData, true);

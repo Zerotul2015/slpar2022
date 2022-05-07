@@ -1,0 +1,38 @@
+.dealer-page {
+  @extend .default-width-content;
+}
+.dh-login-register, .dh-profile {
+  background: #edd4b64f;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display:grid;
+  grid-gap:.5rem;
+  align-items: start;
+  grid-auto-flow:column;
+  justify-items: start;
+}
+
+.dh-login {
+  display:grid;
+  grid-gap:.5rem;
+}
+
+.dh-register {
+  display:grid;
+  grid-gap:.5rem;
+}
+.input-block-dh {
+  position: relative;
+  border-bottom: 1px solid white;
+}
+.input-block-dh input {
+  border: none;
+  background: none;
+  border-radius: 5px;
+  color: #4f4f4f;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+}
+
+.block-button.block-button-dh {}
+

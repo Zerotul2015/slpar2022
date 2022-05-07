@@ -1,0 +1,38 @@
+.dh-order-blank {
+  display:grid;
+  grid-gap: .5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ob-product-item {
+  grid-gap: 1rem;
+  display:grid;
+  grid-template-areas:
+        "bp-img bp-name bp-count";
+  grid-template-columns: 100px 15rem 10rem;
+  box-shadow: 0 0 5px #ccc;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.ob-product-name {
+  grid-area: bp-name;
+}
+
+img.ob-product-img {
+  grid-area: bp-img;
+  width: 80px;
+}
+
+.ob-product-count {
+  grid-area:bp-count;
+  align-self: center;
+  justify-self: end;
+}
+
+.ob-product-count .input {
+
+  border:1px solid $white;
+  text-align:center;
+  width:4rem;
+}

@@ -45,6 +45,8 @@
             </BathStylesHeaderCarousel>
           </div>
           <div class="hlb-links" v-else>
+            <router-link v-if="isAuth" class="header-link-order-form" to="/dealer/order-form">Бланк заказа</router-link>
+
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
                          :to="{path:menuItem.value, params:{isCustom:(menuItem.typeItem === 'custom')}}">
@@ -52,8 +54,12 @@
             </router-link>
           </div>
         </div>
-        <search-site class="header-search-block" :iconShow="true" custom-class="hs-block"></search-site>
+        <search-site class="header-search-block" v-if="!headerFixed"
+                     :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block">
+          <router-link class="header-link-enter" to="/dealer/home" title="Вход для дилера">
+            <icon-svg class="header-icon-cart" icon="user-tie"></icon-svg>
+          </router-link>
           <router-link to="/compare" div class="header-icon-compare-wrap">
             <icon-svg class="header-icon-compare" :class="{'header-icon-compare-full':compareCount}"
                       :scaleX="2" :icon="compareIcon"></icon-svg>
@@ -110,6 +116,9 @@ export default {
     }
   },
   computed: {
+    isAuth(){
+      return this.$store.getters["customer/isAuth"];
+    },
     carouselActive() {
       let siteSectionUsed = ['productCategory', 'compare', 'bathStyle', 'index'];
       let isActive = false;

@@ -43,6 +43,15 @@ const actions = {
                     }
                 })
                 .catch()
+        }else{
+            //temp for blank order
+            api.getData('product', {})
+                .then(r => {
+                    if (r.result === true) {
+                        commit('setProducts', r.returnData);
+                    }
+                })
+                .catch()
         }
     },
     getCategoryByUrl({commit}, url) {

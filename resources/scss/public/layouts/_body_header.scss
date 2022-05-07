@@ -59,6 +59,13 @@
 .header-links-block {
   grid-area: h-links;
 }
+.header-link-enter{
+  color:$brown-light;
+
+}
+.header-link-enter:hover{
+  color:$white;
+}
 
 .header-catalog {
   grid-area: h-catalog;
@@ -130,6 +137,15 @@
 }
 
 // ссылки в шапке
+.header-link-order-form{
+  text-transform: uppercase;
+  color:$brown-light;
+}
+.header-link-order-form:hover{
+  color: $brown-light;
+  text-shadow: 0 0 5px $brown-light;
+  text-decoration: none;
+}
 .h-link {
   text-transform: uppercase;
   color: $white;

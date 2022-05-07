@@ -35,6 +35,7 @@ export default {
     this.$store.dispatch('cart/getCart');
     this.$store.dispatch('compare/getCompare');
     this.$store.dispatch('discounts/getDiscounts');
+    this.$store.dispatch('customer/checkAuth');
   },
   watch:{
     seo(newVal, oldVal){

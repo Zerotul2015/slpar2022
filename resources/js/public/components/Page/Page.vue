@@ -12,10 +12,11 @@
 
 <script>
 import Breadcrumb from "../Breadcrumb";
+import FeedbackForm from "../Feedback/FeedbackForm";
 
 export default {
   name: "Page",
-  components: {Breadcrumb},
+  components: {Breadcrumb,FeedbackForm},
   props: {
     url: {
       required: true,

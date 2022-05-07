@@ -14,6 +14,35 @@ use Exception;
 class NotificationMailModel
 {
 
+    public static function notificationRegisterRequest($requestData)
+    {
+        $name = $requestData['name']??'';
+        $phone = $requestData['phone']??'';
+        $mail = $requestData['company']??'не указана';
+        $mail = $requestData['mail']??'';
+        $text = $requestData['comment']??'';
+        $mailAdmin = new Mail();
+        $mailAdmin->setSubject('Заявка на регистрацию дилера');
+        $mailMessage = "Поступила заявка на регистрацию делира.<br>Имя:$name<br>Телефон:$phone<br>Почта:$mail<br><br>
+        Сообщение:<br>$text";
+        $mailAdmin->setMessage($mailMessage);
+        $returnData['result'] = $mailAdmin->send();
+        return $returnData;
+    }
+    public static function notificationRegisterComplet($dealerData)
+    {
+        $mail = new Mail();
+        $mail->setSubject('Заявка на регистрацию дилера');
+
+        $mailMessage = "<p>Ваша заявка на регистрацию одобрена.</p>";
+        $mailMessage = $mailMessage. "Ваши данные для входа в раздел дилера.<br>";
+        $mailMessage = $mailMessage. "Логин:$dealerData[mail].<br>";
+        $mailMessage = $mailMessage. "Пароль:$dealerData[pass].<br>";
+        $mail->setMessage($mailMessage);
+        $returnData['result'] = $mail->send();
+
+        return $returnData;
+    }
 
     /**
      * Отправляет уведомление о заказах на $recipientMail, если не указывать то уведомление администратору
@@ -41,7 +70,7 @@ class NotificationMailModel
         }
         $linkDetails = 'https://' . $_SERVER['HTTP_HOST'] . '/orders/preview/' . $tokenDetails;
         $linkDetailsAdmin = 'https://' . $_SERVER['HTTP_HOST'] . '/admin/orders/details/' . $order->id;
-        $linkPay = 'https://' . $_SERVER['HTTP_HOST'] . '/orders/pay/' .$order->id . '?token=' . $order->token;
+        $linkPay = 'https://' . $_SERVER['HTTP_HOST'] . '/orders/pay/' . $order->id . '?token=' . $order->token;
         if (!$recipientMail) {
             $recipientMail = $customer->mail;
         }
