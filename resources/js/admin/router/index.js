@@ -265,7 +265,7 @@ export default new Router({
             meta: {title: 'Новая категория оптовых покупателей - Панель управления'}
         },
         {
-            path: '/wholesale-level/itemId',
+            path: '/wholesale-level/:itemId',
             name: 'WholesaleLevelDetails',
             props: true,
             component: () => import("../components/Wholesale/WholesaleLevel.vue"),
