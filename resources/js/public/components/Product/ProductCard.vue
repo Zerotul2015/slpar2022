@@ -73,7 +73,7 @@ export default {
     },
 
     imageMain() {
-      let image = '/build/images/noimg.png/';
+      let image = '/build/images/noimg.png';
       let availableImageSize = {'thumb': true, 'thumb_medium': true}
       let imageSize = (this.imageSize && availableImageSize[this.imageSize]) ? this.imageSize : 'thumb';
       if (this.product.image_main) {
