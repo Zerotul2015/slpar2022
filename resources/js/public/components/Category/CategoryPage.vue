@@ -26,25 +26,32 @@ export default {
     urlParent: {
       required: false,
       type: String,
+    },
+    styleUrl: {
+      required: false,
+      type: String,
     }
   },
   data() {
     return {}
   },
   beforeMount() {
-    this.$store.dispatch('bathStyle/changeFilterCategoryActive', false);
     this.$store.dispatch("productCategory/getCategoryByUrl", this.url);
+    if (this.styleUrl) {
+      this.$store.dispatch("bathStyle/setActiveStyleByUrl", this.styleUrl);
+    }
   },
   watch: {
-    bathStyleActiveId(newVal) {
-      this.filterStyleActive = true;
+    bathStyleActiveId() {
     },
     url(newUrl) {
-      this.$store.dispatch('bathStyle/changeFilterCategoryActive', false);
       this.$store.dispatch("productCategory/getCategoryByUrl", newUrl);
+      this.$store.dispatch("productCategory/getProducts");
+    },
+    styleUrl(newUrl) {
+      this.$store.dispatch("bathStyle/setActiveStyleByUrl", newUrl);
     },
     categoryName() {
-      this.$store.dispatch("productCategory/getProducts");
     }
   },
   computed: {
@@ -59,13 +66,13 @@ export default {
       return size;
     },
     categoryName() {
-      return this.$store.getters['productCategory/name'];
+     return this.$store.getters['productCategory/name'];
     },
     categoryDescription() {
       return this.$store.getters['productCategory/description'];
     },
     category() {
-
+      return this.$store.getters['productCategory/category'];
     },
     products() {
       return this.$store.getters['productCategory/products'];
@@ -79,19 +86,19 @@ export default {
     bathStyleActiveId() {
       return this.$store.getters['bathStyle/activeId'];
     },
-    filterByStyleActive() {
-      return this.$store.getters['bathStyle/filterCategoryActive']
+    toggleFilterByStyle() {
+      return this.$store.getters['bathStyle/toggleFilterForCategory']
     },
     textCategoryWithFilter() {
       let text = '';
-      if (this.filterByStyleActive) {
+      if (this.toggleFilterByStyle) {
         text = text + ' в стиле "' + this.bathStyles[this.bathStyleActiveKey].name + '"';
       }
       return text;
     },
     filteredProducts() {
       let products = [];
-      if (this.filterByStyleActive) {
+      if (this.toggleFilterByStyle) {
         products = this.products.filter((item, index, array) => {
           let stylesInProduct = item.bath_style_id;
           return this.bathStyleActiveId && !!stylesInProduct && stylesInProduct.includes(this.bathStyleActiveId);

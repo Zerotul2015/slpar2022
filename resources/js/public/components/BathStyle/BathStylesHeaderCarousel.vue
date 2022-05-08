@@ -46,7 +46,7 @@ export default {
     slide(newKey) {
       this.changeCurrentStyle(newKey);
       if (this.currentSiteSection === 'productCategory') {
-        this.$store.dispatch('bathStyle/changeFilterCategoryActive', true);
+        this.$store.dispatch('bathStyle/changeToggleFilterForCategory', true);
       }
     },
     activeStyleKey(newKey) {
@@ -74,7 +74,7 @@ export default {
       return count;
     },
     categoryFilterActive() {
-      return this.$store.getters['bathStyle/filterCategoryActive'];
+      return this.$store.getters['bathStyle/toggleFilterForCategory'];
     },
     bathStyles() {
       return this.$store.getters['bathStyle/all']
@@ -93,7 +93,7 @@ export default {
   methods: {
     disableFilterCategory(){
       if(this.categoryFilterActive === true) {
-        this.$store.dispatch('bathStyle/changeFilterCategoryActive', false);
+        this.$store.dispatch('bathStyle/changeToggleFilterForCategory', false);
       }
     },
     triggerAnimation(direction) {
@@ -110,7 +110,8 @@ export default {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
     },
     changeCurrentStyle(key) {
-      if (this.currentSiteSection === 'bathStyle' || this.currentSiteSection === 'index'|| this.currentSiteSection === 'productCategory') {
+      let sectionWhereUsedCarousel = ['index','bathStyle','productCategory','productCategoryWithStyle'];
+      if (sectionWhereUsedCarousel.includes(this.currentSiteSection)) {
         this.$store.dispatch("bathStyle/setActiveStyleKey", key);
       }
     }

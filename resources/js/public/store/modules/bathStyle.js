@@ -8,7 +8,7 @@ const state = () => ({
     bathStyles: [],
     filterBy: '', //fireplace | bath | homestead
     filterToggle: false,
-    filterCategoryActive: false, //
+    toggleFilterForCategory: false, //
     productsData: {},
     productsCategoryData: {},
 
@@ -28,8 +28,8 @@ const getters = {
     filterToggle(state) {
         return state.filterToggle;
     },
-    filterCategoryActive(state) {
-        return state.filterCategoryActive;
+    toggleFilterForCategory(state) {
+        return state.toggleFilterForCategory;
     },
     bathStylesByUrl: (state) => (url) => {
         return state.bathStyles.find(item => item.url === url);
@@ -52,9 +52,9 @@ const getters = {
 
 // actions
 const actions = {
-    changeFilterCategoryActive({commit}, statusNew) {
+    changeToggleFilterForCategory({commit}, statusNew) {
         statusNew = !!statusNew;
-        commit('setFilterCategoryActive', statusNew);
+        commit('setToggleFilterForCategory', statusNew);
     },
     setFilter({commit}, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
@@ -81,6 +81,7 @@ const actions = {
         }
     },
     setActiveStyleByUrl({commit, state}, urlStyle) {
+        console.log(urlStyle)
         let keyStyle = state.bathStyles.findIndex(item => item.url === urlStyle);
         keyStyle = keyStyle !== -1 ? keyStyle : 0;
         commit('setActiveStyleKey', keyStyle);
@@ -113,8 +114,8 @@ const actions = {
 
 // mutations
 const mutations = {
-    setFilterCategoryActive(state, statusNew){
-        state.filterCategoryActive = statusNew;
+    setToggleFilterForCategory(state, statusNew){
+        state.toggleFilterForCategory = statusNew;
     },
     setFilterBy(state, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {

@@ -31,7 +31,13 @@ export default new Router({
             component: () => import("../components/Product/ProductPage.vue"),
         },
         {
-            path: '/catalog/:urlParent*/:url',
+            path: '/catalog/:urlParent?/:url/style-:styleUrl?',
+            name: 'productCategoryWithStyle',
+            props: true,
+            component: () => import("../components/Category/CategoryPage.vue"),
+        },
+        {
+            path: '/catalog/:urlParent?/:url',
             name: 'productCategory',
             props: true,
             component: () => import("../components/Category/CategoryPage.vue"),

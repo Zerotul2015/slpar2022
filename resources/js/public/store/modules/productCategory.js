@@ -8,6 +8,9 @@ const state = () => ({
 
 // getters
 const getters = {
+    category(state) {
+        return state.categoryData;
+    },
     url(state) {
         return state.categoryData.url ? state.categoryData.url : '';
     },
@@ -43,7 +46,7 @@ const actions = {
                     }
                 })
                 .catch()
-        }else{
+        } else {
             //temp for blank order
             api.getData('product', {})
                 .then(r => {
@@ -54,7 +57,7 @@ const actions = {
                 .catch()
         }
     },
-    getCategoryByUrl({commit}, url) {
+    getCategoryByUrl({commit, dispatch}, url) {
         let sendData = {
             'where': 'url',
             'searchString': url
@@ -62,8 +65,9 @@ const actions = {
         api.getData('productCategory', sendData)
             .then(r => {
                 if (r.result === true) {
-                    if( r.returnData[0]){
-                    commit('setCategory', r.returnData[0]);
+                    if (r.returnData[0]) {
+                        commit('setCategory', r.returnData[0]);
+                        dispatch('getProducts');
                     }
                 }
             })

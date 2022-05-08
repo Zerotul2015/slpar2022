@@ -36,13 +36,18 @@ router.beforeEach((to, from, next) => {
     }
 });
 router.beforeResolve((to, from, next) => {
+    NProgress.start();
     if (to.name) {
         app.$store.commit('templateData/setSection', to.name);
         if (to.params.url) {
             app.$store.commit('templateData/setSectionKey', to.params.url);
         }
+
+        if(to.name ==='productCategory' && from.name !== 'productCategory'){
+            app.$store.dispatch('bathStyle/changeToggleFilterForCategory', false);
+            app.$store.dispatch('bathStyle/setActiveStyleKey', 0);
+        }
         // Start the route progress bar.
-        NProgress.start();
     }
     next()
 })

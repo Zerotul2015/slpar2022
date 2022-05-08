@@ -120,12 +120,8 @@ export default {
       return this.$store.getters["customer/isAuth"];
     },
     carouselActive() {
-      let siteSectionUsed = ['productCategory', 'compare', 'bathStyle', 'index'];
-      let isActive = false;
-      if (this.sectionSite) {
-        isActive = siteSectionUsed.includes(this.sectionSite);
-      }
-      return isActive;
+      let siteSectionUsed = ['productCategory','productCategoryWithStyle', 'compare', 'bathStyle', 'index'];
+      return siteSectionUsed.includes(this.sectionSite);
     },
     sectionSite() {
       return this.$store.getters["templateData/section"];
