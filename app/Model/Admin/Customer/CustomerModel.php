@@ -30,7 +30,7 @@ class CustomerModel implements DefaultMethodTableClass
             $returnResult['error'] = $error['text'];
         } else {
             $itemInBase = (isset($val['id']) && $val['id']) ? static::$nameTableClass::findOne($val['id']) : false;
-            if ($passwordString = (isset($val['pass']) && $val['pass']) ? $val['pass'] : null) {
+            if (!empty($val['pass'])) {
                 $val['pass'] = password_hash($val['pass'], PASSWORD_DEFAULT);
             }
             $val['status'] = static::checkedStatus($val['status'] ?? null);
