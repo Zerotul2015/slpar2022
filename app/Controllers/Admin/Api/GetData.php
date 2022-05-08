@@ -147,6 +147,7 @@ class GetData extends Main
     public function customer(): void
     {
         $object = Customer::find();
+        $object->select(['name','phone','mail','status','note_hidden','is_wholesale']);
         $this->returnAnswer($this->prepareReturnData($object));
     }
 
