@@ -95,6 +95,15 @@ class ChangeData extends Main
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Customer\CustomerModel'));
     }
 
+    public function wholesaleLevel(): void
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Wholesale\WholesaleLevelModel'));
+    }
+    public function wholesaleCustomer(): void
+    {
+        $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Wholesale\WholesaleCustomerModel'));
+    }
+
     public function discount(): void
     {
         $this->printResultChangeForAjax($this->wrapperApplyChange('App\Model\Admin\Discount\DiscountModel'));

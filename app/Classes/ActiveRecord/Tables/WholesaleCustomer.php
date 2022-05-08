@@ -8,9 +8,11 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed id regular read/write property
  * @property mixed customer_id regular read/write property
  * @property mixed customerId regular read/write property
+ * @property mixed details regular read/write property
  * @property mixed wholesale_level_id regular read/write property
  * @property mixed wholesaleLevelId regular read/write property
- * @property mixed details regular read/write property
+ * @property mixed wholesale_level_id_fixed regular read/write property
+ * @property mixed wholesaleLevelIdFixed regular read/write property
  */
 
 class WholesaleCustomer extends Main
@@ -36,6 +38,14 @@ class WholesaleCustomer extends Main
             'default' => null,
             'extra' => ''
         ],
+        'details' => [
+            'field' => 'details',
+            'type' => 'text',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
         'wholesale_level_id' => [
             'field' => 'wholesale_level_id',
             'type' => 'bigint unsigned',
@@ -44,11 +54,11 @@ class WholesaleCustomer extends Main
             'default' => null,
             'extra' => ''
         ],
-        'details' => [
-            'field' => 'details',
-            'type' => 'text',
+        'wholesale_level_id_fixed' => [
+            'field' => 'wholesale_level_id_fixed',
+            'type' => 'bigint unsigned',
             'null' => 'YES',
-            'key' => '',
+            'key' => 'MUL',
             'default' => null,
             'extra' => ''
         ]

@@ -27,6 +27,8 @@ use App\Classes\ActiveRecord\Tables\SettingsBanner;
 use App\Classes\ActiveRecord\Tables\SettingsLayouts;
 use App\Classes\ActiveRecord\Tables\SettingsNotifications;
 use App\Classes\ActiveRecord\Tables\Users;
+use App\Classes\ActiveRecord\Tables\WholesaleCustomer;
+use App\Classes\ActiveRecord\Tables\WholesaleLevel;
 
 
 /**
@@ -151,6 +153,17 @@ class GetData extends Main
         $this->returnAnswer($this->prepareReturnData($object));
     }
 
+    public function wholesaleLevel(): void
+    {
+        $object = WholesaleLevel::find();
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
+
+    public function wholesaleCustomer(): void
+    {
+        $object = WholesaleCustomer::find();
+        $this->returnAnswer($this->prepareReturnData($object));
+    }
 
     public function discount(): void
     {

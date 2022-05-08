@@ -7,7 +7,7 @@
         <span class="button-text">Добавить покупателя</span>
       </router-link>
     </div>
-    <div class="form-section">
+    <div class="form-section form-section_column">
       <button class="button" @click="filterWholesale = true">Оптовые покупатели</button>
       <button class="button" @click="filterWholesale = false" >Обычные покупатели</button>
     </div>

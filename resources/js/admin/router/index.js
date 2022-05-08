@@ -245,6 +245,32 @@ export default new Router({
             component: () => import("../components/Customers/CustomersOrdersList.vue"),
             meta: {title: 'Заказы покупателя :customerId - Панель управления'}
         },
+        {
+            path: '/wholesale-level',
+            name: 'WholesaleLevelList',
+            component: () => import("../components/Wholesale/WholesaleLevelList.vue"),
+            meta: {title: 'Категории оптовых покупателей - Панель управления'}
+        },
+        {
+            path: '/wholesale-level/page/:pageNumber',
+            name: 'WholesaleLevelPage',
+            props: true,
+            component: () => import("../components/Wholesale/WholesaleLevelList.vue"),
+            meta: {title: 'Категории оптовых покупателей - Панель управления'}
+        },
+        {
+            path: '/wholesale-level/create',
+            name: 'WholesaleLevelCreate',
+            component: () => import("../components/Wholesale/WholesaleLevel.vue"),
+            meta: {title: 'Новая категория оптовых покупателей - Панель управления'}
+        },
+        {
+            path: '/wholesale-level/itemId',
+            name: 'WholesaleLevelDetails',
+            props: true,
+            component: () => import("../components/Wholesale/WholesaleLevel.vue"),
+            meta: {title: 'Категория оптовых покупателей :itemId - Панель управления'}
+        },
         //---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---Заказы---//
         {
             path: '/orders',

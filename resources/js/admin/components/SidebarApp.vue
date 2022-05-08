@@ -19,6 +19,9 @@
               <hr>
             </li>
             <li class="menu_sidebar__item">
+              <router-link to="/wholesale-level">Категории оптовиков</router-link>
+            </li>
+            <li class="menu_sidebar__item">
               <router-link to="/customers/company">Контрагенты</router-link>
             </li>
           </ul>

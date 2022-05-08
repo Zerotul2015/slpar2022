@@ -31,6 +31,24 @@
         <input id="name" class="input" type="number" min="1" step="1" v-model="item.discount_default">
       </div>
     </div>
+    <div class="form-section">
+      <div class="input-block input-block_highlight">
+        <label for="min_sum_orders">Минимальная сумма заказов для получения этой категории:</label>
+        <input id="min_sum_orders" class="input" type="number" min="1" step="1" v-model="item.min_sum_orders_to_enter">
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="input-block input-block_highlight">
+        <label for="message_enter">Сообщение при получении этой категории:</label>
+        <textarea id="message_enter" class="textarea" v-model="item.message_enter"></textarea>
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="input-block input-block_highlight">
+        <label for="message_enter">Сообщение при исключении из этой категории:</label>
+        <textarea id="message_enter" class="textarea" v-model="item.message_exit"></textarea>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,7 +67,7 @@ export default {
       loading: false,
       error: null,
       item: {},
-      errorSaveText: null, //текст ошибки при  сохранения
+      errorSaveText: null, //текст ошибки при сохранении
       errorDeleteText: null, //текст ошибки удаления
       conditions: {},
       conditionsMinCount: 0,
@@ -59,7 +77,7 @@ export default {
       saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохарнить</span>',
       saveButtonSuccess: '<span class="button-icon"><i class="far fa-check"></i></span><span class="button-icon">изменения записаны</span>',
       saveButtonError: '<span class="button-icon"><i class="far fa-times"></i></span><span class="button-icon">ошибка при сохранении</span>',
-      deleteStatus: null, // 1 -  требуется подтверждение, 2 - ошибка, 0 | null - без изменений
+      deleteStatus: null, // 1 - требуется подтверждение, 2 - ошибка, 0 | null - без изменений
       deleteButtonDefault: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">удалить</span>',
       deleteButtonConfirm: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">подтвердить удаление</span>',
       deleteButtonError: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">ошибка при удалии</span>',
@@ -73,6 +91,9 @@ export default {
       this.item = {
         name: '',
         discount_default: 0,
+        min_sum_orders_to_enter: 0,
+        message_enter: 'Поздравляем с получением новой категории, ваша скидка увеличена!',
+        message_exit: 'Ваш скидка снижена.',
       }
     }
     this.conditionsPrepare();
@@ -84,6 +105,13 @@ export default {
         discount = 0;
       }
       this.item.discount_default = discount;
+    },
+    'item.min_sum_orders_to_enter'(newVal) {
+      let sum = parseInt(newVal)
+      if(isNaN(sum)){
+        sum = 0;
+      }
+      this.item.min_sum_orders_to_enter = sum;
     },
     //start save, delete
     saveStatus: function (newVal) {
@@ -147,7 +175,7 @@ export default {
           .then((r) => {
             if (r.result === true) {
               this.saveStatus = 1;
-              this.$router.push({'name': 'WholesaleLevel'});
+              this.$router.push({'name': 'WholesaleLevelList'});
             } else {
               this.saveStatus = 2;
               this.errorSaveText = r.error ? r.error : 'неизвестная ошибка: ' + r;
@@ -163,7 +191,7 @@ export default {
         api.applyData('wholesaleLevel', 'delete', {'id': this.item.id})
             .then((r) => {
               if (r.result === true) {
-                this.$router.push({'name': 'WholesaleLevel'});
+                this.$router.push({'name': 'WholesaleLevelList'});
               } else {
                 this.deleteStatus = 2;
                 this.errorDeleteText = r.error ? r.error : 'неизвестная ошибка: ' + r;

@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper-content">
-    <h1>Оптовые клиенты</h1>
+    <h1>Категории оптовых клиентов</h1>
     <div class="buttons-block">
-      <router-link class="button button_green" to="/wholesales-customer/create">
+      <router-link class="button button_green" to="/wholesale-level/create">
         <span class="button-icon"><i class="far fa-plus"></i></span>
         <span class="button-text">Создать</span>
       </router-link>
@@ -17,14 +17,14 @@
       <span v-if="searchString">Найдено</span><span v-else>Всего</span> страниц: <span v-html="pagesCount"></span>
       шт.
     </div>
-    <Pagination :route-prefix="'/wholesales-customer/page/'" :page-count="this.paginationPageCount"/>
+    <Pagination :route-prefix="'/wholesale-level/page/'" :page-count="this.paginationPageCount"/>
     <div v-if="error" class="error">
       {{ error }}
     </div>
     <LoaderSpinner v-if="isLoadingItems"></LoaderSpinner>
     <div class="list" v-else>
       <router-link class="list-item" v-for="(item, pageKey) in items.objects" :key="$root.guid()"
-                   :to="'/wholesales-customer/' + item.id">
+                   :to="'/wholesale-level/' + item.id">
         <div>{{ item.name }}</div>
       </router-link>
     </div>
@@ -38,7 +38,7 @@ import api from "../../common/api";
 import {debounce} from "lodash";
 
 export default {
-  name: "wholesaleCustomer",
+  name: "wholesaleLevel",
   components: {
     Pagination,
     LoaderSpinner,
@@ -99,7 +99,7 @@ export default {
     getCount() {
       let sendData = {'count': true};
       sendData = Object.assign(sendData, this.searchArray);
-      api.getData('wholesalesCustomer', sendData)
+      api.getData('wholesaleLevel', sendData)
           .then((r) => {
             this.pagesCount = r.returnData ? r.returnData : 0;
             if (r.error) {
@@ -116,7 +116,7 @@ export default {
       this.getCount();
       let sendData = {'pagination': {'page': pageNumber, 'perPage': 20}};
       sendData = Object.assign(sendData, this.searchArray);
-      api.getData('wholesalesCustomer', sendData)
+      api.getData('wholesaleLevel', sendData)
           .then((r) => {
             setTimeout(()=>{this.isLoadingItems = false}, 1000);
             this.items = r.returnData ? r.returnData : {};
