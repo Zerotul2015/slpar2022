@@ -1,8 +1,8 @@
-/storage/
-/vendor/
-/.yarn/
-/node_modules/
-/public/images/
-/public/build/dist/
-/public/upload/
-/.idea/
+storage
+vendor
+.yarn
+node_modules
+public/images
+public/build/dist
+public/upload
+.idea
