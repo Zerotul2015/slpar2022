@@ -57,7 +57,7 @@
         <search-site class="header-search-block" v-if="!headerFixed"
                      :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block">
-          <router-link class="header-link-enter" to="/dealer/home" title="Вход для дилера">
+          <router-link class="header-link-enter" to="/dealer/home" title="Вход">
             <icon-svg class="header-icon-cart" icon="user-large"></icon-svg>
           </router-link>
           <router-link to="/compare" div class="header-icon-compare-wrap">

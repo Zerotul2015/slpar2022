@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="Покупатели и заказы" comment="Дилеры и управление заказами">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0e4c7f04-011a-4e9c-a536-a77276470c6d" name="Покупатели и заказы" comment="иконка и тень у банера стиля">
+      <change beforePath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/public/components/HeaderApp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/layouts/webpackStyle.twig" afterDir="false" />
     </list>
     <list id="e5a36dea-525f-45a3-ba2c-e723f4ac3500" name="Default Changelist" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
@@ -291,30 +292,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
-    "tasks.open.task.update.state.enabled": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/zerotul/www/slpar2022/resources/js/assets/svg&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;tasks.open.task.update.state.enabled&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\zerotul\www\slpar2022\resources\js\assets\svg" />
@@ -578,13 +579,6 @@
       <workItem from="1650862294765" duration="28522000" />
       <workItem from="1651029605561" duration="26623000" />
       <workItem from="1651301591633" duration="8937000" />
-    </task>
-    <task id="LOCAL-00126" summary="Верстаю шапку">
-      <created>1649581595472</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1649581595472</updated>
     </task>
     <task id="LOCAL-00127" summary="Верстаю шапку">
       <created>1649635895921</created>
@@ -968,7 +962,7 @@
       <workItem from="1651861826066" duration="36000" />
       <workItem from="1651862737623" duration="21000" />
       <workItem from="1651862787346" duration="12478000" />
-      <workItem from="1651888106946" duration="17493000" />
+      <workItem from="1651888106946" duration="17796000" />
     </task>
     <task id="LOCAL-00169" summary="Дилеры и управление заказами">
       <created>1651932753905</created>
@@ -977,7 +971,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651932753905</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="иконка и тень у банера стиля">
+      <created>1651933744942</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1651933744942</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers>
       <YouTrack url="https://kemit.myjetbrains.com">
         <option name="defaultSearch" value="Assignee: me sort by: updated project: slpar.ru State: -Completed " />
@@ -1006,7 +1007,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Перенес модели из прошлых проектов" />
     <MESSAGE value="Создал отдельную модель для работы с заказами" />
     <MESSAGE value="Удалил label" />
     <MESSAGE value="Написал модель для товара" />
@@ -1031,7 +1031,8 @@
     <MESSAGE value="SR-11 Размер текста и заголовков" />
     <MESSAGE value="SR-12 Автоскидки" />
     <MESSAGE value="Дилеры и управление заказами" />
-    <option name="LAST_COMMIT_MESSAGE" value="Дилеры и управление заказами" />
+    <MESSAGE value="иконка и тень у банера стиля" />
+    <option name="LAST_COMMIT_MESSAGE" value="иконка и тень у банера стиля" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
