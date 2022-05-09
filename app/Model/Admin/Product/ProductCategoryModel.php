@@ -5,6 +5,7 @@ namespace App\Model\Admin\Product;
 
 
 use App\Classes\ActiveRecord\Tables\ProductCategory;
+use App\Classes\ActiveRecord\Tables\WholesaleLevel;
 use App\Model\Admin\MainModel;
 use App\Model\Interfaces\DefaultMethodTableClass;
 
@@ -24,7 +25,7 @@ class ProductCategoryModel implements DefaultMethodTableClass
             if (isset($val['id']) && $val['id'] && $itemOld = ProductCategory::findOne($val['id'])) {
                 $imageOld = $itemOld->image ?? '';
                 $folder = $itemOld->folder ? $itemOld->folder : uniqid('', true) . 'fldr' . time();
-            }else{
+            } else {
                 $val['id'] = '';
                 $imageOld = '';
                 $folder = uniqid('', true) . 'fldr' . time();
@@ -33,6 +34,7 @@ class ProductCategoryModel implements DefaultMethodTableClass
             $val['folder'] = $folder;
             $val['image'] = MainModel::prepareImageBeforeSave($image, $imageOld, 'categories/' . $folder);
             $val['url'] = MainModel::urlGeneration($val['name'], ProductCategory::find(), $val['id']);
+            $val['wholesale_discount_size'] = static::updateWholesaleLevel($val['wholesale_discount_size']);
             $item = ProductCategory::create()->set($val);
             $resultSave = $item->save();
             if (!$item->id) {
@@ -45,6 +47,19 @@ class ProductCategoryModel implements DefaultMethodTableClass
             $returnResult['returnData'] = $item;
         }
         return $returnResult;
+    }
+
+    public static function updateWholesaleLevel(array|null $wholesaleDiscountSize): array
+    {
+        $wholesaleDiscountSizeChecked = [];
+        if (!empty($wholesaleDiscountSize) && $wholesaleLevel = WholesaleLevel::find()->indexBy()->all()) {
+            foreach ($wholesaleDiscountSize as $levelId => $discountSize){
+                if(isset($wholesaleLevel[$levelId])){
+                    $wholesaleDiscountSizeChecked[$levelId] = $discountSize;
+                }
+            }
+        }
+        return $wholesaleDiscountSizeChecked;
     }
 
     /**

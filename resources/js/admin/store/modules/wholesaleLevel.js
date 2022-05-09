@@ -18,15 +18,13 @@ const getters = {
 // actions
 const actions = {
     getAll({commit, state}) {
-        if (state.id) {
-            api.getData('wholesalesLevel', {})
+            api.getData('wholesaleLevel', {})
                 .then(r => {
                     if (r.result === true) {
                         commit('setAll', r.returnData);
                     }
                 })
                 .catch()
-        }
     },
 }
 

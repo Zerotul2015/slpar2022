@@ -15,8 +15,8 @@ import customerCompany from './modules/customerCompany'
 import orders from './modules/orders'
 import ordersStatus from './modules/ordersStatus'
 import galleryCategory from './modules/galleryCategory'
-import wholesaleCustomer from './modules/wholesale_customer'
-import wholesaleLevel from './modules/wholesale_level'
+import wholesaleCustomer from './modules/wholesaleCustomer'
+import wholesaleLevel from './modules/wholesaleLevel'
 
 Vue.use(Vuex)
 

@@ -9,6 +9,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed name regular read/write property
  * @property mixed discount_default regular read/write property
  * @property mixed discountDefault regular read/write property
+ * @property mixed discount_by_categories regular read/write property
+ * @property mixed discountByCategories regular read/write property
  * @property mixed message_enter regular read/write property
  * @property mixed messageEnter regular read/write property
  * @property mixed message_exit regular read/write property
@@ -43,6 +45,14 @@ class WholesaleLevel extends Main
         'discount_default' => [
             'field' => 'discount_default',
             'type' => 'int',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'discount_by_categories' => [
+            'field' => 'discount_by_categories',
+            'type' => 'text',
             'null' => 'YES',
             'key' => '',
             'default' => null,

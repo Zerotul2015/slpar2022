@@ -130,7 +130,7 @@ class ProductCategory extends Main
         ],
         'wholesale_discount_size' => [
             'field' => 'wholesale_discount_size',
-            'type' => 'int',
+            'type' => 'text',
             'null' => 'YES',
             'key' => '',
             'default' => null,

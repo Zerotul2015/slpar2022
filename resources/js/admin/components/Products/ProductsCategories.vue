@@ -50,6 +50,7 @@ export default {
   },
   created() {
     this.parentId_ = this.parentId ? this.parentId : 0;
+    this.$store.dispatch('wholesaleLevel/getAll');
     this.$store.dispatch('productCategory/getAllById');
     this.getItemsData();
     this.getNameParent();
@@ -102,7 +103,9 @@ export default {
             'parent_id': this.parentId_,
             'is_custom':false,
             'custom_link': null,
-            'seo': {'title': '', 'description': ''}
+            'seo': {'title': '', 'description': ''},
+            'binding_style':'',
+            'wholesale_discount_size':{},
           }
       )
     },

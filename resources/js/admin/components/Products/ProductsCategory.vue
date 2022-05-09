@@ -23,7 +23,7 @@
     <div class="row" v-if="toggleShow">
       <div class=" input-block row col-2-auto col_middle-left">
         <label class="label" :for="'priority-' + guid">Приоритет:</label>
-        <input :id="'priority-' + guid" class="input" type="number" v-model="item.priority">
+        <input :id="'priority-' + guid" class="input" type="number" v-model.number="item.priority">
       </div>
       <div class=" input-block row col-2-auto col_middle-left">
         <label class="label" :for="'priority-' + guid">Произвольная ссылке:</label>
@@ -80,6 +80,15 @@
           <option value="homestead">Каминов и печей</option>
         </select>
       </div>
+      <h3>Оптовые скидки</h3>
+      <div class="col-3-auto col_middle-left" v-for="(level) in wholesaleLevels">
+        <label :for="level.id + '-level-' + guid">{{ level.name }}:</label>
+        <div>(по умолчанию {{ level.discount_default }}%)</div>
+        <input v-if="customDiscountSizeArray[level.id]"
+               class="input" type="number" v-model.number="customDiscountSizeArray[level.id]">
+        <div v-else class="link" @click="createDiscountSizeForLevels(level.id, level.discount_default)">изменить</div>
+
+      </div>
     </div>
     <div class="row">
       <div class="col buttons-block">
@@ -118,6 +127,7 @@ export default {
       errorText: '',
       errorUploadText: '',
       image: '',
+      customDiscountSizeArray:{},
       toggleButtonClose: '<span class="button-icon"><i class="far fa-compress-arrows-alt"></i></span><span class="button-icon">свернуть</span>',
       toggleButtonOpen: '<span class="button-icon"><i class="far fa-expand-arrows-alt"></i></span><span class="button-icon">подробнее</span>',
       //start save, delete
@@ -125,7 +135,7 @@ export default {
       saveButtonDefault: '<span class="button-icon"><i class="far fa-save"></i></span><span class="button-icon">сохранить</span>',
       saveButtonSuccess: '<span class="button-icon"><i class="far fa-check"></i></span><span class="button-icon">изменения записаны</span>',
       saveButtonError: '<span class="button-icon"><i class="far fa-times"></i></span><span class="button-icon">ошибка при сохранении</span>',
-      deleteStatus: null, // 1 -  требуется подтверждение, 2 - ошибка, 0 | null - без изменений
+      deleteStatus: null, // 1 - требуется подтверждение, 2 - ошибка, 0 | null - без изменений
       deleteButtonDefault: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">удалить</span>',
       deleteButtonConfirm: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">подтвердить удаление</span>',
       deleteButtonError: '<span class="button-icon"><i class="far fa-trash-alt"></i></span><span class="button-icon">ошибка при удалии</span>',
@@ -142,8 +152,25 @@ export default {
     if (!this.item.binding_style) {
       this.item.binding_style = 'bath';
     }
+    // if(this.item.wholesale_discount_size && Object.keys(this.item.wholesale_discount_size).length > 0){
+    //   Object.entries(this.item.wholesale_discount_size).forEach((val,key,item)=>{
+    //     this.customDiscountSizeArray =[{'id':key, 'val':val}];
+    //   });
+    //
+    // }
+    this.customDiscountSizeArray = this.item.wholesale_discount_size;
   },
   watch: {
+    customDiscountSizeArray: {
+      handler(newVal) {
+        if (newVal) {
+          this.item.wholesale_discount_size = newVal;
+        } else {
+          this.customDiscountSizeArray = {};
+        }
+      },
+      deep: true
+    },
     isCustomLink(newVal) {
       this.item.is_custom = newVal;
     },
@@ -170,6 +197,9 @@ export default {
     //end save, delete
   },
   computed: {
+    wholesaleLevels() {
+      return this.$store.getters["wholesaleLevel/all"];
+    },
     productsCategories() {
       return this.$store.state.productCategory.allById;
     },
@@ -215,6 +245,12 @@ export default {
     //end save, delete
   },
   methods: {
+    createDiscountSizeForLevels(levelId, discountSize) {
+      if(!this.customDiscountSizeArray[levelId]){
+        this.$set(this.customDiscountSizeArray, levelId, discountSize);
+      }
+
+    },
     uploadFile(fileForUpload) {
       this.errorUploadText = null
       api.uploadFile(fileForUpload).then((r) => {
