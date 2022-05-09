@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "Favorite"
+  name: "CustomerProfile"
 }
 </script>
 

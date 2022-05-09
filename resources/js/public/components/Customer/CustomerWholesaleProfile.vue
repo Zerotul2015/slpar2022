@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "DealerProfile"
+  name: "CustomerWholesaleProfile"
 }
 </script>
 

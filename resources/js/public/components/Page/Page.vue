@@ -1,22 +1,17 @@
 <template>
-  <div class="page">
-    <breadcrumb></breadcrumb>
-    <div class="page-wrap">
+    <div class="page">
       <h1 v-html="page.title"></h1>
       <div class="page-content" v-html="page.content">
-
       </div>
-    </div>
   </div>
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import FeedbackForm from "../Feedback/FeedbackForm";
 
 export default {
   name: "Page",
-  components: {Breadcrumb,FeedbackForm},
+  components: {FeedbackForm},
   props: {
     url: {
       required: true,

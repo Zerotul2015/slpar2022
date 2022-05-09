@@ -1,6 +1,4 @@
 <template>
-  <div class="cart-page">
-    <breadcrumb></breadcrumb>
     <div class="cart-content-wrap">
       <h1>Корзина</h1>
       <h2 v-if="countCart < 1">Ваша корзина пуста.
@@ -101,17 +99,15 @@
         <cart-checkout v-if="isCheckoutStep"></cart-checkout>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import IconSvg from "../Icon-svg/icon-svg";
 import CartCheckout from "./CartMakingOrder";
 
 export default {
   name: "Cart",
-  components: {CartCheckout, IconSvg, Breadcrumb},
+  components: {CartCheckout, IconSvg},
   data() {
     return {
       countPos: 1,

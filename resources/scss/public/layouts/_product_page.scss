@@ -1,8 +1,8 @@
 .product-page{
-
+  @extend .default-width-content;
 }
 .pp-wrap{
-  @extend .default-width-content;
+
 }
 .pp-name{
   text-align: center;
@@ -109,5 +109,5 @@
 
 //related products
 .pp-related-wrap{
-  @extend .default-width-content;
+
 }

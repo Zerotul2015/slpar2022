@@ -1,4 +1,4 @@
-.dealer-page {
+.customer-home {
   @extend .default-width-content;
 }
 .dh-login-register, .dh-profile {
@@ -12,12 +12,12 @@
   justify-items: start;
 }
 
-.dh-login {
+.customer-login {
   display:grid;
   grid-gap:.5rem;
 }
 
-.dh-register {
+.wholesale-register {
   display:grid;
   grid-gap:.5rem;
 }
@@ -27,7 +27,7 @@
 }
 .input-block-dh input {
   border: none;
-  background: none;
+  background: $white;
   border-radius: 5px;
   color: #4f4f4f;
   padding: 0.25rem 0.5rem;

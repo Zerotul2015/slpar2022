@@ -1,6 +1,4 @@
 <template>
-  <div class="catalog">
-    <breadcrumb></breadcrumb>
     <div class="catalog-wrap">
       <h1>Сравнение товаров</h1>
       <h2 v-if="countCompare < 1">Вы не добавили ни одного товара в сравнение. <router-link to="/">Перейти к готовым стилевым решениям.</router-link></h2>
@@ -12,16 +10,14 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import ProductCard from "../Product/ProductCard";
 
 export default {
   name: "Compare",
-  components: {ProductCard, Breadcrumb},
+  components: {ProductCard},
   beforeMount() {
     this.$store.dispatch("compare/getCompareWithCategories");
   },

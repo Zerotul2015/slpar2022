@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content bath-styles-page">
+  <div class="bath-styles-page">
     <div class="bsp-header">
       <div class="bsp-h-top">Комплексный подход к декорированию бань и саун</div>
       <div class="bsp-h-middle">Аксессуары и декор</div>

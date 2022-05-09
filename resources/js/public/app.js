@@ -37,19 +37,26 @@ router.beforeEach((to, from, next) => {
 });
 router.beforeResolve((to, from, next) => {
     NProgress.start();
+    //allowAnonymous: true,
+    //                 allowCustomer: true,
+    //                 allowWholesale: true,
+    if(!to.meta.allowAnonymous && ((to.meta.allowCustomer && !app.isAuth) || (to.meta.allowWholesale && !app.isWholesale))) {
+        app.$router.push({'name': 403});
+    }
+
     if (to.name) {
         app.$store.commit('templateData/setSection', to.name);
         if (to.params.url) {
             app.$store.commit('templateData/setSectionKey', to.params.url);
         }
 
-        if(to.name ==='productCategory' && from.name !== 'productCategory'){
+        if (to.name === 'productCategory' && from.name !== 'productCategory') {
             app.$store.dispatch('bathStyle/changeToggleFilterForCategory', false);
             app.$store.dispatch('bathStyle/setActiveStyleKey', 0);
         }
         // Start the route progress bar.
     }
-    next()
+    next();
 })
 
 router.afterEach((to, from) => {

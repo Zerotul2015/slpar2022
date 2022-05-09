@@ -1,6 +1,4 @@
 <template>
-  <div class="catalog">
-    <breadcrumb></breadcrumb>
     <div class="catalog-wrap">
       <h1 v-html="categoryName + textCategoryWithFilter"></h1>
       <div class="catalog-products">
@@ -8,16 +6,14 @@
                      :image-size="sizeImageProduct"></ProductCard>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import ProductCard from "../Product/ProductCard";
 
 export default {
   name: "CategoryPage",
-  components: {ProductCard, Breadcrumb},
+  components: {ProductCard},
   props: {
     url: {
       required: true,

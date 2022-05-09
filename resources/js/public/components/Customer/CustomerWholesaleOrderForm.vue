@@ -1,7 +1,5 @@
 <template>
-  <div class="dealer-page">
-    <breadcrumb></breadcrumb>
-    <div class="dealer-home">
+    <div class="main-content customer-home">
       <h1>Бланк заказа</h1>
       <div class="dh-order-blank" v-if="isAuth && products">
         <div v-for="(productItem) in products" :key="$root.guid()" class="ob-product-item">
@@ -13,16 +11,14 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import IconSvg from "../Icon-svg/icon-svg";
 
 export default {
-  name: "DealerOrderForm",
-  components: {IconSvg, Breadcrumb},
+  name: "CustomerWholesaleOrderForm",
+  components: {IconSvg},
   data() {
     return {}
   },

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Dealer;
+namespace App\Model\Customer;
 
 use App\Classes\ActiveRecord\Tables\Customer;
 use App\Classes\ActiveRecord\Tables\WholesaleCustomer;
@@ -8,7 +8,7 @@ use App\Controllers\Authorization;
 use App\Model\Notification\NotificationMailModel;
 use JetBrains\PhpStorm\ArrayShape;
 
-class DealerModel
+class CustomerModel
 {
     #[ArrayShape(['result' => "false", 'returnData' => "array|string", 'error' => "string"])]
     public static function getProfile(): array

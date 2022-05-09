@@ -58,6 +58,7 @@
 
 .header-links-block {
   grid-area: h-links;
+  z-index:1;
 }
 .header-link-enter{
   color:$brown-light;

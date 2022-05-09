@@ -1,6 +1,5 @@
 <template>
   <div class="product-page">
-    <breadcrumb></breadcrumb>
     <div class="pp-wrap" v-if="product.name">
       <h1 class="pp-name">{{ product.name }}</h1>
       <div class="pp-details-wrap">
@@ -18,9 +17,10 @@
           </div>
         </div>
         <div class="pp-images" v-viewer="optionsZoom">
-          <img class="pp-image-main" :src="imageDir + '800/' + imageMain"
+          <img class="pp-image-main"  v-if="imageMain" :src="imageDir + '800/' + imageMain"
                :data-source="imageDir + '/1920/' + imageMain"
                :alt="product.name">
+          <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">
           <div class="pp-thumbs-wrap">
             <img class="pp-image-thumb" v-for="(imageThumb) in product.images"
                  :src="imageDir + 'thumb/' + imageThumb" :key="$root.guid()"
@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import Breadcrumb from "../Breadcrumb";
 import IconSvg from "../Icon-svg/icon-svg";
 import VueHorizontal from "vue-horizontal";
 import ProductCard from "../Product/ProductCard";
@@ -75,7 +74,7 @@ import 'viewerjs/dist/viewer.css'
 
 export default {
   name: "ProductPage",
-  components: {Breadcrumb, VueHorizontal, ProductCard, IconSvg},
+  components: {VueHorizontal, ProductCard, IconSvg},
   props: {
     url: {
       type: String,

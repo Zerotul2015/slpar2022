@@ -2,6 +2,7 @@
   <div id="app" class="body-wrap">
     <headerApp/>
     <div class="content-wrap">
+      <breadcrumb v-if="showBreadcrumb"></breadcrumb>
       <main>
         <transition name="component-fade" mode="out-in">
           <router-view></router-view>
@@ -16,12 +17,14 @@
 
 import axios from "axios";
 import HeaderApp from "./HeaderApp.vue"
+import Breadcrumb from "./Breadcrumb.vue";
 import FooterApp from "./FooterApp.vue"
 
 export default {
   name: "app",
   components: {
     HeaderApp,
+    Breadcrumb,
     FooterApp
   },
   data: () => ({
@@ -50,6 +53,10 @@ export default {
     },
   },
   computed: {
+    showBreadcrumb(){
+      let disallowSection = ['bathStyle','home'];
+      return !disallowSection.includes(this.section);
+    },
     seo(){
       return this.$store.getters["templateData/seo"];
     },
@@ -59,6 +66,12 @@ export default {
     sectionKey(){
       return this.$store.getters["templateData/sectionKey"];
     },
+    isAuth(){
+      return this.$store.getters['customer/isAuth'];
+    },
+    isWholesale(){
+      return this.$store.getters['customer/isWholesale'];
+    }
   },
   methods: {
 

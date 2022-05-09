@@ -49,10 +49,13 @@ class PublicTemplateModel
             'compare' => true,
             'bathStyle' => true,
             'ordersPreview' => true,
-            'dealerHome' => true,
-            'dealerRegister' => true,
-            'dealerOrderForm' => true,
+            'customerHome' => true,
+            'customerRegister' => true,
+            'wholesaleOrderForm' => true,
+            'customerProfile' => true,
             'dealerProfile' => true,
+            'AccessRestricted' => true,
+            'NotFoundPage' => true,
         ];
         if (isset($sectionCheck[$section])) {
             $objectData = match ($section) {
@@ -64,10 +67,13 @@ class PublicTemplateModel
                 'compare' => $breadcrumb->add('Сравнение товаров', '/compare')->render(),
                 'favorite' => $breadcrumb->add('Избранное', '/favorite')->render(),
                 'ordersPreview' => $breadcrumb->add('Просмотр заказов', '/orders/preview')->render(),
-                'dealerHome' => $breadcrumb->add('Кабинет дилера', '/dealer/home')->render(),
-                'dealerRegister' => $breadcrumb->add('Регистрация дилера', '/dealer/register')->render(),
-                'dealerOrderForm' => $breadcrumb->add('Бланк заказа', '/dealer/order-form')->render(),
-                'dealerProfile' => $breadcrumb->add('Профиль дилера', '/dealer/profile')->render(),
+                'customerHome' => $breadcrumb->add('Кабинет дилера', '/customer/home')->render(),
+                'customerRegister' => $breadcrumb->add('Регистрация дилера', '/customer/register')->render(),
+                'dealerOrderForm' => $breadcrumb->add('Бланк заказа', '/customer/order-form')->render(),
+                'customerProfile' => $breadcrumb->add('Профиль покупателя', '/customer/profile')->render(),
+                'dealerProfile' => $breadcrumb->add('Профиль дилера', '/customer/wholesale-profile')->render(),
+                'AccessRestricted' => $breadcrumb->add('Доступ запрещен', '/')->render(),
+                'NotFoundPage' => $breadcrumb->add('Такой страницы не существует', '/')->render(),
                 'bathStyle' => BathStyle::find()->where([$where => $indexOrUrlObject])->one(),
             };
         }

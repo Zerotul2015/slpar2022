@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const URL_GET_PATH = '/api/dealer/';
+const URL_GET_PATH = '/api/customer/';
 const ACTION_PATH = {
     'checkAuth': 'check-auth',
     'auth': 'auth',
-    'getDealer': 'get-dealer',
+    'getCustomer': 'get-customer',
+    'getWholesaleLevels': 'get-wholesale-levels',
     'registerRequest': 'register-request',
     'exit': 'logout',
     'makeOrder': 'make-order',

@@ -2,17 +2,17 @@
 
 namespace App\Controllers\Api;
 
-use App\Model\Dealer\DealerModel;
+use App\Model\Customer\CustomerModel;
 use App\Model\Shop\Compare\CompareModel;
 
-class Dealer extends Main
+class Customer extends Main
 {
 
 
     public function getDealer()
     {
         if ($this->isAuth) {
-            $this->returnData = DealerModel::getProfile();
+            $this->returnData = CustomerModel::getProfile();
             $this->returnAnswer($this->returnData);
         }
     }
@@ -27,7 +27,7 @@ class Dealer extends Main
             'comment' => $this->postData['comment'] ?? ''
         ];
 
-        $this->returnData = DealerModel::registerRequest($formData);
+        $this->returnData = CustomerModel::registerRequest($formData);
         $this->returnAnswer($this->returnData);
     }
 

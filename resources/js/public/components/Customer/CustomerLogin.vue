@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "DealerRegister"
+  name: "CustomerLogin"
 }
 </script>
 

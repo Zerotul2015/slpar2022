@@ -4,8 +4,10 @@ import apiDealer from '../../common/apiDealer'
 const state = () => ({
     authData: {},
     customerData: {},
+    customerCompany:[],
     wholesaleData: {}, // details[] + levelId
-    requestRegisterSend: null
+    wholesaleLevelsData:[], //все уровни оптовиков с настройками
+    requestRegisterSend: null,
 })
 
 // getters
@@ -19,6 +21,13 @@ const getters = {
     isAuth(state) {
         if(state.authData.isAuth){
             return state.authData.isAuth
+        }else{
+            return false
+        }
+    },
+    isWholesale(state) {
+        if(state.authData.isWholesale){
+            return state.authData.isWholesale
         }else{
             return false
         }
@@ -71,7 +80,7 @@ const actions = {
                     if (r.result === true) {
                         commit('setAuthData', {});
                         commit('setCustomerData', {});
-                        commit('wholesaleData', {});
+                        commit('setWholesaleData', {});
                     }
                 })
                 .catch()
@@ -79,13 +88,26 @@ const actions = {
     },
     getDealerData({commit, state}){
         if(state.authData.isAuth === true && state.authData.customerId){
-            apiDealer.dealerAction('auth', {})
+            apiDealer.dealerAction('getCustomer', {})
                 .then(r => {
                     if (r.result === true) {
                         if(r.returnData.customer){
                             commit('setCustomerData', r.returnData.customer);
                         }if(r.returnData.wholesale){
-                            commit('wholesaleData', r.returnData.wholesale);
+                            commit('setWholesaleData', r.returnData.wholesale);
+                        }
+                    }
+                })
+                .catch()
+        }
+    },
+    getWholesaleLevels({commit, state}){
+        if(state.authData.isAuth === true && state.authData.customerId){
+            apiDealer.dealerAction('getWholesaleLevels', {})
+                .then(r => {
+                    if (r.result === true) {
+                        if(r.returnData){
+                            commit('setWholesaleLevels', r.returnData.customer);
                         }
                     }
                 })

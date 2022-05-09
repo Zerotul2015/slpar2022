@@ -57,7 +57,7 @@
         <search-site class="header-search-block" v-if="!headerFixed"
                      :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block">
-          <router-link class="header-link-enter" to="/dealer/home" title="Вход">
+          <router-link class="header-link-enter" :to="linkCabinet" title="Вход">
             <icon-svg class="header-icon-cart" icon="user-large"></icon-svg>
           </router-link>
           <router-link to="/compare" div class="header-icon-compare-wrap">
@@ -118,6 +118,12 @@ export default {
   computed: {
     isAuth(){
       return this.$store.getters["customer/isAuth"];
+    },
+    isWholesale(){
+      return this.$store.getters["customer/isWholesale"];
+    },
+    linkCabinet(){
+      return this.isWholesale ? '/customer/wholesale-profile' : this.isAuth ? '/customer/profile': '/customer/home';
     },
     carouselActive() {
       let siteSectionUsed = ['productCategory','productCategoryWithStyle', 'compare', 'bathStyle', 'index'];
