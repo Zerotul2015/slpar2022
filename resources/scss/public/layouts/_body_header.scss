@@ -391,7 +391,7 @@ svg.icon-input-search.hs-block {
 }
 
 .hcd-wrapper {
-  width: 230px;
+  width: 440px;
 }
 
 .bs-c-title {
@@ -410,9 +410,10 @@ svg.icon-input-search.hs-block {
   cursor: pointer;
   position: absolute;
   top: 0;
-  align-items: center;
+  bottom:0;
   display: grid;
   justify-content: center;
+  align-items: center;
 }
 
 .bs-c-button:hover {
@@ -436,24 +437,23 @@ svg.icon-input-search.hs-block {
 
 .bs-c-prev {
   left: 0;
-  padding-right: 1rem;
+  padding-right: 4rem;
   background: linear-gradient(90deg, $grey 30%, rgb(79, 79, 79, 0) 100%);
 }
 
 .bs-c-next {
   right: 0;
-  padding-left: 1rem;
+  padding-left: 4rem;
   background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, $grey 70%);
 }
 
 .bs-c-item {
   text-align: center;
-  color: $brown-light;
-  width: 220px;
+  color: $white;
+  width: 180px;
   font-size:1.25rem;
 }
 
-.bs-c-item-selected {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.bs-c-item-active {
+  color: $brown-light;
 }

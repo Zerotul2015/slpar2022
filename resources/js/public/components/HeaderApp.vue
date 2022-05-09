@@ -39,8 +39,8 @@
         <div class="header-links-block">
           <div class="hcs-wrapper" v-if="headerFixed && carouselActive">
             <BathStylesHeaderCarousel class="hcd-wrapper">
-              <rl-carousel-slide v-for="(styleItem) in bathStyles" :key="$root.guid()">
-                <div class="bs-c-item">{{ styleItem.name }}</div>
+              <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
+                <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}" >{{ styleItem.name }}</div>
               </rl-carousel-slide>
             </BathStylesHeaderCarousel>
           </div>
@@ -144,8 +144,8 @@ export default {
     bathStyles() {
       return this.$store.getters["bathStyle/all"];
     },
-    selectBathStyleIndex() {
-      return this.$store.getters['bathStyle/selectKey'];
+    activeStyleKey() {
+      return this.$store.getters['bathStyle/activeKey'];
     },
     selectBindingFilterStyle() {
       return this.$store.getters['bathStyle/filterBy'];

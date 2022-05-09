@@ -56,6 +56,11 @@ const actions = {
         statusNew = !!statusNew;
         commit('setToggleFilterForCategory', statusNew);
     },
+    resetFilterForCategory({commit}){
+        commit('setActiveStyleId', null);
+        commit('setToggleFilterForCategory', false);
+
+    },
     setFilter({commit}, filterName) {
         if (filterName === 'fireplace' || filterName === 'bath' || filterName === 'homestead') {
             commit('setFilterBy', filterName);

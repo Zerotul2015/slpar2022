@@ -7,14 +7,14 @@
           </slot>
         </div>
       </div>
-      <div class="bs-c-title" v-html="textCarouselTop" @click="disableFilterCategory()">Выбрать стиль</div>
-      <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left')"
+      <div class="bs-c-title" :class="{'cursor-pointer':categoryFilterActive}" v-html="textCarouselTop" @click="disableFilterCategory()">Выбрать стиль</div>
+      <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left'); toggleFilterCategoryEnable()"
            :class="{'bs-c-button-disable':slide === 0}">
         <div class="bs-c-button-icon-wrap cursor-pointer">
           <icon-svg class="bs-c-button-icon" :class="{ 'animate-left': animateLeft }" icon="angles-left"></icon-svg>
         </div>
       </div>
-      <div class="bs-c-button bs-c-next" @click="slide = active + 1; triggerAnimation('Right')"
+      <div class="bs-c-button bs-c-next" @click="slide = active + 1; triggerAnimation('Right'); toggleFilterCategoryEnable()"
            :class="{'bs-c-button-disable':slide === (countStyle-1)}">
         <div class="bs-c-button-icon-wrap cursor-pointer">
           <icon-svg class="bs-c-button-icon" :class="{ 'animate-right': animateRight }" icon="angles-right"></icon-svg>
@@ -45,9 +45,9 @@ export default {
   watch: {
     slide(newKey) {
       this.changeCurrentStyle(newKey);
-      if (this.currentSiteSection === 'productCategory') {
-        this.$store.dispatch('bathStyle/changeToggleFilterForCategory', true);
-      }
+      // if (this.currentSiteSection === 'productCategory') {
+      //   this.$store.dispatch('bathStyle/changeToggleFilterForCategory', true);
+      // }
     },
     activeStyleKey(newKey) {
       this.slide = newKey;
@@ -93,7 +93,9 @@ export default {
   methods: {
     disableFilterCategory(){
       if(this.categoryFilterActive === true) {
-        this.$store.dispatch('bathStyle/changeToggleFilterForCategory', false);
+        this.$store.dispatch('bathStyle/resetFilterForCategory');
+        // this.$store.dispatch('bathStyle/changeToggleFilterForCategory', false);
+        // this.$store.dispatch('bathStyle/setActiveStyleById', false);
       }
     },
     triggerAnimation(direction) {
@@ -108,6 +110,11 @@ export default {
     },
     prevStyle() {
       console.log(this.$refs.bathSlider[this.activeStyleKey]);
+    },
+    toggleFilterCategoryEnable(){
+      if (this.currentSiteSection === 'productCategory') {
+        this.$store.dispatch('bathStyle/changeToggleFilterForCategory', true);
+      }
     },
     changeCurrentStyle(key) {
       let sectionWhereUsedCarousel = ['index','bathStyle','productCategory','productCategoryWithStyle'];
