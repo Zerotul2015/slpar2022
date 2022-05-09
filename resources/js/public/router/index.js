@@ -147,27 +147,41 @@ export default new Router({
         {
             path: '/customer/profile',
             name: 'customerProfile',
-            allowAnonymous: false,
-            allowCustomer: true,
-            allowWholesale: false,
+            meta: {
+                allowAnonymous: false,
+                allowCustomer: true,
+                allowWholesale: true,
+            },
             component: () => import("../components/Customer/CustomerProfile.vue"),
         },
         {
             path: '/customer/wholesale-profile',
             name: 'wholesaleProfile',
-            allowAnonymous: false,
-            allowCustomer: false,
-            allowWholesale: true,
+            meta: {
+                allowAnonymous: false,
+                allowCustomer: false,
+                allowWholesale: true,
+            },
             component: () => import("../components/Customer/CustomerWholesaleProfile.vue"),
         },
         {
             path: '/403',
             name: 'AccessRestricted',
+            meta: {
+                allowAnonymous: true,
+                allowCustomer: true,
+                allowWholesale: true,
+            },
             component: () => import("../components/Errors/AccessRestricted.vue"),
         },
         {
             path: '*',
             name: 'NotFoundPage',
+            meta: {
+                allowAnonymous: true,
+                allowCustomer: true,
+                allowWholesale: true,
+            },
             component: () => import("../components/Errors/NotFoundPage.vue"),
         },
     ]

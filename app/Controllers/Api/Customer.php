@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Api;
 
+use App\Classes\ActiveRecord\Tables\ProductStockStatus;
+use App\Classes\ActiveRecord\Tables\WholesaleLevel;
 use App\Model\Customer\CustomerModel;
 use App\Model\Shop\Compare\CompareModel;
 
@@ -15,6 +17,15 @@ class Customer extends Main
             $this->returnData = CustomerModel::getProfile();
             $this->returnAnswer($this->returnData);
         }
+    }
+    public function getWholesaleLevels()
+    {
+        if ($this->isAuth) {
+            $object = WholesaleLevel::find();
+            $this->returnAnswer($this->prepareReturnData($object));
+        }
+
+
     }
 
     public function registerRequest()

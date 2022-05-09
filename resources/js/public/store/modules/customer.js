@@ -140,6 +140,9 @@ const mutations = {
     setWholesaleData(state, wholesaleData) {
         state.wholesaleData = wholesaleData;
     },
+    setWholesaleLevels(state, wholesaleLevels) {
+        state.wholesaleLevelsData = wholesaleLevels;
+    },
     setRequestRegisterSend(state, requestRegisterSend) {
         state.requestRegisterSend = requestRegisterSend;
     },
