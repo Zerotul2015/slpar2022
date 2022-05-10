@@ -18,6 +18,7 @@ class Customer extends Main
             $this->returnAnswer($this->returnData);
         }
     }
+
     public function getWholesaleLevels()
     {
         if ($this->isAuth) {
@@ -28,7 +29,7 @@ class Customer extends Main
 
     }
 
-    public function registerRequest()
+    public function registerRequestWholesale()
     {
         $formData = [
             'name' => $this->postData['name'] ?? null,
@@ -38,11 +39,34 @@ class Customer extends Main
             'comment' => $this->postData['comment'] ?? ''
         ];
 
-        $this->returnData = CustomerModel::registerRequest($formData);
+        $this->returnData = CustomerModel::registerRequestWholesale($formData);
         $this->returnAnswer($this->returnData);
     }
 
-    public function makeOrder(){
+    public function registerCustomer()
+    {
+        $formData = [
+            'name' => $this->postData['name'] ?? null,
+            'phone' => $this->postData['phone'] ?? null,
+            'mail' => $this->postData['mail'] ?? null,
+        ];
+
+        $this->returnData = CustomerModel::registerCustomer($formData);
+        $this->returnAnswer($this->returnData);
+    }
+
+    public function checkAlreadyRegistered()
+    {
+        $mail = $this->postData['mail'] ?? null;
+        $phone = $this->postData['phone'] ?? null;
+
+        $this->returnData = CustomerModel::checkAlreadyRegistered($mail, $phone);
+        $this->returnAnswer($this->returnData);
+    }
+
+
+    public function makeOrder()
+    {
 
     }
 
@@ -50,7 +74,7 @@ class Customer extends Main
     {
         if ($this->isAuth) {
             $this->returnData['returnData'] = [
-                'isAuth'=>true,
+                'isAuth' => true,
                 'customerId' => $this->customerId,
                 'isWholesale' => $this->isWholesale
             ];
@@ -65,9 +89,9 @@ class Customer extends Main
         $pass = $this->postData['pass'] ?? null;
         if ($login && $pass) {
             $resultAuth = \App\Controllers\Authorization::auth($login, $pass);
-            $this->returnData['result'] =  $resultAuth['result'];
+            $this->returnData['result'] = $resultAuth['result'];
             $this->returnData['returnData'] = [
-                'isAuth'=> $resultAuth['result'],
+                'isAuth' => $resultAuth['result'],
                 'customerId' => $resultAuth['customerId'],
                 'isWholesale' => $resultAuth['isWholesale']
             ];
@@ -75,9 +99,10 @@ class Customer extends Main
         $this->returnAnswer($this->returnData);
     }
 
-    public function logout(){
+    public function logout()
+    {
         \App\Controllers\Authorization::exit();
-        $this->returnData['result']=true;
+        $this->returnData['result'] = true;
         $this->returnAnswer($this->returnData);
     }
 

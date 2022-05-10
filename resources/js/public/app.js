@@ -8,9 +8,12 @@ import 'nprogress/nprogress.css'
 import axios from "axios";
 import SweetModal from "sweet-modal-vue/src/plugin";
 import Viewer from 'v-viewer'
+// Preferred: as a plugin (directive + filter) + custom placeholders support
+import VueMask from 'v-mask'
 
 Vue.use(Viewer)
 Vue.use(SweetModal)
+Vue.use(VueMask);
 
 Vue.filter('priceToLocale', function (value) {
     if (!value) return '';
@@ -27,9 +30,7 @@ Vue.config.productionTip = false;
 
 
 router.beforeEach((to, from, next) => {
-    console.log(to);
     if (to.params && to.params.isCustom) {
-        console.log(to.pat)
         location.href = to.path;
     } else {
         next();
@@ -37,9 +38,6 @@ router.beforeEach((to, from, next) => {
 });
 router.beforeResolve((to, from, next) => {
     NProgress.start();
-    console.log(to.meta.allowAnonymous);
-    console.log(to.meta.allowCustomer, !app.isAuth);
-    console.log(to.meta.allowWholesale, !app.isWholesale);
     if(!to.meta.allowAnonymous && ((to.meta.allowCustomer && !app.isAuth) || (to.meta.allowWholesale && !app.isWholesale))) {
         next({'name': 'AccessRestricted'})
         //app.$router.push({'name': 'AccessRestricted'});

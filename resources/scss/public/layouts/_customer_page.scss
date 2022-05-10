@@ -1,0 +1,54 @@
+.customer-page {
+  @extend .default-width-content;
+}
+
+.customer-login-register, {
+  display: grid;
+  grid-template-areas: "customer-login customer-register wholesale-register";
+  grid-gap: .5rem;
+  align-items: start;
+  grid-auto-flow: column;
+  justify-items: start;
+}
+.customer-login, .customer-register, .wholesale-register{
+  display: grid;
+  grid-gap: .5rem;
+  background: #edd4b64f;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.customer-login {
+  grid-area: customer-login;
+ }
+
+.customer-register {
+  grid-area: customer-register;
+}
+
+.wholesale-register {
+  grid-area: wholesale-register;
+}
+
+.input-block-dh {
+  position: relative;
+  border-bottom: 1px solid white;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:.5rem;
+}
+.input-block-dh .error{
+  grid-column: 1 / -1;
+}
+
+.input-block-dh input {
+  border: none;
+  background: $white;
+  border-radius: 5px;
+  color: #4f4f4f;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+}
+.block-button.block-button-dh {
+}
+

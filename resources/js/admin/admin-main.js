@@ -10,9 +10,11 @@ import 'nprogress/nprogress.css'
 import axios from "axios";
 import authApi from "./common/authApi"
 import SweetModal from "sweet-modal-vue/src/plugin";
-
+// Preferred: as a plugin (directive + filter) + custom placeholders support
+import VueMask from 'v-mask'
 
 Vue.use(SweetModal)
+Vue.use(VueMask);
 
 Vue.filter('priceToLocale', function (value) {
     if (!value) return '';

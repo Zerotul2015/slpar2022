@@ -122,7 +122,7 @@ export default new Router({
                 allowCustomer: true,
                 allowWholesale: true,
             },
-            component: () => import("../components/Customer/CustomerHomePage.vue"),
+            component: () => import("../components/Customer/CustomerEnterPage.vue"),
         },
         {
             path: '/customer/home',
@@ -132,7 +132,7 @@ export default new Router({
                 allowCustomer: true,
                 allowWholesale: true,
             },
-            component: () => import("../components/Customer/CustomerHomePage.vue"),
+            component: () => import("../components/Customer/CustomerEnterPage.vue"),
         },
         {
             path: '/customer/order-form',

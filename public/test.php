@@ -15,8 +15,7 @@ $dotenv = Dotenv::createImmutable(ROOT_DIRECTORY);
 $dotenv->load();
 $error = '';
 
-$menuHeader = \App\Model\PublicTemplateModel::getMenu('header');
-var_dump($menuHeader);
+var_dump(filter_var('kostyalinksl.com', FILTER_VALIDATE_EMAIL));
 
 echo '<br>===============================================================';
 echo '<br>Время выполнения скрипта: ' . (microtime(true) - $start) . ' sec.';

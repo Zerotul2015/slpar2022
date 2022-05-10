@@ -1,3 +1,10 @@
 .cursor-pointer{
   cursor:pointer;
 }
+.fill-color-green{
+  fill:$green;
+}
+.error{
+  fill:$red;
+  color:$red;
+}
