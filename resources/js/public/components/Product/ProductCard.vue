@@ -2,6 +2,7 @@
   <router-link :to="'/product/' + product.url" class="product-card">
     <div class="pc-name">{{ product.name }}</div>
     <img class="pc-image-main" :src="imageMain">
+<!--    <div class="pc-description" v-html="product.description"></div>-->
     <div class="pc-price-wrap" v-if="product.price_on_request">
       Цена по запросу
     </div>

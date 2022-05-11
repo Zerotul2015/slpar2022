@@ -8,7 +8,6 @@ use App\Classes\PhoneParse;
 use App\Controllers\Authorization;
 use App\Model\Notification\NotificationMailModel;
 use JetBrains\PhpStorm\ArrayShape;
-use libphonenumber\ValidationResult;
 
 class CustomerModel
 {
@@ -39,13 +38,14 @@ class CustomerModel
     }
 
     #[ArrayShape(['result' => "false", 'returnData' => "array|string", 'error' => "string"])]
+
     public static function changeProfile($customerNewData, $wholesaleNewData): array
     {
         $returnData = ['result' => false, 'returnData' => '', 'error' => ''];
         $checkData = Authorization::isAuth();
         if ($checkData['result'] === true) {
             $customer = Customer::findOne($checkData['customerId']);
-            //хешируем новый пароль если был передан, иначе оставляем старый
+            //хэшируем новый пароль если был передан, иначе оставляем старый
             if (isset($customerNewData['pass']) && !empty($customerNewData['pass'])) {
                 $customerNewData['pass'] = self::changePass($customerNewData['pass']);
             }
@@ -71,6 +71,11 @@ class CustomerModel
     }
 
 
+    /**
+     * Обработка заявки на регистрацию оптового покупателя.
+     * @param $requestDataForm
+     * @return array
+     */
     #[ArrayShape(['result' => "false|mixed", 'returnData' => "string", 'error' => "string"])]
     public static function registerRequestWholesale($requestDataForm): array
     {
@@ -82,6 +87,12 @@ class CustomerModel
         return $returnData;
     }
 
+    /**
+     * Регистрация покупателя
+     * @param $requestDataForm
+     * @return array
+     */
+    #[ArrayShape(['result' => "bool", 'returnData' => "bool|string", 'error' => "array|string"])]
     public static function registerCustomer($requestDataForm): array
     {
         $returnData = ['result' => false, 'returnData' => '', 'error' => ''];
@@ -103,11 +114,31 @@ class CustomerModel
         if (empty($requestDataForm['name'])) {
             $errors['mail'] = 'Введите почту.';
         }
-
-        if (empty($errors)) {
-
+        if (empty($requestDataForm['pass'])) {
+            $errors['pass'] = 'Введите пароль';
+        }else{
+            $requestDataForm['pass'] = static::changePass($requestDataForm['pass']);
         }
 
+        if (empty($errors)) {
+            $checkExistCustomer = static::checkAlreadyRegistered($requestDataForm['mail'], $requestDataForm['phone']);
+            if ($checkExistCustomer['returnData']['mailUsed'] === true) {
+                $errors['mail'] = 'Покупатель такой почтой уже зарегистрирован.';
+            }
+            if ($checkExistCustomer['returnData']['phoneUsed'] === true) {
+                $errors['phone'] = 'Покупатель таким телефоном уже зарегистрирован.';
+            }
+        }
+        if (empty($errors)) {
+            if($customer = Customer::create($requestDataForm)->save()){
+                $returnData['result'] = true;
+                $returnData['returnData'] = $customer;
+            }else{
+                $returnData['error']['customer']='Не удалось зарегистрировать покупателя. Свяжитесь со службой поддержки.';
+            }
+        }else{
+            $returnData['error'] = $errors;
+        }
         return $returnData;
     }
 
@@ -133,11 +164,11 @@ class CustomerModel
         }
         if ($phone) {
             $resultParsePhone = PhoneParse::parsePhoneString($phone);
-            if($resultParsePhone['result'] === true){
-                $phone =  $resultParsePhone['phone'];
+            if ($resultParsePhone['result'] === true) {
+                $phone = $resultParsePhone['phone'];
                 $customerAlreadyExit = Customer::find()->where(['phone' => $phone])->one();
                 $returnData['returnData']['phoneUsed'] = (bool)$customerAlreadyExit;
-            }else{
+            } else {
                 $errors['phone'] = 'Телефон указан с ошибкой.';
             }
         }

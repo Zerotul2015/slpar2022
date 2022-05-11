@@ -4,6 +4,16 @@
   grid-gap: .5rem;
   justify-content: center;
   padding: $padding-default;
+
+  //grid-template-areas: "product-card-image"
+  //"product-card-name"
+  //"product-card-desc"
+  //"product-card-price"
+  //"product-card-button";
+   grid-template-areas: "product-card-name"
+                        "product-card-image"
+                        "product-card-price"
+                        "product-card-button";
 }
 
 a.product-card {
@@ -17,20 +27,27 @@ a.product-card {
 }
 
 .pc-name {
+  grid-area: product-card-name;
   text-align: center;
 }
 
 .pc-image-main {
+  grid-area: product-card-image;
   display: block;
   width: 100%;
 }
-
+.pc-description{
+  display: none;
+  grid-area: product-card-desc;
+}
 .pc-price-wrap {
+  grid-area: product-card-price;
   justify-self: end;
   align-self: end;
 }
 
 .pc-buttons {
+  grid-area: product-card-button;
   display: grid;
   grid-auto-flow: column;
   grid-gap: .5rem;

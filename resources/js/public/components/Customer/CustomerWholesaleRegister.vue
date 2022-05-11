@@ -61,8 +61,8 @@ export default {
       mailUsed: false,
       mailChecked: false,
       regSendStatus: null, // 1 -  успешно, 2 - ошибка 3 - не заполнены нужные поля, 0 | null - без изменений
-      regSendButtonDefault: 'отправить',
-      regSendButtonSuccess: 'Ваше сообщение отправлено',
+      regSendButtonDefault: 'отправить заявку',
+      regSendButtonSuccess: 'Заявка успешно отправлена',
       regSendButtonError: 'ошибка сервера',
       regSendButtonErrorInput: 'заполните все поля',
     }

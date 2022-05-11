@@ -14,7 +14,14 @@
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Почта<span class="required">*</span>:</label>
-      <input class="input" type="text" v-model="regMail" placeholder="vasha@pochta.ru" :class="{'error-input':regMailError}">
+      <input class="input" type="email" v-model="regMail" placeholder="vasha@pochta.ru" :class="{'error-input':regMailError}">
+      <div v-if="mailUsed" class="error">
+        Покупатель такой почтой уже зарегистрирован.
+      </div>
+    </div>
+    <div class="input-block input-block-dh">
+      <label class="label" for="name">Пароль<span class="required">*</span>:</label>
+      <input class="input" type="password" v-model="regPass">
       <div v-if="mailUsed" class="error">
         Покупатель такой почтой уже зарегистрирован.
       </div>
@@ -47,13 +54,14 @@ export default {
       regName: '',
       regPhone: '',
       regMail: '',
+      regPass:'',
       phoneUsed: false,
       phoneChecked: false,
       mailUsed: false,
       mailChecked: false,
       regSendStatus: null, // 1 -  успешно, 2 - ошибка 3 - не заполнены нужные поля, 0 | null - без изменений
-      regSendButtonDefault: 'отправить',
-      regSendButtonSuccess: 'Ваше сообщение отправлено',
+      regSendButtonDefault: 'зарегистрироваться',
+      regSendButtonSuccess: 'вы успешно зарегистрированы',
       regSendButtonError: 'ошибка сервера',
       regSendButtonErrorInput: 'заполните все поля',
     }
@@ -147,7 +155,7 @@ export default {
       return this.regMail.length > 7 && this.$root.validateMail(this.regMail);
     },
     regFormChecked() {
-      return !this.mailUsed && !this.phoneUsed && this.regName.length > 1 && this.regPhone.length > 5 && this.regMail.length > 7;
+      return !this.mailUsed && !this.phoneUsed && this.regPass.length > 2 && this.regName.length > 1 && this.regPhone.length > 5 && this.regMail.length > 7;
     },
   },
   methods: {
@@ -177,6 +185,7 @@ export default {
         'name': this.regName,
         'phone': this.regPhone,
         'mail': this.regMail,
+        'pass': this.regPass,
       }
       this.$store.dispatch('customer/registerRequest', formData);
     }
