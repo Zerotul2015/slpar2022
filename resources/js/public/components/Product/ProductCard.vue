@@ -1,8 +1,8 @@
 <template>
   <router-link :to="'/product/' + product.url" class="product-card">
-    <div class="pc-name">{{ product.name }}</div>
     <img class="pc-image-main" :src="imageMain">
-<!--    <div class="pc-description" v-html="product.description"></div>-->
+    <div class="pc-name">{{ product.name }}</div>
+    <div class="pc-description">{{ descriptionText }}</div>
     <div class="pc-price-wrap" v-if="product.price_on_request">
       Цена по запросу
     </div>
@@ -46,13 +46,9 @@ export default {
     },
   },
   data() {
-    return {
-
-    }
+    return {}
   },
-  watch: {
-
-  },
+  watch: {},
   computed: {
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
@@ -72,7 +68,13 @@ export default {
     btnCompareText() {
       return this.inCompare ? 'в сравнение' : 'сравнить';
     },
-
+    descriptionText() {
+      let text = this.product.description ? this.product.description.replace(/<\/?[a-zA-Z]+>/gi, '') : '';
+      if(text.length >130){
+        text = text.slice(0,128).replace(/\s\S+$/g, '') + '...';
+      }
+      return text;
+    },
     imageMain() {
       let image = '/build/images/noimg.png';
       let availableImageSize = {'thumb': true, 'thumb_medium': true}
