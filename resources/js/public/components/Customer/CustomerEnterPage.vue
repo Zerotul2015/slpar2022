@@ -13,11 +13,11 @@
     </div>
     <div class="customer-login-register" v-else>
       <customer-login></customer-login>
-      <customer-register v-if="requestRegisterSend"></customer-register>
+      <customer-register v-if="!requestRegisterSend"></customer-register>
       <div class="customer-register" v-else>
         Поздравляем с успешной регистрацией. Теперь вы можете войти в личный кабинет.
       </div>
-      <customer-wholesale-register v-if="requestRegisterWholesaleSend"></customer-wholesale-register>
+      <customer-wholesale-register v-if="!requestRegisterWholesaleSend"></customer-wholesale-register>
       <div class="wholesale-register" v-else>
         Ваша заявка на регистрацию в качестве оптового покупателя успешно отправлена.
       </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="cart-content-wrap">
+    <div class="main-content cart-content-wrap">
       <h1>Корзина</h1>
       <h2 v-if="countCart < 1">Ваша корзина пуста.
         <router-link to="/">Перейти к готовым стилевым решениям.</router-link>
@@ -19,7 +19,7 @@
           <img class="cp-image"
                :src="'/images/products/'+ cartItem.product.folder + '/thumb/' + cartItem.product.image_main"
                :alt="cartItem.product.name">
-          <div class="cp-name" v-html="cartItem.product.name">Наименование товара</div>
+          <router-link class="cp-name" :to="'/product/' +cartItem.product.url" v-html="cartItem.product.name">Наименование товара</router-link>
           <div class="cp-count">
             <div class="cp-icon-wrap" @click="changeProductCount(cartItem.product.id, (cartItem.count - 1))">
               <icon-svg class="cp-count-icon" icon="minus" scale-x="0.7" scale-y="0.7"></icon-svg>
@@ -119,10 +119,6 @@ export default {
     this.$store.dispatch('discounts/getDiscounts');
   },
   computed: {
-    textActiveDiscount() {
-      let text = 'Дополнительная скидка на заказ';
-      return text;
-    },
     textPromoCodeBtn() {
       let text = 'Применить ПРОМО-код';
       if (this.resultApplyCode === true) {
@@ -136,7 +132,7 @@ export default {
     resultApplyCode() {
       return this.$store.getters['cart/resultApplyCode'];
     },
-    sumDiscountProd() { //общая скидка на товары в корзине/ Решил не использовать.
+    sumDiscountProd() { //Общая скидка на товары в корзине. Решил не использовать.
       let sum = 0;
       Object.keys(this.cartProducts).forEach(key => {
         if (this.cartProducts[key].product.price_old > this.cartProducts[key].product.price) {

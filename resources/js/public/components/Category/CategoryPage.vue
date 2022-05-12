@@ -1,5 +1,5 @@
 <template>
-    <div class="catalog-wrap">
+    <div class="main-content catalog-wrap">
       <h1 v-html="categoryName + textCategoryWithFilter"></h1>
       <div class="catalog-products">
         <ProductCard v-for="(productItem) in filteredProducts" :product="productItem" :key="$root.guid()"

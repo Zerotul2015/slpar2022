@@ -1,5 +1,5 @@
 <template>
-    <div class="page">
+    <div class="main-content page">
       <h1 v-html="page.title"></h1>
       <div class="page-content" v-html="page.content">
       </div>

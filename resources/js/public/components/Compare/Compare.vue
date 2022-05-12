@@ -1,10 +1,10 @@
 <template>
-    <div class="catalog-wrap">
+    <div class="main-content catalog-wrap">
       <h1>Сравнение товаров</h1>
       <h2 v-if="countCompare < 1">Вы не добавили ни одного товара в сравнение. <router-link to="/">Перейти к готовым стилевым решениям.</router-link></h2>
       <div class="compare-group" v-for="(groupCat) in productsGroupByCat">
         <h2>{{groupCat.category.name}}</h2>
-        <div class="catalog-products">
+        <div class="catalog-products" :class="{'catalog-products-big':gridSize === 'big'}">
           <ProductCard v-for="(productItem) in groupCat.products" :product="productItem" :key="$root.guid()"
                        :image-size="sizeImageProduct"></ProductCard>
         </div>

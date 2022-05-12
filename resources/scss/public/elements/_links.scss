@@ -1,6 +1,7 @@
 a, .link{
   cursor:pointer;
-  color:$brown-light;
+  color:$grey;
+  text-decoration: underline;
 }
 
 a:hover, .link:hover{
@@ -10,6 +11,7 @@ a:hover, .link:hover{
 
 .link_bf{
   color:$white;
+  text-decoration: none;
 }
 
 .link_bf:hover{

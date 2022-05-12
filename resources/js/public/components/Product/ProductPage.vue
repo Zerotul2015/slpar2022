@@ -1,5 +1,5 @@
 <template>
-  <div class="product-page">
+  <div class="main-content product-page">
     <div class="pp-wrap" v-if="product.name">
       <h1 class="pp-name">{{ product.name }}</h1>
       <div class="pp-details-wrap">
@@ -16,18 +16,18 @@
             <div class="pp-desc" v-html="product.description"></div>
           </div>
         </div>
+        <div class="pp-thumbs-wrap" v-viewer="optionsZoom">
+          <img class="pp-image-thumb cursor-pointer" v-for="(imageThumb) in product.images"
+               :src="imageDir + '/small/' + imageThumb" :key="$root.guid()"
+               :data-source="imageDir + '/1920/' + imageThumb"
+               :alt="product.name"
+               @click="product.images_main = imageThumb">
+        </div>
         <div class="pp-images" v-viewer="optionsZoom">
-          <img class="pp-image-main"  v-if="imageMain" :src="imageDir + '800/' + imageMain"
+          <img class="pp-image-main cursor-pointer"  v-if="imageMain" :src="imageDir + '/800/' + imageMain"
                :data-source="imageDir + '/1920/' + imageMain"
                :alt="product.name">
           <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">
-          <div class="pp-thumbs-wrap">
-            <img class="pp-image-thumb" v-for="(imageThumb) in product.images"
-                 :src="imageDir + 'thumb/' + imageThumb" :key="$root.guid()"
-                 :data-source="imageDir + '/1920/' + imageThumb"
-                 :alt="product.name"
-                 @click="product.images_main = imageThumb">
-          </div>
         </div>
         <div class="pp-price-act">
           <div class="price-wrap">
@@ -113,7 +113,7 @@ export default {
       return this.product.image_main;
     },
     imageDir() {
-      return '/images/products/' + this.product.folder + '/';
+      return '/images/products/' + this.product.folder + '';
     },
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
