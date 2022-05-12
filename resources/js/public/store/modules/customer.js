@@ -7,8 +7,8 @@ const state = () => ({
     customerCompany: [],
     wholesaleData: {}, // details[] + levelId
     wholesaleLevelsData: [], //все уровни оптовиков с настройками
-    requestRegisterWholesaleSend: null,
-    requestRegisterSend: null,
+    requestRegisterWholesaleResult: {},
+    registerResult: {},// {result: false, returnData: "", error: {pass: "Введите пароль"}}
 })
 
 // getters
@@ -43,11 +43,17 @@ const getters = {
             return null;
         }
     },
-    requestRegisterWholesaleSend(state) {
-        return state.requestRegisterWholesaleSend;
+    requestRegisterWholesaleResult(state) {
+        return state.requestRegisterWholesaleResult.result === undefined ?  null : state.requestRegisterWholesaleResult.result;
     },
-    requestRegisterSend(state) {
-        return state.requestRegisterSend;
+    requestRegisterWholesaleError(state) {
+        return state.requestRegisterWholesaleResult.error ? state.requestRegisterWholesaleResult.error : null;
+    },
+    registerResult(state) {
+        return state.registerResult.result === undefined ?  null : state.registerResult.result;
+    },
+    registerErrors(state) {
+        return state.registerResult.error ? state.registerResult.error : null;
     }
 }
 
@@ -123,24 +129,17 @@ const actions = {
         if (formData) {
             apiCustomer.action('registerRequestWholesale', formData)
                 .then(r => {
-                    if (r.result === true) {
-                        commit('setRequestRegisterWholesaleSend', true);
-                    } else {
-                        commit('setRequestRegisterWholesaleSend', false);
-                    }
+                    commit('setRequestRegisterWholesaleResult', r);
                 })
                 .catch()
         }
     },
-    registerRequest({commit, state}, formData) {
+    registerCustomer({commit, state}, formData) {
         if (formData) {
-            apiCustomer.action('registerRequest', formData)
+            apiCustomer.action('registerCustomer', formData)
                 .then(r => {
-                    if (r.result === true) {
-                        commit('setRequestRegisterSend', true);
-                    } else {
-                        commit('setRequestRegisterSend', false);
-                    }
+                    commit('setRegisterResult', r);
+
                 })
                 .catch()
         }
@@ -161,11 +160,11 @@ const mutations = {
     setWholesaleLevels(state, wholesaleLevels) {
         state.wholesaleLevelsData = wholesaleLevels;
     },
-    setRequestRegisterWholesaleSend(state, requestRegisterSend) {
-        state.requestRegisterWholesaleSend = requestRegisterSend;
+    setRequestRegisterWholesaleResult(state, requestRegisterWholesaleResult) {
+        state.requestRegisterWholesaleResult = requestRegisterWholesaleResult;
     },
-    setRequestRegisterSend(state, requestRegisterSend) {
-        state.requestRegisterSend = requestRegisterSend;
+    setRegisterResult(state, registerResult) {
+        state.registerResult = registerResult;
     },
 }
 

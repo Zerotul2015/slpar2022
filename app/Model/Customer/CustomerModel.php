@@ -47,7 +47,7 @@ class CustomerModel
             $customer = Customer::findOne($checkData['customerId']);
             //хэшируем новый пароль если был передан, иначе оставляем старый
             if (isset($customerNewData['pass']) && !empty($customerNewData['pass'])) {
-                $customerNewData['pass'] = self::changePass($customerNewData['pass']);
+                $customerNewData['pass'] = self::generatePassHash($customerNewData['pass']);
             }
             $customer->set($customerNewData);
             if (!$customer->save()) {
@@ -65,7 +65,7 @@ class CustomerModel
         return $returnData;
     }
 
-    private static function changePass($passString): string
+    private static function generatePassHash($passString): string
     {
         return password_hash($passString, PASSWORD_DEFAULT);
     }
@@ -117,7 +117,7 @@ class CustomerModel
         if (empty($requestDataForm['pass'])) {
             $errors['pass'] = 'Введите пароль';
         }else{
-            $requestDataForm['pass'] = static::changePass($requestDataForm['pass']);
+            $requestDataForm['pass'] = static::generatePassHash($requestDataForm['pass']);
         }
 
         if (empty($errors)) {
@@ -176,6 +176,26 @@ class CustomerModel
             $returnData['result'] = true;
         } else {
             $returnData['error'] = $errors;
+        }
+        return $returnData;
+    }
+
+    #[ArrayShape(['result' => "bool", 'returnData' => "array", 'error' => "null"])]
+    public static function recoveryPassword ($mail): array
+    {
+        $returnData = ['result' => false, 'returnData' => [], 'error' => null];
+        if($customerExist = Customer::find()->where(['mail'=>$mail])->one()){
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $charactersLength = strlen($characters);
+            $newPassString = '';
+            for ($i = 0; $i < 8; $i++) {
+                $newPassString .= $characters[rand(0, $charactersLength - 1)];
+            }
+
+            $customerExist->pass = static::generatePassHash($newPassString);
+            if($customerExist->save()){
+                $returnData['result'] = (bool)NotificationMailModel::notificationNewPassword($newPassString, $customerExist);
+            }
         }
         return $returnData;
     }

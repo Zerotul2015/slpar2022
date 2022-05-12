@@ -49,9 +49,17 @@ class Customer extends Main
             'name' => $this->postData['name'] ?? null,
             'phone' => $this->postData['phone'] ?? null,
             'mail' => $this->postData['mail'] ?? null,
+            'pass' => $this->postData['pass'] ?? null,
         ];
 
         $this->returnData = CustomerModel::registerCustomer($formData);
+        $this->returnAnswer($this->returnData);
+    }
+
+    public function recoveryPassword()
+    {
+        $mail = $this->postData['mail'] ?? null;
+        $this->returnData = CustomerModel::recoveryPassword($mail);
         $this->returnAnswer($this->returnData);
     }
 

@@ -3,30 +3,31 @@
     <h2>{{title}}</h2>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Ваше имя<span class="required">*</span>:</label>
-      <input class="input" type="text" placeholder="Как к вам обращаться" v-model="regName">
+      <input class="input" type="text" placeholder="ФИО" v-model="regName">
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Название организации<span class="required">*</span>:</label>
-      <input class="input" type="text" v-model="regCompany">
+      <input class="input" type="text" placeholder="ООО 'Название компании'" v-model="regCompany">
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Мобильный телефон<span class="required">*</span>:</label>
       <input class="input" type="text" v-mask="'+7-###-###-##-##'" placeholder="+7-923-555-55-55" v-model="regPhone">
       <div v-if="phoneUsed" class="error">
-        Покупатель таким телефоном уже зарегистрирован.<br>Авторизуйтесь что бы отправить заявку.
+        Покупатель с таким телефоном уже зарегистрирован.<br>Вы можете отправить заявку в личном кабинете.
       </div>
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Почта<span class="required">*</span>:</label>
-      <input class="input" type="text" v-model="regMail" placeholder="vasha@pochta.ru" :class="{'error-input':regMailError}">
+      <input class="input" type="email" v-model="regMail" placeholder="vasha@pochta.ru" :class="{'error-input':regMailError}">
       <div v-if="mailUsed" class="error">
-        Покупатель такой почтой уже зарегистрирован.<br>Авторизуйтесь что бы отправить заявку.
+        Покупатель с такой почтой уже зарегистрирован.<br>Вы можете отправить заявку в личном кабинете.
       </div>
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Сообщение:</label>
       <textarea class="textarea" v-model="regComment"></textarea>
     </div>
+    <div class="error" v-html="errorText"></div>
     <div class="block-button block-button-dh">
       <button class="btn" :disabled="!regButtonActive" @click="regSendForm">
         <icon-svg class="btn-icon" :icon="regIconButton"></icon-svg>
@@ -63,7 +64,7 @@ export default {
       regSendStatus: null, // 1 -  успешно, 2 - ошибка 3 - не заполнены нужные поля, 0 | null - без изменений
       regSendButtonDefault: 'отправить заявку',
       regSendButtonSuccess: 'Заявка успешно отправлена',
-      regSendButtonError: 'ошибка сервера',
+      regSendButtonError: 'не удалось зарегистрироваться',
       regSendButtonErrorInput: 'заполните все поля',
     }
   },
@@ -92,6 +93,15 @@ export default {
     }
   },
   computed: {
+    errorText() {
+      let text = '';
+      if (this.registerErrors) {
+        Object.values(this.registerErrors).forEach(errorText=>{
+          text = text + errorText + ' ';
+        });
+      }
+      return text;
+    },
     phoneCheckIcon() {
       let iconName = '';
       if (this.phoneChecked) {
@@ -136,7 +146,7 @@ export default {
       }
     },
     regTextButton: function () {
-      if (this.regSendStatus === 1 || this.requestRegisterSend === true) {
+      if (this.regSendStatus === 1 || this.registerResult === true) {
         return this.regSendButtonSuccess;
       }
       if (this.regSendStatus === 2) {
@@ -149,8 +159,11 @@ export default {
         return this.regSendButtonDefault;
       }
     },
-    requestRegisterSend() {
-      return this.$store.getters['customer/requestRegisterWholesaleSend'];
+    registerErrors() {
+      return this.$store.getters['customer/requestRegisterWholesaleError'];
+    },
+    registerResult() {
+      return this.$store.getters['customer/requestRegisterWholesaleResult'];
     },
     regMailError() {
       return this.regMail.length > 7 && this.$root.validateMail(this.regMail);

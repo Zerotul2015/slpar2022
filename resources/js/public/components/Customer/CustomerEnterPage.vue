@@ -13,14 +13,12 @@
     </div>
     <div class="customer-login-register" v-else>
       <customer-login></customer-login>
-      <customer-register v-if="!requestRegisterSend"></customer-register>
-      <div class="customer-register" v-else>
-        Поздравляем с успешной регистрацией. Теперь вы можете войти в личный кабинет.
-      </div>
-      <customer-wholesale-register v-if="!requestRegisterWholesaleSend"></customer-wholesale-register>
-      <div class="wholesale-register" v-else>
+      <customer-register></customer-register>
+      <div class="wholesale-register" v-if="requestRegisterWholesaleResult">
         Ваша заявка на регистрацию в качестве оптового покупателя успешно отправлена.
       </div>
+      <customer-wholesale-register v-else></customer-wholesale-register>
+
     </div>
   </div>
 </template>
@@ -52,11 +50,11 @@ export default {
       }
       return text;
     },
-    requestRegisterWholesaleSend(){
-      return this.$store.getters['customer/requestRegisterWholesaleSend'];
+    requestRegisterWholesaleResult(){
+      return this.$store.getters['customer/requestRegisterWholesaleResult'];
     },
-    requestRegisterSend(){
-      return this.$store.getters['customer/requestRegisterSend'];
+    registerResult() {
+      return this.$store.getters['customer/registerResult'];
     },
     isAuth() {
       return this.$store.getters['customer/isAuth'];

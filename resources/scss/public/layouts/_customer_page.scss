@@ -41,13 +41,15 @@
   grid-column: 1 / -1;
 }
 
-.input-block-dh input {
-  border: none;
-  background: $white;
-  border-radius: 5px;
-  color: #4f4f4f;
-  padding: 0.25rem 0.5rem;
-  outline: none;
+.input-block-dh  {
+  input, textarea{
+    border: none;
+    background: white;
+    border-radius: 5px;
+    color: #4f4f4f;
+    padding: 0.25rem 0.5rem;
+    outline: none;
+  }
 }
 .block-button.block-button-dh {
 }

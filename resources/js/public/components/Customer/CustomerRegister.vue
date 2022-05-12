@@ -3,7 +3,7 @@
     <h2>{{ title }}</h2>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Ваше имя<span class="required">*</span>:</label>
-      <input class="input" type="text" placeholder="Как к вам обращаться" v-model.trim="regName">
+      <input class="input" type="text" placeholder="ФИО" v-model.trim="regName">
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Мобильный телефон<span class="required"></span>:</label>
@@ -14,7 +14,8 @@
     </div>
     <div class="input-block input-block-dh">
       <label class="label" for="name">Почта<span class="required">*</span>:</label>
-      <input class="input" type="email" v-model="regMail" placeholder="vasha@pochta.ru" :class="{'error-input':regMailError}">
+      <input class="input" type="email" v-model="regMail" placeholder="vasha@pochta.ru"
+             :class="{'error-input':regMailError}">
       <div v-if="mailUsed" class="error">
         Покупатель такой почтой уже зарегистрирован.
       </div>
@@ -22,11 +23,13 @@
     <div class="input-block input-block-dh">
       <label class="label" for="name">Пароль<span class="required">*</span>:</label>
       <input class="input" type="password" v-model="regPass">
-      <div v-if="mailUsed" class="error">
-        Покупатель такой почтой уже зарегистрирован.
-      </div>
     </div>
-    <div class="block-button block-button-dh">
+    <div class="error" v-html="errorText"></div>
+    <div class="customer-register" v-if="registerResult">
+      Поздравляем с успешной регистрацией.<br>
+      Теперь вы можете войти в личный кабинет.
+    </div>
+    <div class="block-button block-button-dh" v-else>
       <button class="btn" :disabled="!regButtonActive" @click="regSendForm">
         <icon-svg class="btn-icon" :icon="regIconButton"></icon-svg>
         <span class="btn-text" v-html="regTextButton"></span>
@@ -54,7 +57,7 @@ export default {
       regName: '',
       regPhone: '',
       regMail: '',
-      regPass:'',
+      regPass: '',
       phoneUsed: false,
       phoneChecked: false,
       mailUsed: false,
@@ -62,20 +65,20 @@ export default {
       regSendStatus: null, // 1 -  успешно, 2 - ошибка 3 - не заполнены нужные поля, 0 | null - без изменений
       regSendButtonDefault: 'зарегистрироваться',
       regSendButtonSuccess: 'вы успешно зарегистрированы',
-      regSendButtonError: 'ошибка сервера',
+      regSendButtonError: 'не удалось зарегистрироваться',
       regSendButtonErrorInput: 'заполните все поля',
     }
   },
   watch: {
     regMail(newVal) {
       this.mailChecked = false;
-      if(newVal.length > 7){
+      if (newVal.length > 7) {
         this.checkedAlreadyRegistered();
       }
     },
     regPhone(newVal) {
       this.phoneChecked = false;
-      if(newVal.length > 7){
+      if (newVal.length > 7) {
         this.checkedAlreadyRegistered();
       }
     },
@@ -91,6 +94,15 @@ export default {
     }
   },
   computed: {
+    errorText() {
+      let text = '';
+      if (this.registerErrors) {
+        Object.values(this.registerErrors).forEach(errorText=>{
+          text = text + errorText + ' ';
+        });
+      }
+      return text;
+    },
     phoneCheckIcon() {
       let iconName = '';
       if (this.phoneChecked) {
@@ -135,7 +147,7 @@ export default {
       }
     },
     regTextButton: function () {
-      if (this.regSendStatus === 1 || this.requestRegisterSend === true) {
+      if (this.regSendStatus === 1 || this.registerResult === true) {
         return this.regSendButtonSuccess;
       }
       if (this.regSendStatus === 2) {
@@ -148,8 +160,11 @@ export default {
         return this.regSendButtonDefault;
       }
     },
-    requestRegisterSend() {
-      return this.$store.getters.requestRegisterSend;
+    registerErrors() {
+      return this.$store.getters['customer/registerErrors'];
+    },
+    registerResult() {
+      return this.$store.getters['customer/registerResult'];
     },
     regMailError() {
       return this.regMail.length > 7 && this.$root.validateMail(this.regMail);
@@ -165,11 +180,11 @@ export default {
         'phone': this.regPhone,
       };
       let that = this;
-      apiCustomer.action('checkAlreadyRegistered', sendData).then(r=>{
+      apiCustomer.action('checkAlreadyRegistered', sendData).then(r => {
         if (r.result === true) {
           console.log(r);
           that.mailChecked = true;
-          that.mailUsed = r.returnData['mailUsed'] ? r.returnData['mailUsed'] :false;
+          that.mailUsed = r.returnData['mailUsed'] ? r.returnData['mailUsed'] : false;
           that.phoneChecked = true;
           that.phoneUsed = r.returnData['phoneUsed'] ? r.returnData['phoneUsed'] : false;
         } else {
@@ -187,7 +202,7 @@ export default {
         'mail': this.regMail,
         'pass': this.regPass,
       }
-      this.$store.dispatch('customer/registerRequest', formData);
+      this.$store.dispatch('customer/registerCustomer', formData);
     }
     ,
   }

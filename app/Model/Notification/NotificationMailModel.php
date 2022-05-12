@@ -22,7 +22,7 @@ class NotificationMailModel
         $mail = $requestData['mail']??'';
         $text = $requestData['comment']??'';
         $mailAdmin = new Mail();
-        $mailAdmin->setSubject('Заявка на регистрацию дилера');
+        $mailAdmin->setSubject('Заявка на регистрацию оптового покупателя');
         $mailMessage = "Поступила заявка на регистрацию делира.<br>Имя:$name<br>Телефон:$phone<br>Почта:$mail<br><br>
         Сообщение:<br>$text";
         $mailAdmin->setMessage($mailMessage);
@@ -32,7 +32,7 @@ class NotificationMailModel
     public static function notificationRegisterComplet($dealerData)
     {
         $mail = new Mail();
-        $mail->setSubject('Заявка на регистрацию дилера');
+        $mail->setSubject('Заявка на регистрацию оптового покупателя');
 
         $mailMessage = "<p>Ваша заявка на регистрацию одобрена.</p>";
         $mailMessage = $mailMessage. "Ваши данные для входа в раздел дилера.<br>";
@@ -154,5 +154,15 @@ class NotificationMailModel
             }
         }
         return $result;
+    }
+
+    public static function notificationNewPassword($newPassString,Customer $customer): bool|int
+    {
+        $mail = new Mail();
+        $message = "Кто то запросил новый пароль для вашего кабинета на сайте slpar.ru. Если это были не вы то просто проигнорируйте это сообщение. <br>Ваш новый пароль:$newPassString";
+        $mail->setRecipient($customer->mail);
+        $mail->setSubject('Новый пароль');
+        $mail->setMessage($message);
+        return $mail->send();
     }
 }
