@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content product-page">
+  <div class="product-page">
     <div class="pp-wrap" v-if="product.name">
       <h1 class="pp-name">{{ product.name }}</h1>
       <div class="pp-details-wrap">

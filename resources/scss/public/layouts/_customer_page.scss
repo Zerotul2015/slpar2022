@@ -53,4 +53,15 @@
 }
 .block-button.block-button-dh {
 }
-
+.recovery-pass-block{
+  justify-self: end;
+}
+.recovery-pass-link{
+  font-size:.75em;
+  margin-top:-.25rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.recovery-pass-link:hover{
+  text-decoration: none;
+}

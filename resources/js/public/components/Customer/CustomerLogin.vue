@@ -9,6 +9,9 @@
       <label class="label" for="password">Пароль:</label>
       <input id="password" class="input" type="password" v-model="enterPass">
     </div>
+    <div class="recovery-pass-block" @click="recoveryPassword">
+      <div class="recovery-pass-link" v-html="recoveryButtonText"></div>
+    </div>
     <div class="block-button block-button-dh">
       <button class="btn" :disabled="!enterButtonActive" @click="sendForm">
         <icon-svg class="btn-icon" :icon="enterIconButton"></icon-svg>
@@ -24,13 +27,13 @@ import IconSvg from "../Icon-svg/icon-svg";
 export default {
   name: "CustomerLogin",
   components: {IconSvg},
-  props:{
-    title:{
-      type:String,
-      default:'Авторизация',
+  props: {
+    title: {
+      type: String,
+      default: 'Авторизация',
     }
   },
-  data(){
+  data() {
     return {
       enterLogin: '',
       enterPass: '',
@@ -39,11 +42,49 @@ export default {
       enterSendButtonSuccess: 'вход выполнен',
       enterSendButtonError: 'не удалось войти',
       enterSendButtonErrorInput: 'введите почту и пароль',
+      recoveryPassClick: null, // bool
     }
   },
-  computed:{
+  watch: {
+    recoveryStatus() {
+      setTimeout(function () {
+        this.recoveryStatus = null
+      }.bind(this), 5000);
+    },
+    recoveryPassClick() {
+      setTimeout(function () {
+        this.recoveryPassClick = null
+      }.bind(this), 5000);
+    }
+  },
+  computed: {
+    inputMailState(newVal) {
+      let stateInput = null;
+      if (this.enterLogin.length === 0) {
+        stateInput = null;
+      } else {
+        stateInput = !!this.$root.validateMail(this.enterLogin);
+      }
+      return stateInput
+    },
+    recoveryPasswordResult(){
+      return this.$store.getters['customer/recoveryPasswordResult'];
+    },
+    recoveryButtonText() {
+      let text = 'Восстановить пароль';
+      if (this.recoveryPasswordResult === true) {
+        text = 'Новый пароль выслан на указанную почту';
+      }
+      if(this.recoveryPasswordResult ===false){
+        text = 'Новый пароль выслан на указанную почту'; // даже при ошибке пишем что отправили.
+      }
+      if(this.recoveryPassClick && this.inputMailState === false){
+        text = 'Сначала введите почту!';
+      }
+      return text;
+    },
     enterButtonActive() {
-      if (this.enterLogin.length > 6 && this.$root.validateMail(this.enterLogin) && this.enterPass.length > 2) {
+      if (this.enterLogin.length > 6 && this.inputMailState && this.enterPass.length > 2) {
         this.enterSendStatus = 0;
         return true;
       } else {
@@ -80,13 +121,19 @@ export default {
       }
     },
   },
-  methods:{
+  methods: {
     sendForm() {
       let formData = {
         'login': this.enterLogin,
         'pass': this.enterPass
       }
       this.$store.dispatch('customer/auth', formData);
+    },
+    recoveryPassword(){
+      this.recoveryPassClick = true;
+      if(this.inputMailState){
+        this.$store.dispatch('customer/recoveryPassword', this.enterLogin);
+      }
     }
   }
 }

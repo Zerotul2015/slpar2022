@@ -9,6 +9,7 @@ const state = () => ({
     wholesaleLevelsData: [], //все уровни оптовиков с настройками
     requestRegisterWholesaleResult: {},
     registerResult: {},// {result: false, returnData: "", error: {pass: "Введите пароль"}}
+    recoveryPasswordResult:null,
 })
 
 // getters
@@ -54,7 +55,10 @@ const getters = {
     },
     registerErrors(state) {
         return state.registerResult.error ? state.registerResult.error : null;
-    }
+    },
+    recoveryPasswordResult(state){
+        return state.recoveryPasswordResult;
+    },
 }
 
 // actions
@@ -129,7 +133,9 @@ const actions = {
         if (formData) {
             apiCustomer.action('registerRequestWholesale', formData)
                 .then(r => {
-                    commit('setRequestRegisterWholesaleResult', r);
+                    if(r.result) {
+                        commit('setRequestRegisterWholesaleResult', r);
+                    }
                 })
                 .catch()
         }
@@ -138,8 +144,20 @@ const actions = {
         if (formData) {
             apiCustomer.action('registerCustomer', formData)
                 .then(r => {
-                    commit('setRegisterResult', r);
-
+                    if(r.result){
+                        commit('setRegisterResult', r);
+                    }
+                })
+                .catch()
+        }
+    },
+    recoveryPassword({commit, state}, mail) {
+        if (mail && mail.length > 7) {
+            apiCustomer.action('recoveryPassword', {'mail':mail})
+                .then(r => {
+                    if(r.result) {
+                        commit('setRecoveryPasswordResult', r.result);
+                    }
                 })
                 .catch()
         }
@@ -165,6 +183,9 @@ const mutations = {
     },
     setRegisterResult(state, registerResult) {
         state.registerResult = registerResult;
+    },
+    setRecoveryPasswordResult(state, result) {
+        state.recoveryPasswordResult = result;
     },
 }
 

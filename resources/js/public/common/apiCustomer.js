@@ -8,6 +8,7 @@ const ACTION_PATH = {
     'getWholesaleLevels': 'get-wholesale-levels', // уровни оптовых цен с их свойствами
     'registerRequestWholesale': 'register-request-wholesale', //регистрация оптовика
     'registerCustomer': 'register-customer', //регистрация обычного покупателя
+    'recoveryPassword': 'recovery-password', //восстановление пароля
     'exit': 'logout', // выход
     'makeOrder': 'make-order', // оформление заказа
     'checkAlreadyRegistered':'check-already-registered' //проверка на то что с такой почтой и телефоном нет покупателя

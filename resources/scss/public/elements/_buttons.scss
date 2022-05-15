@@ -52,6 +52,10 @@ button:hover, .btn:hover {
 .btn_as-text, .btn_as-text:hover{
   background: none;
   border:none;
+  color:$grey;
+}
+.btn_as-text:hover{
+  text-decoration: underline;
 }
 
 
@@ -112,6 +116,6 @@ button:hover, .btn:hover {
   fill:$grey;
   border:1px solid $grey;
 }
-.btn_white{
-
+.btn_white:hover{
+  color:$white;
 }

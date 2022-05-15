@@ -159,7 +159,7 @@ class NotificationMailModel
     public static function notificationNewPassword($newPassString,Customer $customer): bool|int
     {
         $mail = new Mail();
-        $message = "Кто то запросил новый пароль для вашего кабинета на сайте slpar.ru. Если это были не вы то просто проигнорируйте это сообщение. <br>Ваш новый пароль:$newPassString";
+        $message = "Кто то запросил новый пароль для вашего кабинета на сайте slpar.ru. Если это были не вы то просто проигнорируйте это сообщение. <br>Ваш новый пароль: $newPassString";
         $mail->setRecipient($customer->mail);
         $mail->setSubject('Новый пароль');
         $mail->setMessage($message);
