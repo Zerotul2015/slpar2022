@@ -38,8 +38,13 @@ router.beforeEach((to, from, next) => {
 });
 router.beforeResolve((to, from, next) => {
     NProgress.start();
+    console.log('allowAnonymous: ' + to.meta.allowAnonymous);
+    console.log('allowCustomer: ' + to.meta.allowCustomer);
+    console.log('allowWholesale: ' + to.meta.allowWholesale);
+    console.log('isAuth: ' + to.meta.isAuth);
     if(!to.meta.allowAnonymous && ((to.meta.allowCustomer && !app.isAuth) || (to.meta.allowWholesale && !app.isWholesale))) {
-        next({'name': 'AccessRestricted'})
+        console.log('access restricted');
+            next({'name': 'AccessRestricted'})
         //app.$router.push({'name': 'AccessRestricted'});
     }else {
         if (to.name) {

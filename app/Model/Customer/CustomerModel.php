@@ -15,17 +15,17 @@ class CustomerModel
     public static function getProfile(): array
     {
         $returnData = ['result' => false, 'returnData' => '', 'error' => ''];
-        $checkData = Authorization::isAuth();
-        if ($checkData['result'] === true) {
+        $checkDataAuth = Authorization::isAuth();
+        if ($checkDataAuth['result'] === true) {
             $customer = Customer::find()
-                ->where(['id' => $checkData['customerId']])
+                ->where(['id' => $checkDataAuth['customerId']])
                 ->select(['id', 'name', 'phone', 'mail', 'status', 'is_wholesale'])
                 ->one();
             $wholesaleDetails = [];
             if ($customer->is_wholesale) {
                 $wholesale = WholesaleCustomer::find()->where(['customer_id' => $customer->id])->one();
                 $wholesaleDetails = $wholesale->details;
-                $wholesaleDetails['levelId'] = $wholesale->wholesale_level_id;
+                $wholesaleDetails['wholesaleLevelId'] = $wholesale->wholesale_level_id_fixed ?: $wholesale->wholesale_level_id;
             }
             $returnData['returnData'] = [
                 'customer' => $customer,

@@ -38,11 +38,7 @@ const getters = {
         return state.authData;
     },
     discountLevel(state) {
-        if (state.wholesaleData.levelId) {
-            return state.wholesaleData.levelId;
-        } else {
-            return null;
-        }
+        return state.wholesaleData.wholesaleLevelId ? state.wholesaleData.wholesaleLevelId : null;
     },
     requestRegisterWholesaleResult(state) {
         return state.requestRegisterWholesaleResult.result === undefined ?  null : state.requestRegisterWholesaleResult.result;
@@ -100,7 +96,7 @@ const actions = {
                 .catch()
         }
     },
-    getDealerData({commit, state}) {
+    getCustomerData({commit, state}) {
         if (state.authData.isAuth === true && state.authData.customerId) {
             apiCustomer.action('getCustomer', {})
                 .then(r => {

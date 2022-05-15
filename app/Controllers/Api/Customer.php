@@ -11,7 +11,7 @@ class Customer extends Main
 {
 
 
-    public function getDealer()
+    public function getCustomer()
     {
         if ($this->isAuth) {
             $this->returnData = CustomerModel::getProfile();
