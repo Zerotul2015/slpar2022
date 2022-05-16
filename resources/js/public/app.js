@@ -38,15 +38,15 @@ router.beforeEach((to, from, next) => {
 });
 router.beforeResolve((to, from, next) => {
     NProgress.start();
-    console.log('allowAnonymous: ' + to.meta.allowAnonymous);
-    console.log('allowCustomer: ' + to.meta.allowCustomer);
-    console.log('allowWholesale: ' + to.meta.allowWholesale);
-    console.log('isAuth: ' + to.meta.isAuth);
-    if(!to.meta.allowAnonymous && ((to.meta.allowCustomer && !app.isAuth) || (to.meta.allowWholesale && !app.isWholesale))) {
-        console.log('access restricted');
-            next({'name': 'AccessRestricted'})
-        //app.$router.push({'name': 'AccessRestricted'});
-    }else {
+
+    //проверяем уровень доступа
+    let accessAllowed = true;
+    if (!to.meta.allowAnonymous && app.isAuth) {
+        if (!to.meta.allowCustomer && to.meta.allowWholesale && !app.isWholesale) {
+            accessAllowed = false;
+        }
+    }
+    if (accessAllowed) {
         if (to.name) {
             app.$store.commit('templateData/setSection', to.name);
             if (to.params.url) {
@@ -60,6 +60,8 @@ router.beforeResolve((to, from, next) => {
             // Start the route progress bar.
         }
         next();
+    } else {
+        next({'name': 'AccessRestricted'})
     }
 })
 
@@ -99,6 +101,14 @@ const app = new Vue({
     },
     destroyed() {
         window.removeEventListener('scroll', this.handleScroll);
+    },
+    computed: {
+        isAuth() {
+            return this.$store.getters['customer/isAuth'];
+        },
+        isWholesale() {
+            return this.$store.getters['customer/isWholesale'];
+        },
     },
     methods: {
         isInViewport(elem) {

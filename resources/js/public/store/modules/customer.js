@@ -2,6 +2,7 @@ import apiCustomer from '../../common/apiCustomer'
 
 // initial state
 const state = () => ({
+    authResult:null, //результат авторизации
     authData: {}, //{isAuth:bool, isWholesale:bool, customerId:null|int}
     customerData: {},
     customerCompany: [],
@@ -19,6 +20,9 @@ const getters = {
     },
     wholesale(state) {
         return state.wholesaleData;
+    },
+    authResult(state){
+      return  state.authResult;
     },
     isAuth(state) {
         if (state.authData.isAuth) {
@@ -79,6 +83,8 @@ const actions = {
                     } else {
                         commit('setAuthData', {});
                     }
+                    console.log(r.result);
+                    commit('setAuthResult', r.result);
                 })
                 .catch()
         }
@@ -164,6 +170,9 @@ const actions = {
 const mutations = {
     setAuthData(state, authData) {
         state.authData = authData;
+    },
+    setAuthResult(state, result){
+      state.authResult = result;
     },
     setCustomerData(state, customerData) {
         state.customerData = customerData;

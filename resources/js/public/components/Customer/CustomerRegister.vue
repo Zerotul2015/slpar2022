@@ -143,7 +143,7 @@ export default {
         return '';
       }
       if (this.regSendStatus === 0 || this.regSendStatus === null) {
-        return 'send';
+        return 'id-card';
       }
     },
     regTextButton: function () {

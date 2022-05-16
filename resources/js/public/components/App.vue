@@ -66,9 +66,6 @@ export default {
     sectionKey(){
       return this.$store.getters["templateData/sectionKey"];
     },
-    isAuth(){
-      return this.$store.getters['customer/isAuth'];
-    },
     isWholesale(){
       return this.$store.getters['customer/isWholesale'];
     }

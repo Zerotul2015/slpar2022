@@ -36,6 +36,8 @@ import cartCirclePlus from '../../../assets/svg/cart-circle-plus.svg';
 import squareCheck from '../../../assets/svg/square-check.svg';
 import square from '../../../assets/svg/square.svg';
 import userLarge from '../../../assets/svg/user-large.svg';
+import idCard from '../../../assets/svg/id-card.svg';
+import rightToBracket from '../../../assets/svg/right-to-bracket.svg';
 
 //конец иконки
 
@@ -75,6 +77,8 @@ export default {
     square,
     check,
     userLarge,
+    idCard,
+    rightToBracket,
 
     //конец иконки
   },
@@ -130,6 +134,8 @@ export default {
         'square':'square',
         'check':'check',
         'user-large':'userLarge',
+        'id-card':'idCard',
+        'right-to-bracket':'rightToBracket',
       }
     }
   },

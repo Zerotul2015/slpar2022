@@ -12,6 +12,7 @@
     <div class="recovery-pass-block" @click="recoveryPassword">
       <div class="recovery-pass-link" v-html="recoveryButtonText"></div>
     </div>
+    <div class="error" v-if="authResult === false">Нет такого пользователя или ошибка в пароле</div>
     <div class="block-button block-button-dh">
       <button class="btn" :disabled="!enterButtonActive" @click="sendForm">
         <icon-svg class="btn-icon" :icon="enterIconButton"></icon-svg>
@@ -23,6 +24,7 @@
 
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
+import {isNull} from "lodash";
 
 export default {
   name: "CustomerLogin",
@@ -46,18 +48,31 @@ export default {
     }
   },
   watch: {
-    recoveryStatus() {
-      setTimeout(function () {
-        this.recoveryStatus = null
-      }.bind(this), 5000);
+    recoveryStatus(newVal) {
+      if(!isNull(newVal)){
+        setTimeout(function(){this.recoveryStatus = null}.bind(this),5000);
+      }
     },
-    recoveryPassClick() {
-      setTimeout(function () {
-        this.recoveryPassClick = null
-      }.bind(this), 5000);
+    recoveryPassClick(newVal) {
+      if(!isNull(newVal)){
+        setTimeout(function(){this.recoveryPassClick = null}.bind(this),5000);
+      }
+    },
+    authResult(newVal){
+      if(newVal === false){
+        this.enterSendStatus = 2;
+      }
+    },
+    enterSendStatus(newVal){
+      if(!isNull(newVal)){
+        setTimeout(function(){this.enterSendStatus = null}.bind(this),5000);
+      }
     }
   },
   computed: {
+    authResult(){
+      return this.$store.getters['customer/authResult'];
+    },
     inputMailState(newVal) {
       let stateInput = null;
       if (this.enterLogin.length === 0) {
@@ -103,7 +118,7 @@ export default {
         return '';
       }
       if (this.enterSendStatus === 0 || this.enterSendStatus === null) {
-        return 'send';
+        return 'right-to-bracket';
       }
     },
     enterTextButton: function () {
