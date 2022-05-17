@@ -62,23 +62,33 @@ button:hover, .btn:hover {
 //кнопка корзины в каталоге
 .btn_cart{
   fill:$white;
-  background: $green;
-  border: 1px solid $green;
+  background: #f6ca69;
+  border: 1px solid #f6ca69;
 }
 .btn_cart:hover{
-  background: $green-dark;
-  border: 1px solid $green-dark;
+  background: #f6ca69;
+  border: 1px solid #f6ca69;
 }
 .btn_cart-added{
   background: $white;
   border: 1px solid $white;
-  color:$green-dark;
-  fill:$green-dark;
+  color:#f6ca69;
+  fill:#f6ca69;
 }
 .btn_cart-added:hover{
   background: $white;
-  border: 1px solid $green-dark;
+  border: 1px solid #f6ca69;
 }
+  // .btn_cart-added{
+//  background: $white;
+//  border: 1px solid $white;
+//  color:$green-dark;
+//  fill:$green-dark;
+//}
+//.btn_cart-added:hover{
+//  background: $white;
+//  border: 1px solid $green-dark;
+//}
 
 //кнопка закладки в каталоге
 

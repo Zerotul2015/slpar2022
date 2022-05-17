@@ -14,7 +14,7 @@
 }
 
 a.product-card {
-  color: $grey;
+  color: $color-text-default;
   text-decoration: none;
 }
 
@@ -50,6 +50,7 @@ a.product-card {
   grid-area: product-card-button;
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
   grid-gap: .5rem;
   align-self: end;
 }
