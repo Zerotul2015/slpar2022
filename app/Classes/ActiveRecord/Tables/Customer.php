@@ -21,6 +21,8 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed verifyCode regular read/write property
  * @property mixed is_wholesale regular read/write property
  * @property mixed isWholesale regular read/write property
+ * @property mixed orders_sum regular read/write property
+ * @property mixed ordersSum regular read/write property
  */
 
 class Customer extends Main
@@ -121,6 +123,14 @@ class Customer extends Main
         'is_wholesale' => [
             'field' => 'is_wholesale',
             'type' => 'tinyint(1)',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'orders_sum' => [
+            'field' => 'orders_sum',
+            'type' => 'int',
             'null' => 'YES',
             'key' => '',
             'default' => null,

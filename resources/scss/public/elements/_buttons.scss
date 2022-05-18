@@ -61,23 +61,23 @@ button:hover, .btn:hover {
 
 //кнопка корзины в каталоге
 .btn_cart{
-  fill:$white;
-  background: #f6ca69;
-  border: 1px solid #f6ca69;
+  fill:$black;
+  background: $yellow;
+  border: 1px solid $yellow;
 }
 .btn_cart:hover{
-  background: #f6ca69;
-  border: 1px solid #f6ca69;
+  background: $yellow-dark;
+  border: 1px solid $yellow-dark;
 }
 .btn_cart-added{
   background: $white;
   border: 1px solid $white;
-  color:#f6ca69;
-  fill:#f6ca69;
+  color:$black;
+  fill:$black;
 }
 .btn_cart-added:hover{
   background: $white;
-  border: 1px solid #f6ca69;
+  border: 1px solid $yellow;
 }
   // .btn_cart-added{
 //  background: $white;
@@ -107,8 +107,8 @@ button:hover, .btn:hover {
 }
 
 .btn_compare-added{
-  fill:$grey;
-  color:$grey;
+  fill:$black;
+  color:$black;
   background: $white;
   border: 1px solid $white;
 }
@@ -122,9 +122,9 @@ button:hover, .btn:hover {
 //корзина
 .btn_white{
   background: $white;
-  color:$grey;
-  fill:$grey;
-  border:1px solid $grey;
+  color:$black;
+  fill:$black;
+  border:1px solid $black;
 }
 .btn_white:hover{
   color:$white;

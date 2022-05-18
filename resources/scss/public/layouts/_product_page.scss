@@ -11,7 +11,7 @@
 .pp-details-wrap{
   display: grid;
   grid-template-areas: "pp-images pp-price-act" "pp-images pp-spec-desc" "pp-images pp-images-thumb";
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: .75fr 1fr;
   grid-template-rows: auto auto 1fr;
   grid-gap:1rem;
   align-items: start;
@@ -82,10 +82,11 @@
 .pp-price-act{
   grid-area:pp-price-act;
   display: grid;
-  grid-gap:2rem;
+  //grid-gap:2rem;
 }
 
 .pp-act {
+  margin-top:2rem;
   display: grid;
   grid-gap:1rem;
   grid-auto-flow: column;
@@ -94,19 +95,22 @@
 .price-wrap {
   font-weight:700;
   display: grid;
-
   justify-content: center;
   align-items: end;
   grid-gap:.5rem
-
 }
+
 .pp-discounts {
   display: grid;
   justify-content: center;
+  color:$grey;
 }
+
 .pp-price {
   font-size:1.8rem;
+  color:$color-text-brown;
 }
+
 .pp-price-old {
   margin-top:-1.5rem;
   color:rgb(173,173,173);

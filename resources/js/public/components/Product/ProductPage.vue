@@ -131,7 +131,7 @@ export default {
       return this.inCompare ? 'square-check' : '';
     },
     btnCompareText() {
-      return this.inCompare ? 'в сравнение' : 'сравнить';
+      return this.inCompare ? 'в сравнение' : 'в сравнение';
     },
   },
   methods: {

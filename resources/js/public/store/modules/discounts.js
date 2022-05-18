@@ -45,19 +45,19 @@ const getters = {
         let text = '';
         let discountNeed = state.discounts.find(discount => discount.id === id);
         if (discountNeed) {
-            text = '-' + discountNeed.amount;
+            text = '-' + discountNeed.amount.toLocaleString('ru');
             if (discountNeed.unit === 'percent') {
                 text = text + '%';
             }
             if (discountNeed.unit === 'rub') {
-                text = text + 'р.';
+                text = text + ' р.';
             }
             text = text + ' при покупке ';
             if (discountNeed.type === 'count') {
                 text = text + discountNeed.conditions.minCount + ' товаров';
             }
             if (discountNeed.type === 'sum') {
-                text = text + 'на ' + discountNeed.conditions.minSum + 'р.';
+                text = text + 'на ' + discountNeed.conditions.minSum.toLocaleString('ru') + ' р.';
             }
         }
         return text;
@@ -67,19 +67,19 @@ const getters = {
         //{"id":3,"name":"От 5000 скидка 5%","type":"sum","conditions":{"minSum":5000},"enable":1,"unit":"percent","amount":5}
         if (state.discounts && state.discounts.length > 0) {
             state.discounts.forEach(discount => {
-                let text = '-' + discount.amount;
+                let text = '-' + discount.amount.toLocaleString('ru');
                 if (discount.unit === 'percent') {
                     text = text + '%';
                 }
                 if (discount.unit === 'rub') {
-                    text = text + 'р.';
+                    text = text + ' р.';
                 }
                 text = text + ' при покупке ';
                 if (discount.type === 'count') {
                     text = text + discount.conditions.minCount + ' товаров';
                 }
                 if (discount.type === 'sum') {
-                    text = text + 'на ' + discount.conditions.minSum + 'р.';
+                    text = text + 'на ' + discount.conditions.minSum.toLocaleString('ru') + ' р.';
                 }
                 textArray.push(text);
             });

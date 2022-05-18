@@ -17,6 +17,12 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../../../public/build/fonts/OpenSans-Medium.woff2') format('woff2'), url('../../../public/build/fonts/OpenSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
 body{
   font-family: "Open Sans", sans-serif;
@@ -24,4 +30,8 @@ body{
   line-height: 1.5;
   color:$color-text-default;
   font-smooth: antialiased;
+}
+
+h1,h2,h3{
+  color:$grey;
 }

@@ -27,6 +27,12 @@
     </div>
     <div class="form-section">
       <div class="input-block input-block_highlight">
+        <label for="name">Приоритет:</label>
+        <input id="name" class="input" type="text" v-model.number="item.priority">
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="input-block input-block_highlight">
         <label for="type">Тип скидки:</label>
         <select id="type" class="select" v-model="item.type">
           <option value="count">Количество товара в заказе</option>
@@ -50,13 +56,13 @@
       <div class="" v-if="item.type==='count'">
         <div class="input-block input-block_highlight">
           <label for="min-count">Минимальное количество товара в корзине:</label>
-          <input id="name" class="input" type="number" min="1" step="1" v-model="conditionsMinCount">
+          <input id="name" class="input" type="number" min="1" step="1" v-model.number="conditionsMinCount">
         </div>
       </div>
       <div class="" v-if="item.type==='sum'">
         <div class="input-block input-block_highlight">
           <label for="min-count">Минимальная сумма товаров в корзине:</label>
-          <input id="name" class="input" type="number" min="1" step="1" v-model="conditionsMinSum">
+          <input id="name" class="input" type="number" min="1" step="1" v-model.number="conditionsMinSum">
         </div>
       </div>
     </div>

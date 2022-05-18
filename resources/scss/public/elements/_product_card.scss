@@ -19,7 +19,7 @@ a.product-card {
 }
 
 .product-card:hover {
- // box-shadow: 0 0 5px $grey-light;
+  box-shadow: 0 0 5px $grey-light;
 }
 
 .pc-name {
@@ -39,7 +39,7 @@ a.product-card {
 }
 .pc-price-wrap {
   grid-area: product-card-price;
-  justify-self: end;
+  justify-self: start;
   align-self: end;
   display: grid;
   grid-auto-flow: column;
@@ -56,8 +56,10 @@ a.product-card {
 }
 
 .pc-price {
-  font-weight: 600;
-
+  font-weight: 500;
+  color: $black;
+  background: $yellow;
+  padding: 0 .25rem;
 }
 
 .pc-price-old {

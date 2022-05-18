@@ -212,7 +212,7 @@ class GetData extends Main
 
     public function discount(): void
     {
-        $object = Discount::find()->where(['enable' => 1]);
+        $object = Discount::find()->where(['enable' => 1])->orderBy('priority');
         $this->returnAnswer($this->prepareReturnData($object));
     }
 

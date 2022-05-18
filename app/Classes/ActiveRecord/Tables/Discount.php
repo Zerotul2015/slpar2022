@@ -12,6 +12,7 @@ use App\Classes\ActiveRecord\Main;
  * @property mixed enable regular read/write property
  * @property mixed unit regular read/write property
  * @property mixed amount regular read/write property
+ * @property mixed priority regular read/write property
  */
 
 class Discount extends Main
@@ -71,6 +72,14 @@ class Discount extends Main
         ],
         'amount' => [
             'field' => 'amount',
+            'type' => 'int',
+            'null' => 'YES',
+            'key' => '',
+            'default' => null,
+            'extra' => ''
+        ],
+        'priority' => [
+            'field' => 'priority',
             'type' => 'int',
             'null' => 'YES',
             'key' => '',
