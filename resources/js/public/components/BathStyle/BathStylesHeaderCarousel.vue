@@ -7,7 +7,7 @@
           </slot>
         </div>
       </div>
-      <div class="bs-c-title" :class="{'cursor-pointer':categoryFilterActive}" v-html="textCarouselTop" @click="disableFilterCategory()">Выбрать стиль</div>
+      <div class="bs-c-title" :class="{'cursor-pointer':categoryFilterActive}" v-html="textCarouselTop" @click="disableFilterCategory()">Выбор стиля</div>
       <div class="bs-c-button bs-c-prev" @click="slide = active - 1; triggerAnimation('Left'); toggleFilterCategoryEnable()"
            :class="{'bs-c-button-disable':slide === 0}">
         <div class="bs-c-button-icon-wrap cursor-pointer">

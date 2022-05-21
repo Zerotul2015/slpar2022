@@ -216,12 +216,12 @@ export default {
   padding: 6px;
   border-radius: 20px;
   background: none;
-  color: rgb(60, 171, 61);
+  color: rgb(255, 205, 3);
   box-shadow: none;
 }
 
 .bsp-products-wrap >>> .v-hl-btn svg:hover {
-  background: rgb(60, 171, 61);
+  background: rgb(255, 205, 3);
   color: #ffffff;
 }
 

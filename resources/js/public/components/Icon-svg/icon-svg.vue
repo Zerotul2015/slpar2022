@@ -169,9 +169,11 @@ export default {
     },
     iconSize: function () {
       if (this.size) {
-        return (Math.round(parseInt(this.size) * 1.71));
+        //return (Math.round(parseInt(this.size) * 1.71));
+        return (Math.round(parseInt(this.size) * 1.5));
       } else {
-        return (Math.round(this.fontSizeDefault * 1.71));
+        //return (Math.round(this.fontSizeDefault * 1.71));
+        return (Math.round(this.fontSizeDefault * 1.5));
       }
     }
   }

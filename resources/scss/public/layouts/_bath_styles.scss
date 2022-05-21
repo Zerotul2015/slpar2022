@@ -119,13 +119,14 @@
   top: 55%;
   transition: .5s;
   color: #fff;
-  background: rgba(25, 25, 25, .75);
+  background: rgba(25, 25, 25, .5);
   max-width: 75%;
   padding: .25rem .5rem;
 }
 
 .bsp-s-current-description-title {
   display: flex;
+  justify-content: center;
   text-align: center;
   text-decoration: underline;
   text-transform: uppercase

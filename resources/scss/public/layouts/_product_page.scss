@@ -5,7 +5,7 @@
 
 }
 .pp-name{
-  text-align: center;
+  font-size: 1.5em;
 }
 
 .pp-details-wrap{
@@ -22,6 +22,10 @@
     grid-template-columns: 1fr 1.3fr 1fr;
     grid-template-rows: auto 1fr;
     grid-gap:1rem;
+  }
+
+  .pp-name{
+    text-align: center;
   }
 }
 
@@ -107,8 +111,11 @@
 }
 
 .pp-price {
-  font-size:1.8rem;
-  color:$color-text-brown;
+  font-size: 1.8rem;
+  color: $color-text-default;
+  /* text-shadow: 1px 0 1px #4f4f4f, 0 1px 1px #4f4f4f, -1px 0 1px #4f4f4f, 0 -1px 1px #4f4f4f; */
+  background: $yellow;
+  padding: 0 0.5rem;
 }
 
 .pp-price-old {

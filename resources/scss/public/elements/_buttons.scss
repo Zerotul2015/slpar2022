@@ -64,6 +64,7 @@ button:hover, .btn:hover {
   fill:$black;
   background: $yellow;
   border: 1px solid $yellow;
+  color:#000;
 }
 .btn_cart:hover{
   background: $yellow-dark;
@@ -95,15 +96,15 @@ button:hover, .btn:hover {
 .btn_compare{
   fill:$white;
   color:$white;
-  background: $grey-middle;
-  border: 1px solid $grey-middle;
+  background: $grey;
+  border: 1px solid $grey;
 }
 .btn_compare:hover{
   cursor: pointer;
   fill:$white;
   color:$white;
-  background: $grey;
-  border: 1px solid $grey;
+  background: $grey-middle;
+  border: 1px solid $grey-middle;
 }
 
 .btn_compare-added{

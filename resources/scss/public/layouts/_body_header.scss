@@ -43,7 +43,7 @@
   justify-content: start;
   align-items: center;
   grid-gap: $margin-default;
-  padding: .5rem 0;
+  padding: 0.25rem 0 calc(0.25rem + 7px);
 }
 
 .header-logo {
@@ -64,6 +64,8 @@
   z-index:1;
 }
 .header-link-enter{
+  display: grid;
+  align-items: center;
   color: $yellow;
 
 }
@@ -100,6 +102,13 @@
 
 .header-icon-compare-wrap {
   position: relative;
+  display: grid;
+  align-items: center;
+}
+.header-icon-cart-wrap{
+  position: relative;
+  display: grid;
+  align-items: center;
 }
 
 .header-icon-cart-wrap.header-icon-label-full::after {
@@ -109,6 +118,7 @@
   width: 10px;
   height: 10px;
   border-radius: 5px;
+  top: 3px;
   left: calc(100% - 10px);
   border: 1px solid $grey;
 }
@@ -187,12 +197,12 @@
 //Каталог
 .h-catalog {
   position: absolute;
+  left: 0;
+  right: 0;
   display: none;
   flex-wrap: wrap;
   background: $white;
-  padding: 1rem 2rem;
-  left: 0;
-  right: 0;
+  padding: 0 1rem;
   box-shadow: 0 0 5px;
   border-radius: 4px;
 
@@ -208,7 +218,9 @@
   display: block;
   width: 100%;
   white-space: nowrap;
-  color: $brown;
+  color:$grey;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid $grey-light;
 }
 
@@ -231,6 +243,7 @@
 
 .h-catalog-link-child:hover {
   color: $yellow;
+  text-decoration:underline
 }
 
 .h-icon-link-child {

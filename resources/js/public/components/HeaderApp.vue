@@ -3,7 +3,7 @@
     <div class="header-wrap">
       <div class="header-content">
         <a class="header-logo" href="/">
-          <img src="/build/images/logo.svg" alt="С легким паром">
+          <img src="/build/images/logo_yellow.svg" alt="С легким паром">
         </a>
         <div class="header-catalog">
           <div class="h-catalog-link h-link">Каталог<span class="h-catalog-link-caret"><i
