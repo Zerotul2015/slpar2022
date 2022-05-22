@@ -10,7 +10,6 @@
   "product-card-price"
   "product-card-button";
   grid-template-rows: auto auto auto 1fr auto;
-
 }
 
 a.product-card {
@@ -31,7 +30,8 @@ a.product-card {
 .pc-image-main {
   grid-area: product-card-image;
   display: block;
-  width: 100%;
+  width: 250px;
+  justify-self: center;
 }
 .pc-description{
   grid-area: product-card-desc;
