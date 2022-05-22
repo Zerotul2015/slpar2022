@@ -11,7 +11,7 @@
 .pp-details-wrap{
   display: grid;
   grid-template-areas: "pp-images pp-price-act" "pp-images pp-spec-desc" "pp-images pp-images-thumb";
-  grid-template-columns: .75fr 1fr;
+  grid-template-columns: 500px 1fr;
   grid-template-rows: auto auto 1fr;
   grid-gap:1rem;
   align-items: start;
@@ -19,7 +19,7 @@
 @media (min-width: 1400px) {
   .pp-details-wrap{
     grid-template-areas: "pp-spec-desc pp-images pp-price-act""pp-images-thumb pp-images pp-price-act";
-    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-columns: 1fr 500px 1fr;
     grid-template-rows: auto 1fr;
     grid-gap:1rem;
   }

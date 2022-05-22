@@ -1,6 +1,14 @@
 <template>
   <router-link :to="'/product/' + product.url" class="product-card">
-    <img class="pc-image-main" :src="imageMain">
+    <!--    <img class="pc-image-main" :src="imageMain">-->
+    <div class="pc-image-main" v-if="product.image_main">
+      <product-card-slider-images :key-image-main="keyImageMain" :count-images="countImages" :key="$root.guid()">
+        <rl-carousel-slide v-for="(imageItem, keyStyle) in product.images" :key="$root.guid()">
+          <img class="cursor-pointer" :src="imageDir + '/thumb/' + imageItem" :alt="product.name">
+        </rl-carousel-slide>
+      </product-card-slider-images>
+    </div>
+    <img v-else class="pc-image-main" :src="imageMain">
     <div class="pc-name">{{ product.name }}</div>
     <div class="pc-description">{{ descriptionText }}</div>
     <div class="pc-price-wrap" v-if="product.price_on_request">
@@ -31,10 +39,12 @@
 
 <script>
 import IconSvg from "../Icon-svg/icon-svg";
+import ProductCardSliderImages from "./ProductCardSliderImages";
+import {RlCarouselSlide} from 'vue-renderless-carousel'
 
 export default {
   name: "ProductCard",
-  components: {IconSvg},
+  components: {ProductCardSliderImages, IconSvg, RlCarouselSlide},
   props: {
     product: {
       type: Object,
@@ -50,6 +60,22 @@ export default {
   },
   watch: {},
   computed: {
+    keyImageMain() {
+      let indexImage = 0;
+      if (this.product.images) {
+        indexImage = this.product.images.findIndex(item => item === this.product.image_main);
+        if (indexImage === -1) {
+          indexImage = null;
+        }
+      }
+      return indexImage;
+    },
+    countImages() {
+      return this.product.images ? this.product.images.length : 0;
+    },
+    imageDir() {
+      return '/images/products/' + this.product.folder + '';
+    },
     inCart() {
       return !!this.$store.getters['cart/products'][this.product.id];
     },
@@ -70,8 +96,8 @@ export default {
     },
     descriptionText() {
       let text = this.product.description ? this.product.description.replace(/<\/?[a-zA-Z]+>/gi, '') : '';
-      if(text.length >130){
-        text = text.slice(0,128).replace(/\s\S+$/g, '') + '...';
+      if (text.length > 130) {
+        text = text.slice(0, 128).replace(/\s\S+$/g, '') + '...';
       }
       return text;
     },

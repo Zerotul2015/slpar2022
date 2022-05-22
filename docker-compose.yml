@@ -21,6 +21,7 @@ services:
       volumes:
         - ./:/var/www
         - ./docker/supervisor:/etc/supervisor/conf.d
+        - ./docker/share:/home/share
       links:
         - mysql
         - rabbitmq
@@ -37,6 +38,7 @@ services:
       volumes:
         - ./:/var/www
         - ./docker/supervisor:/etc/supervisor/conf.d
+        - ./docker/share:/home/share
       links:
         - mysql
         - rabbitmq
@@ -52,6 +54,7 @@ services:
       image: mysql:8
       volumes:
         - ./storage/docker/mysql:/var/lib/mysql
+        - ./docker/share:/home/share
       environment:
         - "MYSQL_ROOT_PASSWORD=secret"
         - "MYSQL_USER=app"
@@ -88,6 +91,7 @@ services:
         - ./storage/docker/rabbitmq/etc/:/etc/rabbitmq/
         - ./storage/docker/rabbitmq/data/:/var/lib/rabbitmq/mnesia/
         - ./storage/docker/rabbitmq/logs/:/var/log/rabbitmq/
+        - ./docker/share:/home/share
       ports:
         # The standard AMQP protocol port
         - '5672:5672'

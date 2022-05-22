@@ -23,12 +23,17 @@
                :alt="product.name"
                @click="product.images_main = imageThumb">
         </div>
-        <div class="pp-images" v-viewer="optionsZoom">
-          <img class="pp-image-main cursor-pointer"  v-if="imageMain" :src="imageDir + '/800/' + imageMain"
-               :data-source="imageDir + '/1920/' + imageMain"
-               :alt="product.name">
-          <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">
-        </div>
+          <product-page-slider-images  class="pp-images pp-image-main" v-viewer="optionsZoom" slideKey="slideSelected">
+            <rl-carousel-slide v-for="(imageItem, keyStyle) in product.images" :key="$root.guid()">
+              <img  class="cursor-pointer" :src="imageDir + '/thumb_big/' + imageItem" style="width: 100%"
+                   :data-source="imageDir + '/1920/' + imageItem"
+                   :alt="product.name">
+            </rl-carousel-slide>
+          </product-page-slider-images>
+          <!--          <img class="pp-image-main cursor-pointer"  v-if="imageMain" :src="imageDir + '/800/' + imageMain"-->
+          <!--               :data-source="imageDir + '/1920/' + imageMain"-->
+          <!--               :alt="product.name">-->
+          <!--          <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">-->
         <div class="pp-price-act">
           <div class="price-wrap">
             <div class="pp-price">
@@ -70,11 +75,13 @@
 import IconSvg from "../Icon-svg/icon-svg";
 import VueHorizontal from "vue-horizontal";
 import ProductCard from "../Product/ProductCard";
+import {RlCarouselSlide} from 'vue-renderless-carousel'
 import 'viewerjs/dist/viewer.css'
+import ProductPageSliderImages from "./ProductPageSliderImages";
 
 export default {
   name: "ProductPage",
-  components: {VueHorizontal, ProductCard, IconSvg},
+  components: {ProductPageSliderImages, VueHorizontal, ProductCard, IconSvg, RlCarouselSlide},
   props: {
     url: {
       type: String,
@@ -83,6 +90,9 @@ export default {
   },
   data() {
     return {
+      slide: 0,
+      animateLeft: true,
+      animateRight: true,
       optionsZoom: {
         toolbar: true,
         url: 'data-source',
@@ -100,6 +110,12 @@ export default {
     }
   },
   computed: {
+    keyImageMain() {
+      return this.$store.getters['product/keyImageMain'];
+    },
+    countImages() {
+      return this.$store.getters['product/countImages'];
+    },
     discountsAsText() {
       return this.$store.getters['discounts/discountsAsText'];
     },
@@ -135,6 +151,12 @@ export default {
     },
   },
   methods: {
+    triggerAnimation(direction) {
+      this[`animate${direction}`] = true
+      setTimeout(() => {
+        this[`animate${direction}`] = false
+      }, 1000)
+    },
     addCompare() {
       if (this.inCompare) {
         this.$store.dispatch('compare/removeProduct', this.product.id);

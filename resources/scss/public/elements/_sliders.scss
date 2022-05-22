@@ -1,0 +1,38 @@
+.slider-button {
+  position: absolute;
+  top:calc(50% - 1rem);
+  color: $yellow;
+  fill: $yellow;
+  border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.slider-button-disable{
+  display: none;
+}
+.slider-button:hover {
+  background: $yellow;
+  color: $white;
+  fill: $white;
+}
+
+.slide-button-prev {
+  left: 0;
+}
+
+.slide-button-next {
+  right: 0;
+}
+
+.slider-button-icon-wrap {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-button-icon {
+
+}

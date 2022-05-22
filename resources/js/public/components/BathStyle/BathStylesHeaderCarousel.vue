@@ -104,13 +104,6 @@ export default {
         this[`animate${direction}`] = false
       }, 1000)
     },
-    nextStyle() {
-      console.log(this.$refs.bathSlider[this.activeStyleKey]);
-
-    },
-    prevStyle() {
-      console.log(this.$refs.bathSlider[this.activeStyleKey]);
-    },
     toggleFilterCategoryEnable(){
       if (this.currentSiteSection === 'productCategory') {
         this.$store.dispatch('bathStyle/changeToggleFilterForCategory', true);

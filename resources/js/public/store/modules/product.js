@@ -8,17 +8,30 @@ const state = () => ({
 
 // getters
 const getters = {
-    product(state){
+    product(state) {
         return state.product;
     },
-    productsRelated(state){
+    countImages(state) {
+        return state.product.images ? state.product.images.length : 0;
+    },
+    keyImageMain(state) {
+        let indexImage = 0;
+        if(state.product.images){
+            indexImage = state.product.images.findIndex(item=>item === state.product.image_main);
+            if(indexImage === -1){
+                indexImage = null;
+            }
+        }
+        return indexImage;
+    },
+    productsRelated(state) {
         return state.productsRelated;
     }
 }
 
 // actions
 const actions = {
-    getProductByUrl({commit}, url){
+    getProductByUrl({commit}, url) {
         let sendData = {
             'where': 'url',
             'searchString': url
@@ -26,14 +39,14 @@ const actions = {
         api.getData('product', sendData)
             .then(r => {
                 if (r.result === true) {
-                    if(r.returnData[0]) {
+                    if (r.returnData[0]) {
                         commit('setProduct', r.returnData[0]);
                     }
                 }
             })
             .catch()
     },
-    getProductsRelated({commit}, url){
+    getProductsRelated({commit}, url) {
         let sendData = {
             'where': 'url',
             'searchString': url
@@ -41,14 +54,14 @@ const actions = {
         api.getData('productRelated', sendData)
             .then(r => {
                 if (r.result === true) {
-                    if(r.returnData[0]) {
+                    if (r.returnData[0]) {
                         commit('setProductsRelated', r.returnData);
                     }
                 }
             })
             .catch()
     },
-    getProduct({commit}, idProduct){
+    getProduct({commit}, idProduct) {
         let sendData = {
             'where': 'id',
             'searchString': idProduct
@@ -65,10 +78,10 @@ const actions = {
 
 // mutations
 const mutations = {
-    setProduct(state, product){
+    setProduct(state, product) {
         state.product = product;
     },
-    setProductsRelated(state, products){
+    setProductsRelated(state, products) {
         state.productsRelated = products;
     },
 }
