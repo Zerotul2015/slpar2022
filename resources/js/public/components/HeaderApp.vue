@@ -126,6 +126,9 @@ export default {
     menuCatalogIsOpen(){},
     sectionSite(){
       this.menuCatalogIsOpen = false
+    },
+    sectionSiteKey(){
+      this.menuCatalogIsOpen = false
     }
   },
   computed: {
@@ -157,6 +160,9 @@ export default {
     },
     sectionSite() {
       return this.$store.getters["templateData/section"];
+    },
+    sectionSiteKey() {
+      return this.$store.getters["templateData/sectionKey"];
     },
     headerFixed() {
       return this.$root.scrollY > 0;
