@@ -23,17 +23,18 @@
                :alt="product.name"
                @click="product.images_main = imageThumb">
         </div>
-          <product-page-slider-images  class="pp-images pp-image-main" v-viewer="optionsZoom" slideKey="slideSelected">
-            <rl-carousel-slide v-for="(imageItem, keyStyle) in product.images" :key="$root.guid()">
-              <img  class="cursor-pointer" :src="imageDir + '/thumb_big/' + imageItem" style="width: 100%"
-                   :data-source="imageDir + '/1920/' + imageItem"
-                   :alt="product.name">
-            </rl-carousel-slide>
-          </product-page-slider-images>
-          <!--          <img class="pp-image-main cursor-pointer"  v-if="imageMain" :src="imageDir + '/800/' + imageMain"-->
-          <!--               :data-source="imageDir + '/1920/' + imageMain"-->
-          <!--               :alt="product.name">-->
-          <!--          <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">-->
+        <product-page-slider-images class="pp-images pp-image-main" v-if="imageMain" v-viewer="optionsZoom" slideKey="slideSelected">
+          <rl-carousel-slide v-for="(imageItem, keyStyle) in product.images" :key="$root.guid()">
+            <img class="cursor-pointer" :src="imageDir + '/thumb_big/' + imageItem" style="width: 100%"
+                 :data-source="imageDir + '/1920/' + imageItem"
+                 :alt="product.name">
+          </rl-carousel-slide>
+        </product-page-slider-images>
+        <img class="pp-images pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">
+        <!--          <img class="pp-image-main cursor-pointer"  v-if="imageMain" :src="imageDir + '/800/' + imageMain"-->
+        <!--               :data-source="imageDir + '/1920/' + imageMain"-->
+        <!--               :alt="product.name">-->
+        <!--          <img class="pp-image-main"  v-else src="/build/images/noimg.png" :alt="product.name">-->
         <div class="pp-price-act">
           <div class="price-wrap">
             <div class="pp-price">

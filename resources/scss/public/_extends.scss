@@ -29,7 +29,20 @@
 }
 
 .default-width-content{
-  width: 95%;
-  max-width: 1600px;
-  margin: 0 auto;
+  margin: 0 1rem;
+  @include lg() {
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+.app_mobile{
+  .default-width-content {
+    margin: 0 .25rem;
+  }
+}
+.app_tablet{
+  .default-width-content {
+    margin: 0 1rem;
+  }
 }

@@ -1,6 +1,10 @@
 <template>
-  <div class="search-autocomplete" :class="{ [customClass_]:customClass_.length >0 }">
-    <div class="search-autocomplete-input-wrap" :class="{ [customClass_]:customClass_.length >0 }">
+  <div class="search-mobile" :class="{ [customClass_]:customClass_.length >0, 'search-mobile_absolute':toggleSearch }">
+    <button class="btn btn_header" @click="toggleSearch =!toggleSearch">
+      <icon-svg class="btn-icon icon-input-search" :class="{ [customClass_]:customClass_.length >0 }"
+                 icon="search" color=""></icon-svg>
+    </button>
+    <div class="search-autocomplete-input-wrap" :class="{ [customClass_]:customClass_.length >0 }" v-if="toggleSearch">
       <label v-if="labelPosition_==='before' && labelText_.length > 0" class="search-autocomplete-label"
              :class="{ [customClass_]:customClass_.length >0 }" :for="guid">{{ labelText_ }}</label>
       <input :id="guid" class="input input_text" :class="{ [customClass_]:customClass_.length >0 }" type="text"
@@ -44,22 +48,19 @@ import debounce from 'lodash/debounce'
 import IconSvg from "../Icon-svg/icon-svg";
 
 export default {
-  name: "search-site",
+  name: "SearchSiteMobile",
   components: {IconSvg},
   props: {
     inputVal: { //значения для подстановки уже выбранных
       type: String,
     },
-    iconShow: {
-      type: Boolean,
-    },
     placeholder: { // placeholder
       type: String
     },
-    onlyUnique: { // только уникальные значения поля имя казывается в uniqueKey(по умолчанию id)
+    onlyUnique: { // только уникальные значения поля имя указывается в uniqueKey(по умолчанию id)
       type: Boolean
     },
-    uniqueKey: { //имя поля по которому отбирать уникльные значения (по умолчанию id)
+    uniqueKey: { //имя поля по которому отбирать уникальные значения (по умолчанию id)
       type: String
     },
     labelText: { // Текст для label
@@ -68,7 +69,7 @@ export default {
     labelPosition: { // 'before' (по умолчанию) перед input, 'after' после input
       type: String
     },
-    returnKey: { // если указан то возвращает не сам объект а значение с этим ключок
+    returnKey: { // если указан тогда возвращает не сам объект, а значение с этим ключом
       type: String
     },
     customClass: {
@@ -78,8 +79,8 @@ export default {
   data: function () {
     return {
       guid: this.$root.guid(),
+      toggleSearch:false,
       inputVal_: '',
-      iconShow_: false,
       placeholder_: 'поиск по сайту',
       returnKey_: false,
       columnsAll_: false,
@@ -98,9 +99,6 @@ export default {
     }
     if (this.inputVal) {
       this.inputVal_ = this.inputVal;
-    }
-    if (this.iconShow) {
-      this.iconShow_ = this.iconShow;
     }
     if (this.returnKey) {
       this.returnKey_ = this.returnKey;

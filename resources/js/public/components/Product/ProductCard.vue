@@ -1,14 +1,14 @@
 <template>
-  <router-link :to="'/product/' + product.url" class="product-card">
+  <router-link :to="'/product/' + product.url" class="product-card" :class="'product-card_'+imageSize">
     <!--    <img class="pc-image-main" :src="imageMain">-->
-    <div class="pc-image-main" v-if="product.image_main">
+    <div class="pc-image-main" :class="'pc-image-main_'+imageSize" v-if="product.image_main">
       <product-card-slider-images :key-image-main="keyImageMain" :count-images="countImages" :key="$root.guid()">
         <rl-carousel-slide v-for="(imageItem, keyStyle) in product.images" :key="$root.guid()">
-          <img class="cursor-pointer" :src="imageDir + '/thumb/' + imageItem" :alt="product.name">
+          <img class="cursor-pointer" :src="imageDir + '/' + imageSize + '/' + imageItem" :alt="product.name">
         </rl-carousel-slide>
       </product-card-slider-images>
     </div>
-    <img v-else class="pc-image-main" :src="imageMain">
+    <img v-else class="pc-image-main" :class="'pc-image-main_'+imageSize" :src="imageMain">
     <div class="pc-name">{{ product.name }}</div>
     <div class="pc-description">{{ descriptionText }}</div>
     <div class="pc-price-wrap" v-if="product.price_on_request">
@@ -41,6 +41,7 @@
 import IconSvg from "../Icon-svg/icon-svg";
 import ProductCardSliderImages from "./ProductCardSliderImages";
 import {RlCarouselSlide} from 'vue-renderless-carousel'
+import {isNull} from "lodash";
 
 export default {
   name: "ProductCard",
@@ -52,7 +53,8 @@ export default {
     },
     imageSize: {
       type: String,
-      required: false
+      required: false,
+      default:'thumb'
     },
   },
   data() {

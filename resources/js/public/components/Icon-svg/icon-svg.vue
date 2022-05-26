@@ -5,6 +5,7 @@
 
 <script>
 //иконки
+import bars from '../../../assets/svg/bars.svg';
 import compareEmpty from '../../../assets/svg/compare_empty.svg';
 import compareFull from '../../../assets/svg/compare_full.svg';
 import search from '../../../assets/svg/search.svg';
@@ -48,6 +49,7 @@ export default {
     //иконки
     compareEmpty,
     compareFull,
+    bars,
     bookmark,
     bookmarkSolid,
     cartHeader,
@@ -79,7 +81,6 @@ export default {
     userLarge,
     idCard,
     rightToBracket,
-
     //конец иконки
   },
   props: {
@@ -103,6 +104,7 @@ export default {
     return {
       fontSizeDefault: 14,
       iconsName: {
+        'bars': 'bars',
         'compare-full': 'compareFull',
         'compare-empty': 'compareEmpty',
         'bookmark': 'bookmark',

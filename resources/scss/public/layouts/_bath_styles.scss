@@ -58,6 +58,7 @@
   justify-content: center;
 }
 
+
 //Слайдер
 .bsp-sliders {
   position: relative;
@@ -141,15 +142,28 @@
 }
 
 //товары
+
 .bsp-products-group{
   @extend .default-width-content;
-  margin-bottom:2rem;
 }
-.bsp-products-wrap{
-  display:grid;
-  grid-gap:1rem;
-  .product-card{
-    margin-right:1rem;
-  }
+
+.bsp-products-slider{
+
 }
+.bsp-product-slide {
+  display: grid; //для одинаковой высоты
+  margin: .5rem;
+}
+
+//.bsp-products-group{
+//  @extend .default-width-content;
+//  margin-bottom:2rem;
+//}
+//.bsp-products-wrap{
+//  display:grid;
+//  grid-gap:1rem;
+//  .product-card{
+//    margin-right:1rem;
+//  }
+//}
 

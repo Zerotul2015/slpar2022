@@ -19,7 +19,7 @@ const getters = {
         if(state.product.images){
             indexImage = state.product.images.findIndex(item=>item === state.product.image_main);
             if(indexImage === -1){
-                indexImage = null;
+                indexImage = 0;
             }
         }
         return indexImage;

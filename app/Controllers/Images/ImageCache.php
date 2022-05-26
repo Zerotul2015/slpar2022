@@ -197,7 +197,8 @@ class ImageCache
         if ($this->request['originalImage']) {
             $originalImage = Image::make($this->request['originalImage']);
             //если нет изображения нужного фомата создаем его
-            if (!$this->request['requestImageExist']) {
+            //if (!$this->request['requestImageExist']) {
+            if (true) {
                 if (is_array(static::$settings['templates'][$this->request['templates']])) {
                     //если указано автоматическое интелектуальное изменение размера
                     if (isset(static::$settings['templates'][$this->request['templates']]['fit']) && static::$settings['templates'][$this->request['templates']]['fit']) {

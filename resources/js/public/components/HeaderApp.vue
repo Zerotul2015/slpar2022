@@ -1,14 +1,18 @@
 <template>
-  <header class="header-page" :class="{'header-page_fixed':headerFixed}">
+  <header class="header-page"
+          :class="{'header-page_fixed':headerFixed, 'header-page_mobile':isMobile, 'header-page_tablet':isTablet}">
     <div class="header-wrap">
-      <div class="header-content">
-        <a class="header-logo" href="/">
+      <div class="header-content" :class="{'header-content_mobile':isMobile,'header-content_tablet':isTablet}">
+        <a class="header-logo" :class="{'header-logo_mobile':isMobile, 'header-logo_tablet':isTablet}" href="/">
           <img src="/build/images/logo_yellow.svg" alt="С легким паром">
         </a>
-        <div class="header-catalog">
-          <div class="h-catalog-link h-link">Каталог<span class="h-catalog-link-caret"><i
-              class="fas fa-caret-up"></i></span></div>
-          <div class="h-catalog">
+        <div class="header-catalog" :class="{'header-catalog_mobile':isMobile,'header-catalog_tablet':isTablet}">
+          <div class="h-catalog-link h-link btn btn_header" @click="menuCatalogIsOpen = !menuCatalogIsOpen">
+            <icon-svg class="btn-icon" :icon="iconCatalog"></icon-svg>
+            <span class="btn-text" v-if="!isMobile">Каталог</span>
+          </div>
+          <div class="h-catalog"
+               :class="{'h-catalog_mobile':isMobile,'h-catalog_tablet':isTablet,'h-catalog-open':menuCatalogIsOpen && isMobile}">
             <div class="h-catalog-group">
               <router-link class="h-catalog-link-main" :to="'/bath-style/'">Комплексные стилевые решения</router-link>
               <div class="h-catalog-child-group" v-if="bathStyles">
@@ -36,17 +40,19 @@
             </div>
           </div>
         </div>
-        <div class="header-links-block">
+        <div class="header-links-block" v-if="isMobile === false && isTablet === false">
           <div class="hcs-wrapper" v-if="headerFixed && carouselActive">
             <BathStylesHeaderCarousel class="hcd-wrapper">
               <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
-                <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}" >{{ styleItem.name }}</div>
+                <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}">{{
+                    styleItem.name
+                  }}
+                </div>
               </rl-carousel-slide>
             </BathStylesHeaderCarousel>
           </div>
           <div class="hlb-links" v-else>
             <router-link v-if="isAuth" class="header-link-order-form" to="/dealer/order-form">Бланк заказа</router-link>
-
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
                          :to="{path:menuItem.value, params:{isCustom:(menuItem.typeItem === 'custom')}}">
@@ -54,7 +60,8 @@
             </router-link>
           </div>
         </div>
-        <search-site class="header-search-block" v-if="!headerFixed"
+        <search-site-mobile v-if="isMobile"></search-site-mobile>
+        <search-site class="header-search-block" v-else-if="!headerFixed"
                      :iconShow="true" custom-class="hs-block"></search-site>
         <div class="header-icon-block">
           <router-link class="header-link-enter" :to="linkCabinet" title="Вход">
@@ -96,16 +103,18 @@
 <script>
 import VueHorizontal from "vue-horizontal";
 import IconSvg from "./Icon-svg/icon-svg";
-import SearchSite from "./search/search-site";
+import SearchSite from "./search/SearchSite";
+import SearchSiteMobile from "./search/SearchSiteMobile";
 import BathStylesHeaderCarousel from "./BathStyle/BathStylesHeaderCarousel.vue";
 import {RlCarouselSlide} from 'vue-renderless-carousel'
 
 export default {
   name: "HeaderApp",
-  components: {BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal, RlCarouselSlide},
+  components: {SearchSiteMobile, BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal, RlCarouselSlide},
   data() {
     return {
       menuNav: [],
+      menuCatalogIsOpen: false,
     }
   },
   watch: {
@@ -116,17 +125,30 @@ export default {
     }
   },
   computed: {
-    isAuth(){
+    iconCatalog(){
+      let iconName = 'bars';
+      if(this.isMobile === true && this.menuCatalogIsOpen === true){
+        iconName = 'xmark';
+      }
+      return iconName;
+    },
+    isAuth() {
       return this.$store.getters["customer/isAuth"];
     },
-    isWholesale(){
+    isMobile() {
+      return this.$store.getters['templateData/isMobile'];
+    },
+    isTablet() {
+      return this.$store.getters['templateData/isTablet'];
+    },
+    isWholesale() {
       return this.$store.getters["customer/isWholesale"];
     },
-    linkCabinet(){
-      return this.isWholesale ? '/customer/wholesale-profile' : this.isAuth ? '/customer/profile': '/customer/home';
+    linkCabinet() {
+      return this.isWholesale ? '/customer/wholesale-profile' : this.isAuth ? '/customer/profile' : '/customer/home';
     },
     carouselActive() {
-      let siteSectionUsed = ['productCategory','productCategoryWithStyle', 'compare', 'bathStyle', 'index'];
+      let siteSectionUsed = ['productCategory', 'productCategoryWithStyle', 'compare', 'bathStyle', 'index'];
       return siteSectionUsed.includes(this.sectionSite);
     },
     sectionSite() {

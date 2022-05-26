@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="body-wrap">
+  <div id="app" class="body-wrap" :class="{'app_mobile':isMobile, 'app_tablet':isTablet}">
     <headerApp/>
     <div class="content-wrap">
       <breadcrumb v-if="showBreadcrumb"></breadcrumb>
@@ -27,12 +27,11 @@ export default {
     Breadcrumb,
     FooterApp
   },
-  data: () => ({
-  }),
+  data: () => ({}),
   created() {
 
   },
-  beforeMount(){
+  beforeMount() {
     this.$store.dispatch('templateData/getTemplateSettings');
     this.$store.dispatch('bathStyle/getAll');
     this.$store.dispatch('cart/getCart');
@@ -40,39 +39,43 @@ export default {
     this.$store.dispatch('discounts/getDiscounts');
     this.$store.dispatch('customer/checkAuth');
   },
-  watch:{
-    seo(newVal, oldVal){
+  watch: {
+    seo(newVal, oldVal) {
       document.title = newVal.title;
       document.description = newVal.description;
     },
-    section(){
+    section() {
       this.$store.dispatch('templateData/getChange');
     },
-    sectionKey(){
+    sectionKey() {
       this.$store.dispatch('templateData/getChange');
     },
   },
   computed: {
-    showBreadcrumb(){
-      let disallowSection = ['bathStyle','home'];
+    isMobile() {
+      return this.$store.getters['templateData/isMobile'];
+    },
+    isTablet() {
+      return this.$store.getters['templateData/isTablet'];
+    },
+    showBreadcrumb() {
+      let disallowSection = ['bathStyle', 'home'];
       return !disallowSection.includes(this.section);
     },
-    seo(){
+    seo() {
       return this.$store.getters["templateData/seo"];
     },
-    section(){
+    section() {
       return this.$store.getters["templateData/section"];
     },
-    sectionKey(){
+    sectionKey() {
       return this.$store.getters["templateData/sectionKey"];
     },
-    isWholesale(){
+    isWholesale() {
       return this.$store.getters['customer/isWholesale'];
     }
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 

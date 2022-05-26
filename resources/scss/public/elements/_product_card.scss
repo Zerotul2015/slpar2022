@@ -10,6 +10,13 @@
   "product-card-price"
   "product-card-button";
   grid-template-rows: auto auto auto 1fr auto;
+  max-width:calc(250px + 1rem);
+}
+.product-card_thumb{
+  max-width:calc(250px + 1rem);
+}
+.product-card_thumb_medium{
+  max-width:calc(350px + 1rem);
 }
 
 a.product-card {
@@ -33,6 +40,15 @@ a.product-card {
   width: 250px;
   justify-self: center;
 }
+
+.pc-image-main_thumb{
+  width: 250px;
+}
+
+.pc-image-main_thumb_medium{
+  width:350px;
+}
+
 .pc-description{
   grid-area: product-card-desc;
   text-align: center;

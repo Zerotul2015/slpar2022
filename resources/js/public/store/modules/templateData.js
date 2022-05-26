@@ -6,6 +6,8 @@ const state = () => ({
     menuCatalog: {},
     menuHeader: {},
     footer: {},
+    isMobile:false,
+    isTablet:false,
     section: 'index', //index,page,pageCategory,product,productCategory,cart,compare,bathStyle,ordersPreview Берется из названия route
     sectionKey: null, // Берется из параметра url в router
     seo: {'title': '', 'description': ''},
@@ -26,6 +28,12 @@ const getters = {
     },
     footer(state) {
         return state.footer;
+    },
+    isMobile(state) {
+        return state.isMobile;
+    },
+    isTablet(state) {
+        return state.isTablet;
     },
     seo(state) {
         return state.seo;
@@ -74,6 +82,8 @@ const actions = {
                     commit('setMenuCatalog', r.returnData.menuCatalog);
                     commit('setMenuHeader', r.returnData.menuHeader);
                     commit('setFooter', r.returnData.footer);
+                    commit('setIsMobile', r.returnData.isMobile);
+                    commit('setIsTablet', r.returnData.isTablet);
                 }
             })
             .catch()
@@ -82,6 +92,12 @@ const actions = {
 
 // mutations
 const mutations = {
+    setIsMobile(state, isMobile) {
+        state.isMobile = isMobile;
+    },
+    setIsTablet(state, isTablet) {
+        state.isTablet = isTablet;
+    },
     setSeo(state, newSeo) {
         state.seo = newSeo;
     },

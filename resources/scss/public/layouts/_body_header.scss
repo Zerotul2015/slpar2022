@@ -7,17 +7,19 @@
   right: 0;
   top: -100%;
   z-index: 9999;
-  a, .link{
+
+  a, .link {
     text-decoration: none;
+  }
+
+  @include lg() {
+
   }
 }
 
-.header-page_fixed {
-  position: fixed;
-  top: 0;
-  background: $grey;
-  box-shadow: 0 0 5px $grey;
-  padding-bottom: .5rem;
+.header-page_mobile, .header-page_tablet {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .header-wrap {
@@ -34,43 +36,108 @@
   border: 1px solid $yellow;
 }
 
+
 .header-content {
   @extend .default-width-content;
   display: grid;
-  position: relative;
   grid-template-areas: "h-logo h-catalog h-links h-search h-icon";
   grid-template-columns: 13rem repeat(2, auto) 1fr auto;
+  grid-gap: $margin-default;
+  position: relative;
   justify-content: start;
   align-items: center;
-  grid-gap: $margin-default;
   padding: 0.25rem 0 calc(0.25rem + 7px);
+  @include lg() {
+
+  }
+
+}
+
+.header-content_mobile, .header-content_tablet {
+  grid-template-areas: "h-logo h-search h-catalog h-icon";
+  grid-template-columns: 1fr repeat(3, auto);
+  grid-gap: 1rem;
 }
 
 .header-logo {
   grid-area: h-logo;
-  width: 12rem;
   margin-top: -2rem;
   margin-bottom: -2rem;
   z-index: 2;
 
   img {
+    width: 12rem;
     @extends .border-radius;
     @include box-shadow();
   }
+
+  @include lg() {
+
+  }
 }
 
-.header-links-block {
-  grid-area: h-links;
-  z-index:1;
+.header-logo_mobile {
+  margin-top: -1.5rem;
+  margin-bottom: -2rem;
+  img {
+    width: auto;
+    height: 8vh;
+  }
 }
-.header-link-enter{
+
+.header-logo_tablet {
+  margin-top: -1rem;
+  margin-bottom: -1.5rem;
+  img {
+    width: auto;
+    height: 8vh;
+  }
+}
+
+//992px;
+@include lg() {
+
+}
+
+//1200px;
+@include xl() {
+
+}
+
+//1400px;
+@include xxl() {
+
+}
+
+
+.header-page_fixed {
+  position: fixed;
+  top: 0;
+  background: $grey;
+  box-shadow: 0 0 5px $grey;
+  padding-bottom: .5rem;
+
+}
+
+
+.header-links-block {
+  display: none;
+  grid-area: h-links;
+  z-index: 1;
+  @include lg() {
+    display: block;
+  }
+}
+
+.header-link-enter {
   display: grid;
   align-items: center;
   color: $yellow;
 
 }
-.header-link-enter:hover{
-  color:$white;
+
+.header-link-enter:hover {
+  color: $white;
 }
 
 .header-catalog {
@@ -105,7 +172,8 @@
   display: grid;
   align-items: center;
 }
-.header-icon-cart-wrap{
+
+.header-icon-cart-wrap {
   position: relative;
   display: grid;
   align-items: center;
@@ -151,15 +219,17 @@
 }
 
 // ссылки в шапке
-.header-link-order-form{
+.header-link-order-form {
   text-transform: uppercase;
   color: $yellow;
 }
-.header-link-order-form:hover{
+
+.header-link-order-form:hover {
   color: $yellow;
   text-shadow: 0 0 5px $yellow;
   text-decoration: none;
 }
+
 .h-link {
   text-transform: uppercase;
   color: $white;
@@ -190,7 +260,7 @@
   display: block;
 }
 
-.header-catalog:hover .h-catalog {
+.header-catalog:hover:not(.header-catalog_mobile) .h-catalog {
   display: flex;
 }
 
@@ -205,12 +275,14 @@
   padding: 0 1rem;
   box-shadow: 0 0 5px;
   border-radius: 4px;
+}
 
+.h-catalog-open{
+  display: flex;
 }
 
 .h-catalog-group {
   margin: 1rem;
-
 }
 
 .h-catalog-link-main {
@@ -218,7 +290,7 @@
   display: block;
   width: 100%;
   white-space: nowrap;
-  color:$grey;
+  color: $grey;
   font-weight: 700;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid $grey-light;
@@ -243,7 +315,7 @@
 
 .h-catalog-link-child:hover {
   color: $yellow;
-  text-decoration:underline
+  text-decoration: underline
 }
 
 .h-icon-link-child {
@@ -397,7 +469,7 @@ svg.icon-input-search.hs-block {
 }
 
 //Карусель стилей в шапке
-.hcs-wrapper{
+.hcs-wrapper {
   position: absolute;
   left: 0;
   right: 0;
@@ -415,7 +487,7 @@ svg.icon-input-search.hs-block {
   font-size: .7rem;
   position: absolute;
   text-align: center;
-  color:$white;
+  color: $white;
   top: -12px;
   left: 0;
   right: 0
@@ -427,7 +499,7 @@ svg.icon-input-search.hs-block {
   cursor: pointer;
   position: absolute;
   top: 0;
-  bottom:0;
+  bottom: 0;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -436,12 +508,13 @@ svg.icon-input-search.hs-block {
 .bs-c-button:hover {
   fill: $yellow;
 }
-.bs-c-button-disable,.bs-c-button-disable:hover{
+
+.bs-c-button-disable, .bs-c-button-disable:hover {
   fill: $grey-light;
   cursor: default;
 }
 
-.bs-c-button-icon-wrap{
+.bs-c-button-icon-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -468,7 +541,7 @@ svg.icon-input-search.hs-block {
   text-align: center;
   color: $white;
   width: 180px;
-  font-size:1.25rem;
+  font-size: 1.25rem;
 }
 
 .bs-c-item-active {

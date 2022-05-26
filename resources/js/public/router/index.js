@@ -187,5 +187,15 @@ export default new Router({
             },
             component: () => import("../components/Errors/NotFoundPage.vue"),
         },
+        {
+            path: '/test',
+            name: 'test',
+            meta: {
+                allowAnonymous: true,
+                allowCustomer: true,
+                allowWholesale: true,
+            },
+            component: () => import("../components/Test/Test.vue"),
+        },
     ]
 });

@@ -89,7 +89,10 @@ class PublicTemplateModel
                 'menuCatalog' => $menuCategory,
                 'menuHeader' => $menuHeader,
                 'footer' => $footer,
+                'isMobile'=>IS_MOBILE,
+                'isTablet'=>IS_TABLET,
             ];
+
         };
 
         $returnData['breadcrumb'] = is_string($objectData) ? $objectData : static::generateBreadcrumb($objectData);

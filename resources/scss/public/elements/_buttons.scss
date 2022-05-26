@@ -53,10 +53,21 @@ button:hover, .btn:hover {
   background: none;
   border:none;
   color:$grey;
+  fill:$grey;
 }
 .btn_as-text:hover{
   text-decoration: underline;
 }
+
+.btn_header,.btn_header:hover{
+  background: none;
+  border:none;
+  color:$yellow;
+  fill:$yellow;
+  padding: 0;
+}
+.btn_header:hover{
+ }
 
 
 //кнопка корзины в каталоге

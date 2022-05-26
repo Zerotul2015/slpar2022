@@ -109,6 +109,12 @@ const app = new Vue({
         isWholesale() {
             return this.$store.getters['customer/isWholesale'];
         },
+        isMobile(){
+            return this.$store.getters['templateData/isMobile'];
+        },
+        isTablet(){
+            return this.$store.getters['templateData/isTablet'];
+        }
     },
     methods: {
         isInViewport(elem) {

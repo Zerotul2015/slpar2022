@@ -53,10 +53,16 @@
       <div class="bsp-products-group" v-for="(catItem) in productsCategory"
            v-show="filterBindingCategoryState === false || (catItem.binding_style === filterBindingCategory)">
         <h2>{{ catItem.name }}</h2>
-        <vue-horizontal class="bsp-products-wrap" responsive>
-          <ProductCard class="product-card_slider" v-for="(productItem) in products[catItem.id]"
-                       :product="productItem" :key="$root.guid()" image-size="thumb_medium"></ProductCard>
-        </vue-horizontal>
+        <bath-style-slider-products class="bsp-products-slider" :style="{'width':widthSlider}" v-if="products[catItem.id] && products[catItem.id].length > 0" :count-slide="products[catItem.id].length">
+          <rl-carousel-slide v-for="(productItem) in products[catItem.id]" :key="$root.guid()" class="bsp-product-slide">
+            <ProductCard class="product-card_slider"
+                         :product="productItem" :key="$root.guid()"></ProductCard>
+          </rl-carousel-slide>
+        </bath-style-slider-products>
+        <!--        <vue-horizontal class="bsp-products-wrap" responsive>-->
+        <!--          <ProductCard class="product-card_slider" v-for="(productItem) in products[catItem.id]"-->
+        <!--                       :product="productItem" :key="$root.guid()" image-size="thumb_medium"></ProductCard>-->
+        <!--        </vue-horizontal>-->
       </div>
     </div>
   </div>
@@ -67,10 +73,12 @@ import VueHorizontal from "vue-horizontal";
 import iconSvg from "../Icon-svg/icon-svg";
 import ProductCard from "../Product/ProductCard";
 import Breadcrumb from "../Breadcrumb";
+import {RlCarouselSlide} from 'vue-renderless-carousel'
+import BathStyleSliderProducts from "./BathStyleSliderProducts";
 
 export default {
   name: "BathStyle",
-  components: {Breadcrumb, ProductCard, VueHorizontal, iconSvg},
+  components: {BathStyleSliderProducts, Breadcrumb, ProductCard, VueHorizontal, iconSvg, RlCarouselSlide},
   props: {
     url: {
       type: String,
@@ -114,16 +122,21 @@ export default {
     filterBindingCategory() {
       let slidersBlock = document.getElementById("main-sliders-bath-styles");
       if (slidersBlock) {
-          let coordinate = slidersBlock.getBoundingClientRect();
-          window.scrollBy({
-            top: coordinate.bottom - 220,
-            behavior: 'smooth',
-          });
+        let coordinate = slidersBlock.getBoundingClientRect();
+        window.scrollBy({
+          top: coordinate.bottom - 220,
+          behavior: 'smooth',
+        });
       }
 
     },
   },
   computed: {
+    widthSlider(){
+      let elem = document.getElementsByClassName('header-content');
+      console.log(elem);
+      return elem[0].offsetWidth + 'px';
+    },
     filterBindingCategory() {
       return this.$store.getters['bathStyle/filterBy'];
     },
@@ -137,7 +150,7 @@ export default {
       return this.$store.getters['bathStyle/productsCategoryData'];
     },
     activeStyleKey() {
-      return this.$store.getters['bathStyle/activeKey'] ? this.$store.getters['bathStyle/activeKey'] : 0 ;
+      return this.$store.getters['bathStyle/activeKey'] ? this.$store.getters['bathStyle/activeKey'] : 0;
     },
     bathStyles() {
       return this.$store.getters['bathStyle/all'];
@@ -200,51 +213,51 @@ export default {
 </script>
 
 <style scoped>
-.bsp-s-title-icon-toggle {
-  transition: .25s;
-}
+/*.bsp-s-title-icon-toggle {*/
+/*  transition: .25s;*/
+/*}*/
 
-.bsp-s-title-icon-toggle_up {
-  transform: rotate(180deg);
-}
+/*.bsp-s-title-icon-toggle_up {*/
+/*  transform: rotate(180deg);*/
+/*}*/
 
 
-.bsp-products-wrap >>> .v-hl-btn svg {
-  width: 40px;
-  height: 40px;
-  margin: 6px;
-  padding: 6px;
-  border-radius: 20px;
-  background: none;
-  color: rgb(255, 205, 3);
-  box-shadow: none;
-}
+/*.bsp-products-wrap >>> .v-hl-btn svg {*/
+/*  width: 40px;*/
+/*  height: 40px;*/
+/*  margin: 6px;*/
+/*  padding: 6px;*/
+/*  border-radius: 20px;*/
+/*  background: none;*/
+/*  color: rgb(255, 205, 3);*/
+/*  box-shadow: none;*/
+/*}*/
 
-.bsp-products-wrap >>> .v-hl-btn svg:hover {
-  background: rgb(255, 205, 3);
-  color: #ffffff;
-}
+/*.bsp-products-wrap >>> .v-hl-btn svg:hover {*/
+/*  background: rgb(255, 205, 3);*/
+/*  color: #ffffff;*/
+/*}*/
 
-@media (min-width: 640px) {
-  .bsp-products-wrap .product-card_slider {
-    width: calc((100% - 0.5rem) / 2);
-  }
-}
+/*@media (min-width: 640px) {*/
+/*  .bsp-products-wrap .product-card_slider {*/
+/*    width: calc((100% - 0.5rem) / 2);*/
+/*  }*/
+/*}*/
 
-@media (min-width: 1024px) {
-  .bsp-products-wrap .product-card_slider {
-    width: calc((100% - (2 * 0.5rem)) / 3);
-  }
-}
+/*@media (min-width: 1024px) {*/
+/*  .bsp-products-wrap .product-card_slider {*/
+/*    width: calc((100% - (2 * 0.5rem)) / 3);*/
+/*  }*/
+/*}*/
 
-@media (min-width: 1280px) {
-  .bsp-products-wrap .product-card_slider {
-    width: calc((100% - (3 * 0.5rem)) / 4);
+/*@media (min-width: 1280px) {*/
+/*  .bsp-products-wrap .product-card_slider {*/
+/*    width: calc((100% - (3 * 0.5rem)) / 4);*/
 
-  }
-}
+/*  }*/
+/*}*/
 
-.bsp-products-wrap .product-card_slider {
-  margin-right: .55rem;
-}
+/*.bsp-products-wrap .product-card_slider {*/
+/*  margin-right: .55rem;*/
+/*}*/
 </style>
