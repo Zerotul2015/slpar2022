@@ -122,6 +122,10 @@ export default {
       if (newVal === this.$refs) {
 
       }
+    },
+    menuCatalogIsOpen(){},
+    sectionSite(){
+      this.menuCatalogIsOpen = false
     }
   },
   computed: {
