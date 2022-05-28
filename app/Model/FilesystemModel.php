@@ -204,46 +204,4 @@ class FilesystemModel extends Filesystem
         }
     }
 
-
-    /**
-     * Переносит изображение в нужную папку и если не указано другое удаляется старое.
-     * Метод используется при сохранении страниц, сертифиактов и т.д. в которых указано одно изображение
-     * @param $path  string (путь к папке в которой хранятся изображения)
-     * @param string $imageNewFullPath
-     * @param string $imageOldName
-     * @param boolean $removeOld
-     * @return string|null
-     */
-    public static function moveNewImage($path, $imageNewFullPath = '', $imageOldName = '', $removeOld = true)
-    {
-
-        //проверям чтобы в конце пути был слеш
-        if (!preg_match('/\/$/', $path)) {
-            $path = $path . '/';
-        }
-        $nameFileImage = '';
-        $fileSystemModel = new static();
-        //перемещаем изображение
-        if ($imageNewFullPath) {
-            if ($imageOldName == $imageNewFullPath) {
-                $nameFileImage = $imageOldName;
-            } else {
-                $oldPath = static::getAbsolutePath($imageNewFullPath);
-                $nameFileImage = basename($oldPath);
-                if ($fileSystemModel->exists($oldPath)) {
-                    $newPath = static::getAbsolutePath($path . $nameFileImage);
-                    $fileSystemModel->rename($oldPath, $newPath, true);
-                }
-
-            }
-        }
-        //удаляем старое изображение
-        if ($removeOld) {
-            if ($imageOldName && $fileSystemModel->exists($oldImage = static::getAbsolutePath($path . $imageOldName))) {
-                $fileSystemModel->remove($oldImage);
-                MainModel::removeImageInCache($oldImage);
-            }
-        }
-        return $nameFileImage;
-    }
 }
