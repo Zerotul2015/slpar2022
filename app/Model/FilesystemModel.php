@@ -25,7 +25,7 @@ class FilesystemModel extends Filesystem
     private $allowedType = [
         'image' => ['image/gif', 'image/png', 'image/jpeg', 'image/pjpeg', 'image/svg+xml', 'image/bmp', 'image/webp'],
         'video' => ['video/mpeg', 'video/mp4', 'ideo/3gpp2', 'video/3gpp', 'video/x-flv', 'video/x-ms-wmv', 'video/webm', 'video/quicktime', 'video/ogg'],
-        'archive' => ['application/zip', 'application/x-rar-compressed', 'application/gzip', 'application/x-tar'],
+        'archive' => ['application/zip', 'application/x-rar-compressed', 'application/gzip', 'application/x-tar', 'application/x-7z-compressed'],
         'document' => ['application/pdf', 'video/mp4', 'text/plain', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel', 'application/vnd.oasis.opendocument.graphics', 'application/vnd.oasis.opendocument.presentation', 'application/vnd.oasis.opendocument.spreadsheet', 'application/vnd.oasis.opendocument.text']
     ];
 
