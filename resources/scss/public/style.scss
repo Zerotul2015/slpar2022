@@ -9,15 +9,16 @@
 
 
 body{
-  background: linear-gradient(rgb(240, 240, 240) 120px, #fff 180px) repeat-x;
+  //background: linear-gradient(rgb(240, 240, 240) 120px, #fff 180px) repeat-x;
   @include lg() {
     min-width:980px;
   }
 }
 #app{
-  background: url('../../../public/build/images/honeycomb_light.png') repeat-x;
-  background-size: 55px;
-  background-position-y: -14px;
+  background: url('../../../public/build/images/background_header2.png') no-repeat;
+  //background-size: 55px;
+  //background-position-y: -14px;
+  background-size: contain;
 }
 ::-webkit-scrollbar {
   width: 10px;
