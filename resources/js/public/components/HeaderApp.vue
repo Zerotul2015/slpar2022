@@ -1,8 +1,11 @@
 <template>
   <header class="header-page"
-          :class="{'header-page_fixed':headerFixed, 'header-page_mobile':isMobile, 'header-page_tablet':isTablet}">
+          :class="{'header-page_fixed':headerFixed, 'header-page_mobile':isMobile, 'header-page_tablet':isTablet,
+          'header-page_bath-page':(sectionSite==='index' || sectionSite ==='bathStyle')}">
     <div class="header-wrap">
-      <div class="header-content" :class="{'header-content_mobile':isMobile,'header-content_tablet':isTablet}">
+      <div class="header-content"
+           :class="{'header-content_mobile':isMobile,'header-content_tablet':isTablet,
+           'header-content_bath-page':(sectionSite==='index' || sectionSite ==='bathStyle')}">
         <a class="header-logo" :class="{'header-logo_mobile':isMobile, 'header-logo_tablet':isTablet}" href="/">
           <img src="/build/images/logo_yellow.svg" alt="С легким паром">
         </a>
@@ -41,7 +44,27 @@
           </div>
         </div>
         <div class="header-links-block" v-if="isMobile === false && isTablet === false">
-          <div class="hcs-wrapper" v-if="headerFixed && carouselActive">
+          <div class="style-binding-wrapper" v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')">
+            <div class="hf-s-title-binding">
+              <span>Аксессуары и декор</span>
+              <span class="hf-s-binding-toggle-reset" v-show="selectBindingFilterStyleState === true"
+                    @click="resetBindingCategoryStyle">сбросить</span>
+            </div>
+            <div class="hf-s-binging-toggle-wrap">
+              <div class="hf-s-binging-toggle" :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'bath'}"
+                   @click="changeBindingCategoryStyle('bath')">Для бань и саун
+              </div>
+              <div class="hf-s-binging-toggle"
+                   :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'fireplace'}"
+                   @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей
+              </div>
+              <div class="hf-s-binging-toggle"
+                   :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'homestead'}"
+                   @click="changeBindingCategoryStyle('homestead')">Для дома и усадьбы
+              </div>
+            </div>
+          </div>
+          <div class="hcs-wrapper" v-else-if="headerFixed && carouselActive">
             <BathStylesHeaderCarousel class="hcd-wrapper">
               <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
                 <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}">{{
@@ -78,23 +101,15 @@
       </div>
     </div>
     <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">
-      <div class="hf-s-title-binding">
-        <span>Аксессуары и декор</span>
-        <span class="hf-s-binding-toggle-reset" v-show="selectBindingFilterStyleState === true"
-              @click="resetBindingCategoryStyle">сбросить</span>
-      </div>
-      <div class="hf-s-binging-toggle-wrap">
-        <div class="hf-s-binging-toggle" :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'bath'}"
-             @click="changeBindingCategoryStyle('bath')">Для бань и саун
-        </div>
-        <div class="hf-s-binging-toggle"
-             :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'fireplace'}"
-             @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей
-        </div>
-        <div class="hf-s-binging-toggle"
-             :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'homestead'}"
-             @click="changeBindingCategoryStyle('homestead')">Для дома и усадьбы
-        </div>
+      <div class="hcs-wrapper hcs-wrapper_bath-or-index">
+        <BathStylesHeaderCarousel class="hcd-wrapper">
+          <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
+            <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}">{{
+                styleItem.name
+              }}
+            </div>
+          </rl-carousel-slide>
+        </BathStylesHeaderCarousel>
       </div>
     </div>
   </header>

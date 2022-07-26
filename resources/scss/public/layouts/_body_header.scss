@@ -16,6 +16,9 @@
 
   }
 }
+.header-page_fixed.header-page_bath-page{
+  padding-top: 0;
+}
 
 .header-page_mobile, .header-page_tablet {
   padding-top: 1rem;
@@ -50,13 +53,35 @@
   @include lg() {
 
   }
-
 }
 
 .header-content_mobile, .header-content_tablet {
   grid-template-areas: "h-logo h-search h-catalog h-icon";
   grid-template-columns: 1fr repeat(3, auto);
   grid-gap: 1rem;
+}
+
+.header-page_fixed{
+  .header-content_bath-page{
+    padding-bottom: 1rem;
+  }
+  .header-logo{
+    margin-top: 0;
+  }
+}
+
+
+
+.style-binding-wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  display: grid;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
 }
 
 .header-logo {
@@ -116,7 +141,6 @@
   background: $grey;
   box-shadow: 0 0 5px $grey;
   padding-bottom: .5rem;
-
 }
 
 
@@ -477,6 +501,11 @@ svg.icon-input-search.hs-block {
   z-index: 9999;
   display: grid;
   justify-content: center;
+}
+//Карусель стилей в шапке на главной или в стилевых решениях
+.hcs-wrapper_bath-or-index{
+  position: relative;
+  margin-top: 0.7rem;
 }
 
 .hcd-wrapper {
