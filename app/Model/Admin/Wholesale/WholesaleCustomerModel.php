@@ -4,9 +4,10 @@ namespace App\Model\Admin\Wholesale;
 
 use App\Classes\ActiveRecord\Tables\Discount;
 use App\Classes\ActiveRecord\Tables\WholesaleCustomer;
+use App\Model\Interfaces\DefaultMethodTableClass;
 use JetBrains\PhpStorm\ArrayShape;
 
-class WholesaleCustomerModel implements \App\Model\Interfaces\DefaultMethodTableClass
+class WholesaleCustomerModel implements DefaultMethodTableClass
 {
 
     /**

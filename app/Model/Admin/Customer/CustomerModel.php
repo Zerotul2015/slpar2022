@@ -31,6 +31,7 @@ class CustomerModel implements DefaultMethodTableClass
         } else {
             $itemInBase = (isset($val['id']) && $val['id']) ? static::$nameTableClass::findOne($val['id']) : false;
             if (!empty($val['pass'])) {
+                $passwordString = $val['pass'];
                 $val['pass'] = password_hash($val['pass'], PASSWORD_DEFAULT);
             }
             $val['status'] = static::checkedStatus($val['status'] ?? null);
@@ -49,7 +50,7 @@ class CustomerModel implements DefaultMethodTableClass
             }
             $returnResult['returnData'] = $itemForSave;
 
-            if ($passwordString) {
+            if (isset($passwordString) && !empty($passwordString)) {
                 static::sendPassword($passwordString);
             }
         }
