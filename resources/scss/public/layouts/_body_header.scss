@@ -2,10 +2,10 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   transition: top .5s;
-  /* position: fixed; */
+  position: fixed;
   left: 0;
   right: 0;
-  top: -100%;
+  top: 0;
   z-index: 9999;
 
   a, .link {
@@ -15,9 +15,6 @@
   @include lg() {
 
   }
-}
-.header-page_fixed.header-page_bath-page{
-  padding-top: 0;
 }
 
 .header-page_mobile, .header-page_tablet {
@@ -61,23 +58,13 @@
   grid-gap: 1rem;
 }
 
-.header-page_fixed{
-  .header-content_bath-page{
-    padding-bottom: 1rem;
-  }
-  .header-logo{
-    margin-top: 0;
-  }
-}
-
-
 
 .style-binding-wrapper{
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 9990;
   display: grid;
   justify-content: center;
   color: white;
@@ -140,7 +127,6 @@
   top: 0;
   background: $grey;
   box-shadow: 0 0 5px $grey;
-  padding-bottom: .5rem;
 }
 
 
@@ -498,7 +484,7 @@ svg.icon-input-search.hs-block {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 9990;
   display: grid;
   justify-content: center;
 }

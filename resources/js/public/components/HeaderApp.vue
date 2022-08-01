@@ -7,7 +7,7 @@
            :class="{'header-content_mobile':isMobile,'header-content_tablet':isTablet,
            'header-content_bath-page':(sectionSite==='index' || sectionSite ==='bathStyle')}">
         <a class="header-logo" :class="{'header-logo_mobile':isMobile, 'header-logo_tablet':isTablet}" href="/">
-          <img src="/build/images/logo_yellow.svg" alt="С легким паром">
+          <img src="/build/images/logo_yellow.svg" alt="С легким паром!">
         </a>
         <div class="header-catalog" :class="{'header-catalog_mobile':isMobile,'header-catalog_tablet':isTablet}">
           <div class="h-catalog-link h-link btn btn_header" @click="menuCatalogIsOpen = !menuCatalogIsOpen">
@@ -44,37 +44,7 @@
           </div>
         </div>
         <div class="header-links-block" v-if="isMobile === false && isTablet === false">
-          <div class="style-binding-wrapper" v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')">
-            <div class="hf-s-title-binding">
-              <span>Аксессуары и декор</span>
-              <span class="hf-s-binding-toggle-reset" v-show="selectBindingFilterStyleState === true"
-                    @click="resetBindingCategoryStyle">сбросить</span>
-            </div>
-            <div class="hf-s-binging-toggle-wrap">
-              <div class="hf-s-binging-toggle" :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'bath'}"
-                   @click="changeBindingCategoryStyle('bath')">Для бань и саун
-              </div>
-              <div class="hf-s-binging-toggle"
-                   :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'fireplace'}"
-                   @click="changeBindingCategoryStyle('fireplace')">Для каминов и печей
-              </div>
-              <div class="hf-s-binging-toggle"
-                   :class="{'hf-s-binging-toggle_active':selectBindingFilterStyle === 'homestead'}"
-                   @click="changeBindingCategoryStyle('homestead')">Для дома и усадьбы
-              </div>
-            </div>
-          </div>
-          <div class="hcs-wrapper" v-else-if="headerFixed && carouselActive">
-            <BathStylesHeaderCarousel class="hcd-wrapper">
-              <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
-                <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}">{{
-                    styleItem.name
-                  }}
-                </div>
-              </rl-carousel-slide>
-            </BathStylesHeaderCarousel>
-          </div>
-          <div class="hlb-links" v-else>
+          <div class="hlb-links">
             <router-link v-if="isAuth" class="header-link-order-form" to="/dealer/order-form">Бланк заказа</router-link>
             <router-link class="h-link" v-for="(menuItem) in menuHeader"
                          :key="$root.guid()"
@@ -83,35 +53,26 @@
             </router-link>
           </div>
         </div>
-        <search-site-mobile v-if="isMobile"></search-site-mobile>
-        <search-site class="header-search-block" v-else-if="!headerFixed"
-                     :iconShow="true" custom-class="hs-block"></search-site>
+        <search-site-mobile v-if="isMobile"/>
+        <search-site class="header-search-block" v-else
+                     :iconShow="true" custom-class="hs-block"/>
         <div class="header-icon-block">
           <router-link class="header-link-enter" :to="linkCabinet" title="Вход">
             <icon-svg class="header-icon-cart" icon="user-large"></icon-svg>
           </router-link>
           <router-link to="/compare" div class="header-icon-compare-wrap">
             <icon-svg class="header-icon-compare" :class="{'header-icon-compare-full':compareCount}"
-                      :scaleX="2" :icon="compareIcon"></icon-svg>
+                      :scaleX="2" :icon="compareIcon"/>
           </router-link>
           <router-link to="/cart" class="header-icon-cart-wrap" :class="{'header-icon-label-full':cartCount}">
-            <icon-svg class="header-icon-cart" icon="cart-header"></icon-svg>
+            <icon-svg class="header-icon-cart" icon="cart-header"/>
           </router-link>
         </div>
       </div>
     </div>
-    <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">
-      <div class="hcs-wrapper hcs-wrapper_bath-or-index">
-        <BathStylesHeaderCarousel class="hcd-wrapper">
-          <rl-carousel-slide v-for="(styleItem, keyStyle) in bathStyles" :key="$root.guid()">
-            <div class="bs-c-item" :class="{'bs-c-item-active':keyStyle === activeStyleKey}">{{
-                styleItem.name
-              }}
-            </div>
-          </rl-carousel-slide>
-        </BathStylesHeaderCarousel>
-      </div>
-    </div>
+<!--    <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">-->
+<!--      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>-->
+<!--    </div>-->
   </header>
 </template>
 
@@ -120,12 +81,16 @@ import VueHorizontal from "vue-horizontal";
 import IconSvg from "./Icon-svg/icon-svg";
 import SearchSite from "./search/SearchSite";
 import SearchSiteMobile from "./search/SearchSiteMobile";
-import BathStylesHeaderCarousel from "./BathStyle/BathStylesHeaderCarousel.vue";
-import {RlCarouselSlide} from 'vue-renderless-carousel'
+import HeaderStyleCarouselNavigate from "./Header/HeaderStyleCarouselNavigate";
+import BathStyleBinding from "./BathStyle/BathStyleBinding";
 
 export default {
   name: "HeaderApp",
-  components: {SearchSiteMobile, BathStylesHeaderCarousel, SearchSite, IconSvg, VueHorizontal, RlCarouselSlide},
+  components: {
+    BathStyleBinding,
+    HeaderStyleCarouselNavigate,
+    SearchSiteMobile, SearchSite, IconSvg, VueHorizontal
+  },
   data() {
     return {
       menuNav: [],
@@ -138,18 +103,19 @@ export default {
 
       }
     },
-    menuCatalogIsOpen(){},
-    sectionSite(){
+    menuCatalogIsOpen() {
+    },
+    sectionSite() {
       this.menuCatalogIsOpen = false
     },
-    sectionSiteKey(){
+    sectionSiteKey() {
       this.menuCatalogIsOpen = false
     }
   },
   computed: {
-    iconCatalog(){
+    iconCatalog() {
       let iconName = 'bars';
-      if(this.isMobile === true && this.menuCatalogIsOpen === true){
+      if (this.isMobile === true && this.menuCatalogIsOpen === true) {
         iconName = 'xmark';
       }
       return iconName;
@@ -191,15 +157,6 @@ export default {
     bathStyles() {
       return this.$store.getters["bathStyle/all"];
     },
-    activeStyleKey() {
-      return this.$store.getters['bathStyle/activeKey'];
-    },
-    selectBindingFilterStyle() {
-      return this.$store.getters['bathStyle/filterBy'];
-    },
-    selectBindingFilterStyleState() {
-      return this.$store.getters['bathStyle/filterToggle'];
-    },
     cartCount() {
       return this.$store.getters['cart/count'];
     },
@@ -215,19 +172,6 @@ export default {
     }
   },
   methods: {
-    resetBindingCategoryStyle() {
-      this.$store.dispatch('bathStyle/disableFilter');
-    },
-    changeBindingCategoryStyle(bindingName) {
-      console.log(bindingName);
-      if (bindingName === 'fireplace' || bindingName === 'bath' || bindingName === 'homestead') {
-        if (bindingName === this.selectBindingFilterStyle) {
-          this.$store.dispatch('bathStyle/disableFilter');
-        } else {
-          this.$store.dispatch('bathStyle/setFilter', bindingName);
-        }
-      }
-    }
   },
 }
 </script>

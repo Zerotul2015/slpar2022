@@ -18,7 +18,7 @@ export default new Router({
                 allowCustomer: true,
                 allowWholesale: true,
             },
-            component: () => import("../components/BathStyle/BathStyle.vue"),
+            component: () => import("../components/IndexPage/IndexPage.vue"),
         },
         {
             path: '/page/:url',
