@@ -1,7 +1,7 @@
 .header-page {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  transition: top .5s;
+  transition: .5s;
   position: fixed;
   left: 0;
   right: 0;
@@ -47,6 +47,7 @@
   justify-content: start;
   align-items: center;
   padding: 0.25rem 0 calc(0.25rem + 7px);
+  transition:.5s;
   @include lg() {
 
   }
@@ -73,11 +74,12 @@
 
 .header-logo {
   grid-area: h-logo;
-  margin-top: -2rem;
-  margin-bottom: -2rem;
+  position: fixed;
+  top:0;
   z-index: 2;
 
   img {
+    transition:.5s;
     width: 12rem;
     @extends .border-radius;
     @include box-shadow();
@@ -127,6 +129,13 @@
   top: 0;
   background: $grey;
   box-shadow: 0 0 5px $grey;
+  // new
+  padding-top:0;
+  padding-bottom: 0;
+  transition: .5s;
+  .header-logo img{
+
+  }
 }
 
 
