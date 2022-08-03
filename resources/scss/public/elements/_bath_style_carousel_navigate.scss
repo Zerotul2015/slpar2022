@@ -1,0 +1,80 @@
+//Карусель стилей
+.hcs-wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+//Карусель стилей на главной или в стилевых решениях
+.hcs-wrapper_bath-or-index{
+  position: relative;
+  //margin-top: 0.7rem;
+}
+
+.hcd-wrapper {
+  width: 440px;
+}
+
+.bs-c-title {
+  font-size: .7rem;
+  position: absolute;
+  text-align: center;
+  color: $white;
+  top: -12px;
+  left: 0;
+  right: 0
+
+}
+
+.bs-c-button {
+  fill: $yellow;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.bs-c-button:hover {
+  fill: $yellow;
+}
+
+.bs-c-button-disable, .bs-c-button-disable:hover {
+  fill: $grey-light;
+  cursor: default;
+}
+
+.bs-c-button-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bs-header-carousel {
+  position: relative;
+  display: flex;
+}
+
+.bs-c-prev {
+  left: 0;
+  padding-right: 4rem;
+  background: linear-gradient(90deg, $grey 30%, rgb(79, 79, 79, 0) 100%);
+}
+
+.bs-c-next {
+  right: 0;
+  padding-left: 4rem;
+  background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, $grey 70%);
+}
+
+.bs-c-item {
+  text-align: center;
+  color: $white;
+  width: 180px;
+  //font-size: 1.25rem;
+}
+
+.bs-c-item-active {
+  color: $yellow;
+}

@@ -12,7 +12,7 @@ const state = () => ({
     sectionKey: null, // Берется из параметра url в router
     seo: {'title': '', 'description': ''},
     gridSizeCompare: 'big', //big, default
-    gridSizeCategory: 'default', //big, default
+    gridSizeCategory: 'default', //big, default,
 })
 
 // getters

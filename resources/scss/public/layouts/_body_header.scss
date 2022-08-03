@@ -40,8 +40,10 @@
 .header-content {
   @extend .default-width-content;
   display: grid;
-  grid-template-areas: "h-logo h-catalog h-links h-search h-icon";
-  grid-template-columns: 13rem repeat(2, auto) 1fr auto;
+  //grid-template-areas: "h-logo h-catalog h-links h-search h-icon";
+  //grid-template-columns: 13rem repeat(2, auto) 1fr auto;
+  grid-template-areas: "h-logo h-catalog h-links h-toggle-style h-search h-icon";
+  grid-template-columns: 13rem repeat(3, auto) 1fr auto;
   grid-gap: $margin-default;
   position: relative;
   justify-content: start;
@@ -61,11 +63,6 @@
 
 
 .style-binding-wrapper{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 9990;
   display: grid;
   justify-content: center;
   color: white;
@@ -136,6 +133,28 @@
   .header-logo img{
 
   }
+  .header-content{
+
+  }
+}
+
+.header-toggle-style{
+  grid-area: h-toggle-style;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap:.25rem;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border: 1px solid $yellow;
+  border-radius: 5px;
+  padding: 0 .25rem;
+}
+.header-toggle-style-text-label{
+  color:$white;
+}
+.header-toggle-style-text-label-active{
+  color:$yellow;
 }
 
 
@@ -422,152 +441,14 @@ svg.icon-input-search.hs-block {
   @include box-shadow();
 }
 
+.h-fixed-second-line {
+  color: $white;
+  text-transform: uppercase;
+  padding-bottom:.25rem;
+}
+
+
 .breadcrumb-wrap {
   @extend .default-width-content;
 }
 
-// шапка после прокуртки
-//фильтрация товара в стилях
-
-.h-fixed-second-line {
-  color: $white;
-  text-transform: uppercase;
-}
-
-.hf-s-title-binding {
-  text-align: center;
-  margin-bottom: 0.35rem;
-}
-
-.hf-s-binging-toggle-wrap {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  grid-gap: 3rem;
-  margin-bottom: 0.15rem;
-}
-
-.hf-s-binging-toggle {
-  color: $grey-light;
-  border: 1px solid $grey-light;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  width: 209px;
-  text-align: center;
-}
-
-.hf-s-binging-toggle:hover {
-  cursor: pointer;
-  color: $white;
-  text-shadow: 0 0 5px $white;
-}
-
-.hf-s-binging-toggle_active {
-  color: $yellow;
-  border-color: $yellow;
-  cursor: none;
-}
-
-
-.hf-s-binging-toggle_active:hover {
-  cursor: pointer;
-  text-shadow: none;
-  color: $yellow;
-}
-
-.hf-s-binding-toggle-reset {
-  text-align: center;
-  font-size: $font-size-small;
-  color: $grey-light;
-  text-transform: lowercase;
-}
-
-.hf-s-binding-toggle-reset:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-//Карусель стилей в шапке
-.hcs-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 9990;
-  display: grid;
-  justify-content: center;
-}
-//Карусель стилей в шапке на главной или в стилевых решениях
-.hcs-wrapper_bath-or-index{
-  position: relative;
-  margin-top: 0.7rem;
-}
-
-.hcd-wrapper {
-  width: 440px;
-}
-
-.bs-c-title {
-  font-size: .7rem;
-  position: absolute;
-  text-align: center;
-  color: $white;
-  top: -12px;
-  left: 0;
-  right: 0
-
-}
-
-.bs-c-button {
-  fill: $yellow;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
-.bs-c-button:hover {
-  fill: $yellow;
-}
-
-.bs-c-button-disable, .bs-c-button-disable:hover {
-  fill: $grey-light;
-  cursor: default;
-}
-
-.bs-c-button-icon-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bs-header-carousel {
-  position: relative;
-  display: flex;
-}
-
-.bs-c-prev {
-  left: 0;
-  padding-right: 4rem;
-  background: linear-gradient(90deg, $grey 30%, rgb(79, 79, 79, 0) 100%);
-}
-
-.bs-c-next {
-  right: 0;
-  padding-left: 4rem;
-  background: linear-gradient(90deg, rgba(79, 79, 79, 0) 0, $grey 70%);
-}
-
-.bs-c-item {
-  text-align: center;
-  color: $white;
-  width: 180px;
-  font-size: 1.25rem;
-}
-
-.bs-c-item-active {
-  color: $yellow;
-}

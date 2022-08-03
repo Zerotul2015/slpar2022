@@ -1,6 +1,6 @@
 <template>
   <header class="header-page"
-          :class="{'header-page_fixed':headerFixed, 'header-page_mobile':isMobile, 'header-page_tablet':isTablet,
+          :class="{'header-page_fixed':headerFixed || styleHeaderToggle, 'header-page_mobile':isMobile, 'header-page_tablet':isTablet,
           'header-page_bath-page':(sectionSite==='index' || sectionSite ==='bathStyle')}">
     <div class="header-wrap">
       <div class="header-content"
@@ -53,6 +53,11 @@
             </router-link>
           </div>
         </div>
+        <div class="header-toggle-style">
+          <div @click="styleHeaderToggleChange(!styleHeaderToggle)" class="header-toggle-style-text-label"
+          :class="{'header-toggle-style-text-label-active':styleHeaderToggle}">Выбрать стиль</div>
+          <ElementsToggleSwitch :is-checked="styleHeaderToggle" @changeToggle="styleHeaderToggleChange"/>
+        </div>
         <search-site-mobile v-if="isMobile"/>
         <search-site class="header-search-block" v-else
                      :iconShow="true" custom-class="hs-block"/>
@@ -70,6 +75,12 @@
         </div>
       </div>
     </div>
+    <div v-if="styleHeaderToggle" class="h-fixed-second-line">
+      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>
+    </div>
+    <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">
+      <BathStyleBinding/>
+    </div>
 <!--    <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">-->
 <!--      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>-->
 <!--    </div>-->
@@ -83,10 +94,12 @@ import SearchSite from "./search/SearchSite";
 import SearchSiteMobile from "./search/SearchSiteMobile";
 import HeaderStyleCarouselNavigate from "./Header/HeaderStyleCarouselNavigate";
 import BathStyleBinding from "./BathStyle/BathStyleBinding";
+import ElementsToggleSwitch from "./Elements/ElementsToggleSwitch";
 
 export default {
   name: "HeaderApp",
   components: {
+    ElementsToggleSwitch,
     BathStyleBinding,
     HeaderStyleCarouselNavigate,
     SearchSiteMobile, SearchSite, IconSvg, VueHorizontal
@@ -95,6 +108,7 @@ export default {
     return {
       menuNav: [],
       menuCatalogIsOpen: false,
+      styleHeaderToggleTemp:false,
     }
   },
   watch: {
@@ -113,6 +127,9 @@ export default {
     }
   },
   computed: {
+    styleHeaderToggle(){
+      return this.$store.getters["bathStyle/styleHeaderToggle"];
+    },
     iconCatalog() {
       let iconName = 'bars';
       if (this.isMobile === true && this.menuCatalogIsOpen === true) {
@@ -172,6 +189,9 @@ export default {
     }
   },
   methods: {
+    styleHeaderToggleChange(newStateToggle){
+      this.$store.dispatch('bathStyle/changeStyleHeaderToggle', newStateToggle)
+    }
   },
 }
 </script>

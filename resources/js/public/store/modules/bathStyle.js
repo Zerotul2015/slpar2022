@@ -11,6 +11,7 @@ const state = () => ({
     toggleFilterForCategory: false, //
     productsData: {},
     productsCategoryData: {},
+    styleHeaderToggle: false,
 
 })
 
@@ -48,15 +49,22 @@ const getters = {
     productsCategoryData(state) {
         return state.productsCategoryData;
     },
+    styleHeaderToggle(state) {
+        return state.styleHeaderToggle;
+    }
 }
 
 // actions
 const actions = {
+    changeStyleHeaderToggle({commit}, newState) {
+        newState = newState ? newState : false;
+        commit('setStyleHeaderToggle', newState);
+    },
     changeToggleFilterForCategory({commit}, statusNew) {
         statusNew = !!statusNew;
         commit('setToggleFilterForCategory', statusNew);
     },
-    resetFilterForCategory({commit}){
+    resetFilterForCategory({commit}) {
         commit('setActiveStyleId', null);
         commit('setToggleFilterForCategory', false);
 
@@ -119,7 +127,7 @@ const actions = {
 
 // mutations
 const mutations = {
-    setToggleFilterForCategory(state, statusNew){
+    setToggleFilterForCategory(state, statusNew) {
         state.toggleFilterForCategory = statusNew;
     },
     setFilterBy(state, filterName) {
@@ -146,6 +154,9 @@ const mutations = {
     },
     setProductsCategoryData(state, productsCategoryData) {
         state.productsCategoryData = productsCategoryData;
+    },
+    setStyleHeaderToggle(state, newStateToggle) {
+        state.styleHeaderToggle = !!newStateToggle;
     },
     setAll(state, bathStyles) {
         state.bathStyles = bathStyles;

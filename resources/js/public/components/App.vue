@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="body-wrap" :class="{'app_mobile':isMobile, 'app_tablet':isTablet}">
     <headerApp/>
-    <div class="content-wrap">
+    <div class="content-wrap" :class="contentWrapClassName">
       <breadcrumb v-if="showBreadcrumb"></breadcrumb>
       <main>
         <transition name="component-fade" mode="out-in">
@@ -19,6 +19,7 @@ import axios from "axios";
 import HeaderApp from "./HeaderApp.vue"
 import Breadcrumb from "./Breadcrumb.vue";
 import FooterApp from "./FooterApp.vue"
+import {kebabCase} from "lodash"
 
 export default {
   name: "app",
@@ -50,8 +51,16 @@ export default {
     sectionKey() {
       this.$store.dispatch('templateData/getChange');
     },
+    styleHeaderToggle(newVal, oldVal){
+      if(newVal === false && oldVal === true){
+        this.$store.dispatch('bathStyle/resetFilterForCategory');
+      }
+    }
   },
   computed: {
+    contentWrapClassName(){
+      return 'content-wrap-' + kebabCase(this.section);
+    },
     isMobile() {
       return this.$store.getters['templateData/isMobile'];
     },
@@ -73,6 +82,9 @@ export default {
     },
     isWholesale() {
       return this.$store.getters['customer/isWholesale'];
+    },
+    styleHeaderToggle(){
+      return this.$store.getters['bathStyle/styleHeaderToggle'];
     }
   },
   methods: {}
