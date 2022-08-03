@@ -75,11 +75,11 @@
         </div>
       </div>
     </div>
-    <div v-if="styleHeaderToggle" class="h-fixed-second-line">
-      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>
-    </div>
     <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">
       <BathStyleBinding/>
+    </div>
+    <div v-if="styleHeaderToggle" class="h-fixed-second-line">
+      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>
     </div>
 <!--    <div v-if="headerFixed && (sectionSite==='index' || sectionSite ==='bathStyle')" class="h-fixed-second-line">-->
 <!--      <HeaderStyleCarouselNavigate class="hcs-wrapper_bath-or-index"/>-->
